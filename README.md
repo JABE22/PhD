@@ -152,7 +152,7 @@ Before running the mechanistic notebook, collect activations from a local
 open-source model using the prompts already exported in `ai_responses/`.
 
 ```bash
-python collect_activations.py \
+python research/data/scripts/collect_activations.py \
     --model-name mistralai/Mistral-7B-v0.1 \
     --per-test-limit 4 \
     --max-new-tokens 64 \

@@ -285,7 +285,7 @@ jupyter notebook dataset_generation.ipynb
 # Run all cells → creates data/ directory
 
 # 3. Collect AI responses (write your own script)
-python collect_ai_responses.py --test all --models gpt-4,claude-3.5,gemini-1.5
+python research/data/scripts/collect_ai_responses.py --test all --models gpt-4,claude-3.5,gemini-1.5
 
 # 4. Run analysis notebooks
 jupyter notebook section_5-2_test1.ipynb

@@ -3,12 +3,12 @@
 Collect hidden states and attentions for mechanistic analysis.
 
 This script reuses prompts from the existing AI response exports under
-ai_responses/*/all_responses.json and runs a local open-source causal LM over
-those prompts. It stores one artifact per prompt in data/activations so that
+research/test*_*/<test_folder>_responses/all_responses.json and runs a local open-source causal LM over
+those prompts. It stores one artifact per prompt in research/data/activations so that
 section_5-6_mechanistic.ipynb can load them without performing collection.
 
 Example:
-    python collect_activations.py \
+    python research/data/scripts/collect_activations.py \
         --model-name mistralai/Mistral-7B-v0.1 \
         --per-test-limit 4 \
         --max-new-tokens 64
@@ -28,10 +28,10 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 
 
 DEFAULT_TEST_EXPORTS = {
-    "test1_ontological_innovation": Path("ai_responses/test1_ontological_innovation/all_responses.json"),
-    "test2_epistemic_agency": Path("ai_responses/test2_epistemic_agency/all_responses.json"),
-    "test3_theory_generation": Path("ai_responses/test3_theory_generation/all_responses.json"),
-    "test4_category_recognition": Path("ai_responses/test4_category_recognition/all_responses.json"),
+    "test1_ontological_innovation": Path("research/test1_ontological-innovation/test1_ontological_innovation_responses/all_responses.json"),
+    "test2_epistemic_agency": Path("research/test2_epistemic-agency/test2_epistemic_agency_responses/all_responses.json"),
+    "test3_theory_generation": Path("research/test3_theory-generation/test3_theory_generation_responses/all_responses.json"),
+    "test4_category_recognition": Path("research/test4_category-recognition/test4_category_recognition_responses/all_responses.json"),
 }
 
 
@@ -43,7 +43,7 @@ class ActivationCollectionConfig:
     max_prompts: int | None = None
     max_input_length: int = 1024
     max_new_tokens: int = 64
-    output_dir: str = "data/activations"
+    output_dir: str = "research/data/activations"
     device: str = "auto"
     dtype: str = "auto"
     save_attentions: bool = False
@@ -89,7 +89,7 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     )
     parser.add_argument(
         "--output-dir",
-        default="data/activations",
+        default="research/data/activations",
         help="Directory where activation artifacts are written.",
     )
     parser.add_argument(

@@ -43,7 +43,7 @@ def merge_dir(base_dir: Path):
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage: python merge_responses.py <responses_dir> [<responses_dir> ...]")
+        print("Usage: python research/data/scripts/merge_ai_responses.py <responses_dir> [<responses_dir> ...]")
         sys.exit(1)
 
     for arg in sys.argv[1:]:

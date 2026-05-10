@@ -189,10 +189,10 @@ jupyter notebook dataset_generation.ipynb
 **Phase 3: Collect AI Responses (4-8 hours with rate limits)**
 ```bash
 # 4. Query AI models
-python collect_ai_responses.py --test all --models gpt-4,claude-3.5,gemini-1.5 --n-samples 50
+python research/data/scripts/collect_ai_responses.py --test all --models gpt-4,claude-3.5,gemini-1.5 --n-samples 50
 
 # Or test with small sample first:
-python collect_ai_responses.py --test test1 --models gpt-4 --n-samples 5
+python research/data/scripts/collect_ai_responses.py --test test1 --models gpt-4 --n-samples 5
 ```
 
 **Phase 4: Run Analyses (2-3 hours)**
@@ -404,7 +404,7 @@ jupyter notebook dataset_generation.ipynb
 # (modify n_train=50, n_val=10, n_test=10 in first cell)
 
 # Test with 5 samples
-python collect_ai_responses.py --test test1 --models gpt-4 --n-samples 5
+python research/data/scripts/collect_ai_responses.py --test test1 --models gpt-4 --n-samples 5
 
 # Run analysis
 jupyter notebook section_5-2_test1.ipynb
@@ -416,7 +416,7 @@ jupyter notebook section_5-2_test1.ipynb
 jupyter notebook dataset_generation.ipynb
 
 # Collect all responses (takes longest due to rate limits)
-python collect_ai_responses.py --test all --models gpt-4,claude-3.5,gemini-1.5 --n-samples 50
+python research/data/scripts/collect_ai_responses.py --test all --models gpt-4,claude-3.5,gemini-1.5 --n-samples 50
 
 # Run all analyses
 for nb in section_5-*.ipynb; do

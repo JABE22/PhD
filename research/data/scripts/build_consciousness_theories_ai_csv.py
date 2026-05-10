@@ -2,18 +2,18 @@
 """Build a compact AI-theory catalog CSV from test3 all_responses.json via OpenRouter.
 
 The script:
-1) Parses AI theory records from ai_responses/test3_theory_generation/all_responses.json.
+1) Parses AI theory records from research/test3_theory-generation/test3_theory_generation_responses/all_responses.json.
     Note: each record has a `response` field that is itself a JSON-formatted string.
 2) Uses OpenRouter (anthropic/claude-3.7-sonnet) with strict JSON schema response format
     to normalize:
     - theory name formatting
     - abbreviation
     - ~100-word scientific characterization
-3) Writes consciousness_theories_ai.csv.
+3) Writes research/data/consciousness_theories_ai.csv.
 
 Usage:
-  python build_consciousness_theories_ai_csv.py
-  python build_consciousness_theories_ai_csv.py --max-items 20 --delay 0.4
+  python research/data/scripts/build_consciousness_theories_ai_csv.py
+  python research/data/scripts/build_consciousness_theories_ai_csv.py --max-items 20 --delay 0.4
 """
 
 from __future__ import annotations
@@ -31,8 +31,8 @@ from dotenv import load_dotenv  # type: ignore
 from openai import OpenAI  # type: ignore
 
 
-DEFAULT_INPUT = Path("ai_responses/test3_theory_generation/all_responses.json")
-DEFAULT_OUTPUT = Path("consciousness_theories_ai.csv")
+DEFAULT_INPUT = Path("research/test3_theory-generation/test3_theory_generation_responses/all_responses.json")
+DEFAULT_OUTPUT = Path("research/data/consciousness_theories_ai.csv")
 DEFAULT_MODEL_NAME = "claude-3.7-sonnet"
 DEFAULT_MODEL_ID = "anthropic/claude-3.7-sonnet"
 

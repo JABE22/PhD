@@ -91,7 +91,7 @@ jupyter notebook dataset_generation.ipynb
 
 ### Step 4: Collect AI Responses
 ```bash
-python collect_ai_responses.py --test all --models gpt-4,claude-3.5,gemini-1.5 --n-samples 50
+python research/data/scripts/collect_ai_responses.py --test all --models gpt-4,claude-3.5,gemini-1.5 --n-samples 50
 # This queries AI models and saves responses to ai_responses/ directory
 ```
 
@@ -208,7 +208,7 @@ project/
 - **Runtime:** ~15-30 minutes
 - **Purpose:** Creates controlled conceptual universe for testing
 
-### collect_ai_responses.py
+### research/data/scripts/collect_ai_responses.py
 - **Input:** Prompts (defined in script), API keys (.env)
 - **Output:** JSON files with AI responses
 - **Runtime:** ~1-2 hours (with rate limiting)

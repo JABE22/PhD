@@ -14,6 +14,14 @@ TEST_MAP = {
     "test4": "test4_category_recognition",
 }
 
+# Map test names to their folder structure: (parent_folder, responses_folder)
+TEST_FOLDER_STRUCTURE = {
+    "test1_ontological_innovation": ("test1_ontological-innovation", "test1_ontological_innovation_responses"),
+    "test2_epistemic_agency": ("test2_epistemic-agency", "test2_epistemic_agency_responses"),
+    "test3_theory_generation": ("test3_theory-generation", "test3_theory_generation_responses"),
+    "test4_category_recognition": ("test4_category-recognition", "test4_category_recognition_responses"),
+}
+
 FENCE_START_RE = re.compile(r"^\s*```(?:json)?\s*", re.IGNORECASE)
 FENCE_END_RE = re.compile(r"\s*```\s*$", re.IGNORECASE)
 
@@ -143,7 +151,7 @@ def process_file(path: Path) -> str:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Clean AI response payloads in ai_responses/<test_folder>.")
+    parser = argparse.ArgumentParser(description="Clean AI response payloads in research/testN/<test_folder>.")
     parser.add_argument("test", help="test1/test2/test3/test4 or full folder name (e.g., test1_ontological_innovation)")
     parser.add_argument(
         "--only-not-updated",
@@ -157,9 +165,12 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    root = Path(__file__).resolve().parent
+    repo_root = Path(__file__).resolve().parents[3]
     test_folder = resolve_test_folder(args.test)
-    target_dir = root / "ai_responses" / test_folder
+    if test_folder not in TEST_FOLDER_STRUCTURE:
+        raise SystemExit(f"Unknown test: {test_folder}. Available: {list(TEST_FOLDER_STRUCTURE.keys())}")
+    parent_folder, responses_folder = TEST_FOLDER_STRUCTURE[test_folder]
+    target_dir = repo_root / "research" / parent_folder / responses_folder
 
     if not target_dir.exists() or not target_dir.is_dir():
         raise SystemExit(f"Directory not found: {target_dir}")

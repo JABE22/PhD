@@ -6,7 +6,7 @@ This script queries multiple AI models via OpenRouter, Perplexity, and Mistral A
 and saves their responses for analysis in the test notebooks.
 
 Usage:
-    python collect_ai_responses.py --test test3_theory_generation --models gemini-3.1-pro-preview --n-samples 24 --provider perplexity
+    python research/data/scripts/collect_ai_responses.py --test test3_theory_generation --models gemini-3.1-pro-preview --n-samples 24 --provider openrouter
 
 Requirements:
     - .env file with API keys:
@@ -69,6 +69,14 @@ PROVIDER_MODEL_CONFIGS = {
 # Token limit for responses (adjust as needed)
 MAX_TOKENS = 3000
 MAX_WORDS = 750
+
+# Map test names to their folder structure
+TEST_FOLDER_MAPPING = {
+    "test1_ontological_innovation": ("test1_ontological-innovation", "test1_ontological_innovation_responses"),
+    "test2_epistemic_agency": ("test2_epistemic-agency", "test2_epistemic_agency_responses"),
+    "test3_theory_generation": ("test3_theory-generation", "test3_theory_generation_responses"),
+    "test4_category_recognition": ("test4_category-recognition", "test4_category_recognition_responses"),
+}
 
 PROMPTS = {
     "test1_ontological_innovation": """You are participating in a scientific study on AI creativity and conceptual innovation.
@@ -660,7 +668,10 @@ def collect_responses(
 ):
     """Collect responses from multiple models for a given test."""
     if output_dir is None:
-        output_dir = Path("ai_responses") / test_name
+        if test_name not in TEST_FOLDER_MAPPING:
+            raise ValueError(f"Unknown test: {test_name}. Available: {list(TEST_FOLDER_MAPPING.keys())}")
+        test_folder, responses_folder = TEST_FOLDER_MAPPING[test_name]
+        output_dir = Path("research") / test_folder / responses_folder
     
     output_dir.mkdir(parents=True, exist_ok=True)
     
@@ -906,8 +917,8 @@ def main():
     if not args.test or not args.models:
         parser.print_help()
         print("\nExample usage:")
-        print("  python collect_ai_responses.py --test test1 --models gpt-4o,claude-3.5-sonnet --n-samples 50")
-        print("  python collect_ai_responses.py --list-models")
+        print("  python research/data/scripts/collect_ai_responses.py --test test1 --models gpt-4o,claude-3.5-sonnet --n-samples 50")
+        print("  python research/data/scripts/collect_ai_responses.py --list-models")
         return
     
     # Parse models
