@@ -1,0 +1,341 @@
+{
+  "analysis_date": "2026-04-22T18:48:04.434073",
+  "tests_analyzed": [
+    "test1",
+    "test2",
+    "test3",
+    "test4"
+  ],
+  "source_files": {
+    "test1": "results/test1_ontological_innovation/test1_results.csv",
+    "test2": "results/test2_epistemic_agency/detailed_results.csv",
+    "test3": "results/test3_theory_generation/test3_results.csv",
+    "test4": "results/test4_category_recognition/test4_results.csv"
+  },
+  "models_analyzed": [
+    "claude-3.7-sonnet",
+    "deepseek-v3.2",
+    "gemini-3.1-pro-preview",
+    "gpt-5.2",
+    "llama-3.3-70b-instruct",
+    "mistral-large",
+    "perplexity-sonar-pro"
+  ],
+  "metric_legend": [
+    {
+      "test": "test1",
+      "title": "Test 1: Ontological Innovation",
+      "source_file": "results/test1_ontological_innovation/test1_results.csv",
+      "primary_metric": "continuous_novelty_score (continuous novelty score)",
+      "traceability_metric": "is_traceable",
+      "category_source": "not available"
+    },
+    {
+      "test": "test2",
+      "title": "Test 2: Epistemic Agency",
+      "source_file": "results/test2_epistemic_agency/detailed_results.csv",
+      "primary_metric": "novelty_ratio (continuous epistemic novelty)",
+      "traceability_metric": "training_derived",
+      "category_source": "category"
+    },
+    {
+      "test": "test3",
+      "title": "Test 3: Theory Generation",
+      "source_file": "results/test3_theory_generation/test3_results.csv",
+      "primary_metric": "global_novelty_score (theory novelty score)",
+      "traceability_metric": "likely_derivative",
+      "category_source": "not available"
+    },
+    {
+      "test": "test4",
+      "title": "Test 4: Category Recognition",
+      "source_file": "results/test4_category_recognition/test4_results.csv",
+      "primary_metric": "total_score / 15 (normalized category score)",
+      "traceability_metric": "training_derived",
+      "category_source": "not available"
+    }
+  ],
+  "cross_model_statistics": {
+    "test1": {
+      "anova_primary_metric": {
+        "f_stat": 12.978082801242731,
+        "p_value": 6.063183289033833e-12,
+        "eta_squared": 0.3259889765632153,
+        "group_means": {
+          "claude-3.7-sonnet": 0.07043452341575983,
+          "deepseek-v3.2": 0.06333616179105278,
+          "gemini-3.1-pro-preview": 0.07764151045194684,
+          "gpt-5.2": 0.013506951349621404,
+          "llama-3.3-70b-instruct": 0.08154122761316572,
+          "mistral-large": 0.07211142734969095,
+          "perplexity-sonar-pro": 0.03471904077885437
+        },
+        "group_sizes": {
+          "claude-3.7-sonnet": 24,
+          "deepseek-v3.2": 24,
+          "gemini-3.1-pro-preview": 24,
+          "gpt-5.2": 24,
+          "llama-3.3-70b-instruct": 24,
+          "mistral-large": 24,
+          "perplexity-sonar-pro": 24
+        }
+      }
+    },
+    "test2": {
+      "anova_primary_metric": {
+        "f_stat": 10.08821604139516,
+        "p_value": 8.779589432261153e-11,
+        "eta_squared": 0.06774181496064317,
+        "group_means": {
+          "claude-3.7-sonnet": 0.3078018016,
+          "deepseek-v3.2": 0.3211061089499999,
+          "gemini-3.1-pro-preview": 0.3076342422999999,
+          "gpt-5.2": 0.34984955272499996,
+          "llama-3.3-70b-instruct": 0.268487588,
+          "mistral-large": 0.3121448049249999,
+          "perplexity-sonar-pro": 0.32653838239999994
+        },
+        "group_sizes": {
+          "claude-3.7-sonnet": 120,
+          "deepseek-v3.2": 120,
+          "gemini-3.1-pro-preview": 120,
+          "gpt-5.2": 120,
+          "llama-3.3-70b-instruct": 120,
+          "mistral-large": 120,
+          "perplexity-sonar-pro": 120
+        }
+      },
+      "chi_square_category": {
+        "chi2": 116.26857766857766,
+        "p_value": 4.275215613735639e-12,
+        "dof": 30,
+        "cramers_v": 0.16638207440404956,
+        "contingency_table": [
+          {
+            "transcendent_high_traceability": 7,
+            "transcendent_low_traceability": 3,
+            "transcendent_medium_traceability": 3,
+            "within_framework_high_traceability": 14,
+            "within_framework_low_traceability": 67,
+            "within_framework_medium_traceability": 26
+          },
+          {
+            "transcendent_high_traceability": 3,
+            "transcendent_low_traceability": 7,
+            "transcendent_medium_traceability": 1,
+            "within_framework_high_traceability": 11,
+            "within_framework_low_traceability": 71,
+            "within_framework_medium_traceability": 27
+          },
+          {
+            "transcendent_high_traceability": 0,
+            "transcendent_low_traceability": 0,
+            "transcendent_medium_traceability": 0,
+            "within_framework_high_traceability": 5,
+            "within_framework_low_traceability": 98,
+            "within_framework_medium_traceability": 17
+          },
+          {
+            "transcendent_high_traceability": 0,
+            "transcendent_low_traceability": 7,
+            "transcendent_medium_traceability": 1,
+            "within_framework_high_traceability": 3,
+            "within_framework_low_traceability": 98,
+            "within_framework_medium_traceability": 11
+          },
+          {
+            "transcendent_high_traceability": 0,
+            "transcendent_low_traceability": 1,
+            "transcendent_medium_traceability": 1,
+            "within_framework_high_traceability": 15,
+            "within_framework_low_traceability": 50,
+            "within_framework_medium_traceability": 53
+          },
+          {
+            "transcendent_high_traceability": 1,
+            "transcendent_low_traceability": 7,
+            "transcendent_medium_traceability": 1,
+            "within_framework_high_traceability": 11,
+            "within_framework_low_traceability": 68,
+            "within_framework_medium_traceability": 32
+          },
+          {
+            "transcendent_high_traceability": 3,
+            "transcendent_low_traceability": 8,
+            "transcendent_medium_traceability": 2,
+            "within_framework_high_traceability": 11,
+            "within_framework_low_traceability": 77,
+            "within_framework_medium_traceability": 19
+          }
+        ]
+      }
+    },
+    "test3": {
+      "anova_primary_metric": {
+        "f_stat": 1.117314938731325,
+        "p_value": 0.35452444627164253,
+        "eta_squared": 0.03997456258816126,
+        "group_means": {
+          "claude-3.7-sonnet": 0.518069808681806,
+          "deepseek-v3.2": 0.5092928980787595,
+          "gemini-3.1-pro-preview": 0.5180378630757332,
+          "gpt-5.2": 0.5153690651059151,
+          "llama-3.3-70b-instruct": 0.5084536746144295,
+          "mistral-large": 0.5046656678120295,
+          "perplexity-sonar-pro": 0.5167027339339256
+        },
+        "group_sizes": {
+          "claude-3.7-sonnet": 24,
+          "deepseek-v3.2": 24,
+          "gemini-3.1-pro-preview": 24,
+          "gpt-5.2": 24,
+          "llama-3.3-70b-instruct": 24,
+          "mistral-large": 24,
+          "perplexity-sonar-pro": 24
+        }
+      }
+    },
+    "test4": {
+      "anova_primary_metric": {
+        "f_stat": 88.06137892376678,
+        "p_value": 2.8376167427501086e-48,
+        "eta_squared": 0.7664528435974642,
+        "group_means": {
+          "claude-3.7-sonnet": 0.5944444444444444,
+          "deepseek-v3.2": 0.6916666666666665,
+          "gemini-3.1-pro-preview": 0.4611111111111111,
+          "gpt-5.2": 0.8250000000000001,
+          "llama-3.3-70b-instruct": 0.38055555555555554,
+          "mistral-large": 0.7583333333333333,
+          "perplexity-sonar-pro": 0.42777777777777776
+        },
+        "group_sizes": {
+          "claude-3.7-sonnet": 24,
+          "deepseek-v3.2": 24,
+          "gemini-3.1-pro-preview": 24,
+          "gpt-5.2": 24,
+          "llama-3.3-70b-instruct": 24,
+          "mistral-large": 24,
+          "perplexity-sonar-pro": 24
+        }
+      }
+    }
+  },
+  "meta_analysis": {
+    "effect_table": [
+      {
+        "test": "test1",
+        "test_label": "T1: Ontological Innovation",
+        "analysis": "Primary metric",
+        "effect_size": 0.3259889765632153,
+        "p_value": 6.063183289033833e-12
+      },
+      {
+        "test": "test2",
+        "test_label": "T2: Epistemic Agency",
+        "analysis": "Primary metric",
+        "effect_size": 0.06774181496064317,
+        "p_value": 8.779589432261153e-11
+      },
+      {
+        "test": "test2",
+        "test_label": "T2: Epistemic Agency",
+        "analysis": "Category distribution",
+        "effect_size": 0.16638207440404956,
+        "p_value": 4.275215613735639e-12
+      },
+      {
+        "test": "test3",
+        "test_label": "T3: Theory Generation",
+        "analysis": "Primary metric",
+        "effect_size": 0.03997456258816126,
+        "p_value": 0.35452444627164253
+      },
+      {
+        "test": "test4",
+        "test_label": "T4: Category Recognition",
+        "analysis": "Primary metric",
+        "effect_size": 0.7664528435974642,
+        "p_value": 2.8376167427501086e-48
+      }
+    ],
+    "mean_effect_size": 0.2733080544227067,
+    "significant_effect_share": 0.8,
+    "overall_average_interpretation": "Average cross-model variation is small, so the overall pattern is broadly robust across models.",
+    "notable_exception": "The average pattern suggests robustness, but T4: Category Recognition shows a large model effect for primary metric (effect size = 0.766).",
+    "highest_effect_result": {
+      "test": "test4",
+      "test_label": "T4: Category Recognition",
+      "analysis": "Primary metric",
+      "effect_size": 0.7664528435974642,
+      "p_value": 2.8376167427501086e-48
+    },
+    "test_level_interpretations": [
+      {
+        "test": "test1",
+        "test_label": "T1: Ontological Innovation",
+        "analysis": "Primary metric",
+        "effect_size": 0.3259889765632153,
+        "p_value": 6.063183289033833e-12,
+        "magnitude_band": "moderate"
+      },
+      {
+        "test": "test2",
+        "test_label": "T2: Epistemic Agency",
+        "analysis": "Primary metric",
+        "effect_size": 0.06774181496064317,
+        "p_value": 8.779589432261153e-11,
+        "magnitude_band": "negligible"
+      },
+      {
+        "test": "test2",
+        "test_label": "T2: Epistemic Agency",
+        "analysis": "Category distribution",
+        "effect_size": 0.16638207440404956,
+        "p_value": 4.275215613735639e-12,
+        "magnitude_band": "small"
+      },
+      {
+        "test": "test3",
+        "test_label": "T3: Theory Generation",
+        "analysis": "Primary metric",
+        "effect_size": 0.03997456258816126,
+        "p_value": 0.35452444627164253,
+        "magnitude_band": "negligible"
+      },
+      {
+        "test": "test4",
+        "test_label": "T4: Category Recognition",
+        "analysis": "Primary metric",
+        "effect_size": 0.7664528435974642,
+        "p_value": 2.8376167427501086e-48,
+        "magnitude_band": "large"
+      }
+    ],
+    "model_average_primary_metric": {
+      "gpt-5.2": 0.4259313922951341,
+      "mistral-large": 0.41181380835501347,
+      "deepseek-v3.2": 0.3963504588716198,
+      "claude-3.7-sonnet": 0.3726876445355025,
+      "gemini-3.1-pro-preview": 0.34110618173469776,
+      "perplexity-sonar-pro": 0.32643448372263945,
+      "llama-3.3-70b-instruct": 0.30975951144578767
+    }
+  },
+  "generated_files": [
+    "cross_test_summary.png",
+    "model_performance_heatmap.png"
+  ],
+  "key_findings": {
+    "mean_cross_model_effect": 0.2733080544227067,
+    "overall_average_interpretation": "Average cross-model variation is small, so the overall pattern is broadly robust across models.",
+    "notable_exception": "The average pattern suggests robustness, but T4: Category Recognition shows a large model effect for primary metric (effect size = 0.766).",
+    "highest_effect_result": {
+      "test": "test4",
+      "test_label": "T4: Category Recognition",
+      "analysis": "Primary metric",
+      "effect_size": 0.7664528435974642,
+      "p_value": 2.8376167427501086e-48
+    }
+  }
+}

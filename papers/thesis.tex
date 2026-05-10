@@ -1,0 +1,168 @@
+% This is a template for Ph.D. dissertations in the UCI format.
+% 
+% All fonts, including those for sub- and superscripts, must be 10
+% points or larger.  Recommended sizes are 14-point for chapter
+% headings, 12-point for the main body of text and figure/table
+% titles, and 10-point for footnotes, sub- and super-scripts, and text
+% in figures and tables.
+%
+% Notes: Add short title to figures, sections, via square brackets,
+% e.g. \section[short]{long}.
+%
+\documentclass[12pt,fleqn]{ucithesis}
+%\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{kpfonts}
+% --- PACKAGES ---
+
+% Core math and table tools
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{relsize}
+\usepackage[titletoc]{appendix}
+
+% Figures, tables, layout
+\usepackage{subcaption}   % \begin{subfigure}...\end{subfigure}
+\usepackage{multirow}
+\usepackage{csquotes}
+\usepackage{makecell}
+\usepackage{cellspace}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{pbox}
+\usepackage{array}
+\usepackage{parskip}      % no paragraph indent, vertical space between paragraphs
+\usepackage{float}        % [H] placement if needed
+\usepackage{placeins}     % use \FloatBarrier where local float ordering is required
+\newtheorem{corollary}{\textsc{Corollary}}[chapter]
+\usepackage{booktabs}  % for \toprule, \midrule, \bottomrule
+\usepackage{threeparttable} % table notes under captions
+\usepackage{siunitx}        % S column type for decimal-aligned numerics
+\usepackage{geometry}       % local one-page margin override support
+
+% global settings, macros
+\graphicspath{{media/}}
+
+% plainpages=false fixes the "duplicate ignored" error with page counters
+\usepackage[plainpages=false,pdfborder={0 0 0}]{hyperref}
+
+% --- CAPTION SETTINGS: smaller font, left-aligned table captions ---
+\usepackage{caption}
+\DeclareCaptionFont{italic}{\itshape}
+\captionsetup{font={footnotesize,italic},labelfont=bf}
+\captionsetup[table]{justification=raggedright,singlelinecheck=false}
+% If you also want figure captions left-aligned, uncomment:
+% \captionsetup[figure]{justification=raggedright,singlelinecheck=false}
+
+% --- TABLE SETTINGS: global style for tabularx ---
+% Global cell padding (vertical) for all cellspace-aware columns
+\setlength\cellspacetoplimit{12pt}
+\setlength\cellspacebottomlimit{12pt}
+% Make X-columns vertically centered in tabularx
+\renewcommand\tabularxcolumn[1]{m{#1}}
+% Left-aligned X with same font as X
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+% Weighted left-aligned X for proportional content-aware layouts in tabularx
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash\hsize=#1\hsize\linewidth=\hsize}X}
+% Borders and inner horizontal padding
+\setlength{\arrayrulewidth}{0.5pt}  % rule thickness
+\setlength{\tabcolsep}{6pt}         % column padding
+\renewcommand{\arraystretch}{1.5}   % base row-height factor
+
+% --- LIST STRUCTURE SETTINGS: Global style for lists ---
+\usepackage{enumitem}
+\setlist[itemize]{
+  topsep=0pt,    % space above/below the list
+  itemsep=0pt,   % space between items
+  parsep=0pt,
+  partopsep=0pt
+}
+
+% --- HEADING SETTINGS: left-aligned, no hyphenation in headings ---
+\usepackage{titlesec}
+\titleformat{\chapter}
+  {\normalfont\Large\bfseries\raggedright} % left-align, no hyphenation in title[web:38]
+  {\thechapter}{1em}{}
+
+\titleformat{\section}
+  {\normalfont\large\bfseries\raggedright}
+  {\thesection}{1em}{}
+
+\titleformat{\subsection}
+  {\normalfont\normalsize\bfseries\raggedright}
+  {\thesubsection}{1em}{}
+
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\bfseries\raggedright}
+  {\thesubsubsection}{1em}{}
+
+% Uncomment the following line to use the algorithm package
+% \usepackage{algorithm}
+
+% Uncomment the following line to enable Unicode support.
+% \usepackage[utf8x]{inputenc}
+
+% Uncomment the following to avoid "widowing"
+% \widowpenalty=10000
+% \clubpenalty=10000
+
+% Modify or extend these at will.
+\newtheorem{theorem}{\textsc{Theorem}}[chapter]
+\newtheorem{definition}{\textsc{Definition}}[chapter]
+\newtheorem{example}{\textsc{Example}}[chapter]
+
+% Macros for title, author, abstract, etc.
+\input{preliminaries}
+
+% Add PDF document info fields
+\hypersetup{
+  pdftitle={\Thesistitle},
+  pdfauthor={\Authorname},
+  pdfsubject={\Degreefield},
+}
+
+% Uncomment the following to have numbered subsubsections
+% \setcounter{secnumdepth}{4}
+
+% \includeonly{chapter1}
+
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\tolerance=9999
+\emergencystretch=3em
+
+
+\begin{document}
+
+% Preliminary pages are always loaded (TOC, CV, etc.)
+\preliminarypages
+
+% Include the different components of your thesis, in separate files.
+\include{chapters/chapter1}
+\include{chapters/chapter2}
+\include{chapters/chapter3}
+\include{chapters/chapter4}
+\include{chapters/chapter5}
+\include{chapters/chapter6}
+\include{chapters/chapter7}
+% ... and so on
+
+\clearpage
+\phantomsection
+
+\bibliographystyle{plainnat}
+\bibliography{references/thesis,references/refs_c1,references/refs_c2,references/refs_c3,references/refs_c4}
+
+% Turn off list entries for appendix figures if desired
+\captionsetup[figure]{list=no}
+% \captionsetup[table]{list=no}
+
+\begin{appendices}
+\include{appendix}
+\end{appendices}
+
+\end{document}

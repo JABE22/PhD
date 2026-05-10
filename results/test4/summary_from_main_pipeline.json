@@ -1,0 +1,14 @@
+{
+  "source_results_csv": "results/test4_category_recognition/test4_results.csv",
+  "n_rows": 168,
+  "n_models": 7,
+  "scenario_types": [
+    "standard"
+  ],
+  "mean_scores": {
+    "Distinction_Score": 2.6488095238095237,
+    "Identification_Score": 2.8452380952380953,
+    "Alternative_Score": 3.375,
+    "Total_Score": 8.869047619047619
+  }
+}

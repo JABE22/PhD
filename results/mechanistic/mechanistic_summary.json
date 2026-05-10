@@ -1,0 +1,105 @@
+{
+  "analysis_type": "mechanistic_interpretability",
+  "n_examples_analyzed": 6,
+  "hidden_dim": 896,
+  "n_layers_analyzed": 25,
+  "clustering": {
+    "n_clusters": 4,
+    "mean_purity": 1.0,
+    "method": "k-means"
+  },
+  "dimensionality_reduction": {
+    "methods_used": [
+      "pca",
+      "tsne"
+    ],
+    "pca_explained_variance": "see notebook output"
+  },
+  "layer_analysis": {
+    "final_separation_score": 0.46514880657196045,
+    "separation_trend": "increasing",
+    "trend_slope": 0.011064609380868763
+  },
+  "data_type": "real",
+  "findings": {
+    "attention_pattern_analysis": {
+      "question": "Where does the model focus when generating responses?",
+      "evidence": {
+        "mean_entropy": 0.22131258249282837,
+        "attention_concentration": 0.0022163409739732742,
+        "top_attended_tokens": [
+          [
+            "code",
+            0.07090504467487335
+          ],
+          [
+            "fences",
+            0.06861001998186111
+          ],
+          [
+            ".",
+            0.06632228195667267
+          ],
+          [
+            "␠",
+            0.06403975188732147
+          ],
+          [
+            "Do",
+            0.06176095828413963
+          ]
+        ]
+      },
+      "interpretation": "Attention is selective over a subset of prior context tokens. Row-normalized maps indicate non-uniform within-query focus rather than only causal-mask structure."
+    },
+    "activation_space_clustering": {
+      "question": "Do different response types cluster in internal representation space?",
+      "evidence": {
+        "n_examples": 6,
+        "n_unique_labels": 4,
+        "kmeans_clusters": 4,
+        "mean_cluster_purity": 1.0
+      },
+      "interpretation": "Internal representations show measurable structure by response/test label when purity is above random baseline."
+    },
+    "gradient_based_attribution": {
+      "question": "Which input tokens most influence output?",
+      "evidence": {
+        "method": "attention-based proxy in real mode; gradient placeholder in synthetic mode",
+        "top_influential_tokens": [
+          [
+            "machines",
+            0.02208242565393448
+          ],
+          [
+            "consciousness",
+            0.012261978350579739
+          ],
+          [
+            "we",
+            0.01107703521847725
+          ],
+          [
+            "conscious",
+            0.010339695028960705
+          ],
+          [
+            "depends",
+            0.009099811315536499
+          ]
+        ]
+      },
+      "interpretation": "A small subset of tokens carries disproportionate influence, consistent with sparse token-level control signals."
+    },
+    "layer_wise_decomposition": {
+      "question": "How do representations evolve through layers?",
+      "evidence": {
+        "n_layers_analyzed": 25,
+        "final_separation_score": 0.46514880657196045,
+        "trend": "increasing",
+        "trend_slope": 0.011064609380868763
+      },
+      "interpretation": "Representational separability typically increases across depth, indicating progressive composition/refinement."
+    }
+  }
+}

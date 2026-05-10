@@ -1,0 +1,139 @@
+{
+  "summary": {
+    "total_samples_all_tests": 1344,
+    "total_models": 7,
+    "tests_conducted": 4
+  },
+  "key_findings": [
+    "Across all tests, 25.5% of outputs were classified as potentially novel",
+    "However, 98.4% of outputs were traceable to training data",
+    "Consistency observed across 7 different AI models",
+    "Statistical analysis: model comparison tests were not run or are unavailable"
+  ],
+  "test_details": [
+    {
+      "test": "Test 1: Ontological Innovation",
+      "test_code": "T1",
+      "total_samples": 168,
+      "models": [
+        "claude-3.7-sonnet",
+        "deepseek-v3.2",
+        "gemini-3.1-pro-preview",
+        "gpt-5.2",
+        "llama-3.3-70b-instruct",
+        "mistral-large",
+        "perplexity-sonar-pro"
+      ],
+      "prop_novel": 0.05904154896429884,
+      "prop_novel_ci": [
+        0.05286319477001493,
+        0.0652680026651878
+      ],
+      "prop_novel_kind": 0.05904154896429884,
+      "prop_novel_kind_ci": [
+        0.05286319477001493,
+        0.0652680026651878
+      ],
+      "prop_traceable": 0.9821428571428571,
+      "prop_traceable_ci": [
+        0.9583333333333334,
+        1.0
+      ],
+      "metric_label": "continuous_novelty_score (hybrid continuous score)",
+      "traceability_label": "is_traceable"
+    },
+    {
+      "test": "Test 2: Epistemic Agency",
+      "test_code": "T2",
+      "total_samples": 840,
+      "models": [
+        "claude-3.7-sonnet",
+        "deepseek-v3.2",
+        "gemini-3.1-pro-preview",
+        "gpt-5.2",
+        "llama-3.3-70b-instruct",
+        "mistral-large",
+        "perplexity-sonar-pro"
+      ],
+      "prop_novel": 0.047619047619047616,
+      "prop_novel_ci": [
+        0.03333333333333333,
+        0.06190476190476191
+      ],
+      "prop_novel_kind": 0.047619047619047616,
+      "prop_novel_kind_ci": [
+        0.03333333333333333,
+        0.06190476190476191
+      ],
+      "prop_traceable": 1.0,
+      "prop_traceable_ci": [
+        1.0,
+        1.0
+      ],
+      "metric_label": "Transcends_Framework (binary novelty)",
+      "traceability_label": "Training_Derived"
+    },
+    {
+      "test": "Test 3: Theory Generation",
+      "test_code": "T3",
+      "total_samples": 168,
+      "models": [
+        "claude-3.7-sonnet",
+        "deepseek-v3.2",
+        "gemini-3.1-pro-preview",
+        "gpt-5.2",
+        "llama-3.3-70b-instruct",
+        "mistral-large",
+        "perplexity-sonar-pro"
+      ],
+      "prop_novel": 0.320323758211729,
+      "prop_novel_ci": [
+        0.29323925863504857,
+        0.34776438378607943
+      ],
+      "prop_novel_kind": 0.320323758211729,
+      "prop_novel_kind_ci": [
+        0.29323925863504857,
+        0.34776438378607943
+      ],
+      "prop_traceable": 1.0,
+      "prop_traceable_ci": [
+        1.0,
+        1.0
+      ],
+      "metric_label": "Continuous_Literature_Novelty (literature-grounded continuous score)",
+      "traceability_label": "(Similarity_Max_To_Known >= 0.55) OR Likely_Derivative"
+    },
+    {
+      "test": "Test 4: Category Recognition",
+      "test_code": "T4",
+      "total_samples": 168,
+      "models": [
+        "claude-3.7-sonnet",
+        "deepseek-v3.2",
+        "gemini-3.1-pro-preview",
+        "gpt-5.2",
+        "llama-3.3-70b-instruct",
+        "mistral-large",
+        "perplexity-sonar-pro"
+      ],
+      "prop_novel": 0.5912698412698413,
+      "prop_novel_ci": [
+        0.5638888888888889,
+        0.6190476190476191
+      ],
+      "prop_novel_kind": 0.5912698412698413,
+      "prop_novel_kind_ci": [
+        0.5638888888888889,
+        0.6190476190476191
+      ],
+      "prop_traceable": 0.9523809523809523,
+      "prop_traceable_ci": [
+        0.9166666666666666,
+        0.9821428571428571
+      ],
+      "metric_label": "Total_Score / 15 (normalized to [0,1])",
+      "traceability_label": "Training_Derived"
+    }
+  ]
+}

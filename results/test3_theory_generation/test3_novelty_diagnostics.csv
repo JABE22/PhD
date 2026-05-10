@@ -1,0 +1,169 @@
+model,theory_name,max_similarity_to_known,semantic_novelty_component,continuous_literature_novelty,is_likely_derivative,is_literature_novel_gated,is_literature_novel_continuous_only
+deepseek-v3.2,Dimensional Resonance Theory Of Consciousness (DRTC),0.6343764066696167,0.0,0.5059365153312684,True,False,True
+mistral-large,Temporal Recursive Binding Theory (TRBT),0.7094044089317322,0.0,0.08377363825169909,True,False,False
+deepseek-v3.2,Resonant Boundary Theory (RBT),0.6278198957443237,0.0,0.22421042919158937,True,False,False
+llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),0.618838369846344,0.0,0.11556293151816932,True,False,False
+deepseek-v3.2,Consciousness As Causal Geometry (CCG),0.6062468886375427,0.0,0.5756271779537201,True,False,True
+deepseek-v3.2,Consciousness As Dynamic Information Geometry (DIG),0.6075356602668762,0.0,0.5747250378131867,True,False,True
+deepseek-v3.2,Resonant Emergence Theory (RET),0.6551220417022705,0.0,0.49141457080841067,True,False,False
+llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),0.6676637530326843,0.0,0.10792055020992007,True,False,False
+mistral-large,Temporal Recursive Binding Theory (TRBT),0.7269536256790161,0.0,0.08172938191730242,True,False,False
+gemini-3.1-pro-preview,Topological Frustration Resolution Theory (TFRT),0.6540143489837646,0.0,0.13012558937072755,True,False,False
+llama-3.3-70b-instruct,Harmonization Theory Of Consciousness (HTC),0.705750584602356,0.0,0.5059745907783508,True,False,True
+llama-3.3-70b-instruct,Fractal Resonance Theory (FRT),0.6269874572753906,0.0,0.5611087799072265,True,False,True
+claude-3.7-sonnet,Resonant Constraint Theory Of Consciousness (RCT),0.6406888961791992,0.0,0.5515177726745606,True,False,True
+llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),0.6149646043777466,0.0,0.12734961160983552,True,False,False
+gemini-3.1-pro-preview,Topological Void Theory (TVT),0.5981413125991821,0.0,0.23252043247222903,True,False,False
+deepseek-v3.2,Dynamic Resonance Field Theory (DRFT),0.6734664440155029,0.0,0.478573489189148,True,False,False
+llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),0.63889479637146,0.0,0.11242360420145708,True,False,False
+llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),0.6575326919555664,0.0,0.06570378725856284,True,False,False
+gpt-5.2,Counterfactual Control Landscape Theory (CCLT),0.6168029308319092,0.0,0.5682379484176636,True,False,True
+claude-3.7-sonnet,Resonant Field Emergence Theory (RFET),0.6574294567108154,0.0,0.2698996901512146,True,False,False
+mistral-large,Temporal Recursive Binding Theory (TRBT),0.7151250839233398,0.0,0.08310725374821813,True,False,False
+claude-3.7-sonnet,Quantum Resonance Field Theory Of Consciousness (QRFT),0.7441916465759277,0.0,0.4290658473968506,True,False,False
+perplexity-sonar-pro,Resonant Binding Field Theory (RBFT),0.702567994594574,0.0,0.3239980268715003,True,False,False
+claude-3.7-sonnet,Resonant Field Emergence Theory (RFET),0.7044788002967834,0.0,0.2534324198961258,True,False,False
+deepseek-v3.2,Consciousness As Recursive Self-Simulation (CRSS),0.6668386459350586,0.0,0.3199277687072754,True,False,False
+gpt-5.2,Neural Gauge Invariance Theory (NGIT),0.560859203338623,0.0,0.6073985576629639,True,False,True
+perplexity-sonar-pro,Resonant Field Theory Of Consciousness (RFT),0.6614921689033508,0.0,0.1947821927070618,True,False,False
+claude-3.7-sonnet,Temporal Binding Field Theory (TBFT),0.7339479327201843,0.0,0.13752843560061773,True,False,False
+mistral-large,Temporal Recursive Binding Theory (TRBT),0.6902634501457214,0.0,0.0860033119065523,True,False,False
+gemini-3.1-pro-preview,Chrono-Inertial Frame Theory (CIFT),0.7068285942077637,0.0,0.5052199840545655,True,False,True
+perplexity-sonar-pro,Resonant Binding Dynamics Theory (RBDT),0.6958121061325073,0.0,0.185172610282898,True,False,False
+claude-3.7-sonnet,Resonant Symmetry-Breaking Theory Of Consciousness (RSBT),0.6723434925079346,0.0,0.3743137311992425,True,False,False
+perplexity-sonar-pro,Resonant Binding Theory (RBT),0.7123880386352539,0.0,0.22420086419549354,True,False,False
+gpt-5.2,Counterfactual Closure Theory (CCT),0.635684609413147,0.0,0.5550207734107971,True,False,True
+mistral-large,Temporal Recursive Binding Theory (TRBT),0.6982687711715698,0.0,0.07675029280295824,True,False,False
+claude-3.7-sonnet,Quantum Coherence Collapse Theory (QCCT),0.7522170543670654,0.0,0.4234480619430542,True,False,False
+gpt-5.2,Reflexive State-Space Topology Theory (RSST),0.5999423265457153,0.0,0.5800403714179994,True,False,True
+claude-3.7-sonnet,Resonant Field Synchronization Theory (RFST),0.6943129897117615,0.0,0.463980907201767,True,False,False
+llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),0.6611534357070923,0.0,0.1201199159440773,True,False,False
+claude-3.7-sonnet,Resonant Embodiment Theory Of Consciousness (RET),0.6725496053695679,0.0,0.47921527624130256,True,False,False
+deepseek-v3.2,Resonant Phase Coherence Theory (RPCT),0.6708155870437622,0.0,0.3750700058195522,True,False,False
+claude-3.7-sonnet,Resonant Field Emergence Theory (RFET),0.6992452144622803,0.0,0.2302641749382019,True,False,False
+claude-3.7-sonnet,Quantum Coherent Criticality Theory (QCCT),0.7324610948562622,0.0,0.26236634016036986,True,False,False
+deepseek-v3.2,Temporal Resonance Binding Theory (TRBT),0.7450306415557861,0.0,0.4784785509109497,True,False,False
+llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),0.6085644960403442,0.0,0.051340554808496475,True,False,False
+claude-3.7-sonnet,Quantum Coherence Resonance Theory (QCRT),0.744171142578125,0.0,0.42908020019531246,True,False,False
+deepseek-v3.2,Consciousness As Topological Invariant Theory (CTIT),0.6703341007232666,0.0,0.21230645179748536,True,False,False
+gpt-5.2,Counterfactual Sensitivity Field Theory (CSFT),0.6381664276123047,0.0,0.5032835006713867,True,False,True
+gemini-3.1-pro-preview,Thermodynamic Frustration Theory (TFT),0.6010528206825256,0.0,0.23170521020889284,True,False,False
+mistral-large,Dynamic Resonance Theory Of Consciousness (DRTC),0.7127243280410767,0.0,0.11363720428499785,True,False,False
+gemini-3.1-pro-preview,Chrono-Entropic Tension Theory (CETT),0.6283186674118042,0.0,0.22407077312469484,True,False,False
+mistral-large,Temporal Recurrence Binding Theory (TRBT),0.703052282333374,0.0,0.15235902070999144,True,False,False
+deepseek-v3.2,Resonant Integration Field Theory (RIFT),0.6071687936782837,0.0,0.40657356125220845,True,False,False
+gpt-5.2,Thermodynamic Closure Theory Of Consciousness (TCTC),0.5786682367324829,0.0,0.594932234287262,True,False,True
+mistral-large,Dynamic Resonance Theory Of Consciousness (DRTC),0.6898807287216187,0.0,0.19543918875988545,True,False,False
+gpt-5.2,Neural Gauge Symmetry Theory Of Consciousness (NGST),0.6022844910621643,0.0,0.5784008562564851,True,False,True
+perplexity-sonar-pro,Resonant Binding Field Theory (RBFT),0.7473371028900146,0.0,0.337193787886461,True,False,False
+gpt-5.2,Intrinsic Reference Frame Theory (IRFT),0.6480896472930908,0.0,0.14038537321392022,True,False,False
+gpt-5.2,Intrinsic Reference Frame Theory (IRFT),0.6446777582168579,0.0,0.3880075710258503,True,False,False
+claude-3.7-sonnet,Resonant Phase Coherence Theory Of Consciousness (RPCT),0.6864186525344849,0.0,0.5195069432258606,True,False,True
+gemini-3.1-pro-preview,Chronodynamic Interference Theory (CIT),0.6764469146728516,0.0,0.19059486389160157,True,False,False
+llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),0.6623602509498596,0.0,0.10875067959224062,True,False,False
+mistral-large,Temporal Recursive Binding Theory (TRBT),0.7313498258590698,0.0,0.08121728156577299,True,False,False
+gemini-3.1-pro-preview,Topological Friction Theory (TFT),0.5766148567199707,0.0,0.23854784011840824,True,False,False
+deepseek-v3.2,Resonant Phase Coherence Theory (RPCT),0.7276595234870911,0.0,0.3115783537103344,True,False,False
+llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),0.6487276554107666,0.0,0.11088451831570269,True,False,False
+mistral-large,Temporal Recursive Binding Theory (TRBT),0.7185364961624146,0.0,0.08270986843014995,True,False,False
+gpt-5.2,Causal Quotient Theory Of Consciousness (CQTC),0.6144030094146729,0.0,0.5699178934097291,True,False,True
+llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),0.6457933187484741,0.0,0.12252415454040452,True,False,False
+llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),0.6672297120094299,0.0,0.04766753130549219,True,False,False
+gpt-5.2,Gauge-Invariant Manifold Theory (GIMT) Of Consciousness (GIMT),0.6111128926277161,0.0,0.5222209751605988,True,False,True
+perplexity-sonar-pro,Dynamic Binding Resonance Theory (DBRT),0.7765897512435913,0.0,0.1580971547030109,True,False,False
+gemini-3.1-pro-preview,Analog-Discrete Friction Theory (ADFT),0.5339372158050537,0.0,0.25049757957458496,True,False,False
+perplexity-sonar-pro,Temporal Binding Resonance Theory (TBRT),0.7756154537200928,0.0,0.26388901549457533,True,False,False
+mistral-large,Temporal Recursive Binding Theory (TRBT),0.7112175822257996,0.0,0.0835624270594771,True,False,False
+gpt-5.2,Control-Theoretic Hidden-Mode Theory (CHMT),0.6517863273620605,0.0,0.5437495708465576,True,False,True
+llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),0.6631186008453369,0.0,0.10863197905804943,True,False,False
+claude-3.7-sonnet,Quantum Coherence Threshold Theory (QCTT),0.7165745496749878,0.0,0.44839781522750854,True,False,False
+gemini-3.1-pro-preview,Topological Dimensional Collapse Theory (TDCT),0.6441547274589539,0.0,0.21963667631149295,True,False,False
+deepseek-v3.2,Substrate-Independent State Coherence Theory (SISCT),0.6924563646316528,0.0,0.515280544757843,True,False,True
+gemini-3.1-pro-preview,Topological Causal Enclosure Theory (TCET),0.6079779863357544,0.0,0.2297661638259888,True,False,False
+perplexity-sonar-pro,Temporal Binding Account Of Consciousness (TBAC),0.7240889072418213,0.0,0.49313776493072514,True,False,False
+gpt-5.2,Order-Parameter Phenomenology (OPP),0.5997347831726074,0.0,0.5801856517791748,True,False,True
+gpt-5.2,Thermodynamic Curvature Theory Of Consciousness (TCTC),0.6486638784408569,0.0,0.5459352850914001,True,False,True
+claude-3.7-sonnet,Resonant Field Propagation Theory (RFPT),0.7071329951286316,0.0,0.18200276136398316,True,False,False
+mistral-large,Temporal Recursive Binding Theory (TRBT),0.7035945653915405,0.0,0.14075068289262227,True,False,False
+mistral-large,Temporal Recursive Binding Theory (TRBT),0.722770094871521,0.0,0.1370278484047785,True,False,False
+claude-3.7-sonnet,Quantum Resonance Field Theory Of Consciousness (QRF),0.7516942620277405,0.0,0.4238140165805817,True,False,False
+deepseek-v3.2,Resonant Integration Field Theory (RIFT),0.6287426948547363,0.0,0.3958950249792458,True,False,False
+gemini-3.1-pro-preview,Causal Friction Theory (CFT),0.6553723216056824,0.0,0.15308561288800132,True,False,False
+mistral-large,Dynamic Resonance Theory Of Consciousness (DRTC),0.6847806572914124,0.0,0.1778903171767232,True,False,False
+perplexity-sonar-pro,Dynamic Resonance Binding Theory (DRBT),0.7037164568901062,0.0,0.5073984801769257,True,False,True
+gemini-3.1-pro-preview,Counterfactual Interference Friction Theory (CIFT),0.655498743057251,0.0,0.5411508798599243,True,False,True
+mistral-large,Temporal Recursive Binding Theory (TRBT),0.6778426766395569,0.0,0.1457502851029857,True,False,False
+gemini-3.1-pro-preview,Chronotopic Interference Theory (CIT),0.6326133012771606,0.0,0.5571706891059875,True,False,True
+claude-3.7-sonnet,Resonant Constraint Emergence Theory (RCET),0.6709777116775513,0.0,0.19212624073028564,True,False,False
+gemini-3.1-pro-preview,Ontological Friction Theory (OFT),0.6269773244857788,0.0,0.5611158728599548,True,False,True
+gemini-3.1-pro-preview,Topological Frustration Theory (TFT),0.5783802270889282,0.0,0.5951338410377502,True,False,True
+claude-3.7-sonnet,Quantum Eigenstate Collapse Theory Of Consciousness (QECTC),0.7406525015830994,0.0,0.4315432488918304,True,False,False
+llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),0.6707198619842529,0.0,0.10744219349455537,True,False,False
+mistral-large,Dynamic Resonance Theory Of Consciousness (DRTC),0.7294079065322876,0.0,0.1849812805083594,True,False,False
+gemini-3.1-pro-preview,Temporal Shear Theory (TST),0.6291571855545044,0.0,0.559589970111847,True,False,True
+gpt-5.2,Causal Sketch Theory (CST) Of Consciousness (CST),0.5696878433227539,0.0,0.567885176340739,True,False,True
+gemini-3.1-pro-preview,Temporal Phase-Friction Theory (TPFT),0.6763250827789307,0.0,0.4765724420547486,True,False,False
+mistral-large,Temporal Recurrence Binding Theory (TRBT),0.6790519952774048,0.0,0.26233180165290837,True,False,False
+mistral-large,Temporal Recursive Binding Theory (TRBT),0.709119439125061,0.0,0.13967805590218604,True,False,False
+claude-3.7-sonnet,Resonant Criticality Theory Of Consciousness (RCT),0.6657093167304993,0.0,0.5340034782886505,True,False,True
+mistral-large,Dynamic Resonance Theory Of Consciousness (DRTC),0.7065092325210571,0.0,0.11462382011222685,True,False,False
+deepseek-v3.2,Neural Resonance Field Theory (NRFT),0.6807114481925964,0.0,0.33481646539341,True,False,False
+mistral-large,Dynamic Resonance Theory Of Consciousness (DRTC),0.688392698764801,0.0,0.17693466083033943,True,False,False
+llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),0.6588097810745239,0.0,0.10930641603177273,True,False,False
+gemini-3.1-pro-preview,Dimensional Residual Theory (DRT),0.5822041034698486,0.0,0.5924571275711059,True,False,True
+gpt-5.2,Topological Closure Theory (TCT) Of Consciousness (TCT),0.6395964622497559,0.0,0.2009129905700684,True,False,False
+perplexity-sonar-pro,Holoinformative Resonance Theory (HRT),0.6328012943267822,0.0,0.5070390939712525,True,False,True
+gpt-5.2,Interventional Signature Theory (IST),0.6542425751686096,0.0,0.5420301973819732,True,False,True
+claude-3.7-sonnet,Resonant Symmetry-Breaking Theory Of Consciousness (RSBT),0.6488636136054993,0.0,0.3859356783145881,True,False,False
+llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),0.7086213827133179,0.0,0.1015096671184989,True,False,False
+gemini-3.1-pro-preview,Temporal Friction Theory (TFT),0.6965765953063965,0.0,0.204958553314209,True,False,False
+llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),0.6912133693695068,0.0,0.10423445220179785,True,False,False
+deepseek-v3.2,Resonant Binding Theory (RBT),0.6940796971321106,0.0,0.20757160188237894,True,False,False
+gemini-3.1-pro-preview,Causal Friction Theory (CFT),0.6190054416656494,0.0,0.16028588776453573,True,False,False
+claude-3.7-sonnet,Resonant Field Emergence Theory (RFET),0.6764581203460693,0.0,0.2632396578788757,True,False,False
+perplexity-sonar-pro,Temporal Depth Theory Of Consciousness (TDT),0.6572536826133728,0.0,0.5399224221706391,True,False,True
+deepseek-v3.2,Resonant Integration Theory (RIT),0.6969612836837769,0.0,0.46212710142135627,True,False,False
+deepseek-v3.2,Quantum Entanglement Resonance Theory (QERT),0.800489068031311,0.0,0.15586306095123292,True,False,False
+perplexity-sonar-pro,Quantum Resonance Field Theory (QRFT),0.7061790227890015,0.0,0.45567468404769895,True,False,False
+gpt-5.2,Intrinsic Manifold Metric Theory (IMMT),0.5851355195045471,0.0,0.590405136346817,True,False,True
+perplexity-sonar-pro,Dynamic Entanglement Theory Of Consciousness (DETC),0.6655706167221069,0.0,0.2904603409767151,True,False,False
+llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),0.7025379538536072,0.0,0.04098474974046429,True,False,False
+gpt-5.2,Causal Bottleneck Identity Theory (CBIT),0.6117503046989441,0.0,0.5717747867107392,True,False,True
+deepseek-v3.2,Somatic Resonance Hypothesis (SRH),0.6532801389694214,0.0,0.295622341632843,True,False,False
+llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),0.6657918691635132,0.0,0.04328541855213669,True,False,False
+claude-3.7-sonnet,Resonant Interference Theory Of Consciousness (RITC),0.657848596572876,0.0,0.5395059823989868,True,False,True
+perplexity-sonar-pro,Neural Resonance Field Theory (NRFT),0.7595351934432983,0.0,0.29580070204370545,True,False,False
+mistral-large,Temporal Recurrence Binding Theory (TRBT),0.6718219518661499,0.0,0.2648623168468476,True,False,False
+gpt-5.2,Entropy-Gradient Manifold Theory (EGMT),0.6177622675895691,0.0,0.5675664126873017,True,False,True
+perplexity-sonar-pro,Dynamic Binding Resonance Theory (DBRT),0.7754616737365723,0.0,0.14105019088530665,True,False,False
+perplexity-sonar-pro,Resonant Binding Theory (RBT),0.779995858669281,0.0,0.1806755890235637,True,False,False
+perplexity-sonar-pro,Temporal Binding Wave Theory (TBWT),0.6909022331237793,0.0,0.4663684368133545,True,False,False
+gemini-3.1-pro-preview,Temporal Topology Isolation Theory (TTIT),0.6281173229217529,0.0,0.560317873954773,True,False,True
+gemini-3.1-pro-preview,Counterfactual Exclusion Theory (CET),0.6101943254470825,0.0,0.5728639721870423,True,False,True
+perplexity-sonar-pro,Temporal Binding Field Theory (TBFT),0.769417941570282,0.0,0.1957585982105332,True,False,False
+llama-3.3-70b-instruct,Resonant Harmonization Theory (RHT),0.7470516562461853,0.0,0.47706384062767027,True,False,False
+mistral-large,Temporal Recursive Binding Theory (TRBT),0.7077161073684692,0.0,0.13995050584244875,True,False,False
+gpt-5.2,Invariant Dynamics Theory (IDT) Of Consciousness (IDT),0.6124927997589111,0.0,0.5712550401687622,True,False,True
+gpt-5.2,Gauge-Invariant Information Geometry Theory (GIGT),0.5810370445251465,0.0,0.5932740688323974,True,False,True
+perplexity-sonar-pro,Resonant Binding Dynamics (RBD) Theory (RBD),0.692097008228302,0.0,0.5155320942401886,True,False,True
+deepseek-v3.2,Resonant Binding Theory (RBT),0.7515665292739868,0.0,0.21193605663012713,True,False,False
+gemini-3.1-pro-preview,Temporal Shear And Thermodynamic Resolution Theory (TSTRT),0.6321115493774414,0.0,0.22300876617431645,True,False,False
+perplexity-sonar-pro,Resonant Binding Theory (RBT),0.7001014947891235,0.0,0.22804716081028062,True,False,False
+mistral-large,Dynamic Resonance Theory Of Consciousness (DRTC),0.7207000851631165,0.0,0.11237109209325569,True,False,False
+deepseek-v3.2,Substrate-Independent Coherence Theory (SICT),0.6920039057731628,0.0,0.2062389063835144,True,False,False
+llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),0.6872566938400269,0.0,0.10485376988321575,True,False,False
+mistral-large,Temporal Recurrence Binding Theory (TRBT),0.7278061509132385,0.0,0.22026784718036652,True,False,False
+perplexity-sonar-pro,Temporal Binding Resonance Theory (TBRT),0.7344290018081665,0.0,0.11221372874535868,True,False,False
+gemini-3.1-pro-preview,Non-Orientable Topology Of Information (NOTI) Theory (NOTI),0.6080211400985718,0.0,0.5743852019309998,True,False,True
+perplexity-sonar-pro,Autopoietic Uncertainty Modulation Theory (AUMT),0.7203800678253174,0.0,0.19829358100891115,True,False,False
+llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),0.6445379257202148,0.0,0.11154031474338229,True,False,False
+deepseek-v3.2,Resonant Temporal Binding Theory (RTBT),0.7145920991897583,0.0,0.49978553056716923,True,False,False
+deepseek-v3.2,Dimensional Resonance Theory (DRT),0.7316118478775024,0.0,0.43787170648574825,True,False,False
+perplexity-sonar-pro,Dynamic Binding Resonance Theory (DBRT),0.7100718021392822,0.0,0.10460426138151618,True,False,False
+gpt-5.2,Counterfactual Topology Theory (CTT) Of Consciousness (CTT),0.6245930194854736,0.0,0.5627848863601685,True,False,True
+perplexity-sonar-pro,Strange Loop Theory Of Consciousness (SLT),0.6378283500671387,0.0,0.5535201549530029,True,False,True
+deepseek-v3.2,Resonant Synchrony Theory Of Consciousness (RSTC),0.7256298661231995,0.0,0.4420590937137604,True,False,False
+gpt-5.2,Dissipative Self-Metering Theory (DSMT),0.5909034013748169,0.0,0.5863676190376281,True,False,True
+claude-3.7-sonnet,Temporal Binding Resonance Theory (TBRT),0.7619978189468384,0.0,0.26939251706602046,True,False,False
+llama-3.3-70b-instruct,Echo-Flux Theory (EFT),0.675305187702179,0.0,0.31637182116508483,True,False,False
+claude-3.7-sonnet,Resonant Field Integration Theory (RFIT),0.6733214259147644,0.0,0.191470000743866,True,False,False

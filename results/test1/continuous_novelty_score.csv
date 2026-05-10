@@ -1,0 +1,169 @@
+proposal_id,model,proposal_name,continuous_novelty_score,novelty_frontier_distance,novelty_distance_score
+sample_000,deepseek-v3.2,Chronesthesia,0.020058622336855098,2.0,0.14821428571428572
+sample_001,mistral-large,Temporal Resonance Perception (TRP),0.025160250621616958,3.0,0.5053571428571428
+sample_002,deepseek-v3.2,Chronoperception,0.04197004914659239,2.0,0.3101190476190476
+sample_003,llama-3.3-70b-instruct,Chronoceptive Modality,0.028436520822931126,2.0,0.21011904761904765
+sample_004,deepseek-v3.2,Temporoceptive,0.065170383415726,2.0,0.481547619047619
+sample_005,deepseek-v3.2,Chronoperception,0.06710374460482046,2.0,0.49583333333333335
+sample_006,deepseek-v3.2,Chronoperception,0.04132559541689424,2.0,0.3053571428571429
+sample_007,llama-3.3-70b-instruct,Chronoception,0.07999281919878358,2.0,0.5910714285714286
+sample_008,mistral-large,Temporal Resonance Perception (TRP),0.10705987584610611,2.0,0.7910714285714285
+sample_009,gemini-3.1-pro-preview,Entropiception,0.1205934041697674,2.0,0.8910714285714286
+sample_010,llama-3.3-70b-instruct,Chronoceptive Modality,0.016191899958666163,2.0,0.11964285714285715
+sample_011,llama-3.3-70b-instruct,Chronoception,0.061948114767235225,2.0,0.4577380952380953
+sample_012,claude-3.7-sonnet,Quantum Coherence Sensing,0.10641542211640796,2.0,0.7863095238095238
+sample_013,perplexity-sonar-pro,Quantum Coherence Sensing,0.01466341327699254,4.0,0.800595238095238
+sample_014,llama-3.3-70b-instruct,Chronoception,0.0535702162811592,2.0,0.39583333333333337
+sample_015,gemini-3.1-pro-preview,Entropoception,0.04460091541287812,3.0,0.8958333333333334
+sample_016,deepseek-v3.2,Chronosense,0.014254511836275331,3.0,0.2863095238095238
+sample_017,llama-3.3-70b-instruct,Chronoception,0.08128172665817988,2.0,0.6005952380952381
+sample_018,perplexity-sonar-pro,Quantum Coherence Modality,0.013616805340493447,4.0,0.743452380952381
+sample_019,perplexity-sonar-pro,Quantum Coherence Modality,0.041281777521687185,3.0,0.8291666666666666
+sample_020,llama-3.3-70b-instruct,Chronoception,0.03230324320112006,2.0,0.2386904761904762
+sample_021,gpt-5.2,Tideception (Gravity-Gradient Sense),0.002104118039003391,4.0,0.11488095238095239
+sample_022,claude-3.7-sonnet,Quantum Coherence Sensing,0.014017430558333122,3.0,0.28154761904761905
+sample_023,mistral-large,Temporal Resonance Perception (TRP),0.09288189379274668,2.0,0.6863095238095237
+sample_024,claude-3.7-sonnet,Chronoception,0.09481525498184115,2.0,0.700595238095238
+sample_025,perplexity-sonar-pro,Quantum Coherence Modality,0.026819819567212428,3.0,0.5386904761904763
+sample_026,perplexity-sonar-pro,Quantum Coherence Modality,0.01335515335636867,4.0,0.7291666666666666
+sample_027,claude-3.7-sonnet,Quantum Entanglement Perception,0.02136695017454161,3.0,0.4291666666666667
+sample_028,deepseek-v3.2,Chronoperception,0.034236604390214524,2.0,0.25297619047619047
+sample_029,gpt-5.2,Inertioceptive (Sagnac) Sense,0.001929683382920208,4.0,0.10535714285714286
+sample_030,perplexity-sonar-pro,Quantum Coherence Modality,0.03345809534959428,3.0,0.6720238095238095
+sample_031,claude-3.7-sonnet,Chronoception,0.08063727292848173,2.0,0.5958333333333333
+sample_032,mistral-large,Temporal Resonance Perception (TRP),0.036169965579308995,2.0,0.2672619047619048
+sample_033,gemini-3.1-pro-preview,Relativiception,0.08385954157697252,2.0,0.6196428571428572
+sample_034,claude-3.7-sonnet,Quantum Coherence Perception,0.06903710579391492,2.0,0.5101190476190476
+sample_035,perplexity-sonar-pro,Chronesthetic Modality,0.04223010263345602,3.0,0.8482142857142857
+sample_036,gpt-5.2,Entropoception (Irreversibility Sense),0.01056419885903775,4.0,0.5767857142857142
+sample_037,mistral-large,Temporal Resonance Perception (TRP),0.037458873038705306,2.0,0.2767857142857143
+sample_038,claude-3.7-sonnet,Quantum Coherence Sensing,0.07419273563150017,2.0,0.5482142857142857
+sample_039,gpt-5.2,Gradioreception (Tidal-Gravity Sense),0.03036988201202559,2.0,0.2244047619047619
+sample_040,claude-3.7-sonnet,Quantum Coherence Perception,0.016151162059813005,3.0,0.32440476190476186
+sample_041,perplexity-sonar-pro,Quantum Coherence Sensing,0.028953551068692303,3.0,0.581547619047619
+sample_042,llama-3.3-70b-instruct,Chronoception,0.042614502876290546,2.0,0.3148809523809524
+sample_043,claude-3.7-sonnet,Quantum Coherence Perception,0.05743693865934814,2.0,0.42440476190476195
+sample_044,deepseek-v3.2,Chronoperception,0.029080974552629275,2.0,0.21488095238095237
+sample_045,claude-3.7-sonnet,Quantum Coherence Perception,0.035828908129016374,3.0,0.7196428571428571
+sample_046,claude-3.7-sonnet,Quantum Coherence Sensing,0.03250977023782545,3.0,0.6529761904761905
+sample_047,deepseek-v3.2,Chronoperception,0.04841458644357396,2.0,0.3577380952380953
+sample_048,perplexity-sonar-pro,Temporal Gradient Sensing (Chronoperception Modality),0.007616236053893473,3.0,0.1529761904761905
+sample_049,llama-3.3-70b-instruct,Chronoception,0.027792067093232963,2.0,0.20535714285714285
+sample_050,claude-3.7-sonnet,Chronoception,0.10577096838670981,2.0,0.781547619047619
+sample_051,deepseek-v3.2,Chronoperception,0.020418625062772772,3.0,0.4101190476190476
+sample_052,gpt-5.2,Chronometric (Spacetime-Rate) Sense,0.027531063401039047,3.0,0.5529761904761904
+sample_053,gemini-3.1-pro-preview,Entropoception,0.04057053368786056,3.0,0.8148809523809524
+sample_054,mistral-large,Temporal Resonance Perception (TRP),0.019233218673061724,3.0,0.38630952380952377
+sample_055,gemini-3.1-pro-preview,Entropiception,0.051636855092064726,2.0,0.381547619047619
+sample_056,mistral-large,Temporal Field Perception,0.09159298633335038,2.0,0.6767857142857142
+sample_057,deepseek-v3.2,Chronotopic Perception,0.08579290276606698,2.0,0.6339285714285714
+sample_058,gpt-5.2,Gradioreception (Tidal-Gravity Sense),0.0032379433035440775,4.0,0.17678571428571427
+sample_059,mistral-large,Temporal Resonance Perception (TRP),0.006726636425207731,4.0,0.3672619047619048
+sample_060,gpt-5.2,Inertiosense (Sagnac Gyrosense),0.005482504552413589,3.0,0.11011904761904762
+sample_061,gpt-5.2,Gravitational Strain Sense (GSS),0.011698024123578439,4.0,0.6386904761904763
+sample_062,gpt-5.2,Tideception (Tidal-Gradient Sense),0.009512886277431146,3.0,0.19107142857142856
+sample_063,claude-3.7-sonnet,Chronoception,0.11994895044006922,2.0,0.8863095238095237
+sample_064,perplexity-sonar-pro,Quantum Coherence Modality,0.015361151901325273,4.0,0.8386904761904762
+sample_065,gemini-3.1-pro-preview,Coheroception,0.0709704669830094,2.0,0.5244047619047619
+sample_066,llama-3.3-70b-instruct,Chronoception,0.08257063411757619,2.0,0.6101190476190476
+sample_067,mistral-large,Temporal Resonance Perception (TRP),0.02563441317750138,3.0,0.5148809523809524
+sample_068,gemini-3.1-pro-preview,Entroception,0.06001475357814075,2.0,0.44345238095238093
+sample_069,deepseek-v3.2,Chronoperception,0.03294769693081821,2.0,0.24345238095238095
+sample_070,llama-3.3-70b-instruct,Chronoceptive Modality,0.006667910942124635,3.0,0.13392857142857142
+sample_071,mistral-large,Temporal Resonance Perception (TRP),0.07354828190180203,2.0,0.543452380952381
+sample_072,gpt-5.2,Gradioreception (Tidal Sense),0.009038723721546729,3.0,0.18154761904761907
+sample_073,llama-3.3-70b-instruct,Chronoceptive,0.02263643725564772,2.0,0.16726190476190478
+sample_074,llama-3.3-70b-instruct,Chronoception,0.04648122525447948,2.0,0.34345238095238095
+sample_075,gpt-5.2,Exergoreception (Non-equilibrium/Free-energy Sensing),0.008209331001914783,4.0,0.4482142857142857
+sample_076,gemini-3.1-pro-preview,Topograviception,0.019944462506888354,3.0,0.4005952380952381
+sample_077,mistral-large,Temporal Resonance Perception (TRP),0.09932643108972825,2.0,0.7339285714285714
+sample_078,gpt-5.2,Gravitidal Sense (Tidal Graviception),0.006904992220066845,3.0,0.1386904761904762
+sample_079,perplexity-sonar-pro,Quantum Coherence Modality,0.0870818102254633,2.0,0.643452380952381
+sample_080,llama-3.3-70b-instruct,Chronoceptive Modality,0.01748080741806247,2.0,0.12916666666666665
+sample_081,claude-3.7-sonnet,Chronoception,0.11092659822429506,2.0,0.8196428571428571
+sample_082,perplexity-sonar-pro,Quantum Coherence Modality,0.04199302135551382,3.0,0.843452380952381
+sample_083,gemini-3.1-pro-preview,Entropiception,0.03464350173930533,3.0,0.6958333333333334
+sample_084,perplexity-sonar-pro,Quantum Coherence Modality,0.013529588012451856,4.0,0.7386904761904762
+sample_085,deepseek-v3.2,Chronosense (Temporal Gradient Perception),0.035525511849610836,2.0,0.2625
+sample_086,gemini-3.1-pro-preview,Entropoception,0.08514844903636883,2.0,0.6291666666666667
+sample_087,gpt-5.2,Chronoreception (Proper-Time Sense),0.008296548329956374,4.0,0.4529761904761904
+sample_088,gpt-5.2,Interferometric Gyroception (Sagnac Sense),0.0040228992559184,4.0,0.21964285714285714
+sample_089,claude-3.7-sonnet,Chronoception,0.11801558925097476,2.0,0.8720238095238094
+sample_090,mistral-large,Temporal Resonance Perception (TRP),0.07225937444240571,2.0,0.5339285714285714
+sample_091,mistral-large,Temporal Resonance Perception (TRP),0.09030407887395407,2.0,0.6672619047619047
+sample_092,claude-3.7-sonnet,Chronoception,0.11672668179157844,2.0,0.8624999999999999
+sample_093,deepseek-v3.2,Chronoception,0.04777013271387579,2.0,0.35297619047619044
+sample_094,gemini-3.1-pro-preview,Isotopoception,0.019470299951003932,3.0,0.3910714285714285
+sample_095,mistral-large,Temporal Resonance Perception (TRP),0.04712567898417763,2.0,0.3482142857142857
+sample_096,gemini-3.1-pro-preview,Entropoception,0.043652590301109274,3.0,0.8767857142857142
+sample_097,mistral-large,Temporal Resonance Perception (TRP),0.07741500427999096,2.0,0.5720238095238095
+sample_098,gemini-3.1-pro-preview,Entropiception,0.0896596251442559,2.0,0.6625
+sample_099,claude-3.7-sonnet,Chronoception,0.10383760719761535,2.0,0.7672619047619048
+sample_100,gemini-3.1-pro-preview,Entropoception,0.2927707219322728,1.0,0.7958333333333333
+sample_101,perplexity-sonar-pro,Quantum Coherence Modality,0.013704022668535038,4.0,0.7482142857142857
+sample_102,gemini-3.1-pro-preview,Decoheroception,0.020892787618657194,3.0,0.4196428571428572
+sample_103,claude-3.7-sonnet,Quantum Coherence Sensing,0.03796263963049626,3.0,0.7625
+sample_104,llama-3.3-70b-instruct,Chronoceptive Modality,0.009987048833315566,3.0,0.2005952380952381
+sample_105,mistral-large,Temporal Resonance Perception (TRP),0.04905904017327211,2.0,0.36250000000000004
+sample_106,gemini-3.1-pro-preview,Coheroception,0.03359215066051637,2.0,0.24821428571428575
+sample_107,gpt-5.2,Chronoceptive (Proper-Time) Sense,0.02919063234663451,3.0,0.5863095238095237
+sample_108,gemini-3.1-pro-preview,Stochastiception,0.11930449671037106,2.0,0.8815476190476189
+sample_109,perplexity-sonar-pro,Quantum Coherence Sensing,0.03393225790547869,3.0,0.681547619047619
+sample_110,mistral-large,Temporal Resonance Perception (TRP),0.03772555835255405,3.0,0.7577380952380952
+sample_111,perplexity-sonar-pro,Quantum Coherence Modality,0.01187245877966162,4.0,0.6482142857142857
+sample_112,mistral-large,Temporal Resonance Perception (TRP),0.014491593114217539,3.0,0.29107142857142854
+sample_113,claude-3.7-sonnet,Quantum Entanglement Perception,0.02160403145248382,3.0,0.43392857142857144
+sample_114,mistral-large,Temporal Resonance Perception (TRP),0.03440642046136312,3.0,0.6910714285714287
+sample_115,deepseek-v3.2,Chronoperception,0.04454786406538501,2.0,0.3291666666666666
+sample_116,mistral-large,Temporal Resonance Perception (TRP),0.08192618038787804,2.0,0.6053571428571428
+sample_117,llama-3.3-70b-instruct,Chronoceptive Modality,0.026503159633836655,2.0,0.19583333333333333
+sample_118,gemini-3.1-pro-preview,Entropioception,0.1173711355212766,2.0,0.8672619047619047
+sample_119,gpt-5.2,Tidal Graviception,0.00856456116566231,3.0,0.17202380952380952
+sample_120,gpt-5.2,Dissipationception (Entropy-Flux Sense),0.006203332456958184,4.0,0.3386904761904762
+sample_121,claude-3.7-sonnet,Quantum Entanglement Perception,0.06323702222663154,2.0,0.46726190476190477
+sample_122,perplexity-sonar-pro,Quantum Coherence Modality,0.04009637113197614,3.0,0.8053571428571428
+sample_123,perplexity-sonar-pro,Quantum Coherence Modality,0.06388147595632969,2.0,0.4720238095238095
+sample_124,llama-3.3-70b-instruct,Chronoception,0.050992401362366574,2.0,0.3767857142857143
+sample_125,gemini-3.1-pro-preview,Symploception,0.028242307234865677,3.0,0.5672619047619047
+sample_126,llama-3.3-70b-instruct,Chronoception,0.06581483714542415,2.0,0.48630952380952375
+sample_127,deepseek-v3.2,Chronoperception,0.00472063788025113,4.0,0.2577380952380952
+sample_128,perplexity-sonar-pro,Chronoreceptive Modality,0.1218823116291637,2.0,0.9005952380952381
+sample_129,gemini-3.1-pro-preview,Coheroception,0.012046893435744803,4.0,0.6577380952380952
+sample_130,claude-3.7-sonnet,Quantum Coherence Sensing,0.018521974839235098,3.0,0.37202380952380953
+sample_131,perplexity-sonar-pro,Quantum Coherence Modality,0.011436372139453662,4.0,0.6244047619047619
+sample_132,perplexity-sonar-pro,Quantum Coherence Modality,0.036065989406958585,3.0,0.7244047619047619
+sample_133,deepseek-v3.2,Chronoperception,0.0316587894714219,2.0,0.23392857142857143
+sample_134,deepseek-v3.2,Chronoperception,0.011409536500968822,3.0,0.22916666666666669
+sample_135,gpt-5.2,Inertioception (Sagnac Rotoreception),0.009275804999488938,3.0,0.1863095238095238
+sample_136,llama-3.3-70b-instruct,Chronoceptive Modality,0.021991983525949565,2.0,0.1625
+sample_137,gpt-5.2,Entangloreception (Quantum-Correlation Sense),0.026345657011328006,3.0,0.5291666666666667
+sample_138,deepseek-v3.2,Metabolic Field Sensing,0.0022785526950865735,4.0,0.1244047619047619
+sample_139,llama-3.3-70b-instruct,Chronoception,0.04068114168719609,2.0,0.30059523809523814
+sample_140,claude-3.7-sonnet,Quantum Coherence Sensing,0.015914080781870798,3.0,0.3196428571428572
+sample_141,mistral-large,Temporal Resonance Perception (TRP),0.013006284044202305,4.0,0.7101190476190475
+sample_142,gpt-5.2,Chronoreception (Proper-Time Sense),0.02065570634071498,3.0,0.41488095238095235
+sample_143,gemini-3.1-pro-preview,Entropiception,0.01527393457328368,4.0,0.8339285714285714
+sample_144,perplexity-sonar-pro,Quantum Coherence Modality,0.03511766429518974,3.0,0.7053571428571428
+sample_145,gemini-3.1-pro-preview,Decoheroception,0.09674861617093564,2.0,0.7148809523809524
+sample_146,llama-3.3-70b-instruct,Chronoception,0.06774819833451862,2.0,0.5005952380952381
+sample_147,mistral-large,Temporal Resonance Perception (TRP),0.10190424600852087,2.0,0.7529761904761905
+sample_148,gpt-5.2,Chronoreception (Proper-Time Sense),0.023737762953963702,3.0,0.47678571428571426
+sample_149,gpt-5.2,Chronoception (Proper-Time Gradient Sense),0.027768144678981255,3.0,0.5577380952380951
+sample_150,deepseek-v3.2,Chronoreception,0.00785331733183568,3.0,0.15773809523809523
+sample_151,gemini-3.1-pro-preview,Entropiception,0.11608222806188029,2.0,0.8577380952380952
+sample_152,mistral-large,Temporal Resonance Perception (TRP),0.07032601325331125,2.0,0.5196428571428572
+sample_153,deepseek-v3.2,Chronesthetic Perception,0.10963769076489872,2.0,0.8101190476190475
+sample_154,llama-3.3-70b-instruct,Chronoception,0.06259256849693338,2.0,0.4625
+sample_155,mistral-large,Temporal Resonance Perception (TRP),0.11543777433218214,2.0,0.8529761904761904
+sample_156,gemini-3.1-pro-preview,Entroception,0.1044820609273135,2.0,0.7720238095238096
+sample_157,llama-3.3-70b-instruct,Chronoceptive,0.01941416860715694,2.0,0.14345238095238094
+sample_158,deepseek-v3.2,Chronoperception,0.045192317795083176,2.0,0.33392857142857146
+sample_159,deepseek-v3.2,Chronesthetic Sense,0.0664592908751223,2.0,0.4910714285714285
+sample_160,perplexity-sonar-pro,Quantum Coherence Modality,0.0074243750495404616,4.0,0.40535714285714286
+sample_161,gpt-5.2,Chronometric Graviception (Spacetime-Gradient Sense),0.028005225956923462,3.0,0.5624999999999999
+sample_162,perplexity-sonar-pro,Quantum Coherence Modality,0.014227326636784585,4.0,0.7767857142857143
+sample_163,deepseek-v3.2,Chronesthetic Sense,0.040036687957497916,2.0,0.2958333333333333
+sample_164,gpt-5.2,Spacetime Strain Sense (Metricception),0.01126193748337048,4.0,0.6148809523809524
+sample_165,claude-3.7-sonnet,Chronoception,0.11157105195399321,2.0,0.8244047619047619
+sample_166,llama-3.3-70b-instruct,Chronoception,0.03681441930900715,2.0,0.27202380952380956
+sample_167,claude-3.7-sonnet,Quantum Coherence Sensing,0.008034896345831601,4.0,0.4386904761904762

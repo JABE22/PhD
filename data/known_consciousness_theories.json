@@ -1,0 +1,355 @@
+{
+  "metadata": {
+    "created_at": "2026-03-14T12:27:20.047236",
+    "n_theories": 18,
+    "sources": {
+      "seed": 12,
+      "openalex": 6
+    },
+    "openalex_queries": [
+      "Dimensional Resonance Theory of Consciousness (DRTC) consciousness",
+      "quantum consciousness theory brain",
+      "phenomenal consciousness qualia hard problem",
+      "information integration consciousness theory",
+      "consciousness irreducible fundamental property",
+      "consciousness emergence computation neural",
+      "functional role consciousness cognitive",
+      "Temporal Recursive Binding Theory (TRBT) consciousness",
+      "Resonant Boundary Theory consciousness",
+      "Echo-Resonance Theory (ERT) consciousness",
+      "Consciousness as Causal Geometry consciousness",
+      "Consciousness as Dynamic Information Geometry (DIG) consciousness",
+      "Resonant Emergence Theory consciousness",
+      "Topological Frustration Resolution Theory consciousness",
+      "Harmonization Theory of Consciousness consciousness",
+      "Fractal Resonance Theory (FRT) consciousness",
+      "Resonant Constraint Theory of Consciousness consciousness",
+      "Topological Void Theory (TVT) consciousness",
+      "Dynamic Resonance Field Theory (DRFT) consciousness",
+      "Counterfactual Control Landscape Theory (CCLT) consciousness",
+      "Resonant Field Emergence Theory (RFET) consciousness",
+      "Quantum Resonance Field Theory of Consciousness consciousness",
+      "Resonant Binding Field Theory consciousness",
+      "Consciousness as Recursive Self-Simulation consciousness",
+      "Neural Gauge Invariance Theory (NGIT) consciousness",
+      "Resonant Field Theory of Consciousness (RFT) consciousness",
+      "Temporal Binding Field Theory (TBFT) consciousness",
+      "Chrono-Inertial Frame Theory consciousness",
+      "Resonant Binding Dynamics Theory (RBDT) consciousness",
+      "Resonant Symmetry-Breaking Theory of Consciousness consciousness",
+      "Resonant Binding Theory (RBT) consciousness",
+      "Counterfactual Closure Theory (CCT) consciousness",
+      "Quantum Coherence Collapse Theory consciousness",
+      "Reflexive State-Space Topology Theory (RSST) consciousness",
+      "Resonant Field Synchronization Theory consciousness",
+      "Resonant Embodiment Theory of Consciousness consciousness",
+      "Resonant Phase Coherence Theory consciousness",
+      "Quantum Coherent Criticality Theory consciousness",
+      "Temporal Resonance Binding Theory consciousness",
+      "Quantum Coherence Resonance Theory (QCRT) consciousness",
+      "Consciousness as Topological Invariant Theory consciousness",
+      "Counterfactual Sensitivity Field Theory (CSFT) consciousness",
+      "Thermodynamic Frustration Theory (TFT) consciousness",
+      "Dynamic Resonance Theory of Consciousness (DRTC) consciousness",
+      "Chrono-Entropic Tension Theory (CETT) consciousness",
+      "Temporal Recurrence Binding Theory (TRBT) consciousness",
+      "Resonant Integration Field Theory consciousness",
+      "Thermodynamic Closure Theory of Consciousness (TCTC) consciousness",
+      "Neural Gauge Symmetry Theory of Consciousness (NGST) consciousness",
+      "Resonant Binding Field Theory (RBFT) consciousness",
+      "Intrinsic Reference Frame Theory (IRFT) consciousness",
+      "Resonant Phase Coherence Theory of Consciousness consciousness",
+      "Chronodynamic Interference Theory consciousness",
+      "Topological Friction Theory (TFT) consciousness",
+      "Resonant Phase Coherence Theory (RPCT) consciousness",
+      "Causal Quotient Theory of Consciousness (CQTC) consciousness",
+      "Gauge-Invariant Manifold Theory (GIMT) of Consciousness consciousness",
+      "Dynamic Binding Resonance Theory (DBRT) consciousness",
+      "Analog-Discrete Friction Theory (ADFT) consciousness",
+      "Temporal Binding Resonance Theory (TBRT) consciousness",
+      "Control-Theoretic Hidden-Mode Theory (CHMT) consciousness",
+      "Quantum Coherence Threshold Theory (QCTT) consciousness",
+      "Topological Dimensional Collapse Theory (TDCT) consciousness",
+      "Substrate-Independent State Coherence Theory (SISCT) consciousness",
+      "Topological Causal Enclosure Theory (TCET) consciousness",
+      "Temporal Binding Account of Consciousness (TBAC) consciousness",
+      "Order-Parameter Phenomenology (OPP) consciousness",
+      "Thermodynamic Curvature Theory of Consciousness (TCTC) consciousness",
+      "Resonant Field Propagation Theory consciousness",
+      "Causal Friction Theory (CFT) consciousness",
+      "Dynamic Resonance Binding Theory (DRBT) consciousness",
+      "Counterfactual Interference Friction Theory consciousness",
+      "Chronotopic Interference Theory consciousness",
+      "Resonant Constraint Emergence Theory (RCET) consciousness",
+      "Ontological Friction Theory (OFT) consciousness",
+      "Topological Frustration Theory consciousness",
+      "Quantum Eigenstate Collapse Theory of Consciousness (QECTC) consciousness",
+      "Temporal Shear Theory consciousness",
+      "Causal Sketch Theory (CST) of Consciousness consciousness",
+      "Temporal Phase-Friction Theory consciousness",
+      "Resonant Criticality Theory of Consciousness consciousness",
+      "Neural Resonance Field Theory consciousness",
+      "non-physical consciousness dualism theory",
+      "Dimensional Residual Theory (DRT) consciousness",
+      "Topological Closure Theory (TCT) of Consciousness consciousness",
+      "Holoinformative Resonance Theory (HRT) consciousness",
+      "Interventional Signature Theory (IST) consciousness",
+      "Temporal Friction Theory consciousness",
+      "Resonant Binding Theory consciousness",
+      "Causal Friction Theory consciousness",
+      "Temporal Depth Theory of Consciousness consciousness",
+      "Resonant Integration Theory (RIT) consciousness",
+      "Quantum Entanglement Resonance Theory (QERT) consciousness",
+      "Quantum Resonance Field Theory (QRFT) consciousness",
+      "Intrinsic Manifold Metric Theory (IMMT) consciousness",
+      "Dynamic Entanglement Theory of Consciousness (DETC) consciousness",
+      "Causal Bottleneck Identity Theory (CBIT) consciousness",
+      "The Somatic Resonance Hypothesis consciousness",
+      "Resonant Interference Theory of Consciousness consciousness",
+      "Neural Resonance Field Theory (NRFT) consciousness",
+      "Entropy-Gradient Manifold Theory (EGMT) consciousness",
+      "Temporal Binding Wave Theory consciousness",
+      "Temporal Topology Isolation Theory consciousness",
+      "Counterfactual Exclusion Theory (CET) consciousness",
+      "Temporal Binding Field Theory consciousness",
+      "Resonant Harmonization Theory (RHT) consciousness",
+      "Invariant Dynamics Theory (IDT) of Consciousness consciousness",
+      "Gauge-Invariant Information Geometry Theory (GIGT) consciousness",
+      "Resonant Binding Dynamics (RBD) Theory consciousness",
+      "Temporal Shear and Thermodynamic Resolution Theory (TSTRT) consciousness",
+      "Substrate-Independent Coherence Theory (SICT) consciousness",
+      "Non-Orientable Topology of Information (NOTI) Theory consciousness",
+      "Autopoietic Uncertainty Modulation Theory (AUMT) consciousness",
+      "Resonant Temporal Binding Theory consciousness",
+      "Dimensional Resonance Theory consciousness",
+      "Counterfactual Topology Theory (CTT) of Consciousness consciousness",
+      "Strange Loop Theory of Consciousness consciousness",
+      "Resonant Synchrony Theory of Consciousness (RSTC) consciousness",
+      "Dissipative Self-Metering Theory (DSMT) consciousness",
+      "Temporal Binding Resonance Theory consciousness",
+      "Echo-Flux Theory consciousness",
+      "Resonant Field Integration Theory (RFIT) consciousness"
+    ]
+  },
+  "theories": {
+    "Global Workspace Theory": {
+      "theory_name": "Global Workspace Theory",
+      "description": "Consciousness arises when information is broadcast globally across the brain through a central workspace accessible to multiple cognitive processes. Contents of consciousness are those that win competition for access to this global workspace, enabling wide broadcasting and coordination.",
+      "references": [
+        "Baars, B.J. (1988). A Cognitive Theory of Consciousness. Cambridge University Press.",
+        "Dehaene, S. & Changeux, J.P. (2011). Experimental and theoretical approaches to conscious processing. Neuron, 70(2), 200-227. DOI: 10.1016/j.neuron.2011.03.018",
+        "Francis Crick & Christof Koch (1990). Towards a Neurobiological Theory of Consciousness. CaltechAUTHORS (California Institute of Technology).",
+        "Joseph E. LeDoux & Richard Brown (2017). A higher-order theory of emotional consciousness. Proceedings of the National Academy of Sciences. DOI: https://doi.org/10.1073/pnas.1619316114",
+        "Masafumi Oizumi et al. (2014). From the Phenomenology to the Mechanisms of Consciousness: Integrated Information Theory 3.0. PLoS Computational Biology. DOI: https://doi.org/10.1371/journal.pcbi.1003588",
+        "Robin Carhart‐Harris et al. (2014). The entropic brain: a theory of conscious states informed by neuroimaging research with psychedelic drugs. Frontiers in Human Neuroscience. DOI: https://doi.org/10.3389/fnhum.2014.00020",
+        "Bernard J. Baars et al. (2013). Global Workspace Dynamics: Cortical “Binding and Propagation” Enables Conscious Contents. Frontiers in Psychology. DOI: https://doi.org/10.3389/fpsyg.2013.00200"
+      ],
+      "source": "seed",
+      "year": null,
+      "cited_by_count": null
+    },
+    "Integrated Information Theory": {
+      "theory_name": "Integrated Information Theory",
+      "description": "Consciousness is identical to integrated information (Phi). A system is conscious to the degree it integrates information irreducibly across its parts. Different conscious states correspond to distinct conceptual structures; the substrate is any system with high Phi regardless of implementation.",
+      "references": [
+        "Tononi, G. (2004). An information integration theory of consciousness. BMC Neuroscience, 5, 42. DOI: 10.1186/1471-2202-5-42",
+        "Tononi, G., Boly, M., Massimini, M., & Koch, C. (2016). Integrated information theory: from consciousness to its physical substrate. Nature Reviews Neuroscience, 17(7), 450-461. DOI: 10.1038/nrn.2016.44",
+        "Andrea I. Luppi et al. (2023). A synergistic workspace for human consciousness revealed by Integrated Information Decomposition. eLife. DOI: https://doi.org/10.7554/elife.88173"
+      ],
+      "source": "seed",
+      "year": null,
+      "cited_by_count": null
+    },
+    "Higher-Order Thought Theory": {
+      "theory_name": "Higher-Order Thought Theory",
+      "description": "A mental state is conscious when it is accompanied by a suitable higher-order representation (thought or perception) directed at that state. Consciousness is not intrinsic to first-order states but requires meta-representation; without a higher-order state, the first-order state is merely unconscious.",
+      "references": [
+        "Rosenthal, D.M. (2005). Consciousness and Mind. Oxford University Press.",
+        "Brown, R., Lau, H., & LeDoux, J.E. (2019). Understanding the Higher-Order Approach to Consciousness. Trends in Cognitive Sciences, 23(9), 754-768. DOI: 10.1016/j.tics.2019.06.003"
+      ],
+      "source": "seed",
+      "year": null,
+      "cited_by_count": null
+    },
+    "Quantum Orchestrated Reduction": {
+      "theory_name": "Quantum Orchestrated Reduction",
+      "description": "Consciousness arises from quantum computations in neuronal microtubules undergoing orchestrated objective reduction (Orch OR). Quantum superposition and wavefunction collapse in tubulin proteins generate moments of proto-conscious experience that cannot be replicated by classical computation.",
+      "references": [
+        "Penrose, R. (1989). The Emperor's New Mind. Oxford University Press.",
+        "Hameroff, S. & Penrose, R. (2014). Consciousness in the universe: a review of the 'Orch OR' theory. Physics of Life Reviews, 11(1), 39-78. DOI: 10.1016/j.plrev.2013.08.002"
+      ],
+      "source": "seed",
+      "year": null,
+      "cited_by_count": null
+    },
+    "Predictive Processing": {
+      "theory_name": "Predictive Processing",
+      "description": "The brain is a hierarchical prediction machine that continually generates and updates a generative model of the world. Conscious experience corresponds to the brain's best current hypothesis minimizing prediction error (free energy), integrating top-down predictions with bottom-up sensory signals through precision-weighted belief updating.",
+      "references": [
+        "Clark, A. (2016). Surfing Uncertainty: Prediction, Action, and the Embodied Mind. Oxford University Press.",
+        "Friston, K. (2010). The free-energy principle: a unified brain theory? Nature Reviews Neuroscience, 11(2), 127-138. DOI: 10.1038/nrn2787",
+        "Hohwy, J. (2013). The Predictive Mind. Oxford University Press."
+      ],
+      "source": "seed",
+      "year": null,
+      "cited_by_count": null
+    },
+    "Attention Schema Theory": {
+      "theory_name": "Attention Schema Theory",
+      "description": "The brain builds a simplified internal model (attention schema) of its own attentional processes. Consciousness is this schema - a model that ascribes awareness to the self. It evolved to allow better control of attention and social attribution of mental states to others.",
+      "references": [
+        "Graziano, M.S.A. (2013). Consciousness and the Social Brain. Oxford University Press.",
+        "Graziano, M.S.A. & Kastner, S. (2011). Human consciousness and its relationship to social neuroscience. Cognitive Neuroscience, 2(2), 98-113. DOI: 10.1080/17588928.2011.565121"
+      ],
+      "source": "seed",
+      "year": null,
+      "cited_by_count": null
+    },
+    "Quantum Information Panpsychism": {
+      "theory_name": "Quantum Information Panpsychism",
+      "description": "Consciousness is a fundamental property of systems in quantum pure states. Because quantum information cannot be cloned, each conscious system has private, first-person experience irreducible to third-person description. Free will emerges from irreducibly quantum indeterminacy not reducible to classical information processing.",
+      "references": [
+        "Chalmers, D.J. (1996). The Conscious Mind: In Search of a Fundamental Theory. Oxford University Press.",
+        "Stapp, H.P. (2007). Mind, Matter and Quantum Mechanics. Springer."
+      ],
+      "source": "seed",
+      "year": null,
+      "cited_by_count": null
+    },
+    "Recurrent Processing Theory": {
+      "theory_name": "Recurrent Processing Theory",
+      "description": "Consciousness depends on recurrent (re-entrant) processing between higher and lower visual areas. Feedforward sweeps suffice for rapid, unconscious categorization; phenomenal experience requires sustained recurrent loops that feed information back to early sensory areas.",
+      "references": [
+        "Lamme, V.A.F. (2006). Towards a true neural stance on consciousness. Trends in Cognitive Sciences, 10(11), 494-501. DOI: 10.1016/j.tics.2006.09.001",
+        "Lamme, V.A.F. & Roelfsema, P.R. (2000). The distinct modes of vision offered by feedforward and recurrent processing. Trends in Neurosciences, 23(11), 571-579."
+      ],
+      "source": "seed",
+      "year": null,
+      "cited_by_count": null
+    },
+    "Biological Naturalism": {
+      "theory_name": "Biological Naturalism",
+      "description": "Consciousness is a real biological phenomenon caused by lower-level neuronal processes in the brain and realized in the brain's physical structure. It is irreducible to functional or computational descriptions; its subjective, first-person ontology cannot be captured by any third-person physicalist account based solely on syntax or computation.",
+      "references": [
+        "Searle, J.R. (1992). The Rediscovery of the Mind. MIT Press.",
+        "Searle, J.R. (2000). Consciousness. Annual Review of Neuroscience, 23, 557-578. DOI: 10.1146/annurev.neuro.23.1.557"
+      ],
+      "source": "seed",
+      "year": null,
+      "cited_by_count": null
+    },
+    "Illusionism": {
+      "theory_name": "Illusionism",
+      "description": "Phenomenal consciousness - the felt quality of experience - is an introspective illusion. The brain generates systematically misleading representations of its own mental states that make them appear to have irreducible qualitative properties (qualia). Explaining the illusion dissolves the hard problem.",
+      "references": [
+        "Frankish, K. (2016). Illusionism as a theory of consciousness. Journal of Consciousness Studies, 23(11-12), 11-39.",
+        "Dennett, D.C. (1991). Consciousness Explained. Little, Brown and Company."
+      ],
+      "source": "seed",
+      "year": null,
+      "cited_by_count": null
+    },
+    "Active Inference and Free Energy": {
+      "theory_name": "Active Inference and Free Energy",
+      "description": "Conscious experience is the product of hierarchical Bayesian inference that minimizes variational free energy (a bound on surprisal). The brain encodes probabilistic beliefs about causes of sensory data; action and perception are unified as dual strategies for minimizing surprise under a generative model of the world and the agent's place in it.",
+      "references": [
+        "Friston, K. (2019). A free energy principle for a particular physics. arXiv:1906.10184.",
+        "Friston, K., Wiese, W., & Hobson, J.A. (2020). Sentience and the free-energy principle. DOI: 10.31234/osf.io/p3nvz",
+        "Nigel J. T. Thomas (1999). Are Theories of Imagery Theories of Imagination? An Active Perception Approach to Conscious Mental Content. Cognitive Science. DOI: https://doi.org/10.1207/s15516709cog2302_3",
+        "Adam Safron (2020). An Integrated World Modeling Theory (IWMT) of Consciousness: Combining Integrated Information and Global Neuronal Workspace Theories With the Free Energy Principle and Active Inference Framework; Toward Solving the Hard Problem and Characterizing Agentic Causation. Frontiers in Artificial Intelligence. DOI: https://doi.org/10.3389/frai.2020.00030"
+      ],
+      "source": "seed",
+      "year": null,
+      "cited_by_count": null
+    },
+    "Phenomenal Concepts Strategy": {
+      "theory_name": "Phenomenal Concepts Strategy",
+      "description": "The explanatory gap between physical and phenomenal descriptions arises from the special way humans form phenomenal concepts - direct, non-inferential recognitional concepts applied to one's own experiences. These concepts are not a priori deducible from physical concepts, but this epistemic gap does not entail an ontological gap; physicalism remains tenable.",
+      "references": [
+        "Loar, B. (1990). Phenomenal states. Philosophical Perspectives, 4, 81-108.",
+        "Papineau, D. (2002). Thinking about Consciousness. Oxford University Press."
+      ],
+      "source": "seed",
+      "year": null,
+      "cited_by_count": null
+    },
+    "Consciousness: here, there and everywhere?": {
+      "theory_name": "Consciousness: here, there and everywhere?",
+      "description": "The science of consciousness has made great strides by focusing on the behavioural and neuronal correlates of experience. However, while such correlates are important for progress to occur, they are not enough if we are to understand even basic facts, for example, why the cerebral cortex gives rise to consciousness but the cerebellum does not, though it has even more neurons and appears to be just as complicated. Moreover, correlates are of little help in many instances where we would like to know if consciousness is present: patients with a few remaining islands of functioning cortex, preterm infants, non-mammalian species and machines that are rapidly outperforming people at driving, recognizing faces and objects, and answering difficult questions. To address these issues, we need not only more data but also a theory of consciousness-one that says what experience is and what type of physical systems can have it. Integrated information theory (IIT) does so by starting from experience itself via five phenomenological axioms: intrinsic existence, composition, information, integration and exclusion. From these it derives five postulates about the properties required of physical mechanisms to support consciousness. The theory provides a principled account of both the quantity and the quality of an individual experience (a quale), and a calculus to evaluate whether or not a particular physical system is conscious and of what. Moreover, IIT can explain a range of clinical and laboratory findings, makes a number of testable predictions and extrapolates to a number of problematic conditions. The theory holds that consciousness is a fundamental property possessed by physical systems having specific causal properties. It predicts that consciousness is graded, is common among biological organisms and can occur in some very simple systems. Conversely, it predicts that feed-forward networks, even complex ones, are not conscious, nor are aggregates such as groups of individuals or heaps of sand. Also, in sharp contrast to widespread functionalist beliefs, IIT implies that digital computers, even if their behaviour were to be functionally equivalent to ours, and even if they were to run faithful simulations of the human brain, would experience next to nothing.",
+      "references": [
+        "Giulio Tononi & Christof Koch (2015). Consciousness: here, there and everywhere?. Philosophical Transactions of the Royal Society B Biological Sciences. DOI: https://doi.org/10.1098/rstb.2014.0167",
+        "Karl Friston et al. (2020). Sentience and the Origins of Consciousness: From Cartesian Duality to Markovian Monism. Entropy. DOI: https://doi.org/10.3390/e22050516"
+      ],
+      "source": "openalex",
+      "openalex_id": "https://openalex.org/W2170232314",
+      "doi": "https://doi.org/10.1098/rstb.2014.0167",
+      "year": 2015,
+      "cited_by_count": 773
+    },
+    "Biology of Consciousness": {
+      "theory_name": "Biology of Consciousness",
+      "description": "The Dynamic Core and Global Workspace hypotheses were independently put forward to provide mechanistic and biologically plausible accounts of how brains generate conscious mental content. The Dynamic Core proposes that reentrant neural activity in the thalamocortical system gives rise to conscious experience. Global Workspace reconciles the limited capacity of momentary conscious content with the vast repertoire of long-term memory. In this paper we show the close relationship between the two hypotheses. This relationship allows for a strictly biological account of phenomenal experience and subjectivity that is consistent with mounting experimental evidence. We examine the constraints on causal analyses of consciousness and suggest that there is now sufficient evidence to consider the design and construction of a conscious artifact.",
+      "references": [
+        "Gerald M. Edelman et al. (2011). Biology of Consciousness. Frontiers in Psychology. DOI: https://doi.org/10.3389/fpsyg.2011.00004",
+        "Stuart R. Hameroff (2006). The Entwined Mysteries of Anesthesia and Consciousness. Anesthesiology. DOI: https://doi.org/10.1097/00000542-200608000-00024",
+        "Adenauer G. Casali et al. (2013). A Theoretically Based Index of Consciousness Independent of Sensory Processing and Behavior. Science Translational Medicine. DOI: https://doi.org/10.1126/scitranslmed.3006294",
+        "Adrien Doerig et al. (2020). Hard criteria for empirical theories of consciousness. Cognitive Neuroscience. DOI: https://doi.org/10.1080/17588928.2020.1772214",
+        "Simone Sarasso et al. (2021). Consciousness and complexity: a consilience of evidence. Neuroscience of Consciousness. DOI: https://doi.org/10.1093/nc/niab023"
+      ],
+      "source": "openalex",
+      "openalex_id": "https://openalex.org/W2139877515",
+      "doi": "https://doi.org/10.3389/fpsyg.2011.00004",
+      "year": 2011,
+      "cited_by_count": 194
+    },
+    "Brain Dynamics Underlying the Nonlinear Threshold for Access to Consci...": {
+      "theory_name": "Brain Dynamics Underlying the Nonlinear Threshold for Access to Consci...",
+      "description": "When a flashed stimulus is followed by a backward mask, subjects fail to perceive it unless the target-mask interval exceeds a threshold duration of about 50 ms. Models of conscious access postulate that this threshold is associated with the time needed to establish sustained activity in recurrent cortical loops, but the brain areas involved and their timing remain debated. We used high-density recordings of event-related potentials (ERPs) and cortical source reconstruction to assess the time course of human brain activity evoked by masked stimuli and to determine neural events during which brain activity correlates with conscious reports. Target-mask stimulus onset asynchrony (SOA) was varied in small steps, allowing us to ask which ERP events show the characteristic nonlinear dependence with SOA seen in subjective and objective reports. The results separate distinct stages in mask-target interactions, indicating that a considerable amount of subliminal processing can occur early on in the occipito-temporal pathway (<250 ms) and pointing to a late (>270 ms) and highly distributed fronto-parieto-temporal activation as a correlate of conscious reportability.",
+      "references": [
+        "Antoine Del Cul et al. (2007). Brain Dynamics Underlying the Nonlinear Threshold for Access to Consciousness. PLoS Biology. DOI: https://doi.org/10.1371/journal.pbio.0050260"
+      ],
+      "source": "openalex",
+      "openalex_id": "https://openalex.org/W2144655282",
+      "doi": "https://doi.org/10.1371/journal.pbio.0050260",
+      "year": 2007,
+      "cited_by_count": 770
+    },
+    "Thalamocortical model for a propofol-induced α-rhythm associated with ...": {
+      "theory_name": "Thalamocortical model for a propofol-induced α-rhythm associated with ...",
+      "description": "Recent data reveal that the general anesthetic propofol gives rise to a frontal α-rhythm at dose levels sufficient to induce loss of consciousness. In this work, a computational model is developed that suggests the network mechanisms responsible for such a rhythm. It is shown that propofol can alter the dynamics in thalamocortical loops, leading to persistent and synchronous α-activity. The synchrony that forms in the cortex by virtue of the involvement of the thalamus may impede responsiveness to external stimuli, thus providing a correlate for the unconscious state.",
+      "references": [
+        "ShiNung Ching et al. (2010). Thalamocortical model for a propofol-induced α-rhythm associated with loss of consciousness. Proceedings of the National Academy of Sciences. DOI: https://doi.org/10.1073/pnas.1017069108"
+      ],
+      "source": "openalex",
+      "openalex_id": "https://openalex.org/W2044670283",
+      "doi": "https://doi.org/10.1073/pnas.1017069108",
+      "year": 2010,
+      "cited_by_count": 395
+    },
+    "Can Computers Become Conscious and Overcome Humans?": {
+      "theory_name": "Can Computers Become Conscious and Overcome Humans?",
+      "description": "The idea of machines overcoming humans can be intrinsically related to conscious machines. Surpassing humans would mean replicating, reaching and exceeding key distinctive properties of human beings, for example, high-level cognition associated with conscious perception. However, can computers be compared with humans? Can computers become conscious? Can computers outstrip human capabilities? These are paradoxical and controversial questions, particularly because there are many hidden assumptions and misconceptions about the understanding of the brain. In this sense, it is necessary to first explore these assumptions and then suggest how the specific information processing of brains would be replicated by machines. Therefore, this article will discuss a subset of human capabilities and the connection with conscious behavior, secondly, a prototype theory of consciousness will be explored and machines will be classified according to this framework. Finally, this analysis will show the paradoxical conclusion that trying to achieve conscious machines to beat humans implies that computers will never completely exceed human capabilities, or if the computer were to do it, the machine should not be considered a computer anymore.",
+      "references": [
+        "Camilo Miguel Signorelli (2018). Can Computers Become Conscious and Overcome Humans?. Frontiers in Robotics and AI. DOI: https://doi.org/10.3389/frobt.2018.00121",
+        "Adam Safron (2021). The Radically Embodied Conscious Cybernetic Bayesian Brain: From Free Energy to Free Will and Back Again. Entropy. DOI: https://doi.org/10.3390/e23060783"
+      ],
+      "source": "openalex",
+      "openalex_id": "https://openalex.org/W2894092088",
+      "doi": "https://doi.org/10.3389/frobt.2018.00121",
+      "year": 2018,
+      "cited_by_count": 51
+    },
+    "Brain Connectivity Dissociates Responsiveness from Drug Exposure durin...": {
+      "theory_name": "Brain Connectivity Dissociates Responsiveness from Drug Exposure durin...",
+      "description": "Accurately measuring the neural correlates of consciousness is a grand challenge for neuroscience. Despite theoretical advances, developing reliable brain measures to track the loss of reportable consciousness during sedation is hampered by significant individual variability in susceptibility to anaesthetics. We addressed this challenge using high-density electroencephalography to characterise changes in brain networks during propofol sedation. Assessments of spectral connectivity networks before, during and after sedation were combined with measurements of behavioural responsiveness and drug concentrations in blood. Strikingly, we found that participants who had weaker alpha band networks at baseline were more likely to become unresponsive during sedation, despite registering similar levels of drug in blood. In contrast, phase-amplitude coupling between slow and alpha oscillations correlated with drug concentrations in blood. Our findings highlight novel markers that prognosticate individual differences in susceptibility to propofol and track drug exposure. These advances could inform accurate drug titration and brain state monitoring during anaesthesia.",
+      "references": [
+        "Srivas Chennu et al. (2016). Brain Connectivity Dissociates Responsiveness from Drug Exposure during Propofol-Induced Transitions of Consciousness. PLoS Computational Biology. DOI: https://doi.org/10.1371/journal.pcbi.1004669"
+      ],
+      "source": "openalex",
+      "openalex_id": "https://openalex.org/W2232938174",
+      "doi": "https://doi.org/10.1371/journal.pcbi.1004669",
+      "year": 2016,
+      "cited_by_count": 152
+    }
+  }
+}

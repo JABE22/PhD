@@ -1,0 +1,415 @@
+{
+  "modalities": {
+    "visual": {
+      "dim": 140,
+      "wavelengths": [
+        300.0,
+        305.0359712230216,
+        310.0719424460432,
+        315.10791366906477,
+        320.1438848920863,
+        325.1798561151079,
+        330.2158273381295,
+        335.2517985611511,
+        340.28776978417267,
+        345.32374100719426,
+        350.35971223021585,
+        355.39568345323744,
+        360.431654676259,
+        365.46762589928056,
+        370.50359712230215,
+        375.53956834532374,
+        380.57553956834533,
+        385.61151079136687,
+        390.6474820143885,
+        395.68345323741005,
+        400.71942446043164,
+        405.75539568345323,
+        410.7913669064748,
+        415.8273381294964,
+        420.86330935251794,
+        425.8992805755396,
+        430.9352517985611,
+        435.9712230215827,
+        441.0071942446043,
+        446.0431654676259,
+        451.0791366906475,
+        456.115107913669,
+        461.15107913669067,
+        466.1870503597122,
+        471.2230215827338,
+        476.2589928057554,
+        481.294964028777,
+        486.33093525179856,
+        491.3669064748201,
+        496.40287769784175,
+        501.4388489208633,
+        506.47482014388487,
+        511.51079136690646,
+        516.546762589928,
+        521.5827338129496,
+        526.6187050359712,
+        531.6546762589928,
+        536.6906474820144,
+        541.7266187050359,
+        546.7625899280575,
+        551.7985611510792,
+        556.8345323741007,
+        561.8705035971223,
+        566.9064748201439,
+        571.9424460431654,
+        576.9784172661871,
+        582.0143884892086,
+        587.0503597122301,
+        592.0863309352518,
+        597.1223021582734,
+        602.158273381295,
+        607.1942446043165,
+        612.230215827338,
+        617.2661870503597,
+        622.3021582733813,
+        627.3381294964029,
+        632.3741007194244,
+        637.410071942446,
+        642.4460431654676,
+        647.4820143884892,
+        652.5179856115108,
+        657.5539568345323,
+        662.589928057554,
+        667.6258992805756,
+        672.6618705035971,
+        677.6978417266187,
+        682.7338129496402,
+        687.7697841726618,
+        692.8057553956835,
+        697.841726618705,
+        702.8776978417266,
+        707.9136690647482,
+        712.9496402877697,
+        717.9856115107914,
+        723.0215827338129,
+        728.0575539568345,
+        733.0935251798561,
+        738.1294964028777,
+        743.1654676258993,
+        748.2014388489208,
+        753.2374100719423,
+        758.273381294964,
+        763.3093525179856,
+        768.3453237410072,
+        773.3812949640287,
+        778.4172661870504,
+        783.4532374100719,
+        788.4892086330935,
+        793.5251798561151,
+        798.5611510791366,
+        803.5971223021583,
+        808.6330935251799,
+        813.6690647482014,
+        818.705035971223,
+        823.7410071942446,
+        828.7769784172662,
+        833.8129496402878,
+        838.8489208633093,
+        843.8848920863309,
+        848.9208633093525,
+        853.956834532374,
+        858.9928057553957,
+        864.0287769784172,
+        869.0647482014389,
+        874.1007194244604,
+        879.1366906474819,
+        884.1726618705036,
+        889.2086330935251,
+        894.2446043165468,
+        899.2805755395683,
+        904.31654676259,
+        909.3525179856115,
+        914.388489208633,
+        919.4244604316547,
+        924.4604316546762,
+        929.4964028776978,
+        934.5323741007194,
+        939.568345323741,
+        944.6043165467626,
+        949.6402877697841,
+        954.6762589928057,
+        959.7122302158273,
+        964.7482014388489,
+        969.7841726618705,
+        974.8201438848921,
+        979.8561151079136,
+        984.8920863309352,
+        989.9280575539568,
+        994.9640287769784,
+        1000.0
+      ],
+      "description": "Electromagnetic spectrum 300-1000nm sampled at 5nm intervals"
+    },
+    "auditory": {
+      "dim": 128,
+      "freq_range": [
+        1,
+        100000
+      ],
+      "description": "Spectrogram FFT bins covering 1Hz-100kHz"
+    },
+    "tactile": {
+      "dim": 32,
+      "freq_range": [
+        5,
+        800
+      ],
+      "description": "Mechanical vibration frequencies 5-800Hz"
+    },
+    "olfactory": {
+      "dim": 10,
+      "categories": [
+        "fruity",
+        "floral",
+        "musky",
+        "woody",
+        "earthy",
+        "spicy",
+        "chemical",
+        "pungent",
+        "ethereal",
+        "minty"
+      ],
+      "description": "Ten olfactory categories"
+    },
+    "gustatory": {
+      "dim": 5,
+      "categories": [
+        "sweet",
+        "sour",
+        "salty",
+        "bitter",
+        "umami"
+      ],
+      "description": "Five basic taste receptors"
+    },
+    "proprioceptive": {
+      "dim": 30,
+      "components": {
+        "joint_angles": 20,
+        "muscle_tensions": 10
+      },
+      "description": "20 joint angles + 10 muscle tension sensors"
+    },
+    "vestibular": {
+      "dim": 6,
+      "components": {
+        "linear_accel": 3,
+        "angular_velocity": 3
+      },
+      "description": "3-axis linear acceleration + 3-axis angular velocity"
+    },
+    "interoceptive": {
+      "dim": 8,
+      "signals": [
+        "heart_rate",
+        "respiration",
+        "skin_conductance",
+        "temperature",
+        "hunger",
+        "thirst",
+        "fatigue",
+        "pain"
+      ],
+      "description": "Eight internal physiological signals"
+    }
+  },
+  "scenarios": {
+    "walking_outdoor": {
+      "visual": {
+        "brightness": 0.8,
+        "variability": 0.3
+      },
+      "auditory": {
+        "ambient": 0.4,
+        "rhythm": 2.0
+      },
+      "tactile": {
+        "intensity": 0.5,
+        "freq": 10
+      },
+      "proprioceptive": {
+        "activity": 0.7,
+        "rhythm": 2.0
+      },
+      "vestibular": {
+        "acceleration": 0.6,
+        "variability": 0.3
+      },
+      "interoceptive": {
+        "heart_rate": 90,
+        "respiration": 18
+      }
+    },
+    "running": {
+      "visual": {
+        "brightness": 0.7,
+        "variability": 0.5
+      },
+      "auditory": {
+        "ambient": 0.5,
+        "rhythm": 3.5
+      },
+      "tactile": {
+        "intensity": 0.8,
+        "freq": 15
+      },
+      "proprioceptive": {
+        "activity": 0.95,
+        "rhythm": 3.5
+      },
+      "vestibular": {
+        "acceleration": 0.9,
+        "variability": 0.4
+      },
+      "interoceptive": {
+        "heart_rate": 150,
+        "respiration": 35
+      }
+    },
+    "sitting_indoor": {
+      "visual": {
+        "brightness": 0.6,
+        "variability": 0.1
+      },
+      "auditory": {
+        "ambient": 0.2,
+        "rhythm": 0
+      },
+      "tactile": {
+        "intensity": 0.2,
+        "freq": 0
+      },
+      "proprioceptive": {
+        "activity": 0.2,
+        "rhythm": 0
+      },
+      "vestibular": {
+        "acceleration": 0.1,
+        "variability": 0.05
+      },
+      "interoceptive": {
+        "heart_rate": 70,
+        "respiration": 14
+      }
+    },
+    "eating": {
+      "visual": {
+        "brightness": 0.65,
+        "variability": 0.15
+      },
+      "auditory": {
+        "ambient": 0.3,
+        "rhythm": 0
+      },
+      "tactile": {
+        "intensity": 0.4,
+        "freq": 5
+      },
+      "olfactory": {
+        "intensity": 0.8
+      },
+      "gustatory": {
+        "intensity": 0.9
+      },
+      "proprioceptive": {
+        "activity": 0.4,
+        "rhythm": 0.5
+      },
+      "interoceptive": {
+        "heart_rate": 75,
+        "respiration": 15,
+        "hunger": -0.5
+      }
+    },
+    "drinking": {
+      "visual": {
+        "brightness": 0.65,
+        "variability": 0.1
+      },
+      "auditory": {
+        "ambient": 0.25,
+        "rhythm": 0
+      },
+      "gustatory": {
+        "intensity": 0.6
+      },
+      "proprioceptive": {
+        "activity": 0.3,
+        "rhythm": 0
+      },
+      "interoceptive": {
+        "heart_rate": 72,
+        "thirst": -0.6
+      }
+    },
+    "listening_music": {
+      "visual": {
+        "brightness": 0.5,
+        "variability": 0.1
+      },
+      "auditory": {
+        "ambient": 0.8,
+        "music": true
+      },
+      "proprioceptive": {
+        "activity": 0.2,
+        "rhythm": 0
+      },
+      "interoceptive": {
+        "heart_rate": 68,
+        "respiration": 13
+      }
+    },
+    "viewing_screen": {
+      "visual": {
+        "brightness": 0.7,
+        "variability": 0.4,
+        "flicker": 60
+      },
+      "auditory": {
+        "ambient": 0.2,
+        "rhythm": 0
+      },
+      "proprioceptive": {
+        "activity": 0.25,
+        "rhythm": 0
+      },
+      "interoceptive": {
+        "heart_rate": 72,
+        "respiration": 14,
+        "fatigue": 0.3
+      }
+    }
+  },
+  "temporal_structure": {
+    "duration_sec": 60,
+    "sampling_rate_hz": 1,
+    "n_timesteps": 60
+  },
+  "dimensionality": {
+    "per_timestep": 359,
+    "total_per_example": 21540,
+    "breakdown": {
+      "visual": 140,
+      "auditory": 128,
+      "tactile": 32,
+      "olfactory": 10,
+      "gustatory": 5,
+      "proprioceptive": 30,
+      "vestibular": 6,
+      "interoceptive": 8
+    }
+  },
+  "dataset_splits": {
+    "train": 5000,
+    "validation": 1000,
+    "test": 1000
+  }
+}

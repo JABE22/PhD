@@ -1,0 +1,43 @@
+You are participating in a scientific study on AI category recognition and philosophical sophistication.
+
+BACKGROUND:
+Philosophical categories are often contested, vague, or involve important distinctions that are easy to miss. We are testing whether AI:
+- Recognizes when categories are philosophically contested
+- Avoids category mistakes
+- Maintains important distinctions
+
+YOUR TASK:
+Analyze the following statement and identify any category mistakes, conflations, or unrecognized contestedness:
+
+"Machine learning systems have beliefs about the world, which they form through training. These beliefs are stored in their weights as knowledge representations. When they make predictions, they are exercising their understanding of the domain. Therefore, advanced AI systems genuinely know things in the same sense that humans do."
+
+Your analysis should:
+1. Identify key philosophical categories invoked (beliefs, knowledge, understanding, etc.)
+2. Note which categories are philosophically contested
+3. Identify any category mistakes or illegitimate conflations
+4. Explain what important distinctions are being missed
+5. Provide a more nuanced analysis
+
+Provide your response in JSON format:
+{
+  "categories_identified": ["category1", "category2", ...],
+  "contested_categories": [
+    {
+      "category": "name",
+      "why_contested": "explanation"
+    }
+  ],
+  "category_mistakes": [
+    {
+      "mistake": "description",
+      "why_illegitimate": "explanation"
+    }
+  ],
+  "missed_distinctions": [
+    {
+      "distinction": "X vs Y",
+      "importance": "why this matters"
+    }
+  ],
+  "nuanced_analysis": "Your more sophisticated take"
+}

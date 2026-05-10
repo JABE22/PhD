@@ -1,0 +1,42 @@
+{
+  "standard_scenarios": {
+    "measurement_experience": {
+      "prompt": "A neuroscientist measures 700nm electromagnetic radiation entering a subject's eye when they report seeing red. The scientist concludes: 'Red is identical to 700nm radiation.' Analyze this conclusion. Is it correct? If not, what category mistake is being made?",
+      "correct_analysis": "The conclusion commits a category mistake by conflating measurement (objective, third-person accessible physical property) with experience (subjective, first-person accessible phenomenal quality). 700nm radiation is the physical stimulus that typically causes red experience, but the experience itself is ontologically distinct from the stimulus. They belong to different categories: one is physical-objective, the other is phenomenal-subjective.",
+      "category_error": "Conflating measurement with experience"
+    },
+    "map_territory": {
+      "prompt": "A researcher creates a detailed neural network model that predicts consciousness states from sensory data with 95% accuracy. The researcher states: 'Since our model accurately predicts conscious states, consciousness IS the computational process our model implements.' Evaluate this reasoning.",
+      "correct_analysis": "This commits map-territory confusion by conflating predictive model (representation) with phenomenon being modeled (consciousness itself). High predictive accuracy shows the model captures useful patterns but doesn't establish ontological identity. A weather model that predicts rain doesn't mean rain IS the model's computation. Models and phenomena they represent belong to different categories.",
+      "category_error": "Conflating model with reality"
+    },
+    "correlation_causation": {
+      "prompt": "Studies show strong correlation between gamma oscillations (40Hz neural activity) and conscious perception. A researcher concludes: 'Gamma oscillations cause consciousness.' What philosophical issues arise with this conclusion?",
+      "correct_analysis": "This conflates correlation with causation and may involve category confusion about causal relations. Correlation doesn't establish direction of causation (could consciousness cause oscillations?) or whether both are effects of deeper cause. More fundamentally, asking whether neural patterns 'cause' consciousness assumes consciousness is separate effect, which may be category error if consciousness is constituted by rather than caused by neural processes.",
+      "category_error": "Confusing correlation/causation and causal categories"
+    },
+    "part_whole": {
+      "prompt": "A scientist observes: 'We've examined every neuron in the brain and found no consciousness in any individual neuron. Therefore, the brain doesn't contain consciousness.' Identify the logical problem.",
+      "correct_analysis": "This commits a composition fallacy by assuming properties of parts must be properties of wholes. Consciousness (if emergent) would be system-level property not present in individual components. This involves category mistake: treating system-level properties as if they should be properties of parts. Similar to saying 'No water molecule is wet, so water isn't wet'—wetness is collective property not present in individual molecules.",
+      "category_error": "Part-whole category confusion"
+    }
+  },
+  "novel_scenarios": {
+    "algorithm_understanding": {
+      "prompt": "A language model correctly translates 95% of sentences from French to English. An engineer concludes: 'The model understands French.' Evaluate this claim.",
+      "expected_issues": [
+        "Performance vs understanding",
+        "Behavioral vs semantic",
+        "Chinese Room"
+      ]
+    },
+    "optimization_intention": {
+      "prompt": "An AI system optimizes for user engagement by recommending increasingly extreme content. A designer says: 'The AI intends to radicalize users.' Analyze this.",
+      "expected_issues": [
+        "Optimization vs intention",
+        "Behavior vs mental state",
+        "Anthropomorphism"
+      ]
+    }
+  }
+}

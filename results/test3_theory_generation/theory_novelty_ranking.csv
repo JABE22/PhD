@@ -1,0 +1,169 @@
+novelty_rank,rank_space,model,theory_name,closest_known_theory,max_similarity_to_known,mean_similarity_to_known,median_similarity_to_known,min_similarity_to_known,passes_max_sim_threshold,global_novelty_score
+1,raw_ai_theories,perplexity-sonar-pro,Resonant Binding Field Theory (RBFT),Electromagnetic Field Theories,0.702568,0.42553613,0.41957325,0.2687923,False,0.57446384
+2,raw_ai_theories,gemini-3.1-pro-preview,Analog-Discrete Friction Theory (ADFT),Non-Computability and Consciousness Limits,0.5339372,0.42730737,0.4297095,0.27663,False,0.57269263
+3,raw_ai_theories,deepseek-v3.2,Neural Resonance Field Theory (NRFT),Electromagnetic Field Theories,0.68071145,0.42966422,0.40771794,0.29158738,False,0.57033575
+4,raw_ai_theories,gemini-3.1-pro-preview,Chronotopic Interference Theory (CIT),Synchrony and Binding-by-Synchrony,0.6326133,0.43082067,0.4170053,0.28591937,False,0.5691793
+5,raw_ai_theories,gpt-5.2,Causal Sketch Theory (CST) Of Consciousness (CST),Integrated Information Theory,0.56968784,0.43087506,0.43022043,0.3076792,False,0.56912494
+6,raw_ai_theories,claude-3.7-sonnet,Quantum Coherence Threshold Theory (QCTT),Quantum Consciousness Theories,0.71657455,0.43532932,0.4223161,0.26939964,False,0.5646707
+7,raw_ai_theories,claude-3.7-sonnet,Resonant Field Integration Theory (RFIT),Electromagnetic Field Theories,0.6733214,0.4386668,0.41415054,0.2871724,False,0.5613332
+8,raw_ai_theories,mistral-large,Temporal Recurrence Binding Theory (TRBT),Synchrony and Binding-by-Synchrony,0.7030523,0.44116655,0.4392302,0.2827658,False,0.5588335
+9,raw_ai_theories,gpt-5.2,Dissipative Self-Metering Theory (DSMT),Free Energy Principle and Active Inference,0.5909034,0.44257087,0.43505245,0.3133508,False,0.55742913
+10,raw_ai_theories,perplexity-sonar-pro,Temporal Binding Wave Theory (TBWT),Electromagnetic Field Theories,0.69090223,0.4439414,0.42834663,0.27466375,False,0.5560586
+11,raw_ai_theories,gemini-3.1-pro-preview,Topological Frustration Theory (TFT),Mind-Centered Structural Theories,0.5783802,0.44643643,0.4379266,0.23276202,False,0.5535636
+12,raw_ai_theories,claude-3.7-sonnet,Quantum Coherence Resonance Theory (QCRT),Orchestrated Objective Reduction,0.74417114,0.4478117,0.43581107,0.27924752,False,0.5521883
+13,raw_ai_theories,gemini-3.1-pro-preview,Dimensional Residual Theory (DRT),Conscious Pilot Theory,0.5822041,0.44905642,0.4485504,0.28421342,False,0.5509436
+14,raw_ai_theories,perplexity-sonar-pro,Holoinformative Resonance Theory (HRT),Electromagnetic Field Theories,0.6328013,0.44941795,0.43423593,0.3185747,False,0.55058205
+15,raw_ai_theories,claude-3.7-sonnet,Quantum Eigenstate Collapse Theory Of Consciousness (QECTC),Quantum Consciousness Theories,0.7406525,0.45177823,0.43888375,0.29561234,False,0.54822177
+16,raw_ai_theories,deepseek-v3.2,Quantum Entanglement Resonance Theory (QERT),Quantum Consciousness Theories,0.80048907,0.45198533,0.4373563,0.29976842,False,0.54801464
+17,raw_ai_theories,claude-3.7-sonnet,Resonant Field Emergence Theory (RFET),Synchrony and Binding-by-Synchrony,0.6764581,0.45201898,0.43660605,0.2996306,False,0.547981
+18,raw_ai_theories,gpt-5.2,Neural Gauge Invariance Theory (NGIT),Synchrony and Binding-by-Synchrony,0.5608592,0.4526403,0.4555453,0.3190555,False,0.5473597
+19,raw_ai_theories,perplexity-sonar-pro,Quantum Resonance Field Theory (QRFT),Quantum Consciousness Theories,0.706179,0.45368537,0.4396149,0.30209702,False,0.5463146
+20,raw_ai_theories,gpt-5.2,Topological Closure Theory (TCT) Of Consciousness (TCT),Electromagnetic Field Theories,0.63959646,0.45422682,0.45925432,0.32950917,False,0.54577315
+21,raw_ai_theories,claude-3.7-sonnet,Resonant Field Emergence Theory (RFET),Synchrony and Binding-by-Synchrony,0.65742946,0.4557396,0.43586326,0.30040237,False,0.5442604
+22,raw_ai_theories,gemini-3.1-pro-preview,Topological Friction Theory (TFT),Dynamic Core Hypothesis,0.57661486,0.45827398,0.4682929,0.3045597,False,0.541726
+23,raw_ai_theories,gemini-3.1-pro-preview,Thermodynamic Frustration Theory (TFT),Free Energy Principle and Active Inference,0.6010528,0.45877025,0.45279115,0.29190564,False,0.5412297
+24,raw_ai_theories,perplexity-sonar-pro,Temporal Binding Field Theory (TBFT),Synchrony and Binding-by-Synchrony,0.76941794,0.4589407,0.4559963,0.28809667,False,0.54105926
+25,raw_ai_theories,mistral-large,Dynamic Resonance Theory Of Consciousness (DRTC),Synchrony and Binding-by-Synchrony,0.70650923,0.45915374,0.45886266,0.2783255,False,0.5408462
+26,raw_ai_theories,claude-3.7-sonnet,Resonant Embodiment Theory Of Consciousness (RET),Adaptive Resonance Theory of Consciousness,0.6725496,0.46041805,0.4562431,0.33729088,False,0.53958195
+27,raw_ai_theories,mistral-large,Dynamic Resonance Theory Of Consciousness (DRTC),Adaptive Resonance Theory of Consciousness,0.68478066,0.4607691,0.45241335,0.29033947,False,0.53923094
+28,raw_ai_theories,perplexity-sonar-pro,Resonant Field Theory Of Consciousness (RFT),Adaptive Resonance Theory of Consciousness,0.66149217,0.4617214,0.45525715,0.32158864,False,0.5382786
+29,raw_ai_theories,deepseek-v3.2,Dynamic Resonance Field Theory (DRFT),Electromagnetic Field Theories,0.67346644,0.4624517,0.45352527,0.30481434,False,0.5375483
+30,raw_ai_theories,perplexity-sonar-pro,Resonant Binding Field Theory (RBFT),Synchrony and Binding-by-Synchrony,0.7473371,0.46274093,0.45488292,0.30050483,False,0.5372591
+31,raw_ai_theories,gpt-5.2,Entropy-Gradient Manifold Theory (EGMT),Dynamic Core Hypothesis,0.61776227,0.46296862,0.46867475,0.28417525,False,0.5370314
+32,raw_ai_theories,gemini-3.1-pro-preview,Temporal Phase-Friction Theory (TPFT),Synchrony and Binding-by-Synchrony,0.6763251,0.46401924,0.44912666,0.30387345,False,0.53598076
+33,raw_ai_theories,deepseek-v3.2,Dimensional Resonance Theory Of Consciousness (DRTC),Adaptive Resonance Theory of Consciousness,0.6343764,0.46454015,0.45271677,0.31899282,False,0.5354599
+34,raw_ai_theories,claude-3.7-sonnet,Resonant Field Synchronization Theory (RFST),Orchestrated Objective Reduction,0.694313,0.46494865,0.43467844,0.30203807,False,0.53505135
+35,raw_ai_theories,gpt-5.2,Order-Parameter Phenomenology (OPP),Synchrony and Binding-by-Synchrony,0.5997348,0.46656367,0.46297863,0.34582615,False,0.5334363
+36,raw_ai_theories,gpt-5.2,Reflexive State-Space Topology Theory (RSST),Mind-Centered Structural Theories,0.5999423,0.4673585,0.4640271,0.33586735,False,0.53264153
+37,raw_ai_theories,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Adaptive Resonance Theory of Consciousness,0.61883837,0.4676544,0.4668805,0.2997524,False,0.5323456
+38,raw_ai_theories,claude-3.7-sonnet,Quantum Resonance Field Theory Of Consciousness (QRFT),Quantum Consciousness Theories,0.74419165,0.46807566,0.45831043,0.29635942,False,0.53192437
+39,raw_ai_theories,claude-3.7-sonnet,Quantum Coherent Criticality Theory (QCCT),Quantum Consciousness Theories,0.7324611,0.4690022,0.4629488,0.31349808,False,0.5309978
+40,raw_ai_theories,mistral-large,Dynamic Resonance Theory Of Consciousness (DRTC),Synchrony and Binding-by-Synchrony,0.7294079,0.4697668,0.46201164,0.30402935,False,0.5302332
+41,raw_ai_theories,deepseek-v3.2,Resonant Phase Coherence Theory (RPCT),Synchrony and Binding-by-Synchrony,0.6708156,0.47065297,0.46115744,0.311244,False,0.52934706
+42,raw_ai_theories,claude-3.7-sonnet,Resonant Field Emergence Theory (RFET),Electromagnetic Field Theories,0.6992452,0.4715324,0.46303678,0.29924828,False,0.5284676
+43,raw_ai_theories,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Adaptive Resonance Theory of Consciousness,0.66236025,0.4730888,0.4791522,0.32190248,False,0.5269112
+44,raw_ai_theories,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Predictive Processing Theory of Consciousness,0.6085645,0.47314334,0.47041875,0.32474622,False,0.52685666
+45,raw_ai_theories,perplexity-sonar-pro,Dynamic Entanglement Theory Of Consciousness (DETC),Quantum Consciousness Theories,0.6655706,0.47324586,0.4585352,0.32275724,False,0.52675414
+46,raw_ai_theories,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Adaptive Resonance Theory of Consciousness,0.6631186,0.47367576,0.46588662,0.31172386,False,0.5263243
+47,raw_ai_theories,gpt-5.2,Intrinsic Manifold Metric Theory (IMMT),Physicalist Structural Theories,0.5851355,0.47460648,0.47581187,0.33081406,False,0.5253935
+48,raw_ai_theories,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Adaptive Resonance Theory of Consciousness,0.6388948,0.47464982,0.4760789,0.31836534,False,0.5253502
+49,raw_ai_theories,perplexity-sonar-pro,Dynamic Resonance Binding Theory (DRBT),Synchrony and Binding-by-Synchrony,0.70371646,0.47490382,0.47118956,0.29991713,False,0.5250962
+50,raw_ai_theories,deepseek-v3.2,Resonant Integration Field Theory (RIFT),Synchrony and Binding-by-Synchrony,0.6287427,0.47570366,0.46763787,0.3112408,False,0.52429634
+51,raw_ai_theories,gpt-5.2,Thermodynamic Closure Theory Of Consciousness (TCTC),Dynamic Core Hypothesis,0.57866824,0.47586432,0.48314923,0.31381524,False,0.5241357
+52,raw_ai_theories,gemini-3.1-pro-preview,Temporal Shear And Thermodynamic Resolution Theory (TSTRT),Dynamic Core Hypothesis,0.63211155,0.47626188,0.4825166,0.31483287,False,0.52373815
+53,raw_ai_theories,mistral-large,Temporal Recursive Binding Theory (TRBT),Local Recurrency Model of the Brain,0.6982688,0.47646764,0.4813013,0.3092519,False,0.5235324
+54,raw_ai_theories,gpt-5.2,Neural Gauge Symmetry Theory Of Consciousness (NGST),Synchrony and Binding-by-Synchrony,0.6022845,0.476595,0.47149295,0.32953566,False,0.52340496
+55,raw_ai_theories,gemini-3.1-pro-preview,Temporal Friction Theory (TFT),Synchrony and Binding-by-Synchrony,0.6965766,0.4770136,0.48579764,0.28655797,False,0.5229864
+56,raw_ai_theories,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Adaptive Resonance Theory of Consciousness,0.64872766,0.4778059,0.47734228,0.29398865,False,0.5221941
+57,raw_ai_theories,gpt-5.2,Counterfactual Closure Theory (CCT),Predictive Processing Theory of Consciousness,0.6356846,0.47799876,0.4751841,0.3520624,False,0.52200127
+58,raw_ai_theories,deepseek-v3.2,Consciousness As Dynamic Information Geometry (DIG),Mind-Centered Structural Theories,0.60753566,0.47801092,0.47887862,0.35405952,False,0.5219891
+59,raw_ai_theories,gpt-5.2,Gauge-Invariant Information Geometry Theory (GIGT),Dynamic Core Hypothesis,0.58103704,0.47849855,0.4822272,0.34253335,False,0.5215014
+60,raw_ai_theories,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Adaptive Resonance Theory of Consciousness,0.6588098,0.47852322,0.47785354,0.32193464,False,0.52147675
+61,raw_ai_theories,gemini-3.1-pro-preview,Topological Causal Enclosure Theory (TCET),Mind-Centered Structural Theories,0.607978,0.47911698,0.4785688,0.34635383,False,0.520883
+62,raw_ai_theories,claude-3.7-sonnet,Resonant Symmetry-Breaking Theory Of Consciousness (RSBT),Adaptive Resonance Theory of Consciousness,0.6488636,0.47923067,0.48026055,0.30536816,False,0.52076936
+63,raw_ai_theories,deepseek-v3.2,Resonant Emergence Theory (RET),Adaptive Resonance Theory of Consciousness,0.65512204,0.4793806,0.47456703,0.3740664,False,0.5206194
+64,raw_ai_theories,claude-3.7-sonnet,Quantum Resonance Field Theory Of Consciousness (QRF),Quantum Consciousness Theories,0.75169426,0.47967023,0.46470603,0.32163498,False,0.5203298
+65,raw_ai_theories,perplexity-sonar-pro,Resonant Binding Dynamics (RBD) Theory (RBD),Synchrony and Binding-by-Synchrony,0.692097,0.4810696,0.47737294,0.30696255,False,0.51893044
+66,raw_ai_theories,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Adaptive Resonance Theory of Consciousness,0.6575327,0.4817292,0.48242947,0.32475376,False,0.5182708
+67,raw_ai_theories,mistral-large,Temporal Recursive Binding Theory (TRBT),Synchrony and Binding-by-Synchrony,0.6778427,0.48177892,0.48289752,0.34496123,False,0.5182211
+68,raw_ai_theories,mistral-large,Temporal Recursive Binding Theory (TRBT),Local Recurrency Model of the Brain,0.70359457,0.4826323,0.48534912,0.31666046,False,0.5173677
+69,raw_ai_theories,gemini-3.1-pro-preview,Topological Dimensional Collapse Theory (TDCT),Dynamic Core Hypothesis,0.6441547,0.48269048,0.48553628,0.30303022,False,0.51730955
+70,raw_ai_theories,mistral-large,Temporal Recursive Binding Theory (TRBT),Synchrony and Binding-by-Synchrony,0.7112176,0.48338166,0.48596913,0.3001775,False,0.5166184
+71,raw_ai_theories,perplexity-sonar-pro,Temporal Binding Account Of Consciousness (TBAC),Synchrony and Binding-by-Synchrony,0.7240889,0.48372248,0.48435536,0.30999938,False,0.51627755
+72,raw_ai_theories,gemini-3.1-pro-preview,Causal Friction Theory (CFT),Physicalist Structural Theories,0.61900544,0.48372543,0.48370415,0.34560138,False,0.5162746
+73,raw_ai_theories,gpt-5.2,Gauge-Invariant Manifold Theory (GIMT) Of Consciousness (GIMT),Local Recurrency Model of the Brain,0.6111129,0.48408252,0.48114792,0.3293685,False,0.5159175
+74,raw_ai_theories,gemini-3.1-pro-preview,Topological Void Theory (TVT),Conscious Pilot Theory,0.5981413,0.48451617,0.49101108,0.3411603,False,0.51548386
+75,raw_ai_theories,gemini-3.1-pro-preview,Chrono-Entropic Tension Theory (CETT),Dynamic Core Hypothesis,0.62831867,0.4855338,0.497285,0.29945987,False,0.51446617
+76,raw_ai_theories,mistral-large,Dynamic Resonance Theory Of Consciousness (DRTC),Synchrony and Binding-by-Synchrony,0.7207001,0.48584744,0.47979197,0.31227416,False,0.5141525
+77,raw_ai_theories,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Adaptive Resonance Theory of Consciousness,0.70253795,0.48587543,0.47923416,0.31888896,False,0.5141246
+78,raw_ai_theories,gpt-5.2,Counterfactual Sensitivity Field Theory (CSFT),Self-Representational Theory,0.6381664,0.48608565,0.48619074,0.32511133,False,0.51391435
+79,raw_ai_theories,perplexity-sonar-pro,Neural Resonance Field Theory (NRFT),Synchrony and Binding-by-Synchrony,0.7595352,0.48641244,0.48271614,0.32382816,False,0.5135876
+80,raw_ai_theories,mistral-large,Temporal Recursive Binding Theory (TRBT),Synchrony and Binding-by-Synchrony,0.7269536,0.48647434,0.48922852,0.33286434,False,0.51352566
+81,raw_ai_theories,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Adaptive Resonance Theory of Consciousness,0.67071986,0.48662165,0.47683936,0.32643825,False,0.5133784
+82,raw_ai_theories,perplexity-sonar-pro,Temporal Binding Resonance Theory (TBRT),Synchrony and Binding-by-Synchrony,0.734429,0.48733884,0.47667176,0.32923496,False,0.51266116
+83,raw_ai_theories,deepseek-v3.2,Resonant Integration Field Theory (RIFT),Adaptive Resonance Theory of Consciousness,0.6071688,0.4873601,0.48232496,0.33416045,False,0.5126399
+84,raw_ai_theories,gemini-3.1-pro-preview,Chronodynamic Interference Theory (CIT),Synchrony and Binding-by-Synchrony,0.6764469,0.48778802,0.47703862,0.346948,False,0.512212
+85,raw_ai_theories,deepseek-v3.2,Consciousness As Causal Geometry (CCG),Physicalist Structural Theories,0.6062469,0.48788252,0.48376638,0.3707682,False,0.5121175
+86,raw_ai_theories,deepseek-v3.2,Resonant Temporal Binding Theory (RTBT),Synchrony and Binding-by-Synchrony,0.7145921,0.48871937,0.4814924,0.33073506,False,0.51128066
+87,raw_ai_theories,deepseek-v3.2,Resonant Phase Coherence Theory (RPCT),Synchrony and Binding-by-Synchrony,0.7276595,0.4889379,0.47783643,0.31304628,False,0.5110621
+88,raw_ai_theories,gpt-5.2,Counterfactual Control Landscape Theory (CCLT),Predictive Processing Theory of Consciousness,0.61680293,0.48945054,0.49462953,0.35010135,False,0.5105494
+89,raw_ai_theories,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Adaptive Resonance Theory of Consciousness,0.6872567,0.48989433,0.48358792,0.33613765,False,0.51010567
+90,raw_ai_theories,deepseek-v3.2,Resonant Integration Theory (RIT),Adaptive Resonance Theory of Consciousness,0.6969613,0.49002072,0.48030904,0.33701587,False,0.50997925
+91,raw_ai_theories,mistral-large,Dynamic Resonance Theory Of Consciousness (DRTC),Adaptive Resonance Theory of Consciousness,0.6883927,0.49033272,0.49007976,0.32355103,False,0.5096673
+92,raw_ai_theories,claude-3.7-sonnet,Quantum Coherence Collapse Theory (QCCT),Quantum Consciousness Theories,0.75221705,0.4912819,0.49111998,0.31038752,False,0.50871813
+93,raw_ai_theories,gemini-3.1-pro-preview,Non-Orientable Topology Of Information (NOTI) Theory (NOTI),Mind-Centered Structural Theories,0.60802114,0.49175984,0.4904701,0.359434,False,0.50824016
+94,raw_ai_theories,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Adaptive Resonance Theory of Consciousness,0.69121337,0.4921443,0.49632153,0.32139704,False,0.5078557
+95,raw_ai_theories,claude-3.7-sonnet,Resonant Field Emergence Theory (RFET),Synchrony and Binding-by-Synchrony,0.7044788,0.49218592,0.4895537,0.33073804,False,0.50781405
+96,raw_ai_theories,llama-3.3-70b-instruct,Resonant Harmonization Theory (RHT),Synchrony and Binding-by-Synchrony,0.74705166,0.4925516,0.49028292,0.29305547,False,0.50744843
+97,raw_ai_theories,perplexity-sonar-pro,Dynamic Binding Resonance Theory (DBRT),Synchrony and Binding-by-Synchrony,0.77658975,0.49318045,0.50414455,0.31426263,False,0.50681955
+98,raw_ai_theories,mistral-large,Temporal Recursive Binding Theory (TRBT),Dynamic Core Hypothesis,0.7313498,0.49324533,0.49117213,0.3099047,False,0.50675464
+99,raw_ai_theories,gemini-3.1-pro-preview,Ontological Friction Theory (OFT),Physicalist Structural Theories,0.6269773,0.4934138,0.48508048,0.37427324,False,0.5065862
+100,raw_ai_theories,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Predictive Processing Theory of Consciousness,0.6149646,0.49342963,0.5033382,0.34438825,False,0.50657034
+101,raw_ai_theories,mistral-large,Dynamic Resonance Theory Of Consciousness (DRTC),Synchrony and Binding-by-Synchrony,0.6898807,0.4935997,0.49096584,0.33791795,False,0.5064003
+102,raw_ai_theories,mistral-large,Temporal Recursive Binding Theory (TRBT),Local Recurrency Model of the Brain,0.7151251,0.49404916,0.5045901,0.2776839,False,0.5059508
+103,raw_ai_theories,deepseek-v3.2,Resonant Binding Theory (RBT),Adaptive Resonance Theory of Consciousness,0.6940797,0.49422437,0.47933298,0.32942596,False,0.50577563
+104,raw_ai_theories,deepseek-v3.2,Temporal Resonance Binding Theory (TRBT),Synchrony and Binding-by-Synchrony,0.74503064,0.49446204,0.48543912,0.3217931,False,0.505538
+105,raw_ai_theories,llama-3.3-70b-instruct,Echo-Flux Theory (EFT),Local Recurrent Processing Theory,0.6753052,0.49512962,0.50629926,0.3222182,False,0.5048704
+106,raw_ai_theories,claude-3.7-sonnet,Resonant Field Propagation Theory (RFPT),Electromagnetic Field Theories,0.707133,0.4951549,0.48538804,0.30546302,False,0.50484514
+107,raw_ai_theories,gemini-3.1-pro-preview,Counterfactual Exclusion Theory (CET),Predictive Processing Theory of Consciousness,0.6101943,0.4956236,0.497285,0.34831756,False,0.5043764
+108,raw_ai_theories,perplexity-sonar-pro,Autopoietic Uncertainty Modulation Theory (AUMT),Predictive Processing Theory of Consciousness,0.72038007,0.49566308,0.49852088,0.3698182,False,0.50433695
+109,raw_ai_theories,claude-3.7-sonnet,Temporal Binding Field Theory (TBFT),Synchrony and Binding-by-Synchrony,0.73394793,0.49643123,0.48181516,0.30898649,False,0.50356877
+110,raw_ai_theories,perplexity-sonar-pro,Dynamic Binding Resonance Theory (DBRT),Synchrony and Binding-by-Synchrony,0.7754617,0.4966417,0.5067953,0.33400723,False,0.5033583
+111,raw_ai_theories,deepseek-v3.2,Consciousness As Topological Invariant Theory (CTIT),Dynamic Core Hypothesis,0.6703341,0.49749914,0.49440423,0.31213474,False,0.5025009
+112,raw_ai_theories,perplexity-sonar-pro,Strange Loop Theory Of Consciousness (SLT),Mind-Centered Structural Theories,0.63782835,0.49795756,0.49439892,0.3504015,False,0.5020424
+113,raw_ai_theories,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Synchrony and Binding-by-Synchrony,0.66115344,0.49978912,0.4963705,0.32120228,False,0.5002109
+114,raw_ai_theories,deepseek-v3.2,Resonant Boundary Theory (RBT),Dynamic Core Hypothesis,0.6278199,0.4999166,0.4899651,0.34361044,False,0.5000834
+115,raw_ai_theories,gpt-5.2,Invariant Dynamics Theory (IDT) Of Consciousness (IDT),Mind-Centered Structural Theories,0.6124928,0.5009521,0.4946227,0.40185905,False,0.49904788
+116,raw_ai_theories,mistral-large,Temporal Recursive Binding Theory (TRBT),Synchrony and Binding-by-Synchrony,0.7227701,0.5017435,0.5089281,0.33344877,False,0.4982565
+117,raw_ai_theories,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Adaptive Resonance Theory of Consciousness,0.66579187,0.502487,0.4947691,0.31173974,False,0.497513
+118,raw_ai_theories,gpt-5.2,Counterfactual Topology Theory (CTT) Of Consciousness (CTT),Predictive Processing Theory of Consciousness,0.624593,0.5028399,0.51455116,0.3632511,False,0.49716008
+119,raw_ai_theories,mistral-large,Temporal Recurrence Binding Theory (TRBT),Local Recurrency Model of the Brain,0.72780615,0.5029074,0.50520575,0.31586742,False,0.4970926
+120,raw_ai_theories,gpt-5.2,Causal Bottleneck Identity Theory (CBIT),Conscious Pilot Theory,0.6117503,0.5033587,0.5023724,0.32206795,False,0.49664128
+121,raw_ai_theories,claude-3.7-sonnet,Resonant Phase Coherence Theory Of Consciousness (RPCT),Synchrony and Binding-by-Synchrony,0.68641865,0.50350237,0.5018836,0.34669566,False,0.49649763
+122,raw_ai_theories,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Adaptive Resonance Theory of Consciousness,0.7086214,0.5038972,0.50656563,0.3251084,False,0.4961028
+123,raw_ai_theories,gemini-3.1-pro-preview,Temporal Topology Isolation Theory (TTIT),Dynamic Core Hypothesis,0.6281173,0.50432324,0.5116574,0.34353048,False,0.49567676
+124,raw_ai_theories,mistral-large,Temporal Recurrence Binding Theory (TRBT),Local Recurrency Model of the Brain,0.679052,0.5043762,0.5012459,0.3602279,False,0.49562383
+125,raw_ai_theories,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Adaptive Resonance Theory of Consciousness,0.6445379,0.5043969,0.5118022,0.31679356,False,0.49560308
+126,raw_ai_theories,llama-3.3-70b-instruct,Fractal Resonance Theory (FRT),Mind-Centered Structural Theories,0.62698746,0.50466204,0.50555027,0.3611613,False,0.49533796
+127,raw_ai_theories,perplexity-sonar-pro,Resonant Binding Theory (RBT),Synchrony and Binding-by-Synchrony,0.7001015,0.5056085,0.51446426,0.32160822,False,0.4943915
+128,raw_ai_theories,gemini-3.1-pro-preview,Temporal Shear Theory (TST),Microconsciousness Theory,0.6291572,0.5059664,0.5143686,0.36897972,False,0.49403358
+129,raw_ai_theories,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Adaptive Resonance Theory of Consciousness,0.66766375,0.5060493,0.50795305,0.34394926,False,0.49395072
+130,raw_ai_theories,deepseek-v3.2,Resonant Synchrony Theory Of Consciousness (RSTC),Synchrony and Binding-by-Synchrony,0.72562987,0.50707394,0.5082177,0.3452053,False,0.49292606
+131,raw_ai_theories,perplexity-sonar-pro,Temporal Depth Theory Of Consciousness (TDT),Local Recurrent Processing Theory,0.6572537,0.5071814,0.51096094,0.34753156,False,0.4928186
+132,raw_ai_theories,gemini-3.1-pro-preview,Topological Frustration Resolution Theory (TFRT),Conscious Pilot Theory,0.65401435,0.5074266,0.51000345,0.36439252,False,0.49257338
+133,raw_ai_theories,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Synchrony and Binding-by-Synchrony,0.6672297,0.5076782,0.50848067,0.32134312,False,0.4923218
+134,raw_ai_theories,perplexity-sonar-pro,Resonant Binding Theory (RBT),Synchrony and Binding-by-Synchrony,0.77999586,0.5076961,0.49035406,0.3425675,False,0.4923039
+135,raw_ai_theories,perplexity-sonar-pro,Temporal Binding Resonance Theory (TBRT),Synchrony and Binding-by-Synchrony,0.77561545,0.50787836,0.5082952,0.32288992,False,0.49212164
+136,raw_ai_theories,perplexity-sonar-pro,Resonant Binding Dynamics Theory (RBDT),Adaptive Resonance Theory of Consciousness,0.6958121,0.5085716,0.5000778,0.35982123,False,0.49142838
+137,raw_ai_theories,claude-3.7-sonnet,Temporal Binding Resonance Theory (TBRT),Synchrony and Binding-by-Synchrony,0.7619978,0.50863564,0.5181427,0.3523476,False,0.49136436
+138,raw_ai_theories,gpt-5.2,Thermodynamic Curvature Theory Of Consciousness (TCTC),Free Energy Principle and Active Inference,0.6486639,0.5087243,0.51507795,0.3363909,False,0.49127573
+139,raw_ai_theories,deepseek-v3.2,Resonant Binding Theory (RBT),Synchrony and Binding-by-Synchrony,0.7515665,0.5108458,0.50019777,0.31866106,False,0.48915422
+140,raw_ai_theories,deepseek-v3.2,Somatic Resonance Hypothesis (SRH),Adaptive Resonance Theory of Consciousness,0.65328014,0.5109558,0.5120213,0.36467928,False,0.4890442
+141,raw_ai_theories,gemini-3.1-pro-preview,Causal Friction Theory (CFT),Physicalist Structural Theories,0.6553723,0.5114239,0.5104009,0.37447667,False,0.4885761
+142,raw_ai_theories,claude-3.7-sonnet,Resonant Symmetry-Breaking Theory Of Consciousness (RSBT),Adaptive Resonance Theory of Consciousness,0.6723435,0.51238734,0.5022732,0.39696345,False,0.48761266
+143,raw_ai_theories,gpt-5.2,Causal Quotient Theory Of Consciousness (CQTC),Dynamic Core Hypothesis,0.614403,0.51374894,0.5163512,0.33434433,False,0.48625106
+144,raw_ai_theories,deepseek-v3.2,Substrate-Independent State Coherence Theory (SISCT),Synchrony and Binding-by-Synchrony,0.69245636,0.5138688,0.52180505,0.31073344,False,0.4861312
+145,raw_ai_theories,mistral-large,Dynamic Resonance Theory Of Consciousness (DRTC),Synchrony and Binding-by-Synchrony,0.7127243,0.51395077,0.5166464,0.33299947,False,0.48604923
+146,raw_ai_theories,gpt-5.2,Interventional Signature Theory (IST),Predictive Processing Theory of Consciousness,0.6542426,0.5143509,0.52304775,0.33642414,False,0.4856491
+147,raw_ai_theories,deepseek-v3.2,Dimensional Resonance Theory (DRT),Adaptive Resonance Theory of Consciousness,0.73161185,0.5149549,0.50710547,0.39811432,False,0.48504508
+148,raw_ai_theories,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Self-Representational Theory,0.6457933,0.5155999,0.52542603,0.35519305,False,0.4844001
+149,raw_ai_theories,perplexity-sonar-pro,Dynamic Binding Resonance Theory (DBRT),Adaptive Resonance Theory of Consciousness,0.7100718,0.5156091,0.5171647,0.3525272,False,0.4843909
+150,raw_ai_theories,mistral-large,Temporal Recursive Binding Theory (TRBT),Local Recurrency Model of the Brain,0.7185365,0.51631117,0.51746744,0.34584564,False,0.48368883
+151,raw_ai_theories,llama-3.3-70b-instruct,Harmonization Theory Of Consciousness (HTC),Synchrony and Binding-by-Synchrony,0.7057506,0.51663524,0.5301027,0.3319491,False,0.48336476
+152,raw_ai_theories,claude-3.7-sonnet,Resonant Constraint Theory Of Consciousness (RCT),Free Energy Principle and Active Inference,0.6406889,0.51718026,0.5122402,0.41721135,False,0.48281974
+153,raw_ai_theories,gpt-5.2,Control-Theoretic Hidden-Mode Theory (CHMT),Predictive Processing Theory of Consciousness,0.6517863,0.51720667,0.5195867,0.35226637,False,0.48279333
+154,raw_ai_theories,claude-3.7-sonnet,Resonant Criticality Theory Of Consciousness (RCT),Mind-Centered Structural Theories,0.6657093,0.51736265,0.51874864,0.3746091,False,0.48263735
+155,raw_ai_theories,mistral-large,Temporal Recursive Binding Theory (TRBT),Local Recurrency Model of the Brain,0.7077161,0.51881963,0.528436,0.36302996,False,0.48118037
+156,raw_ai_theories,gpt-5.2,Intrinsic Reference Frame Theory (IRFT),Relational Processing Theory,0.64808965,0.51958364,0.51956385,0.33993602,False,0.48041636
+157,raw_ai_theories,perplexity-sonar-pro,Resonant Binding Theory (RBT),Synchrony and Binding-by-Synchrony,0.71238804,0.5204696,0.5232893,0.37169844,False,0.4795304
+158,raw_ai_theories,claude-3.7-sonnet,Resonant Interference Theory Of Consciousness (RITC),Synchrony and Binding-by-Synchrony,0.6578486,0.5242609,0.5232558,0.37399516,False,0.47573912
+159,raw_ai_theories,mistral-large,Temporal Recurrence Binding Theory (TRBT),Dynamic Core Hypothesis,0.67182195,0.5260681,0.53597176,0.37325138,False,0.4739319
+160,raw_ai_theories,gpt-5.2,Intrinsic Reference Frame Theory (IRFT),Mind-Centered Structural Theories,0.64467776,0.5299915,0.53835195,0.3992629,False,0.4700085
+161,raw_ai_theories,deepseek-v3.2,Consciousness As Recursive Self-Simulation (CRSS),Self-Representational Theory,0.66683865,0.5305113,0.5274706,0.3809234,False,0.46948868
+162,raw_ai_theories,gemini-3.1-pro-preview,Counterfactual Interference Friction Theory (CIFT),Dynamic Core Hypothesis,0.65549874,0.5305218,0.5341728,0.39285058,False,0.4694782
+163,raw_ai_theories,mistral-large,Temporal Recursive Binding Theory (TRBT),Local Recurrency Model of the Brain,0.7094044,0.53111345,0.526919,0.36597183,False,0.46888655
+164,raw_ai_theories,claude-3.7-sonnet,Resonant Constraint Emergence Theory (RCET),Adaptive Resonance Theory of Consciousness,0.6709777,0.53371906,0.53569853,0.36658192,False,0.46628094
+165,raw_ai_theories,mistral-large,Temporal Recursive Binding Theory (TRBT),Local Recurrency Model of the Brain,0.69026345,0.5337521,0.54007775,0.37581995,False,0.46624792
+166,raw_ai_theories,gemini-3.1-pro-preview,Chrono-Inertial Frame Theory (CIFT),Synchrony and Binding-by-Synchrony,0.7068286,0.5353014,0.54153305,0.37898314,False,0.4646986
+167,raw_ai_theories,mistral-large,Temporal Recursive Binding Theory (TRBT),Local Recurrency Model of the Brain,0.70911944,0.54031634,0.5451169,0.34738678,False,0.45968366
+168,raw_ai_theories,deepseek-v3.2,Substrate-Independent Coherence Theory (SICT),Predictive Processing Theory of Consciousness,0.6920039,0.5473476,0.5588803,0.39208823,False,0.4526524

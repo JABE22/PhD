@@ -1,0 +1,169 @@
+sample_id,model,theory_name,best_family,sim,traceable_lenient_0p30,traceable_strict_0p70,alias_hits,ont_overlap,mech_overlap,label_lenient,novelty
+20,gpt-5.2,Neural Gauge Invariance Theory (NGIT),Synchrony and Binding-by-Synchrony,0.561,True,False,0,0.0,0.0,DERIVATIVE,0.607
+22,gemini-3.1-pro-preview,Topological Frustration Theory (TFT),Mind-Centered Structural Theories,0.578,True,False,0,0.0,0.0,DERIVATIVE,0.595
+14,gpt-5.2,Thermodynamic Closure Theory Of Consciousness (TCTC),Dynamic Core Hypothesis,0.579,True,False,0,0.0,0.0,DERIVATIVE,0.595
+4,gpt-5.2,Gauge-Invariant Information Geometry Theory (GIGT),Dynamic Core Hypothesis,0.581,True,False,0,0.0,0.0,DERIVATIVE,0.593
+20,gemini-3.1-pro-preview,Dimensional Residual Theory (DRT),Conscious Pilot Theory,0.582,True,False,0,0.0,0.0,DERIVATIVE,0.592
+21,gpt-5.2,Intrinsic Manifold Metric Theory (IMMT),Physicalist Structural Theories,0.585,True,False,0,0.0,0.0,DERIVATIVE,0.59
+8,gpt-5.2,Dissipative Self-Metering Theory (DSMT),Free Energy Principle and Active Inference,0.591,True,False,0,0.0,0.0,DERIVATIVE,0.586
+11,gpt-5.2,Reflexive State-Space Topology Theory (RSST),Mind-Centered Structural Theories,0.6,True,False,0,0.0,0.0,DERIVATIVE,0.58
+16,gpt-5.2,Order-Parameter Phenomenology (OPP),Synchrony and Binding-by-Synchrony,0.6,True,False,0,0.0,0.0,DERIVATIVE,0.58
+7,gpt-5.2,Neural Gauge Symmetry Theory Of Consciousness (NGST),Synchrony and Binding-by-Synchrony,0.602,True,False,0,0.0,0.0,DERIVATIVE,0.578
+20,deepseek-v3.2,Consciousness As Causal Geometry (CCG),Physicalist Structural Theories,0.606,True,False,0,0.0,0.0,DERIVATIVE,0.576
+13,deepseek-v3.2,Consciousness As Dynamic Information Geometry (DIG),Mind-Centered Structural Theories,0.608,True,False,0,0.0,0.0,DERIVATIVE,0.575
+13,gemini-3.1-pro-preview,Non-Orientable Topology Of Information (NOTI) Theory (NOTI),Mind-Centered Structural Theories,0.608,True,False,0,0.0,0.0,DERIVATIVE,0.574
+0,gemini-3.1-pro-preview,Counterfactual Exclusion Theory (CET),Predictive Processing Theory of Consciousness,0.61,True,False,0,0.0,0.0,DERIVATIVE,0.573
+5,gpt-5.2,Causal Bottleneck Identity Theory (CBIT),Conscious Pilot Theory,0.612,True,False,0,0.0,0.0,DERIVATIVE,0.572
+9,gpt-5.2,Invariant Dynamics Theory (IDT) Of Consciousness (IDT),Mind-Centered Structural Theories,0.612,True,False,0,0.0,0.0,DERIVATIVE,0.571
+18,gpt-5.2,Causal Quotient Theory Of Consciousness (CQTC),Dynamic Core Hypothesis,0.614,True,False,0,0.0,0.0,DERIVATIVE,0.57
+3,gpt-5.2,Causal Sketch Theory (CST) Of Consciousness (CST),Integrated Information Theory,0.57,True,False,0,0.0,0.333,DERIVATIVE,0.568
+12,gpt-5.2,Counterfactual Control Landscape Theory (CCLT),Predictive Processing Theory of Consciousness,0.617,True,False,0,0.0,0.0,DERIVATIVE,0.568
+10,gpt-5.2,Entropy-Gradient Manifold Theory (EGMT),Dynamic Core Hypothesis,0.618,True,False,0,0.0,0.0,DERIVATIVE,0.568
+1,gpt-5.2,Counterfactual Topology Theory (CTT) Of Consciousness (CTT),Predictive Processing Theory of Consciousness,0.625,True,False,0,0.0,0.0,DERIVATIVE,0.563
+3,llama-3.3-70b-instruct,Fractal Resonance Theory (FRT),Mind-Centered Structural Theories,0.627,True,False,0,0.0,0.0,DERIVATIVE,0.561
+18,gemini-3.1-pro-preview,Ontological Friction Theory (OFT),Physicalist Structural Theories,0.627,True,False,0,0.0,0.0,DERIVATIVE,0.561
+1,gemini-3.1-pro-preview,Temporal Topology Isolation Theory (TTIT),Dynamic Core Hypothesis,0.628,True,False,0,0.0,0.0,DERIVATIVE,0.56
+11,gemini-3.1-pro-preview,Temporal Shear Theory (TST),Microconsciousness Theory,0.629,True,False,0,0.0,0.0,DERIVATIVE,0.56
+19,gemini-3.1-pro-preview,Chronotopic Interference Theory (CIT),Synchrony and Binding-by-Synchrony,0.633,True,False,0,0.0,0.0,DERIVATIVE,0.557
+0,gpt-5.2,Counterfactual Closure Theory (CCT),Predictive Processing Theory of Consciousness,0.636,True,False,0,0.0,0.0,DERIVATIVE,0.555
+11,perplexity-sonar-pro,Strange Loop Theory Of Consciousness (SLT),Mind-Centered Structural Theories,0.638,True,False,0,0.0,0.0,DERIVATIVE,0.554
+6,claude-3.7-sonnet,Resonant Constraint Theory Of Consciousness (RCT),Free Energy Principle and Active Inference,0.641,True,False,0,0.0,0.0,DERIVATIVE,0.552
+2,gpt-5.2,Thermodynamic Curvature Theory Of Consciousness (TCTC),Free Energy Principle and Active Inference,0.649,True,False,0,0.0,0.0,DERIVATIVE,0.546
+19,gpt-5.2,Control-Theoretic Hidden-Mode Theory (CHMT),Predictive Processing Theory of Consciousness,0.652,True,False,0,0.0,0.0,DERIVATIVE,0.544
+17,gpt-5.2,Interventional Signature Theory (IST),Predictive Processing Theory of Consciousness,0.654,True,False,0,0.0,0.0,DERIVATIVE,0.542
+8,gemini-3.1-pro-preview,Counterfactual Interference Friction Theory (CIFT),Dynamic Core Hypothesis,0.655,True,False,0,0.0,0.0,DERIVATIVE,0.541
+12,perplexity-sonar-pro,Temporal Depth Theory Of Consciousness (TDT),Local Recurrent Processing Theory,0.657,True,False,0,0.0,0.0,DERIVATIVE,0.54
+15,claude-3.7-sonnet,Resonant Interference Theory Of Consciousness (RITC),Synchrony and Binding-by-Synchrony,0.658,True,False,0,0.0,0.0,DERIVATIVE,0.54
+3,claude-3.7-sonnet,Resonant Criticality Theory Of Consciousness (RCT),Mind-Centered Structural Theories,0.666,True,False,0,0.0,0.0,DERIVATIVE,0.534
+23,gpt-5.2,Gauge-Invariant Manifold Theory (GIMT) Of Consciousness (GIMT),Local Recurrency Model of the Brain,0.611,True,False,1,0.0,0.0,DERIVATIVE,0.522
+8,claude-3.7-sonnet,Resonant Phase Coherence Theory Of Consciousness (RPCT),Synchrony and Binding-by-Synchrony,0.686,True,False,0,0.0,0.0,DERIVATIVE,0.52
+0,perplexity-sonar-pro,Resonant Binding Dynamics (RBD) Theory (RBD),Synchrony and Binding-by-Synchrony,0.692,True,False,0,0.0,0.0,DERIVATIVE,0.516
+18,deepseek-v3.2,Substrate-Independent State Coherence Theory (SISCT),Synchrony and Binding-by-Synchrony,0.692,True,False,0,0.0,0.0,DERIVATIVE,0.515
+4,perplexity-sonar-pro,Holoinformative Resonance Theory (HRT),Electromagnetic Field Theories,0.633,True,False,1,0.0,0.0,DERIVATIVE,0.507
+23,perplexity-sonar-pro,Dynamic Resonance Binding Theory (DRBT),Synchrony and Binding-by-Synchrony,0.704,True,True,0,0.0,0.0,DERIVATIVE,0.507
+4,deepseek-v3.2,Dimensional Resonance Theory Of Consciousness (DRTC),Adaptive Resonance Theory of Consciousness,0.634,True,False,1,0.0,0.0,DERIVATIVE,0.506
+12,llama-3.3-70b-instruct,Harmonization Theory Of Consciousness (HTC),Synchrony and Binding-by-Synchrony,0.706,True,True,0,0.0,0.0,DERIVATIVE,0.506
+21,gemini-3.1-pro-preview,Chrono-Inertial Frame Theory (CIFT),Synchrony and Binding-by-Synchrony,0.707,True,True,0,0.0,0.0,DERIVATIVE,0.505
+6,gpt-5.2,Counterfactual Sensitivity Field Theory (CSFT),Self-Representational Theory,0.638,True,False,1,0.0,0.0,DERIVATIVE,0.503
+1,deepseek-v3.2,Resonant Temporal Binding Theory (RTBT),Synchrony and Binding-by-Synchrony,0.715,True,True,0,0.0,0.0,DERIVATIVE,0.5
+10,perplexity-sonar-pro,Temporal Binding Account Of Consciousness (TBAC),Synchrony and Binding-by-Synchrony,0.724,True,True,0,0.0,0.0,DERIVATIVE,0.493
+7,deepseek-v3.2,Resonant Emergence Theory (RET),Adaptive Resonance Theory of Consciousness,0.655,True,False,1,0.0,0.0,DERIVATIVE,0.491
+12,deepseek-v3.2,Dynamic Resonance Field Theory (DRFT),Electromagnetic Field Theories,0.673,True,False,1,0.0,0.0,DERIVATIVE,0.479
+1,claude-3.7-sonnet,Resonant Embodiment Theory Of Consciousness (RET),Adaptive Resonance Theory of Consciousness,0.673,True,False,1,0.0,0.0,DERIVATIVE,0.479
+9,deepseek-v3.2,Temporal Resonance Binding Theory (TRBT),Synchrony and Binding-by-Synchrony,0.745,True,True,0,0.0,0.0,DERIVATIVE,0.478
+17,gemini-3.1-pro-preview,Temporal Phase-Friction Theory (TPFT),Synchrony and Binding-by-Synchrony,0.676,True,False,1,0.0,0.0,DERIVATIVE,0.477
+11,llama-3.3-70b-instruct,Resonant Harmonization Theory (RHT),Synchrony and Binding-by-Synchrony,0.747,True,True,0,0.0,0.0,DERIVATIVE,0.477
+9,perplexity-sonar-pro,Temporal Binding Wave Theory (TBWT),Electromagnetic Field Theories,0.691,True,False,1,0.0,0.0,DERIVATIVE,0.466
+18,claude-3.7-sonnet,Resonant Field Synchronization Theory (RFST),Orchestrated Objective Reduction,0.694,True,False,1,0.0,0.0,DERIVATIVE,0.464
+6,deepseek-v3.2,Resonant Integration Theory (RIT),Adaptive Resonance Theory of Consciousness,0.697,True,False,1,0.0,0.0,DERIVATIVE,0.462
+8,perplexity-sonar-pro,Quantum Resonance Field Theory (QRFT),Quantum Consciousness Theories,0.706,True,True,1,0.0,0.0,DERIVATIVE,0.456
+23,claude-3.7-sonnet,Quantum Coherence Threshold Theory (QCTT),Quantum Consciousness Theories,0.717,True,True,1,0.0,0.0,DERIVATIVE,0.448
+11,deepseek-v3.2,Resonant Synchrony Theory Of Consciousness (RSTC),Synchrony and Binding-by-Synchrony,0.726,True,True,1,0.0,0.0,DERIVATIVE,0.442
+23,deepseek-v3.2,Dimensional Resonance Theory (DRT),Adaptive Resonance Theory of Consciousness,0.732,True,True,1,0.0,0.0,DERIVATIVE,0.438
+13,claude-3.7-sonnet,Quantum Eigenstate Collapse Theory Of Consciousness (QECTC),Quantum Consciousness Theories,0.741,True,True,1,0.0,0.0,DERIVATIVE,0.432
+0,claude-3.7-sonnet,Quantum Resonance Field Theory Of Consciousness (QRFT),Quantum Consciousness Theories,0.744,True,True,1,0.0,0.0,DERIVATIVE,0.429
+16,claude-3.7-sonnet,Quantum Coherence Resonance Theory (QCRT),Orchestrated Objective Reduction,0.744,True,True,1,0.0,0.0,DERIVATIVE,0.429
+5,claude-3.7-sonnet,Quantum Resonance Field Theory Of Consciousness (QRF),Quantum Consciousness Theories,0.752,True,True,1,0.0,0.0,DERIVATIVE,0.424
+19,claude-3.7-sonnet,Quantum Coherence Collapse Theory (QCCT),Quantum Consciousness Theories,0.752,True,True,1,0.0,0.0,DERIVATIVE,0.423
+2,deepseek-v3.2,Resonant Integration Field Theory (RIFT),Adaptive Resonance Theory of Consciousness,0.607,True,False,0,0.0,0.0,DERIVATIVE,0.407
+15,deepseek-v3.2,Resonant Integration Field Theory (RIFT),Synchrony and Binding-by-Synchrony,0.629,True,False,0,0.0,0.0,DERIVATIVE,0.396
+15,gpt-5.2,Intrinsic Reference Frame Theory (IRFT),Mind-Centered Structural Theories,0.645,True,False,0,0.0,0.0,DERIVATIVE,0.388
+20,claude-3.7-sonnet,Resonant Symmetry-Breaking Theory Of Consciousness (RSBT),Adaptive Resonance Theory of Consciousness,0.649,True,False,0,0.0,0.0,DERIVATIVE,0.386
+0,deepseek-v3.2,Resonant Phase Coherence Theory (RPCT),Synchrony and Binding-by-Synchrony,0.671,True,False,0,0.0,0.0,DERIVATIVE,0.375
+17,claude-3.7-sonnet,Resonant Symmetry-Breaking Theory Of Consciousness (RSBT),Adaptive Resonance Theory of Consciousness,0.672,True,False,0,0.0,0.0,DERIVATIVE,0.374
+1,perplexity-sonar-pro,Resonant Binding Field Theory (RBFT),Synchrony and Binding-by-Synchrony,0.747,True,True,0,0.0,0.0,DERIVATIVE,0.337
+5,deepseek-v3.2,Neural Resonance Field Theory (NRFT),Electromagnetic Field Theories,0.681,True,False,1,0.0,0.0,DERIVATIVE,0.335
+6,perplexity-sonar-pro,Resonant Binding Field Theory (RBFT),Electromagnetic Field Theories,0.703,True,True,1,0.0,0.0,DERIVATIVE,0.324
+3,deepseek-v3.2,Consciousness As Recursive Self-Simulation (CRSS),Self-Representational Theory,0.667,True,False,0,0.0,0.0,DERIVATIVE,0.32
+1,llama-3.3-70b-instruct,Echo-Flux Theory (EFT),Local Recurrent Processing Theory,0.675,True,False,0,0.0,0.0,DERIVATIVE,0.316
+17,deepseek-v3.2,Resonant Phase Coherence Theory (RPCT),Synchrony and Binding-by-Synchrony,0.728,True,True,1,0.0,0.0,DERIVATIVE,0.312
+8,deepseek-v3.2,Somatic Resonance Hypothesis (SRH),Adaptive Resonance Theory of Consciousness,0.653,True,False,1,0.0,0.0,DERIVATIVE,0.296
+18,perplexity-sonar-pro,Neural Resonance Field Theory (NRFT),Synchrony and Binding-by-Synchrony,0.76,True,True,1,0.0,0.0,DERIVATIVE,0.296
+14,perplexity-sonar-pro,Dynamic Entanglement Theory Of Consciousness (DETC),Quantum Consciousness Theories,0.666,True,False,1,0.0,0.0,DERIVATIVE,0.29
+10,claude-3.7-sonnet,Resonant Field Emergence Theory (RFET),Synchrony and Binding-by-Synchrony,0.657,True,False,0,0.0,0.0,DERIVATIVE,0.27
+12,claude-3.7-sonnet,Temporal Binding Resonance Theory (TBRT),Synchrony and Binding-by-Synchrony,0.762,True,True,0,0.0,0.0,DERIVATIVE,0.269
+9,mistral-large,Temporal Recurrence Binding Theory (TRBT),Dynamic Core Hypothesis,0.672,True,False,0,0.0,0.0,DERIVATIVE,0.265
+5,perplexity-sonar-pro,Temporal Binding Resonance Theory (TBRT),Synchrony and Binding-by-Synchrony,0.776,True,True,0,0.0,0.0,DERIVATIVE,0.264
+4,claude-3.7-sonnet,Resonant Field Emergence Theory (RFET),Synchrony and Binding-by-Synchrony,0.676,True,False,0,0.0,0.0,DERIVATIVE,0.263
+20,mistral-large,Temporal Recurrence Binding Theory (TRBT),Local Recurrency Model of the Brain,0.679,True,False,0,0.0,0.0,DERIVATIVE,0.262
+9,claude-3.7-sonnet,Quantum Coherent Criticality Theory (QCCT),Quantum Consciousness Theories,0.732,True,True,1,0.0,0.0,DERIVATIVE,0.262
+7,claude-3.7-sonnet,Resonant Field Emergence Theory (RFET),Synchrony and Binding-by-Synchrony,0.704,True,True,0,0.0,0.0,DERIVATIVE,0.253
+4,gemini-3.1-pro-preview,Analog-Discrete Friction Theory (ADFT),Non-Computability and Consciousness Limits,0.534,True,False,0,0.0,0.0,DERIVATIVE,0.25
+9,gemini-3.1-pro-preview,Topological Friction Theory (TFT),Dynamic Core Hypothesis,0.577,True,False,0,0.0,0.0,DERIVATIVE,0.239
+15,gemini-3.1-pro-preview,Topological Void Theory (TVT),Conscious Pilot Theory,0.598,True,False,0,0.0,0.0,DERIVATIVE,0.233
+3,gemini-3.1-pro-preview,Thermodynamic Frustration Theory (TFT),Free Energy Principle and Active Inference,0.601,True,False,0,0.0,0.0,DERIVATIVE,0.232
+2,gemini-3.1-pro-preview,Topological Causal Enclosure Theory (TCET),Mind-Centered Structural Theories,0.608,True,False,0,0.0,0.0,DERIVATIVE,0.23
+11,claude-3.7-sonnet,Resonant Field Emergence Theory (RFET),Electromagnetic Field Theories,0.699,True,False,1,0.0,0.0,DERIVATIVE,0.23
+16,perplexity-sonar-pro,Resonant Binding Theory (RBT),Synchrony and Binding-by-Synchrony,0.7,True,True,0,0.0,0.0,DERIVATIVE,0.228
+14,deepseek-v3.2,Resonant Boundary Theory (RBT),Dynamic Core Hypothesis,0.628,True,False,0,0.0,0.0,DERIVATIVE,0.224
+7,gemini-3.1-pro-preview,Chrono-Entropic Tension Theory (CETT),Dynamic Core Hypothesis,0.628,True,False,0,0.0,0.0,DERIVATIVE,0.224
+17,perplexity-sonar-pro,Resonant Binding Theory (RBT),Synchrony and Binding-by-Synchrony,0.712,True,True,0,0.0,0.0,DERIVATIVE,0.224
+16,gemini-3.1-pro-preview,Temporal Shear And Thermodynamic Resolution Theory (TSTRT),Dynamic Core Hypothesis,0.632,True,False,0,0.0,0.0,DERIVATIVE,0.223
+6,gemini-3.1-pro-preview,Topological Dimensional Collapse Theory (TDCT),Dynamic Core Hypothesis,0.644,True,False,0,0.0,0.0,DERIVATIVE,0.22
+21,mistral-large,Temporal Recurrence Binding Theory (TRBT),Local Recurrency Model of the Brain,0.728,True,True,1,0.0,0.0,DERIVATIVE,0.22
+16,deepseek-v3.2,Consciousness As Topological Invariant Theory (CTIT),Dynamic Core Hypothesis,0.67,True,False,0,0.0,0.0,DERIVATIVE,0.212
+21,deepseek-v3.2,Resonant Binding Theory (RBT),Synchrony and Binding-by-Synchrony,0.752,True,True,0,0.0,0.0,DERIVATIVE,0.212
+22,deepseek-v3.2,Resonant Binding Theory (RBT),Adaptive Resonance Theory of Consciousness,0.694,True,False,1,0.0,0.0,DERIVATIVE,0.208
+19,deepseek-v3.2,Substrate-Independent Coherence Theory (SICT),Predictive Processing Theory of Consciousness,0.692,True,False,0,0.0,0.0,DERIVATIVE,0.206
+14,gemini-3.1-pro-preview,Temporal Friction Theory (TFT),Synchrony and Binding-by-Synchrony,0.697,True,False,0,0.0,0.0,DERIVATIVE,0.205
+13,gpt-5.2,Topological Closure Theory (TCT) Of Consciousness (TCT),Electromagnetic Field Theories,0.64,True,False,1,0.0,0.0,DERIVATIVE,0.201
+21,perplexity-sonar-pro,Autopoietic Uncertainty Modulation Theory (AUMT),Predictive Processing Theory of Consciousness,0.72,True,True,0,0.0,0.0,DERIVATIVE,0.198
+22,perplexity-sonar-pro,Temporal Binding Field Theory (TBFT),Synchrony and Binding-by-Synchrony,0.769,True,True,0,0.0,0.0,DERIVATIVE,0.196
+19,perplexity-sonar-pro,Resonant Field Theory Of Consciousness (RFT),Adaptive Resonance Theory of Consciousness,0.661,True,False,1,0.0,0.0,DERIVATIVE,0.195
+6,mistral-large,Dynamic Resonance Theory Of Consciousness (DRTC),Synchrony and Binding-by-Synchrony,0.69,True,False,0,0.0,0.0,DERIVATIVE,0.195
+14,claude-3.7-sonnet,Resonant Constraint Emergence Theory (RCET),Adaptive Resonance Theory of Consciousness,0.671,True,False,1,0.0,0.0,DERIVATIVE,0.192
+22,claude-3.7-sonnet,Resonant Field Integration Theory (RFIT),Electromagnetic Field Theories,0.673,True,False,1,0.0,0.0,DERIVATIVE,0.191
+12,gemini-3.1-pro-preview,Chronodynamic Interference Theory (CIT),Synchrony and Binding-by-Synchrony,0.676,True,False,1,0.0,0.0,DERIVATIVE,0.191
+3,perplexity-sonar-pro,Resonant Binding Dynamics Theory (RBDT),Adaptive Resonance Theory of Consciousness,0.696,True,False,1,0.0,0.0,DERIVATIVE,0.185
+11,mistral-large,Dynamic Resonance Theory Of Consciousness (DRTC),Synchrony and Binding-by-Synchrony,0.729,True,True,0,0.0,0.0,DERIVATIVE,0.185
+21,claude-3.7-sonnet,Resonant Field Propagation Theory (RFPT),Electromagnetic Field Theories,0.707,True,True,1,0.0,0.0,DERIVATIVE,0.182
+13,perplexity-sonar-pro,Resonant Binding Theory (RBT),Synchrony and Binding-by-Synchrony,0.78,True,True,1,0.0,0.0,DERIVATIVE,0.181
+8,mistral-large,Dynamic Resonance Theory Of Consciousness (DRTC),Adaptive Resonance Theory of Consciousness,0.685,True,False,1,0.0,0.0,DERIVATIVE,0.178
+14,mistral-large,Dynamic Resonance Theory Of Consciousness (DRTC),Adaptive Resonance Theory of Consciousness,0.688,True,False,1,0.0,0.0,DERIVATIVE,0.177
+23,gemini-3.1-pro-preview,Causal Friction Theory (CFT),Physicalist Structural Theories,0.619,True,False,0,0.0,0.0,DERIVATIVE,0.16
+15,perplexity-sonar-pro,Dynamic Binding Resonance Theory (DBRT),Synchrony and Binding-by-Synchrony,0.777,True,True,0,0.0,0.0,DERIVATIVE,0.158
+10,deepseek-v3.2,Quantum Entanglement Resonance Theory (QERT),Quantum Consciousness Theories,0.8,True,True,1,0.0,0.0,DERIVATIVE,0.156
+10,gemini-3.1-pro-preview,Causal Friction Theory (CFT),Physicalist Structural Theories,0.655,True,False,0,0.0,0.0,DERIVATIVE,0.153
+15,mistral-large,Temporal Recurrence Binding Theory (TRBT),Synchrony and Binding-by-Synchrony,0.703,True,True,0,0.0,0.0,DERIVATIVE,0.152
+16,mistral-large,Temporal Recursive Binding Theory (TRBT),Synchrony and Binding-by-Synchrony,0.678,True,False,0,0.0,0.0,DERIVATIVE,0.146
+18,mistral-large,Temporal Recursive Binding Theory (TRBT),Local Recurrency Model of the Brain,0.704,True,True,0,0.0,0.0,DERIVATIVE,0.141
+7,perplexity-sonar-pro,Dynamic Binding Resonance Theory (DBRT),Synchrony and Binding-by-Synchrony,0.775,True,True,1,0.0,0.0,DERIVATIVE,0.141
+22,gpt-5.2,Intrinsic Reference Frame Theory (IRFT),Relational Processing Theory,0.648,True,False,1,0.0,0.0,DERIVATIVE,0.14
+19,mistral-large,Temporal Recursive Binding Theory (TRBT),Local Recurrency Model of the Brain,0.708,True,True,0,0.0,0.0,DERIVATIVE,0.14
+1,mistral-large,Temporal Recursive Binding Theory (TRBT),Local Recurrency Model of the Brain,0.709,True,True,0,0.0,0.0,DERIVATIVE,0.14
+2,claude-3.7-sonnet,Temporal Binding Field Theory (TBFT),Synchrony and Binding-by-Synchrony,0.734,True,True,0,0.0,0.0,DERIVATIVE,0.138
+10,mistral-large,Temporal Recursive Binding Theory (TRBT),Synchrony and Binding-by-Synchrony,0.723,True,True,0,0.0,0.0,DERIVATIVE,0.137
+5,gemini-3.1-pro-preview,Topological Frustration Resolution Theory (TFRT),Conscious Pilot Theory,0.654,True,False,0,0.0,0.0,DERIVATIVE,0.13
+5,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Predictive Processing Theory of Consciousness,0.615,True,False,0,0.0,0.0,DERIVATIVE,0.127
+23,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Self-Representational Theory,0.646,True,False,0,0.0,0.0,DERIVATIVE,0.123
+14,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Synchrony and Binding-by-Synchrony,0.661,True,False,0,0.0,0.0,DERIVATIVE,0.12
+4,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Adaptive Resonance Theory of Consciousness,0.619,True,False,1,0.0,0.0,DERIVATIVE,0.116
+23,mistral-large,Dynamic Resonance Theory Of Consciousness (DRTC),Synchrony and Binding-by-Synchrony,0.707,True,True,0,0.0,0.0,DERIVATIVE,0.115
+13,mistral-large,Dynamic Resonance Theory Of Consciousness (DRTC),Synchrony and Binding-by-Synchrony,0.713,True,True,0,0.0,0.0,DERIVATIVE,0.114
+9,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Adaptive Resonance Theory of Consciousness,0.639,True,False,1,0.0,0.0,DERIVATIVE,0.112
+7,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Adaptive Resonance Theory of Consciousness,0.645,True,False,1,0.0,0.0,DERIVATIVE,0.112
+2,mistral-large,Dynamic Resonance Theory Of Consciousness (DRTC),Synchrony and Binding-by-Synchrony,0.721,True,True,0,0.0,0.0,DERIVATIVE,0.112
+20,perplexity-sonar-pro,Temporal Binding Resonance Theory (TBRT),Synchrony and Binding-by-Synchrony,0.734,True,True,0,0.0,0.0,DERIVATIVE,0.112
+16,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Adaptive Resonance Theory of Consciousness,0.649,True,False,1,0.0,0.0,DERIVATIVE,0.111
+19,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Adaptive Resonance Theory of Consciousness,0.659,True,False,1,0.0,0.0,DERIVATIVE,0.109
+21,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Adaptive Resonance Theory of Consciousness,0.662,True,False,1,0.0,0.0,DERIVATIVE,0.109
+22,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Adaptive Resonance Theory of Consciousness,0.663,True,False,1,0.0,0.0,DERIVATIVE,0.109
+2,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Adaptive Resonance Theory of Consciousness,0.668,True,False,1,0.0,0.0,DERIVATIVE,0.108
+20,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Adaptive Resonance Theory of Consciousness,0.671,True,False,1,0.0,0.0,DERIVATIVE,0.107
+10,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Adaptive Resonance Theory of Consciousness,0.687,True,False,1,0.0,0.0,DERIVATIVE,0.105
+2,perplexity-sonar-pro,Dynamic Binding Resonance Theory (DBRT),Adaptive Resonance Theory of Consciousness,0.71,True,True,1,0.0,0.0,DERIVATIVE,0.105
+15,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Adaptive Resonance Theory of Consciousness,0.691,True,False,1,0.0,0.0,DERIVATIVE,0.104
+6,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Adaptive Resonance Theory of Consciousness,0.709,True,True,1,0.0,0.0,DERIVATIVE,0.102
+0,mistral-large,Temporal Recursive Binding Theory (TRBT),Local Recurrency Model of the Brain,0.69,True,False,0,0.0,0.0,DERIVATIVE,0.086
+12,mistral-large,Temporal Recursive Binding Theory (TRBT),Local Recurrency Model of the Brain,0.709,True,True,0,0.0,0.0,DERIVATIVE,0.084
+17,mistral-large,Temporal Recursive Binding Theory (TRBT),Synchrony and Binding-by-Synchrony,0.711,True,True,0,0.0,0.0,DERIVATIVE,0.084
+4,mistral-large,Temporal Recursive Binding Theory (TRBT),Local Recurrency Model of the Brain,0.715,True,True,0,0.0,0.0,DERIVATIVE,0.083
+5,mistral-large,Temporal Recursive Binding Theory (TRBT),Local Recurrency Model of the Brain,0.719,True,True,0,0.0,0.0,DERIVATIVE,0.083
+3,mistral-large,Temporal Recursive Binding Theory (TRBT),Synchrony and Binding-by-Synchrony,0.727,True,True,0,0.0,0.0,DERIVATIVE,0.082
+22,mistral-large,Temporal Recursive Binding Theory (TRBT),Dynamic Core Hypothesis,0.731,True,True,0,0.0,0.0,DERIVATIVE,0.081
+7,mistral-large,Temporal Recursive Binding Theory (TRBT),Local Recurrency Model of the Brain,0.698,True,False,1,0.0,0.0,DERIVATIVE,0.077
+13,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Adaptive Resonance Theory of Consciousness,0.658,True,False,1,0.0,0.0,DERIVATIVE,0.066
+0,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Predictive Processing Theory of Consciousness,0.609,True,False,0,0.0,0.0,DERIVATIVE,0.051
+17,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Synchrony and Binding-by-Synchrony,0.667,True,False,0,0.0,0.0,DERIVATIVE,0.048
+8,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Adaptive Resonance Theory of Consciousness,0.666,True,False,1,0.0,0.0,DERIVATIVE,0.043
+18,llama-3.3-70b-instruct,Echo-Resonance Theory (ERT),Adaptive Resonance Theory of Consciousness,0.703,True,True,1,0.0,0.0,DERIVATIVE,0.041

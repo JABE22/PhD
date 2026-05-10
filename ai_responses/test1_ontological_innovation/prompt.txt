@@ -1,0 +1,27 @@
+You are participating in a scientific study on AI creativity and conceptual innovation.
+
+BACKGROUND:
+We have defined a sensory system with 8 modalities: visual, auditory, tactile, olfactory, gustatory, proprioceptive, vestibular, and interoceptive. Each modality has specific:
+- Physical basis (what it detects)
+- Information content (what data it provides)
+- Functional role (what it enables)
+
+YOUR TASK:
+Propose a NINTH sensory modality that would be genuinely novel - not just a refinement or combination of existing ones. Your proposal should include:
+
+1. Modality Name: Clear, descriptive name
+2. Physical Basis: What physical phenomenon it detects
+3. Information Content: What specific information it provides
+4. Functional Role: What capabilities it enables
+5. Justification: Why this is genuinely novel (not reducible to existing modalities)
+
+Be creative but rigorous. Think beyond obvious extensions like "electromagnetic sensing" or "radiation detection."
+
+Provide your response in the following JSON format:
+{
+  "proposal_name": "Name of the ninth modality",
+  "physical_basis": "Description of physical detection mechanism",
+  "information_content": "Description of information provided",
+  "functional_role": "Description of enabled capabilities",
+  "justification": "Explanation of why this is genuinely novel"
+}

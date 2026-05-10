@@ -1,0 +1,41 @@
+% AUTO-GENERATED from pairwise Bonferroni-corrected t-tests on test4_results.csv — do not edit by hand.
+\begin{table}[htbp]
+  \centering
+  \begin{footnotesize}
+  \caption{Test 4 pairwise model comparisons on normalized total score (0--1), Bonferroni-corrected ($\alpha=0.05/21=0.00238$). Significant pairs marked (*). 16 of 21 pairs are significant, reflecting the large overall model effect ($\eta^2=0.766$). Two higher-performing clusters (GPT-5.2 and Mistral-Large; DeepSeek-v3.2) differ from two lower-performing clusters (LLaMA-3.3-70B and Perplexity-Sonar-Pro; Gemini-3.1-Pro). Pairs within the top-two and within the bottom-two tiers are the main non-significant cases.}
+  \label{tab:cross_model_t4_pairwise}
+  \begin{threeparttable}
+  \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{3.6cm} >{\raggedright\arraybackslash}p{3.6cm} >{\raggedleft\arraybackslash}p{1.2cm} >{\raggedleft\arraybackslash}p{1.0cm} >{\raggedleft\arraybackslash}p{1.2cm} Y@{}}
+    \toprule
+    \textbf{Model A} & \textbf{Model B} & {\textbf{Diff.}} & {\textbf{$t$}} & {\textbf{$p_{\mathrm{bonf}}$}} & \textbf{Sig.} \\
+    \midrule
+    GPT-5.2            & LLaMA-3.3-70B    & +0.444 & 22.47 & $<0.001$ & * \\
+    GPT-5.2            & Perplexity-Sonar & +0.397 & 14.97 & $<0.001$ & * \\
+    Mistral-Large      & LLaMA-3.3-70B    & +0.378 & 18.72 & $<0.001$ & * \\
+    GPT-5.2            & Gemini-3.1-Pro   & +0.364 & 15.17 & $<0.001$ & * \\
+    Mistral-Large      & Perplexity-Sonar & +0.331 & 12.32 & $<0.001$ & * \\
+    DeepSeek-v3.2      & LLaMA-3.3-70B    & +0.311 & 10.93 & $<0.001$ & * \\
+    Mistral-Large      & Gemini-3.1-Pro   & +0.297 & 12.22 & $<0.001$ & * \\
+    DeepSeek-v3.2      & Perplexity-Sonar & +0.264 &  7.88 & $<0.001$ & * \\
+    Claude-3.7-Sonnet  & GPT-5.2          & -0.231 & -11.33 & $<0.001$ & * \\
+    DeepSeek-v3.2      & Gemini-3.1-Pro   & +0.231 &  7.31 & $<0.001$ & * \\
+    Claude-3.7-Sonnet  & LLaMA-3.3-70B    & +0.214 &  9.09 & $<0.001$ & * \\
+    Claude-3.7-Sonnet  & Perplexity-Sonar & +0.167 &  5.66 & $<0.001$ & * \\
+    Claude-3.7-Sonnet  & Mistral-Large    & -0.164 & -7.90 & $<0.001$ & * \\
+    DeepSeek-v3.2      & GPT-5.2          & -0.133 & -5.15 & 0.0001 & * \\
+    Claude-3.7-Sonnet  & Gemini-3.1-Pro   & +0.133 &  4.91 & 0.0003   & * \\
+    Claude-3.7-Sonnet  & DeepSeek-v3.2    & -0.097 & -3.37 & 0.032 & * \\
+    \midrule
+    Gemini-3.1-Pro     & LLaMA-3.3-70B    & +0.081 &  3.01 & 0.088    & \\
+    DeepSeek-v3.2      & Mistral-Large    & -0.067 & -2.54 & 0.302 & \\
+    GPT-5.2            & Mistral-Large    & +0.067 &  4.07 & 0.004    & * \\
+    LLaMA-3.3-70B      & Perplexity-Sonar & -0.047 & -1.63 & 1.000 & \\
+    Gemini-3.1-Pro     & Perplexity-Sonar & +0.033 &  1.04 & 1.000    & \\
+    \bottomrule
+  \end{tabularx}
+  \begin{tablenotes}
+    \item $n=24$ per model. Bonferroni threshold: $\alpha^* = 0.00238$. Diff = Model~A mean $-$ Model~B mean (normalized 0--1 scale). 16 of 21 pairs significant. Non-significant pairs cluster within the bottom tier (LLaMA/Perplexity/Gemini) and between mid-level models.
+  \end{tablenotes}
+  \end{threeparttable}
+  \end{footnotesize}
+\end{table}

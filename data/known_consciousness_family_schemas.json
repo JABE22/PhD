@@ -1,0 +1,226 @@
+{
+  "metadata": {
+    "description": "Curated family-level schema for consciousness theory traceability.",
+    "fields": [
+      "aliases",
+      "ontology_tokens",
+      "mechanism_tokens"
+    ]
+  },
+  "theory_family_schemas": {
+    "Global Workspace Theory": {
+      "aliases": [
+        "global workspace",
+        "gwt",
+        "global neuronal workspace",
+        "gnw",
+        "workspace broadcasting"
+      ],
+      "ontology_tokens": [
+        "workspace",
+        "global access",
+        "broadcast",
+        "competition",
+        "integration"
+      ],
+      "mechanism_tokens": [
+        "broadcasting",
+        "attentional gating",
+        "frontoparietal ignition",
+        "global availability"
+      ]
+    },
+    "Integrated Information Theory": {
+      "aliases": [
+        "integrated information theory",
+        "iit",
+        "phi theory",
+        "integrated information"
+      ],
+      "ontology_tokens": [
+        "integrated information",
+        "phi",
+        "causal structure",
+        "irreducibility",
+        "intrinsic information"
+      ],
+      "mechanism_tokens": [
+        "cause-effect structure",
+        "maximally irreducible conceptual structure",
+        "integration"
+      ]
+    },
+    "Higher-Order Thought Theory": {
+      "aliases": [
+        "higher-order thought",
+        "hot",
+        "higher order theory",
+        "meta-representation"
+      ],
+      "ontology_tokens": [
+        "higher-order representation",
+        "metacognition",
+        "awareness of state"
+      ],
+      "mechanism_tokens": [
+        "thought about thought",
+        "meta-representational access"
+      ]
+    },
+    "Quantum Orchestrated Reduction": {
+      "aliases": [
+        "orch or",
+        "orch-or",
+        "orchestrated objective reduction",
+        "quantum microtubules"
+      ],
+      "ontology_tokens": [
+        "quantum state",
+        "objective reduction",
+        "microtubules",
+        "non-classical"
+      ],
+      "mechanism_tokens": [
+        "quantum collapse",
+        "microtubule coherence",
+        "objective reduction events"
+      ]
+    },
+    "Predictive Processing": {
+      "aliases": [
+        "predictive processing",
+        "predictive coding",
+        "bayesian brain",
+        "free energy principle"
+      ],
+      "ontology_tokens": [
+        "prediction error",
+        "generative model",
+        "precision weighting",
+        "bayesian inference"
+      ],
+      "mechanism_tokens": [
+        "top-down prediction",
+        "error minimization",
+        "belief updating"
+      ]
+    },
+    "Attention Schema Theory": {
+      "aliases": [
+        "attention schema",
+        "ast",
+        "awareness schema",
+        "social attention model"
+      ],
+      "ontology_tokens": [
+        "attention schema",
+        "self-model",
+        "awareness attribution"
+      ],
+      "mechanism_tokens": [
+        "attention control model",
+        "schema updating",
+        "social attribution"
+      ]
+    },
+    "Quantum Information Panpsychism": {
+      "aliases": [
+        "quantum panpsychism",
+        "quantum information panpsychism",
+        "panpsychism"
+      ],
+      "ontology_tokens": [
+        "fundamental consciousness",
+        "quantum information",
+        "intrinsic subjectivity"
+      ],
+      "mechanism_tokens": [
+        "quantum state individuality",
+        "non-clonability"
+      ]
+    },
+    "Recurrent Processing Theory": {
+      "aliases": [
+        "recurrent processing",
+        "rpt",
+        "re-entrant processing",
+        "feedback processing"
+      ],
+      "ontology_tokens": [
+        "recurrent loop",
+        "reentry",
+        "sensory recurrence"
+      ],
+      "mechanism_tokens": [
+        "feedback connectivity",
+        "reentrant dynamics"
+      ]
+    },
+    "Biological Naturalism": {
+      "aliases": [
+        "biological naturalism",
+        "searle",
+        "biological realism"
+      ],
+      "ontology_tokens": [
+        "biological phenomenon",
+        "first-person ontology",
+        "irreducibility"
+      ],
+      "mechanism_tokens": [
+        "neural causation",
+        "biological realization"
+      ]
+    },
+    "Illusionism": {
+      "aliases": [
+        "illusionism",
+        "illusionist theory",
+        "qualia illusion"
+      ],
+      "ontology_tokens": [
+        "introspective illusion",
+        "misrepresentation",
+        "anti-qualia"
+      ],
+      "mechanism_tokens": [
+        "self-model error",
+        "cognitive confabulation"
+      ]
+    },
+    "Active Inference and Free Energy": {
+      "aliases": [
+        "active inference",
+        "free energy",
+        "fep",
+        "variational free energy"
+      ],
+      "ontology_tokens": [
+        "generative model",
+        "surprise minimization",
+        "belief dynamics"
+      ],
+      "mechanism_tokens": [
+        "policy selection",
+        "perception-action loop",
+        "variational optimization"
+      ]
+    },
+    "Phenomenal Concepts Strategy": {
+      "aliases": [
+        "phenomenal concepts strategy",
+        "pcs",
+        "phenomenal concept"
+      ],
+      "ontology_tokens": [
+        "epistemic gap",
+        "conceptual gap",
+        "recognitional concept"
+      ],
+      "mechanism_tokens": [
+        "special concept acquisition",
+        "indexical phenomenal concept"
+      ]
+    }
+  }
+}

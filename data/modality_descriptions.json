@@ -1,0 +1,88 @@
+{
+  "modalities_order": [
+    "visual",
+    "auditory",
+    "tactile",
+    "olfactory",
+    "gustatory",
+    "proprioceptive",
+    "vestibular",
+    "interoceptive"
+  ],
+  "modality_descriptions": {
+    "visual": "Visual sensation detects electromagnetic radiation from 300-1000nm wavelengths across ultraviolet, visible, and near-infrared spectrum, enabling perception of light, color, brightness, and spatial patterns through photoreceptors.",
+    "auditory": "Auditory sensation detects mechanical sound waves from 1Hz to 100kHz through air pressure variations, enabling perception of sound, pitch, volume, and acoustic patterns through mechanoreceptors in the cochlea.",
+    "tactile": "Tactile sensation detects mechanical vibrations and pressure from 5-800Hz on skin surface, enabling perception of touch, texture, vibration, and contact through mechanoreceptors in skin.",
+    "olfactory": "Olfactory sensation detects airborne chemical molecules across ten scent categories (fruity, floral, musky, woody, earthy, spicy, chemical, pungent, ethereal, minty) through chemoreceptors in nasal epithelium.",
+    "gustatory": "Gustatory sensation detects dissolved chemical molecules across five taste categories (sweet, sour, salty, bitter, umami) through chemoreceptors on tongue and oral cavity.",
+    "proprioceptive": "Proprioceptive sensation detects body position, joint angles, and muscle tensions through mechanoreceptors in muscles, tendons, and joints, enabling awareness of body configuration and movement without visual input.",
+    "vestibular": "Vestibular sensation detects head position, linear acceleration, and angular velocity through mechanoreceptors in inner ear semicircular canals, enabling balance, spatial orientation, and motion detection.",
+    "interoceptive": "Interoceptive sensation detects internal physiological states including heart rate, respiration, skin conductance, temperature, hunger, thirst, fatigue, and pain through diverse receptors monitoring homeostatic conditions."
+  },
+  "extension_keywords": {
+    "visual": [
+      "electromagnetic",
+      "radiation",
+      "spectrum",
+      "wavelength",
+      "infrared",
+      "ultraviolet",
+      "x-ray",
+      "radio"
+    ],
+    "auditory": [
+      "sound",
+      "acoustic",
+      "frequency",
+      "infrasound",
+      "ultrasound",
+      "vibration",
+      "pressure wave"
+    ],
+    "tactile": [
+      "pressure",
+      "mechanical",
+      "touch",
+      "vibration",
+      "surface"
+    ],
+    "olfactory": [
+      "chemical",
+      "molecule",
+      "scent",
+      "smell",
+      "airborne"
+    ],
+    "gustatory": [
+      "taste",
+      "chemical",
+      "molecule",
+      "dissolved"
+    ],
+    "proprioceptive": [
+      "joint",
+      "muscle",
+      "tendon",
+      "body position",
+      "kinesthetic"
+    ],
+    "vestibular": [
+      "vestibular",
+      "equilibrium",
+      "balance",
+      "acceleration",
+      "angular velocity",
+      "inner ear",
+      "semicircular canal",
+      "head position"
+    ],
+    "interoceptive": [
+      "heartbeat",
+      "respiration",
+      "hunger",
+      "thirst",
+      "fatigue",
+      "pain"
+    ]
+  }
+}

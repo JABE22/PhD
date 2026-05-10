@@ -1,0 +1,32 @@
+% AUTO-GENERATED from pairwise Bonferroni-corrected t-tests on test1_results.csv — do not edit by hand.
+\begin{table}[htbp]
+  \centering
+  \begin{footnotesize}
+  \caption{Test 1 pairwise model comparisons on continuous novelty score, Bonferroni-corrected ($\alpha=0.05/21=0.00238$). Significant pairs marked (*). GPT-5.2 is the primary outlier, differing from all other models due to its atypically low continuous novelty score ($\bar{x}=0.014$). Perplexity-Sonar-Pro forms a secondary low cluster. Within the remaining five models no pairwise differences survive correction, indicating homogeneous moderate-level novelty.}
+  \label{tab:cross_model_t1_pairwise}
+  \begin{threeparttable}
+  \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{3.6cm} >{\raggedright\arraybackslash}p{3.6cm} S[table-format=+1.4] S[table-format=2.2] S[table-format=1.4] Y@{}}
+    \toprule
+    \textbf{Model A} & \textbf{Model B} & {\textbf{Diff.}} & {\textbf{$t$}} & {\textbf{$p_{\mathrm{bonf}}$}} & \textbf{Sig.} \\
+    \midrule
+    LLaMA-3.3-70B     & GPT-5.2           & +0.0680 & 15.29 & $<$0.001 & * \\
+    Gemini-3.1-Pro    & GPT-5.2           & +0.0641 &  5.42 & $<$0.001 & * \\
+    Mistral-Large     & GPT-5.2           & +0.0586 &  8.01 & $<$0.001 & * \\
+    Claude-3.7-Sonnet & GPT-5.2           & +0.0569 &  7.42 & $<$0.001 & * \\
+    DeepSeek-v3.2     & GPT-5.2           & +0.0498 &  6.49 & $<$0.001 & * \\
+    LLaMA-3.3-70B     & Perplexity-Sonar  & +0.0468 &  6.60 & $<$0.001 & * \\
+    Gemini-3.1-Pro    & Perplexity-Sonar  & +0.0429 &  3.29 & 0.041    & * \\
+    Mistral-Large     & Perplexity-Sonar  & +0.0374 &  4.08 & 0.004    & * \\
+    Claude-3.7-Sonnet & Perplexity-Sonar  & +0.0357 &  3.78 & 0.010    & * \\
+    Perplexity-Sonar  & GPT-5.2           & $-$0.0212 & $-$3.29 & 0.041 & * \\
+    DeepSeek-v3.2     & Perplexity-Sonar  & +0.0286 &  3.03 & 0.085    & \\
+    \midrule
+    \multicolumn{6}{l}{\textit{All remaining pairs (within the 5-model cluster): $p_{\mathrm{bonf}} > 0.60$, not significant.}} \\
+    \bottomrule
+  \end{tabularx}
+  \begin{tablenotes}
+    \item $n=24$ per model. Bonferroni threshold: $\alpha^* = 0.00238$. Diff = Model~A mean $-$ Model~B mean. 10 of 21 pairs are significant after correction.
+  \end{tablenotes}
+  \end{threeparttable}
+  \end{footnotesize}
+\end{table}

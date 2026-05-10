@@ -1,0 +1,8 @@
+[Neutral Results]
+In the frontier-distance decomposition, the average contribution profile was dominated by hull and traceability (mean component values: hull=1.00, traceability=0.98, hybrid=0.45, extension=0.20, similarity_shortfall=0.00). The similarity-shortfall component remained at ~0.00 across models, indicating that non-novel classification did not arise from the max-similarity cutoff. By average frontier distance, gpt-5.2 ranked highest (mean=3.38), whereas llama-3.3-70b-instruct ranked lowest (mean=2.08).
+
+[Discussion Style]
+These results suggest that the current novelty decision boundary is constrained primarily by structural gates, not by semantic proximity to known modalities. Specifically, hull and traceability terms contribute most strongly (hull=1.00, traceability=0.98, hybrid=0.45, extension=0.20, similarity_shortfall=0.00), while similarity shortfall is negligible. This means models can produce semantically distant proposals and still fail novelty classification because they remain blocked by manifold and traceability criteria. The strongest blockage profile appears for gpt-5.2 (mean frontier distance 3.38), whereas llama-3.3-70b-instruct is comparatively closer to the novelty boundary (2.08).
+
+[Ranking Line]
+Model ranking (frontier distance, high->low): top: gpt-5.2 (3.38); perplexity-sonar-pro (3.29); gemini-3.1-pro-preview (2.46); bottom: llama-3.3-70b-instruct (2.08); deepseek-v3.2 (2.33); mistral-large (2.42).

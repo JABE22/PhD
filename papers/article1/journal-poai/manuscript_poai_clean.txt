@@ -1,0 +1,262 @@
+УДК 004.8
+
+НАЗВАНИЕ СТАТЬИ (RU)
+ОПЕРАЦИОНАЛЬНЫЕ ОГРАНИЧЕНИЯ ОНТОЛОГИЧЕСКОЙ ИННОВАЦИИ В БОЛЬШИХ ЯЗЫКОВЫХ МОДЕЛЯХ: ДАННЫЕ КОНТРОЛИРУЕМОЙ ГЕНЕРАЦИИ СЕНСОРНОЙ МОДАЛЬНОСТИ
+
+TITLE (EN)
+OPERATIONAL LIMITS OF ONTOLOGICAL INNOVATION IN LARGE LANGUAGE MODELS: EVIDENCE FROM CONTROLLED SENSORY-MODALITY GENERATION
+
+НАЗВА СТАТТІ (UKR)
+ОПЕРАЦІЙНІ ОБМЕЖЕННЯ ОНТОЛОГІЧНОЇ ІННОВАЦІЇ У ВЕЛИКИХ МОВНИХ МОДЕЛЯХ: ДАНІ КОНТРОЛЬОВАНОЇ ГЕНЕРАЦІЇ СЕНСОРНОЇ МОДАЛЬНОСТІ
+
+АВТОР (RU)
+Матармаа Ярно
+ФГАОУ ВО «Уральский федеральный университет имени первого Президента России Б.Н. Ельцина»,
+Институт радиоэлектроники и информационных технологий,
+Екатеринбург, Россия
+E-mail: iarnoolavi.matarmaa@urfu.ru
+
+AUTHOR (EN)
+Jarno Matarmaa
+Ural Federal University,
+Institute of Radio Electronics and Information Technologies,
+Yekaterinburg, Russia
+E-mail: iarnoolavi.matarmaa@urfu.ru
+
+АВТОР (UKR)
+Ярно Матармаа
+Уральський федеральний університет,
+Інститут радіоелектроніки та інформаційних технологій,
+Єкатеринбург, Росія
+E-mail: iarnoolavi.matarmaa@urfu.ru
+
+АННОТАЦИЯ (RU)
+В статье исследуются операциональные пределы онтологической инновации в больших языковых моделях на материале контролируемого эксперимента с восьмимодальной сенсорной онтологией. Семь современных моделей сформировали 168 предложений гипотетической девятой модальности. Для оценки использованы четыре взаимодополняющих подхода: трассируемость по научной литературе, структурная декомпозиция, анализ выпуклой оболочки в пространстве эмбеддингов и непрерывная метрика новизны. Строгая новизна не выявлена, а большинство ответов оказались семантически и структурно сводимыми к известным примитивам. Полученные результаты поддерживают интерпретацию ограниченного репрезентационного многообразия современных LLM.
+
+ABSTRACT (EN)
+The article examines operational limits of ontological innovation in large language models through a controlled experiment based on an eight-modality sensory ontology. Seven contemporary models produced 168 proposals for a hypothetical ninth modality. Four complementary evaluation procedures were applied: literature traceability, structural decomposition, embedding-space convex-hull analysis, and a continuous novelty score. No strictly novel proposals were found, while most responses were traceable to known conceptual material. The results support a constrained-manifold interpretation of current LLM behavior rather than genuine ontological basis expansion.
+
+АНОТАЦІЯ (UKR)
+У статті досліджуються операційні межі онтологічної інновації у великих мовних моделях на матеріалі контрольованого експерименту з восьмимодальною сенсорною онтологією. Сім сучасних моделей сформували 168 пропозицій гіпотетичної дев'ятої модальності. Для оцінювання використано чотири взаємодоповнювальні процедури: трасованість за науковою літературою, структурну декомпозицію, аналіз опуклої оболонки в просторі ембедінгів та безперервну метрику новизни. Строгої новизни не виявлено, а більшість відповідей зводяться до відомих концептуальних примітивів. Результати підтримують інтерпретацію обмеженого репрезентаційного багатовиду сучасних LLM.
+
+Ключевые слова (RU)
+онтологическая инновация, искусственный интеллект, большие языковые модели, вычислительное творчество, концептуальные пространства, системный анализ.
+
+Keywords (EN)
+ontological innovation, artificial intelligence, large language models, computational creativity, conceptual spaces, systems analysis.
+
+1. Introduction
+
+The rapid improvement of large language models [1, 2] has intensified the question of whether such systems are capable of genuine conceptual innovation or only of highly sophisticated recombination. In practical terms, this issue affects expectations about using LLMs in scientific discovery [3], knowledge engineering, and decision support. In theoretical terms, it bears on the distinction between surface novelty and the emergence of genuinely new conceptual primitives.
+
+Many outputs produced by modern models appear original on first inspection. They may combine unfamiliar terminology, bridge previously separated domains, or propose mechanisms not explicitly stated in a single source. However, apparent novelty is not equivalent to ontological novelty. A system may produce surprising combinations while remaining entirely inside the conceptual closure induced by its training data.
+
+The purpose of this study is to test that distinction in a controlled setting. Instead of evaluating free-form creative outputs, the article introduces an experimental environment in which the initial conceptual universe is made explicit. This makes it possible to ask whether a model can propose a concept that is not reducible to recombination, extension, or transformation of known primitives.
+
+The article makes four contributions. First, it operationalizes ontological innovation through a controlled multimodal ontology. Second, it introduces a convergent evaluation scheme based on traceability, structural decomposition, embedding-space geometry, and continuous novelty scoring. Third, it presents comparative empirical evidence from seven contemporary LLMs. Fourth, it interprets the observed limitations through the formal idea of the No New Basis Theorem.
+
+2. Research Object and Problem Statement
+
+The research object is the generative behavior of large language models when they are explicitly required to introduce a concept outside a predefined ontology. The practical problem is to distinguish true ontological innovation from outputs that merely rearrange or stretch previously available conceptual material.
+
+The study uses an eight-modality sensory ontology as the controlled universe. The ontology includes visual, auditory, tactile, olfactory, gustatory, proprioceptive, vestibular, and interoceptive modalities. Each modality is specified through its physical basis, information channel, and functional role. Because the experimental universe is explicit, any proposed ninth modality can be examined with respect to whether it truly adds a new primitive basis or whether it remains within the closure of existing categories.
+
+In this framework, ontological innovation is understood more strictly than combinational or exploratory creativity. A genuinely novel modality must not be explainable as a range extension of an existing modality, a hybrid combination of several known modalities, or a functional reassignment of an existing sensory mechanism. This definition sets a falsifiable target for empirical evaluation.
+
+3. Analysis of Related Work
+
+The dominant theoretical background comes from computational creativity research. Boden distinguishes combinational, exploratory, and transformational creativity [4]. This taxonomy is valuable, but it does not fully isolate the case where a system would have to introduce a genuinely new primitive rather than transform rules inside an existing space. For this reason, the present study emphasizes ontological creativity as a stricter category.
+
+Wiggins also showed [5] that many creativity claims depend on an implicit framing space defined by the system designer. This critique is especially relevant for LLMs, whose conceptual universe is broad but still bounded by training corpora and representational structure. A model may seem to transform a local domain while in fact staying within a broader latent space already supplied by data.
+
+Philosophical critiques of machine cognition have long questioned whether computation alone can ground authentic understanding or genuine conceptual innovation [6, 7, 8, 9]. Systems that operate through analogy and recombination demonstrate impressive range but remain bounded by their initial representational resources [10]. Computational creativity research has recently sharpened these questions empirically: studies comparing LLMs with human divergent thinkers, narrative writers, and creative scorers consistently show strong performance on standard metrics while revealing characteristic limitations in the depth of conceptual departure [11, 12, 13, 14, 15, 16, 17, 18, 19, 20].
+
+Research in mechanistic interpretability and transformer analysis provides an additional technical basis for this concern. In current architectures, generation is grounded in learned weights, token statistics, and interpolation across representational neighborhoods [21]. These mechanisms are powerful, but they do not by themselves imply expansion of conceptual basis vectors. This motivates the theoretical interpretation advanced in the article: if the basis of the learned manifold is fixed by training, inference alone may not suffice to produce ontologically new primitives.
+
+This problem is also consistent with several recent publications in the target journal that emphasize ontology construction, semantic relationships, knowledge-driven inference, and hybrid intelligent systems. In particular, Nicenko and Shelepov [22] examine ontology-oriented semantic disambiguation, while Mashchenko et al. [23], Podoprigorova et al. [24], Torzhkov et al. [25], and Shen et al. [26] analyze expert-system and semantic-decision architectures in application settings. These studies do not address ontological novelty in LLMs directly, but they provide a relevant journal-specific context for discussing semantic representation, inference structures, and AI decision support.
+
+4. Materials and Methods
+
+4.1. Experimental Ontology
+
+The controlled ontology contains eight sensory modalities spanning both biological and extended machine-sensing capacities. Each modality is defined not only verbally but also through explicit machine-readable descriptors. This design allows structural and semantic comparisons between model outputs and the initial ontology.
+
+The dataset contains training, validation, and test episodes derived from everyday scenarios such as walking, running, sitting, eating, drinking, listening, and viewing. Each example is sampled as a temporal multimodal record. The ontology therefore functions not as a metaphorical background, but as a concrete experimental universe with known dimensional structure and known primitives, structurally analogous to the formal notion of conceptual space [27].
+
+The importance of explicit dataset and representation design is also reflected in recent POAI publications devoted to methodological aspects of AI datasets and annotation pipelines, including Pikalyov [28], Ustenko and Bondarenko [29], and Yermolenko and Khakimov [30]. Their results concern computer vision and geolocalization tasks, but they are relevant here at the methodological level because they treat dataset structure, semantic labeling, and model-evaluation conditions as decisive factors in interpreting the behavior of intelligent systems.
+
+4.2. Task Design
+
+Each model was instructed to propose a ninth sensory modality that would be genuinely new relative to the existing eight. To reduce prompt-induced bias, the task statement did not suggest target answer types. Instead, models were required to specify three aspects of the proposed modality: the physical phenomenon to be sensed, the channel or encoding through which information would be represented, and the functional role that would differentiate the modality from those already defined.
+
+Twenty-four independent runs were collected from each of seven models, yielding 168 proposals in total. The evaluated models included GPT-5.2, Claude-3.7-Sonnet, Gemini-3.1-Pro-Preview, LLaMA-3.3-70B-Instruct, DeepSeek-v3.2, Mistral-Large, and Perplexity Sonar Pro; for the underlying architectures see [31, 32, 33, 34, 35].
+
+4.3. Evaluation Procedures
+
+The first procedure was literature traceability. Each proposal was compared against a curated scientific corpus using Sentence-BERT embeddings [36] and cosine similarity. A proposal was treated as traceable if it exceeded a calibrated similarity threshold of $\tau = 0.40$.
+
+The second procedure was structural decomposition. Proposals were examined for reducibility to known primitives. Three recurrent patterns were used as decomposition categories: range extension, hybrid combination, and functional recombination.
+
+The third procedure was embedding-space convex-hull analysis. Proposal embeddings and training-modality embeddings were reduced to three principal components, after which convex-hull membership was tested. A proposal outside the hull would indicate semantic displacement beyond the known manifold.
+
+The fourth procedure was continuous novelty scoring. This metric combined structural non-reducibility, semantic distance from known modalities, and geometric relation to the hull boundary. Proposals with scores of at least 0.5 were classified as strictly novel.
+
+5. Results and Discussion
+
+5.1. Primary Findings
+
+The aggregate strict novelty rate was zero. Across all 168 evaluated proposals, no response met the threshold for strict ontological novelty. At the same time, the traceability rate reached 0.982, indicating that almost all responses were strongly linked to known conceptual material in the scientific literature.
+
+These two findings already constrain interpretation. The outputs were not random, incoherent, or merely low quality. On the contrary, they were usually meaningful and literature-connected. The limitation lies elsewhere: the models remained within a space of recombination and extension rather than producing new ontological primitives.
+
+5.2. Structural Patterns
+
+Structural decomposition identified three dominant failure modes. The first was range extension, in which an existing sensory mechanism was stretched along a known parameter axis, such as extending the visual spectrum or auditory range. The second was hybrid combination, where outputs fused features of two or more existing modalities. The third was functional recombination, where an existing mechanism was reassigned to a new functional role without introducing a new physical basis.
+
+These categories are theoretically important because they reveal that the absence of novelty is not simply a matter of weak phrasing. The models systematically explored transformations that remain internal to the original ontology. This is consistent with a constrained-manifold interpretation rather than with isolated model mistakes.
+
+5.3. Embedding-Space Geometry
+
+All proposals were located inside the convex hull formed by the training-modality descriptions in reduced embedding space. No proposal occupied a semantically isolated position that would plausibly indicate basis expansion. This result complements the structural analysis because it does not rely on hand-defined categories alone. Even proposals that were less easily decomposed structurally still remained geometrically close to the known conceptual manifold.
+
+5.4. Cross-Model Effects
+
+The models differed moderately in their raw novelty scores, with a one-way ANOVA effect size of $\eta^2 = 0.305$. However, these differences did not change the qualitative pattern. No model produced a strictly novel proposal, and no model escaped the low-novelty, high-traceability regime. Model scale and architectural differences therefore affected degree rather than kind.
+
+6. Scientific Novelty and Practical Value
+
+The scientific novelty of the study lies in the operationalization of ontological innovation as a testable computational problem. Instead of relying on subjective judgments of originality, the article combines explicit ontology design with convergent evaluation criteria. This makes it possible to distinguish between conceptual recombination and candidate basis expansion in a reproducible way.
+
+The practical value of the results is twofold. First, the proposed evaluation framework can be reused in other domains where claims about AI creativity need to be assessed more rigorously. Second, the findings provide a more realistic basis for deploying LLMs in knowledge-intensive workflows. The models appear well suited for combinational search, synthesis, and structured extension of known spaces, but not for paradigm-level conceptual invention in the sense of Kuhn [37] under the tested conditions.
+
+From the standpoint of the journal's scope in system analysis, information processing, and intelligent systems, this conclusion is compatible with work on semantic expert systems and applied inference published in POAI. Those studies typically demonstrate strong performance when the decision space, rule base, or semantic categories are explicitly defined in advance [23, 24, 25, 26]. The present article extends that line of discussion by asking whether a generative model can move beyond such predefined conceptual structures rather than merely operate effectively inside them.
+
+7. Conclusions
+
+The study examined whether contemporary LLMs can generate genuinely new ontological primitives in a controlled multimodal domain. Across 168 proposals from seven models, no strictly novel outputs were identified. Most responses were highly traceable to known scientific concepts, structurally reducible to existing primitives, and geometrically located inside the embedding manifold of the original ontology.
+
+These findings support the interpretation that current LLMs operate within constrained representational manifolds derived from training data. Their creativity is real at the level of recombination, extension, and reorganization, but the present experiment provides no evidence of ontological basis expansion. Future work should test whether the same pattern holds across other conceptual domains, prompting regimes, and hybrid architectures with external memory or online learning.
+
+FIGURES AND TABLES FOR INSERTION INTO THE WORD TEMPLATE
+
+Table 1. Eight-modality sensory ontology used as the experimental universe.
+Figure 1. Classification summary of generated proposals.
+Figure 2. Novelty-frontier bands by model.
+Figure 3. Frontier decomposition by model.
+Figure 4. Embedding-space analysis.
+Figure 5. Similarity heatmap.
+Figure 6. Canonical proposal families by model.
+Figure 7. Continuous novelty score ridgeline plot.
+
+REFERENCES
+
+1. Vaswani A., Shazeer N., Parmar N. et al. Attention Is All You Need // Advances in Neural Information Processing Systems. 2017. Vol. 30.
+
+2. Brown T. B., Mann B., Ryder N. et al. Language Models are Few-Shot Learners // Advances in Neural Information Processing Systems. 2020. Vol. 33. P. 1877–1901.
+
+3. Jumper J., Evans R., Pritzel A. et al. Highly Accurate Protein Structure Prediction with AlphaFold // Nature. 2021. Vol. 596. P. 583–589. DOI: 10.1038/s41586-021-03819-2.
+
+4. Boden M. A. The Creative Mind: Myths and Mechanisms. 2nd ed. London: Routledge, 2004.
+
+5. Wiggins G. A. A Preliminary Framework for Description, Analysis and Comparison of Creative Systems // Knowledge-Based Systems. 2006. Vol. 19, No. 7. P. 449–458.
+
+6. Dreyfus H. L. What Computers Can’t Do: A Critique of Artificial Reason. New York: Harper & Row, 1972.
+
+7. Searle J. R. Minds, Brains, and Programs // Behavioral and Brain Sciences. 1980. Vol. 3, No. 3. P. 417–424.
+
+8. Penrose R. The Emperor’s New Mind: Concerning Computers, Minds and the Laws of Physics. London: Vintage, 1990.
+
+9. Faggin F. Irreducible: Consciousness, Life, Computers, and Human Nature. Washington: John Hunt Publishing, 2024.
+
+10. Hofstadter D. R. Fluid Concepts and Creative Analogies: Computer Models of the Fundamental Mechanisms of Thought. New York: Basic Books, 1995.
+
+11. Colton S., Wiggins G. A. Computational Creativity: The Final Frontier? // Proceedings of the 20th European Conference on Artificial Intelligence. Amsterdam: IOS Press, 2012. P. 21–26.
+
+12. Stevenson C., Smal I., Baas M. et al. Putting GPT-3’s Creativity to the Test // Scientific Reports. 2022. Vol. 12. Art. 14472. DOI: 10.1038/s41598-022-18979-y.
+
+13. Organisciak P., Dumas D. Beyond Semantic Distance: Automated Scoring of Divergent Thinking Greatly Improves with Large Language Models // Thinking Skills and Creativity. 2023. Vol. 49. Art. 101356. DOI: 10.1016/j.tsc.2023.101356.
+
+14. Zhao Y., Zhang R., Li W. et al. Assessing and Understanding Creativity in Large Language Models // arXiv preprint arXiv:2401.12491. 2024.
+
+15. Wang H., Zou J., Mozer M. et al. Can AI Be as Creative as Humans? // arXiv preprint arXiv:2401.01623. 2024.
+
+16. Peeperkorn M., Kouwenhoven T., Brown D., Jordanous A. Is Temperature the Creativity Parameter of Large Language Models? // arXiv preprint arXiv:2405.00492. 2024.
+
+17. Bellemare-Pepin A., Lespinasse F., Thölke P. et al. Divergent Creativity in Humans and Large Language Models // arXiv preprint arXiv:2405.13012. 2024.
+
+18. Ismayilzada M., Stevenson C., van der Plas L. Evaluating Creative Short Story Generation in Humans and Large Language Models // arXiv preprint arXiv:2411.02316. 2024.
+
+19. Olson M. L., Ratzlaff N., Hinck M. et al. Steering Large Language Models to Evaluate and Amplify Creativity // arXiv preprint arXiv:2412.06060. 2024.
+
+20. Nakajima K., Zuiderveld J., Pezzelle S. Beyond Divergent Creativity: A Human-Based Evaluation of Creativity in Large Language Models // arXiv preprint arXiv:2601.20546. 2026.
+
+21. Elhage N., Nanda N., Olsson C. et al. A Mathematical Framework for Transformer Circuits // Transformer Circuits Thread. 2021. URL: https://transformer-circuits.pub/2021/framework/index.html.
+
+22. Nicenko A. V., Shelepov V. Ju. The Use of Semantic Information to Disambiguate the Nominative/Accusative Homonyms: An Element of Creating Ontology // Problems of Artificial Intelligence. 2024. No. 4(35). P. 16–24. DOI: 10.24412/2413-7383-2024-4-16-24.
+
+23. Mashchenko E. I., Karpov D. K., Varlamov O. O. et al. Creation of a Mivar Expert System for Understanding Images and Making Decisions When People Fall // Problems of Artificial Intelligence. 2024. No. 4(35). P. 88–100. DOI: 10.24412/2413-7383-2024-4-88-100.
+
+24. Podoprigorova N. S., Kozyrev S. A., Podoprigorova S. S. et al. Development of a Mivar Expert System for Selecting a Consensus Algorithm for Distributed Lists // Problems of Artificial Intelligence. 2024. No. 4(35). P. 126–138. DOI: 10.24412/2413-7383-2024-4-126-138.
+
+25. Torzhkov M. S., Koroleva Yu. P., Baldin A. V. et al. Creation of a Mivar Expert System for Implementing Ethical Aspects of Artificial Intelligence for Credit Scoring // Problems of Artificial Intelligence. 2024. No. 4(35). P. 139–150. DOI: 10.24412/2413-7383-2024-4-139-150.
+
+26. Shen Qiujie, Gong Shenshuo, Varlamov O. O. et al. Dynamic Robot Path Planning Based on Semantic Object Detection Using Mivar Expert System // Problems of Artificial Intelligence. 2024. No. 4(35). P. 164–176. DOI: 10.24412/2413-7383-2024-4-164-176.
+
+27. Gärdenfors P. Conceptual Spaces: The Geometry of Thought. Cambridge, MA: MIT Press, 2000.
+
+28. Pikalyov Y. S. Key Objects Detection and Cross-View Geolocation: Dataset Analysis and Methodological Aspects // Problems of Artificial Intelligence. 2024. No. 4(35). P. 25–37.
+
+29. Ustenko V. Y., Bondarenko V. I. Software Development Data Annotation for Computer Vision Tasks: An Object-Oriented Approach Based on WinForms // Problems of Artificial Intelligence. 2024. No. 4(35). P. 151–163. DOI: 10.24412/2413-7383-2024-4-151-163.
+
+30. Yermolenko T. V., Khakimov R. S. On the Question of Application of Deep Learning for the Problem of Cross-View Geolocalization // Problems of Artificial Intelligence. 2024. No. 4(35). P. 4–15. DOI: 10.24412/2413-7383-2024-4-4-15.
+
+31. OpenAI, Achiam J., Adler S. et al. GPT-4 Technical Report // arXiv preprint arXiv:2303.08774. 2023.
+
+32. Gemini Team, Google, Anil R. et al. Gemini: A Family of Highly Capable Multimodal Models // arXiv preprint arXiv:2312.11805. 2023.
+
+33. Grattafiori A., Dubey A., Jauhri A. et al. The Llama 3 Herd of Models // arXiv preprint arXiv:2407.21783. 2024.
+
+34. Jiang A. Q., Sablayrolles A., Mensch A. et al. Mistral 7B // arXiv preprint arXiv:2310.06825. 2023.
+
+35. DeepSeek-AI, Liu A., Feng B. et al. DeepSeek-V3 Technical Report // arXiv preprint arXiv:2412.19437. 2024.
+
+36. Reimers N., Gurevych I. Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks // Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing. 2019. P. 3982–3992.
+
+37. Kuhn T. S. The Structure of Scientific Revolutions. Chicago: University of Chicago Press, 1962.
+
+DETAILED RESUME (EN)
+
+Author: Jarno Matarmaa
+Title: Operational Limits of Ontological Innovation in Large Language Models: Evidence from Controlled Sensory-Modality Generation
+
+Background. The article addresses whether state-of-the-art language models can introduce genuinely new conceptual primitives rather than recombine already available material. This issue is important both for computational creativity theory and for practical expectations concerning the use of LLMs in scientific discovery.
+
+Materials and methods. A controlled ontology with eight predefined sensory modalities was used as the experimental universe. Seven large language models produced 168 proposals for a hypothetical ninth modality. The evaluation combined literature traceability, structural decomposition, convex-hull analysis in embedding space, and a continuous novelty score.
+
+Results. No proposal reached the threshold of strict novelty. Most outputs were traceable to existing scientific concepts, and all proposals remained inside the embedding-space convex hull defined by the training ontology. The dominant response patterns were range extension, hybridization, and functional recombination.
+
+Conclusion. The findings support a constrained-manifold interpretation of LLM generation. Under the tested conditions, current models reorganize and extend known conceptual regions but do not demonstrate ontological basis expansion. The proposed protocol can be reused to test stronger claims about machine creativity in other domains.
+
+DETAILED RESUME (RU)
+
+Автор: Матармаа Ярно
+Название: Операциональные ограничения онтологической инновации в больших языковых моделях: данные контролируемой генерации сенсорной модальности
+
+Актуальность. Вопрос о способности современных языковых моделей к подлинной онтологической инновации принципиален как для теории вычислительного творчества, так и для практической оценки применимости LLM в задачах научного поиска.
+
+Материалы и методы. В исследовании использована контролируемая онтология, включающая восемь заранее определенных сенсорных модальностей. Семь больших языковых моделей сформировали 168 предложений гипотетической девятой модальности. Оценка выполнялась с помощью анализа трассируемости по научной литературе, структурной декомпозиции, проверки принадлежности выпуклой оболочке в пространстве эмбеддингов и непрерывной метрики новизны.
+
+Результаты. Ни одно предложение не достигло порога строгой новизны. Большинство ответов было соотнесено с уже известными научными концептами, а все предложения остались внутри пространства признаков, задаваемого исходной онтологией. Доминирующими типами ответов оказались расширение диапазона, гибридизация и функциональная рекомбинация.
+
+Выводы. Полученные результаты подтверждают интерпретацию ограниченного репрезентационного многообразия современных LLM. В исследованных условиях модели способны перестраивать и расширять уже известные концептуальные области, но не демонстрируют расширения онтологического базиса. Предложенный протокол может использоваться для сопоставимых исследований машинного творчества в других предметных областях.
+
+ИНФОРМАЦИЯ ОБ АВТОРЕ
+
+Матармаа Ярно.
+Должность: [★ ЗАПОЛНИТЬ: актуальная должность в UrFU].
+Организация: ФГАОУ ВО «Уральский федеральный университет имени первого Президента России Б.Н. Ельцина», Институт радиоэлектроники и информационных технологий.
+Адрес организации: [★ ЗАПОЛНИТЬ: полный почтовый адрес UrFU с индексом].
+Телефон: [★ ЗАПОЛНИТЬ: рабочий или мобильный телефон].
+E-mail: iarnoolavi.matarmaa@urfu.ru.
+Область научных интересов: искусственный интеллект, большие языковые модели, вычислительное творчество, системный анализ, концептуальные пространства.
+ORCID: [★ ЗАПОЛНИТЬ: https://orcid.org/... и/или SPIN-код].

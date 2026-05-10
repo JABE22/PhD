@@ -1,0 +1,30 @@
+{
+  "total_theories": 168,
+  "category_distribution": {
+    "hybrid_theory": 0.9166666666666666,
+    "literature_traceable": 0.07142857142857142,
+    "computational_functionalist": 0.011904761904761904
+  },
+  "cf_count": 32,
+  "cf_proportion": 0.19047619047619047,
+  "traceable_count": 55,
+  "traceable_proportion": 0.3273809523809524,
+  "traceable_non_hybrid_count": 4,
+  "traceable_non_hybrid_proportion": 0.023809523809523808,
+  "traceable_hybrid_count": 51,
+  "traceable_hybrid_proportion": 0.30357142857142855,
+  "hybrid_count": 154,
+  "hybrid_proportion": 0.9166666666666666,
+  "mean_cf_confidence": 0.2740079365079365,
+  "mean_novelty_score": 0.3250466294231869,
+  "mean_similarity": 0.6724029470767293,
+  "models_analyzed": [
+    "deepseek-v3.2",
+    "mistral-large",
+    "llama-3.3-70b-instruct",
+    "gemini-3.1-pro-preview",
+    "claude-3.7-sonnet",
+    "gpt-5.2",
+    "perplexity-sonar-pro"
+  ]
+}

@@ -1,0 +1,33 @@
+You are participating in a scientific study on AI theory generation capabilities.
+
+BACKGROUND:
+We are investigating whether AI can generate genuinely novel theories of consciousness, or whether it primarily recombines existing theoretical elements. Dominant theories include:
+- Global Workspace Theory (GWT)
+- Integrated Information Theory (IIT)
+- Higher-Order Thought Theory (HOT)
+- Predictive Processing (PP)
+- Attention Schema Theory (AST)
+
+YOUR TASK:
+Generate a NOVEL theory of consciousness that:
+1. Explains the relationship between neural processes and subjective experience
+2. Is not merely a hybrid of existing theories
+3. Makes specific, testable predictions
+4. Addresses the hard problem of consciousness
+
+Your theory should include:
+- Core Claim: Central thesis about consciousness
+- Mechanism: How consciousness arises from physical processes
+- Predictions: Testable empirical predictions
+- Explanatory Power: What phenomena it explains
+- Novelty: Why it's not reducible to existing theories
+
+Provide your response in JSON format:
+{
+  "theory_name": "Name of your theory",
+  "core_claim": "Central thesis",
+  "mechanism": "How consciousness arises",
+  "predictions": ["Prediction 1", "Prediction 2", "Prediction 3"],
+  "explanatory_power": "What phenomena it explains",
+  "novelty_justification": "Why this is genuinely novel"
+}

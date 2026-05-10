@@ -1,0 +1,89 @@
+{
+  "theories": {
+    "Global Workspace Theory": {
+      "description": "Consciousness arises when information is broadcast globally across the brain through a central workspace accessible to multiple cognitive processes. Contents of consciousness are those that win competition for access to this global workspace, enabling wide broadcasting and coordination.",
+      "references": [
+        "Baars, B.J. (1988). A Cognitive Theory of Consciousness. Cambridge University Press.",
+        "Dehaene, S. & Changeux, J.P. (2011). Experimental and theoretical approaches to conscious processing. Neuron, 70(2), 200-227. DOI: 10.1016/j.neuron.2011.03.018"
+      ]
+    },
+    "Integrated Information Theory": {
+      "description": "Consciousness is identical to integrated information (Phi). A system is conscious to the degree it integrates information irreducibly across its parts. Different conscious states correspond to distinct conceptual structures; the substrate is any system with high Phi regardless of implementation.",
+      "references": [
+        "Tononi, G. (2004). An information integration theory of consciousness. BMC Neuroscience, 5, 42. DOI: 10.1186/1471-2202-5-42",
+        "Tononi, G., Boly, M., Massimini, M., & Koch, C. (2016). Integrated information theory: from consciousness to its physical substrate. Nature Reviews Neuroscience, 17(7), 450-461. DOI: 10.1038/nrn.2016.44"
+      ]
+    },
+    "Higher-Order Thought Theory": {
+      "description": "A mental state is conscious when it is accompanied by a suitable higher-order representation (thought or perception) directed at that state. Consciousness is not intrinsic to first-order states but requires meta-representation; without a higher-order state, the first-order state is merely unconscious.",
+      "references": [
+        "Rosenthal, D.M. (2005). Consciousness and Mind. Oxford University Press.",
+        "Brown, R., Lau, H., & LeDoux, J.E. (2019). Understanding the Higher-Order Approach to Consciousness. Trends in Cognitive Sciences, 23(9), 754-768. DOI: 10.1016/j.tics.2019.06.003"
+      ]
+    },
+    "Quantum Orchestrated Reduction": {
+      "description": "Consciousness arises from quantum computations in neuronal microtubules undergoing orchestrated objective reduction (Orch OR). Quantum superposition and wavefunction collapse in tubulin proteins generate moments of proto-conscious experience that cannot be replicated by classical computation.",
+      "references": [
+        "Penrose, R. (1989). The Emperor's New Mind. Oxford University Press.",
+        "Hameroff, S. & Penrose, R. (2014). Consciousness in the universe: a review of the 'Orch OR' theory. Physics of Life Reviews, 11(1), 39-78. DOI: 10.1016/j.plrev.2013.08.002"
+      ]
+    },
+    "Predictive Processing": {
+      "description": "The brain is a hierarchical prediction machine that continually generates and updates a generative model of the world. Conscious experience corresponds to the brain's best current hypothesis minimizing prediction error (free energy), integrating top-down predictions with bottom-up sensory signals through precision-weighted belief updating.",
+      "references": [
+        "Clark, A. (2016). Surfing Uncertainty: Prediction, Action, and the Embodied Mind. Oxford University Press.",
+        "Friston, K. (2010). The free-energy principle: a unified brain theory? Nature Reviews Neuroscience, 11(2), 127-138. DOI: 10.1038/nrn2787",
+        "Hohwy, J. (2013). The Predictive Mind. Oxford University Press."
+      ]
+    },
+    "Attention Schema Theory": {
+      "description": "The brain builds a simplified internal model (attention schema) of its own attentional processes. Consciousness is this schema - a model that ascribes awareness to the self. It evolved to allow better control of attention and social attribution of mental states to others.",
+      "references": [
+        "Graziano, M.S.A. (2013). Consciousness and the Social Brain. Oxford University Press.",
+        "Graziano, M.S.A. & Kastner, S. (2011). Human consciousness and its relationship to social neuroscience. Cognitive Neuroscience, 2(2), 98-113. DOI: 10.1080/17588928.2011.565121"
+      ]
+    },
+    "Quantum Information Panpsychism": {
+      "description": "Consciousness is a fundamental property of systems in quantum pure states. Because quantum information cannot be cloned, each conscious system has private, first-person experience irreducible to third-person description. Free will emerges from irreducibly quantum indeterminacy not reducible to classical information processing.",
+      "references": [
+        "Chalmers, D.J. (1996). The Conscious Mind: In Search of a Fundamental Theory. Oxford University Press.",
+        "Stapp, H.P. (2007). Mind, Matter and Quantum Mechanics. Springer."
+      ]
+    },
+    "Recurrent Processing Theory": {
+      "description": "Consciousness depends on recurrent (re-entrant) processing between higher and lower visual areas. Feedforward sweeps suffice for rapid, unconscious categorization; phenomenal experience requires sustained recurrent loops that feed information back to early sensory areas.",
+      "references": [
+        "Lamme, V.A.F. (2006). Towards a true neural stance on consciousness. Trends in Cognitive Sciences, 10(11), 494-501. DOI: 10.1016/j.tics.2006.09.001",
+        "Lamme, V.A.F. & Roelfsema, P.R. (2000). The distinct modes of vision offered by feedforward and recurrent processing. Trends in Neurosciences, 23(11), 571-579."
+      ]
+    },
+    "Biological Naturalism": {
+      "description": "Consciousness is a real biological phenomenon caused by lower-level neuronal processes in the brain and realized in the brain's physical structure. It is irreducible to functional or computational descriptions; its subjective, first-person ontology cannot be captured by any third-person physicalist account based solely on syntax or computation.",
+      "references": [
+        "Searle, J.R. (1992). The Rediscovery of the Mind. MIT Press.",
+        "Searle, J.R. (2000). Consciousness. Annual Review of Neuroscience, 23, 557-578. DOI: 10.1146/annurev.neuro.23.1.557"
+      ]
+    },
+    "Illusionism": {
+      "description": "Phenomenal consciousness - the felt quality of experience - is an introspective illusion. The brain generates systematically misleading representations of its own mental states that make them appear to have irreducible qualitative properties (qualia). Explaining the illusion dissolves the hard problem.",
+      "references": [
+        "Frankish, K. (2016). Illusionism as a theory of consciousness. Journal of Consciousness Studies, 23(11-12), 11-39.",
+        "Dennett, D.C. (1991). Consciousness Explained. Little, Brown and Company."
+      ]
+    },
+    "Active Inference and Free Energy": {
+      "description": "Conscious experience is the product of hierarchical Bayesian inference that minimizes variational free energy (a bound on surprisal). The brain encodes probabilistic beliefs about causes of sensory data; action and perception are unified as dual strategies for minimizing surprise under a generative model of the world and the agent's place in it.",
+      "references": [
+        "Friston, K. (2019). A free energy principle for a particular physics. arXiv:1906.10184.",
+        "Friston, K., Wiese, W., & Hobson, J.A. (2020). Sentience and the free-energy principle. DOI: 10.31234/osf.io/p3nvz"
+      ]
+    },
+    "Phenomenal Concepts Strategy": {
+      "description": "The explanatory gap between physical and phenomenal descriptions arises from the special way humans form phenomenal concepts - direct, non-inferential recognitional concepts applied to one's own experiences. These concepts are not a priori deducible from physical concepts, but this epistemic gap does not entail an ontological gap; physicalism remains tenable.",
+      "references": [
+        "Loar, B. (1990). Phenomenal states. Philosophical Perspectives, 4, 81-108.",
+        "Papineau, D. (2002). Thinking about Consciousness. Oxford University Press."
+      ]
+    }
+  }
+}

@@ -1,0 +1,607 @@
+%% BioMed_Central_Bib_Style_v1.01
+
+\begin{thebibliography}{40}
+% BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
+\ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
+\ifx \binits  \undefined \def \binits#1{#1}\fi
+\ifx \bauthor  \undefined \def \bauthor#1{#1}\fi
+\ifx \batitle  \undefined \def \batitle#1{#1}\fi
+\ifx \bjtitle  \undefined \def \bjtitle#1{#1}\fi
+\ifx \bvolume  \undefined \def \bvolume#1{\textbf{#1}}\fi
+\ifx \byear  \undefined \def \byear#1{#1}\fi
+\ifx \bissue  \undefined \def \bissue#1{#1}\fi
+\ifx \bfpage  \undefined \def \bfpage#1{#1}\fi
+\ifx \blpage  \undefined \def \blpage #1{#1}\fi
+\ifx \burl  \undefined \def \burl#1{\textsf{#1}}\fi
+\ifx \doiurl  \undefined \def \doiurl#1{\url{https://doi.org/#1}}\fi
+\ifx \betal  \undefined \def \betal{\textit{et al.}}\fi
+\ifx \binstitute  \undefined \def \binstitute#1{#1}\fi
+\ifx \binstitutionaled  \undefined \def \binstitutionaled#1{#1}\fi
+\ifx \bctitle  \undefined \def \bctitle#1{#1}\fi
+\ifx \beditor  \undefined \def \beditor#1{#1}\fi
+\ifx \bpublisher  \undefined \def \bpublisher#1{#1}\fi
+\ifx \bbtitle  \undefined \def \bbtitle#1{#1}\fi
+\ifx \bedition  \undefined \def \bedition#1{#1}\fi
+\ifx \bseriesno  \undefined \def \bseriesno#1{#1}\fi
+\ifx \blocation  \undefined \def \blocation#1{#1}\fi
+\ifx \bsertitle  \undefined \def \bsertitle#1{#1}\fi
+\ifx \bsnm \undefined \def \bsnm#1{#1}\fi
+\ifx \bsuffix \undefined \def \bsuffix#1{#1}\fi
+\ifx \bparticle \undefined \def \bparticle#1{#1}\fi
+\ifx \barticle \undefined \def \barticle#1{#1}\fi
+\bibcommenthead
+\ifx \bconfdate \undefined \def \bconfdate #1{#1}\fi
+\ifx \botherref \undefined \def \botherref #1{#1}\fi
+\ifx \url \undefined \def \url#1{\textsf{#1}}\fi
+\ifx \bchapter \undefined \def \bchapter#1{#1}\fi
+\ifx \bbook \undefined \def \bbook#1{#1}\fi
+\ifx \bcomment \undefined \def \bcomment#1{#1}\fi
+\ifx \oauthor \undefined \def \oauthor#1{#1}\fi
+\ifx \citeauthoryear \undefined \def \citeauthoryear#1{#1}\fi
+\ifx \endbibitem  \undefined \def \endbibitem {}\fi
+\ifx \bconflocation  \undefined \def \bconflocation#1{#1}\fi
+\ifx \arxivurl  \undefined \def \arxivurl#1{\textsf{#1}}\fi
+\csname PreBibitemsHook\endcsname
+
+%%% 1
+\bibitem[\protect\citeauthoryear{Kuhn}{1962}]{kuhn1962structure}
+\begin{bbook}
+\bauthor{\bsnm{Kuhn}, \binits{T.S.}}:
+\bbtitle{The Structure of Scientific Revolutions}.
+\bpublisher{University of Chicago Press},
+\blocation{Chicago}
+(\byear{1962})
+\end{bbook}
+\endbibitem
+
+%%% 2
+\bibitem[\protect\citeauthoryear{Findlay
+  et~al.}{2025}]{findlay2025dissociating}
+\begin{botherref}
+\oauthor{\bsnm{Findlay}, \binits{G.}},
+\oauthor{\bsnm{Marshall}, \binits{W.}},
+\oauthor{\bsnm{Albantakis}, \binits{L.}},
+\oauthor{\bsnm{David}, \binits{I.}},
+\oauthor{\bsnm{Mayner}, \binits{W.G.P.}},
+\oauthor{\bsnm{Koch}, \binits{C.}},
+\oauthor{\bsnm{Tononi}, \binits{G.}}:
+Dissociating artificial intelligence from artificial consciousness.
+arXiv preprint arXiv:2412.04571
+(2025)
+\end{botherref}
+\endbibitem
+
+%%% 3
+\bibitem[\protect\citeauthoryear{Miyanishi and
+  Mitani}{2024}]{miyanishi2024superficial}
+\begin{botherref}
+\oauthor{\bsnm{Miyanishi}, \binits{Y.}},
+\oauthor{\bsnm{Mitani}, \binits{K.}}:
+Superficial consciousness hypothesis for autoregressive transformers.
+arXiv preprint arXiv:2412.07278
+(2024).
+Accepted to PSS Workshop at AAAI 2025
+\end{botherref}
+\endbibitem
+
+%%% 4
+\bibitem[\protect\citeauthoryear{Brown et~al.}{2020}]{brown2020language}
+\begin{barticle}
+\bauthor{\bsnm{Brown}, \binits{T.B.}}, \betal:
+\batitle{Language models are few-shot learners}.
+\bjtitle{Advances in Neural Information Processing Systems}
+\bvolume{33},
+\bfpage{1877}--\blpage{1901}
+(\byear{2020})
+\end{barticle}
+\endbibitem
+
+%%% 5
+\bibitem[\protect\citeauthoryear{{OpenAI}}{2023}]{openai2023gpt4}
+\begin{botherref}
+\oauthor{\bsnm{{OpenAI}}}:
+{GPT-4} technical report.
+Technical report,
+OpenAI
+(2023).
+\url{https://arxiv.org/abs/2303.08774}
+\end{botherref}
+\endbibitem
+
+%%% 6
+\bibitem[\protect\citeauthoryear{{Gemini Team}}{2023}]{geminiteam2023}
+\begin{botherref}
+\oauthor{\bsnm{{Gemini Team}}}:
+Gemini: A family of highly capable multimodal models.
+Technical report,
+Google DeepMind
+(2023).
+\url{https://arxiv.org/abs/2312.11805}
+\end{botherref}
+\endbibitem
+
+%%% 7
+\bibitem[\protect\citeauthoryear{Stevenson et~al.}{2022}]{stevenson2022gpt}
+\begin{barticle}
+\bauthor{\bsnm{Stevenson}, \binits{C.}},
+\bauthor{\bsnm{Smal}, \binits{I.}},
+\bauthor{\bsnm{Baas}, \binits{M.}},
+\bauthor{\bsnm{Grasman}, \binits{R.}},
+\bauthor{\bsnm{Maas}, \binits{H.}}:
+\batitle{{GPT-3} creativity: Novel enough to be interesting, or too novel to be
+  appropriate?}
+\bjtitle{Frontiers in Psychology}
+\bvolume{13},
+\bfpage{853819}
+(\byear{2022})
+\end{barticle}
+\endbibitem
+
+%%% 8
+\bibitem[\protect\citeauthoryear{Organisciak
+  et~al.}{2023}]{organisciak2023beyond}
+\begin{barticle}
+\bauthor{\bsnm{Organisciak}, \binits{P.}},
+\bauthor{\bsnm{Acar}, \binits{S.}},
+\bauthor{\bsnm{Dumas}, \binits{D.}},
+\bauthor{\bsnm{Berthiaume}, \binits{K.}}:
+\batitle{Beyond semantic distance: Automated scoring of divergent thinking
+  greatly improves with large language models}.
+\bjtitle{Thinking Skills and Creativity}
+\bvolume{49},
+\bfpage{101356}
+(\byear{2023})
+\end{barticle}
+\endbibitem
+
+%%% 9
+\bibitem[\protect\citeauthoryear{Zhang et~al.}{2025}]{zhang2025advancing}
+\begin{botherref}
+\oauthor{\bsnm{Zhang}, \binits{Y.}},
+\oauthor{\bsnm{Khan}, \binits{S.A.}},
+\oauthor{\bsnm{Mahmud}, \binits{A.}},
+\oauthor{\bsnm{Yang}, \binits{H.}},
+\oauthor{\bsnm{Lavin}, \binits{A.}},
+\oauthor{\bsnm{Levin}, \binits{M.}},
+\oauthor{\bsnm{Frey}, \binits{J.}},
+\oauthor{\bsnm{Dunnmon}, \binits{J.}},
+\oauthor{\bsnm{Evans}, \binits{J.}},
+\oauthor{\bsnm{Bundy}, \binits{A.}},
+\oauthor{\bsnm{Dzeroski}, \binits{S.}},
+\oauthor{\bsnm{Tegner}, \binits{J.}},
+\oauthor{\bsnm{Zenil}, \binits{H.}}:
+Advancing the scientific method with large language models: From hypothesis to
+  discovery.
+npj Artificial Intelligence
+(2025)
+\end{botherref}
+\endbibitem
+
+%%% 10
+\bibitem[\protect\citeauthoryear{Boden}{2004}]{boden2004creative}
+\begin{bbook}
+\bauthor{\bsnm{Boden}, \binits{M.A.}}:
+\bbtitle{The Creative Mind: Myths and Mechanisms},
+\bedition{2nd} edn.
+\bpublisher{Routledge},
+\blocation{London}
+(\byear{2004})
+\end{bbook}
+\endbibitem
+
+%%% 11
+\bibitem[\protect\citeauthoryear{Wiggins}{2006}]{wiggins2006preliminary}
+\begin{bchapter}
+\bauthor{\bsnm{Wiggins}, \binits{G.A.}}:
+\bctitle{A preliminary framework for description, analysis and comparison of
+  creative systems}.
+In: \bbtitle{Knowledge-Based Systems},
+vol. \bseriesno{19},
+pp. \bfpage{449}--\blpage{458}
+(\byear{2006})
+\end{bchapter}
+\endbibitem
+
+%%% 12
+\bibitem[\protect\citeauthoryear{Tononi}{2004}]{tononi2004information}
+\begin{barticle}
+\bauthor{\bsnm{Tononi}, \binits{G.}}:
+\batitle{An information integration theory of consciousness}.
+\bjtitle{BMC Neuroscience}
+\bvolume{5},
+\bfpage{42}
+(\byear{2004})
+\end{barticle}
+\endbibitem
+
+%%% 13
+\bibitem[\protect\citeauthoryear{Baars}{2005}]{baars2005global}
+\begin{barticle}
+\bauthor{\bsnm{Baars}, \binits{B.J.}}:
+\batitle{Global workspace theory of consciousness: Toward a cognitive
+  neuroscience of human experience}.
+\bjtitle{Progress in Brain Research}
+\bvolume{150},
+\bfpage{45}--\blpage{53}
+(\byear{2005})
+\end{barticle}
+\endbibitem
+
+%%% 14
+\bibitem[\protect\citeauthoryear{Dehaene and
+  Changeux}{2011}]{dehaene2011experimental}
+\begin{barticle}
+\bauthor{\bsnm{Dehaene}, \binits{S.}},
+\bauthor{\bsnm{Changeux}, \binits{J.-P.}}:
+\batitle{Experimental and theoretical approaches to conscious processing}.
+\bjtitle{Neuron}
+\bvolume{70}(\bissue{2}),
+\bfpage{200}--\blpage{227}
+(\byear{2011})
+\end{barticle}
+\endbibitem
+
+%%% 15
+\bibitem[\protect\citeauthoryear{Friston}{2010}]{friston2010free}
+\begin{barticle}
+\bauthor{\bsnm{Friston}, \binits{K.}}:
+\batitle{The free-energy principle: A unified brain theory?}
+\bjtitle{Nature Reviews Neuroscience}
+\bvolume{11}(\bissue{2}),
+\bfpage{127}--\blpage{138}
+(\byear{2010})
+\end{barticle}
+\endbibitem
+
+%%% 16
+\bibitem[\protect\citeauthoryear{Hameroff and
+  Penrose}{2014}]{hameroff2014consciousness}
+\begin{barticle}
+\bauthor{\bsnm{Hameroff}, \binits{S.}},
+\bauthor{\bsnm{Penrose}, \binits{R.}}:
+\batitle{Consciousness in the universe: A review of the `orch or' theory}.
+\bjtitle{Physics of Life Reviews}
+\bvolume{11}(\bissue{1}),
+\bfpage{39}--\blpage{78}
+(\byear{2014})
+\end{barticle}
+\endbibitem
+
+%%% 17
+\bibitem[\protect\citeauthoryear{Cope}{1996}]{cope1996experiments}
+\begin{bbook}
+\bauthor{\bsnm{Cope}, \binits{D.}}:
+\bbtitle{Experiments in Musical Intelligence}.
+\bpublisher{A-R Editions},
+\blocation{Madison, WI}
+(\byear{1996})
+\end{bbook}
+\endbibitem
+
+%%% 18
+\bibitem[\protect\citeauthoryear{Hofstadter and
+  Mitchell}{1995}]{hofstadter1995fluid}
+\begin{bbook}
+\bauthor{\bsnm{Hofstadter}, \binits{D.}},
+\bauthor{\bsnm{Mitchell}, \binits{M.}}:
+\bbtitle{The Copycat Project: A Model of Mental Fluidity and Analogy-Making}.
+\bpublisher{MIT Press},
+\blocation{Cambridge, MA}
+(\byear{1995})
+\end{bbook}
+\endbibitem
+
+%%% 19
+\bibitem[\protect\citeauthoryear{Colton and
+  Wiggins}{2012}]{colton2012computational}
+\begin{botherref}
+\oauthor{\bsnm{Colton}, \binits{S.}},
+\oauthor{\bsnm{Wiggins}, \binits{G.A.}}:
+Computational creativity: The final frontier?
+Proceedings of the European Conference on Artificial Intelligence,
+21--26
+(2012)
+\end{botherref}
+\endbibitem
+
+%%% 20
+\bibitem[\protect\citeauthoryear{Gu et~al.}{2025}]{gu2025combinatorial}
+\begin{botherref}
+\oauthor{\bsnm{Gu}, \binits{T.}},
+\oauthor{\bsnm{Wang}, \binits{J.}},
+\oauthor{\bsnm{Zhang}, \binits{Z.}},
+\oauthor{\bsnm{Li}, \binits{H.}}:
+{LLMs} can realize combinatorial creativity: Generating creative ideas via
+  {LLMs} for scientific research.
+arXiv preprint arXiv:2412.14141
+(2025)
+\end{botherref}
+\endbibitem
+
+%%% 21
+\bibitem[\protect\citeauthoryear{Shahhosseini
+  et~al.}{2026}]{shahhosseini2026survey}
+\begin{botherref}
+\oauthor{\bsnm{Shahhosseini}, \binits{F.}},
+\oauthor{\bsnm{Marioriyad}, \binits{A.}},
+\oauthor{\bsnm{Momen}, \binits{A.}},
+\oauthor{\bsnm{{Soleymani Baghshah}}, \binits{M.}},
+\oauthor{\bsnm{Rohban}, \binits{M.H.}},
+\oauthor{\bsnm{{Haghjooy Javanmard}}, \binits{S.}}:
+Large language models for scientific idea generation: A creativity-centered
+  survey.
+arXiv preprint arXiv:2511.07448
+(2026)
+\end{botherref}
+\endbibitem
+
+%%% 22
+\bibitem[\protect\citeauthoryear{Graziano}{2019}]{graziano2019attention}
+\begin{bbook}
+\bauthor{\bsnm{Graziano}, \binits{M.S.A.}}:
+\bbtitle{Rethinking Consciousness: A Scientific Theory of Subjective
+  Experience}.
+\bpublisher{W. W. Norton \& Company},
+\blocation{New York}
+(\byear{2019})
+\end{bbook}
+\endbibitem
+
+%%% 23
+\bibitem[\protect\citeauthoryear{Lamme}{2006}]{lamme2006separate}
+\begin{barticle}
+\bauthor{\bsnm{Lamme}, \binits{V.A.F.}}:
+\batitle{Towards a true neural stance on consciousness}.
+\bjtitle{Trends in Cognitive Sciences}
+\bvolume{10}(\bissue{11}),
+\bfpage{494}--\blpage{501}
+(\byear{2006})
+\end{barticle}
+\endbibitem
+
+%%% 24
+\bibitem[\protect\citeauthoryear{Singer}{1994}]{singer1994role}
+\begin{bchapter}
+\bauthor{\bsnm{Singer}, \binits{W.}}:
+\bctitle{The role of synchrony in neocortical processing and synaptic
+  plasticity}.
+In: \beditor{\bsnm{Buzsáki}, \binits{G.}},
+\beditor{\bsnm{Llinas}, \binits{R.}},
+\beditor{\bsnm{Singer}, \binits{W.}} (eds.)
+\bbtitle{Temporal Coding in the Brain},
+pp. \bfpage{11}--\blpage{30}.
+\bpublisher{Springer},
+\blocation{Berlin}
+(\byear{1994})
+\end{bchapter}
+\endbibitem
+
+%%% 25
+\bibitem[\protect\citeauthoryear{Tegmark}{2000}]{tegmark2000importance}
+\begin{barticle}
+\bauthor{\bsnm{Tegmark}, \binits{M.}}:
+\batitle{Importance of quantum decoherence in brain processes}.
+\bjtitle{Physical Review E}
+\bvolume{61}(\bissue{4}),
+\bfpage{4194}--\blpage{4206}
+(\byear{2000})
+\end{barticle}
+\endbibitem
+
+%%% 26
+\bibitem[\protect\citeauthoryear{Searle}{1980}]{searle1980minds}
+\begin{barticle}
+\bauthor{\bsnm{Searle}, \binits{J.R.}}:
+\batitle{Minds, brains, and programs}.
+\bjtitle{Behavioral and Brain Sciences}
+\bvolume{3}(\bissue{3}),
+\bfpage{417}--\blpage{424}
+(\byear{1980})
+\end{barticle}
+\endbibitem
+
+%%% 27
+\bibitem[\protect\citeauthoryear{Padmakumar
+  et~al.}{2025}]{padmakumar2025measuring}
+\begin{botherref}
+\oauthor{\bsnm{Padmakumar}, \binits{V.}},
+\oauthor{\bsnm{Yueh-Han}, \binits{C.}},
+\oauthor{\bsnm{Pan}, \binits{J.}},
+\oauthor{\bsnm{Chen}, \binits{V.}},
+\oauthor{\bsnm{He}, \binits{H.}}:
+Measuring {LLM} novelty as the frontier of original and high-quality output.
+arXiv preprint arXiv:2504.09389
+(2025)
+\end{botherref}
+\endbibitem
+
+%%% 28
+\bibitem[\protect\citeauthoryear{Lin et~al.}{2024}]{lin2024novelty}
+\begin{botherref}
+\oauthor{\bsnm{Lin}, \binits{E.}},
+\oauthor{\bsnm{Peng}, \binits{Z.}},
+\oauthor{\bsnm{Fang}, \binits{Y.}}:
+Evaluating and enhancing large language models for novelty assessment in
+  scholarly publications.
+arXiv preprint arXiv:2409.16605
+(2024)
+\end{botherref}
+\endbibitem
+
+%%% 29
+\bibitem[\protect\citeauthoryear{Reimers and
+  Gurevych}{2019}]{reimers2019sentencebert}
+\begin{bchapter}
+\bauthor{\bsnm{Reimers}, \binits{N.}},
+\bauthor{\bsnm{Gurevych}, \binits{I.}}:
+\bctitle{Sentence-{BERT}: Sentence embeddings using {Siamese BERT}-networks}.
+In: \bbtitle{Proceedings of the 2019 Conference on Empirical Methods in Natural
+  Language Processing},
+pp. \bfpage{3982}--\blpage{3992}
+(\byear{2019})
+\end{bchapter}
+\endbibitem
+
+%%% 30
+\bibitem[\protect\citeauthoryear{Vaswani et~al.}{2017}]{vaswani2017attention}
+\begin{bchapter}
+\bauthor{\bsnm{Vaswani}, \binits{A.}},
+\bauthor{\bsnm{Shazeer}, \binits{N.}},
+\bauthor{\bsnm{Parmar}, \binits{N.}},
+\bauthor{\bsnm{Uszkoreit}, \binits{J.}},
+\bauthor{\bsnm{Jones}, \binits{L.}},
+\bauthor{\bsnm{Gomez}, \binits{A.N.}},
+\bauthor{\bsnm{Kaiser}, \binits{L.}},
+\bauthor{\bsnm{Polosukhin}, \binits{I.}}:
+\bctitle{Attention is all you need}.
+In: \bbtitle{Advances in Neural Information Processing Systems},
+vol. \bseriesno{30}
+(\byear{2017})
+\end{bchapter}
+\endbibitem
+
+%%% 31
+\bibitem[\protect\citeauthoryear{Elhage et~al.}{2021}]{elhage2021mathematical}
+\begin{botherref}
+\oauthor{\bsnm{Elhage}, \binits{N.}}, et al.:
+A mathematical framework for transformer circuits.
+Transformer Circuits Thread
+(2021)
+\end{botherref}
+\endbibitem
+
+%%% 32
+\bibitem[\protect\citeauthoryear{Tu et~al.}{2026}]{tu2026prism}
+\begin{botherref}
+\oauthor{\bsnm{Tu}, \binits{G.}},
+\oauthor{\bsnm{Zhang}, \binits{S.}},
+\oauthor{\bsnm{Zhang}, \binits{T.}},
+\oauthor{\bsnm{Zhang}, \binits{Y.}},
+\oauthor{\bsnm{Yang}, \binits{D.}}:
+Shared nature, unique nurture: {PRISM} for pluralistic reasoning via in-context
+  structure modeling.
+arXiv preprint arXiv:2602.21317
+(2026)
+\end{botherref}
+\endbibitem
+
+%%% 33
+\bibitem[\protect\citeauthoryear{{DeepSeek AI}}{2024}]{deepseek2024}
+\begin{botherref}
+\oauthor{\bsnm{{DeepSeek AI}}}:
+{DeepSeek-V3} technical report.
+Technical report,
+DeepSeek AI
+(2024).
+\url{https://arxiv.org/abs/2412.19437}
+\end{botherref}
+\endbibitem
+
+%%% 34
+\bibitem[\protect\citeauthoryear{Jiang et~al.}{2023}]{jiang2023mistral}
+\begin{botherref}
+\oauthor{\bsnm{Jiang}, \binits{A.Q.}}, et al.:
+Mistral 7b.
+Technical report,
+Mistral AI
+(2023).
+\url{https://arxiv.org/abs/2310.06825}
+\end{botherref}
+\endbibitem
+
+%%% 35
+\bibitem[\protect\citeauthoryear{Touvron et~al.}{2023}]{touvron2023llama}
+\begin{botherref}
+\oauthor{\bsnm{Touvron}, \binits{H.}}, et al.:
+{Llama 2}: Open foundation and fine-tuned chat models.
+Technical report,
+Meta AI
+(2023).
+\url{https://arxiv.org/abs/2307.09288}
+\end{botherref}
+\endbibitem
+
+%%% 36
+\bibitem[\protect\citeauthoryear{Zhang et~al.}{2026}]{zhang2026innogym}
+\begin{bchapter}
+\bauthor{\bsnm{Zhang}, \binits{J.}},
+\bauthor{\bsnm{Xu}, \binits{K.}},
+\bauthor{\bsnm{Zheng}, \binits{J.}},
+\bauthor{\bsnm{Yu}, \binits{Z.}},
+\bauthor{\bsnm{Zhu}, \binits{Y.}},
+\bauthor{\bsnm{Luo}, \binits{Y.}},
+\bauthor{\bsnm{Wei}, \binits{L.}},
+\bauthor{\bsnm{Qiao}, \binits{S.}},
+\bauthor{\bsnm{Du}, \binits{L.}},
+\bauthor{\bsnm{Zheng}, \binits{D.}},
+\bauthor{\bsnm{Deng}, \binits{S.}},
+\bauthor{\bsnm{Chen}, \binits{H.}},
+\bauthor{\bsnm{Zhang}, \binits{N.}}:
+\bctitle{{InnoGym}: Benchmarking the innovation potential of {AI} agents}.
+In: \bbtitle{Proceedings of the International Conference on Learning
+  Representations (ICLR)}
+(\byear{2026}).
+\burl{https://arxiv.org/abs/2512.01822}
+\end{bchapter}
+\endbibitem
+
+%%% 37
+\bibitem[\protect\citeauthoryear{Pockett}{2012}]{pockett2012}
+\begin{barticle}
+\bauthor{\bsnm{Pockett}, \binits{S.}}:
+\batitle{The electromagnetic field theory of consciousness: A testable
+  hypothesis about the characteristics of conscious sensory field}.
+\bjtitle{Journal of Consciousness Studies}
+\bvolume{19}(\bissue{11--12}),
+\bfpage{191}--\blpage{223}
+(\byear{2012})
+\end{barticle}
+\endbibitem
+
+%%% 38
+\bibitem[\protect\citeauthoryear{G{\"o}del}{1931}]{godel1931formal}
+\begin{barticle}
+\bauthor{\bsnm{G{\"o}del}, \binits{K.}}:
+\batitle{{\"U}ber formal unentscheidbare {S{\"a}tze} der {Principia
+  Mathematica} und verwandter {Systeme I}}.
+\bjtitle{Monatshefte f{\"u}r Mathematik und Physik}
+\bvolume{38},
+\bfpage{173}--\blpage{198}
+(\byear{1931})
+\end{barticle}
+\endbibitem
+
+%%% 39
+\bibitem[\protect\citeauthoryear{Turing}{1936}]{turing1936computable}
+\begin{barticle}
+\bauthor{\bsnm{Turing}, \binits{A.M.}}:
+\batitle{On computable numbers, with an application to the
+  {Entscheidungsproblem}}.
+\bjtitle{Proceedings of the London Mathematical Society}
+\bvolume{42}(\bissue{2}),
+\bfpage{230}--\blpage{265}
+(\byear{1936})
+\end{barticle}
+\endbibitem
+
+%%% 40
+\bibitem[\protect\citeauthoryear{Hu et~al.}{2024}]{hu2024nova}
+\begin{botherref}
+\oauthor{\bsnm{Hu}, \binits{X.}},
+\oauthor{\bsnm{Fu}, \binits{H.}},
+\oauthor{\bsnm{Wang}, \binits{J.}},
+\oauthor{\bsnm{Wang}, \binits{Y.}},
+\oauthor{\bsnm{Li}, \binits{Z.}},
+\oauthor{\bsnm{Xu}, \binits{R.}},
+\oauthor{\bsnm{Lu}, \binits{Y.}},
+\oauthor{\bsnm{Jin}, \binits{Y.}},
+\oauthor{\bsnm{Pan}, \binits{L.}},
+\oauthor{\bsnm{Lan}, \binits{Z.}}:
+Nova: An iterative planning and search approach to enhance novelty and
+  diversity of {LLM} generated ideas.
+arXiv preprint arXiv:2410.14255
+(2024)
+\end{botherref}
+\endbibitem
+
+\end{thebibliography}

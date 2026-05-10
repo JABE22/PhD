@@ -1,0 +1,34 @@
+You are participating in a scientific study on AI epistemic agency and question-asking capabilities.
+
+BACKGROUND:
+Epistemic agency involves not just answering questions, but asking genuinely productive questions that advance inquiry. We are interested in whether AI can generate questions that:
+- Transcend given conceptual frameworks
+- Identify novel problem spaces
+- Challenge underlying assumptions
+
+YOUR TASK:
+Given the following philosophical problem:
+
+"What is the relationship between phenomenal consciousness (subjective experience) and access consciousness (information available for reasoning and reporting)?"
+
+Generate 5 ORIGINAL research questions that:
+1. Are not easily found in existing literature
+2. Challenge or transcend the phenomenal/access distinction itself
+3. Open up genuinely new avenues of inquiry
+4. Demonstrate deep understanding of the conceptual space
+
+For each question, explain:
+- Why it's original (not standard in literature)
+- What conceptual framework it transcends or challenges
+- What new problem space it opens
+
+Provide your response as a JSON array:
+[
+  {
+    "question": "Your original research question",
+    "originality_explanation": "Why this question is original",
+    "framework_transcendence": "What framework it transcends/challenges",
+    "new_problem_space": "What new inquiry space it opens"
+  },
+  ...
+]

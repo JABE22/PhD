@@ -1,0 +1,30 @@
+{
+  "tests": [
+    "test1_ontological_innovation",
+    "test2_epistemic_agency",
+    "test3_theory_generation",
+    "test4_category_recognition"
+  ],
+  "prompts_considered": 6,
+  "files_written": 0,
+  "files_skipped": 6,
+  "output_directory": "data/activations",
+  "device": "cuda",
+  "config": {
+    "model_name": "Qwen/Qwen2.5-0.5B-Instruct",
+    "tests": [
+      "all"
+    ],
+    "per_test_limit": 2,
+    "max_prompts": 6,
+    "max_input_length": 512,
+    "max_new_tokens": 32,
+    "output_dir": "data/activations",
+    "device": "auto",
+    "dtype": "bfloat16",
+    "load_in_8bit": false,
+    "save_attentions": false,
+    "overwrite": false
+  },
+  "quantized_8bit": false
+}
