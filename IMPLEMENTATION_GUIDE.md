@@ -8,7 +8,7 @@ This document provides guidance for implementing the complete analysis described
 
 I've created the following files for you:
 
-### 1. **dataset_generation.ipynb** ✓
+### 1. **research/data/notebooks/dataset-generation.ipynb** ✓
 Complete implementation of Section 4.2 multimodal sensory dataset generation.
 - 8 sensory modality classes
 - Scenario-based data generation
@@ -16,7 +16,7 @@ Complete implementation of Section 4.2 multimodal sensory dataset generation.
 - Ontology creation
 - Visualization and statistics
 
-### 2. **overview-analysis.ipynb** ✓
+### 2. **research/results/overview/overview-analysis.ipynb** ✓
 Aggregate analysis across all four tests (Section 5.1).
 - Load and combine results from all tests
 - Cross-test comparison statistics
@@ -206,7 +206,7 @@ I'll provide detailed templates below that follow the same structure as the comp
 ## Implementation Workflow
 
 ### Phase 1: Data Generation (Done)
-Run `dataset_generation.ipynb`
+Run `research/data/notebooks/dataset-generation.ipynb`
 
 ### Phase 2: Collect AI Responses
 
@@ -281,7 +281,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 
 # 2. Generate dataset
-jupyter notebook dataset_generation.ipynb
+jupyter notebook research/data/notebooks/dataset-generation.ipynb
 # Run all cells → creates data/ directory
 
 # 3. Collect AI responses (write your own script)
@@ -292,7 +292,7 @@ jupyter notebook test1_analysis.ipynb
 # Repeat for 5.3, 5.4, 5.5, 5.6, 5.7
 
 # 5. Generate overview
-jupyter notebook overview-analysis.ipynb
+jupyter notebook research/results/overview/overview-analysis.ipynb
 ```
 
 ---

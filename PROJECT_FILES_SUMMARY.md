@@ -9,7 +9,7 @@ I've successfully generated **all 7 analysis notebooks** for your empirical sect
 ## Core Infrastructure (Previously Created) ✓
 
 ### 1. Data Generation ✓
-**File:** `dataset_generation.ipynb`
+**File:** `research/data/notebooks/dataset-generation.ipynb`
 - Generates 7,000 examples (5K train, 1K val, 1K test)
 - 8-modality sensory dataset (359 dimensions × 60 timesteps)
 - Machine-readable ontology creation
@@ -143,7 +143,7 @@ I've successfully generated **all 7 analysis notebooks** for your empirical sect
 ---
 
 ### 9. Overview Analysis ✓
-**File:** `overview-analysis.ipynb`
+**File:** `research/results/overview/overview-analysis.ipynb`
 
 **What it does:**
 - Aggregates results from all 4 tests
@@ -182,7 +182,7 @@ EOF
 **Phase 2: Data Generation (1-2 hours)**
 ```bash
 # 3. Generate dataset
-jupyter notebook dataset_generation.ipynb
+jupyter notebook research/data/notebooks/dataset-generation.ipynb
 # Run all cells → creates data/ directory with 7,000 examples
 ```
 
@@ -210,7 +210,7 @@ jupyter notebook test5_mechanistic-analysis.ipynb
 jupyter notebook test6_cross-model-analysis.ipynb
 
 # 8. Generate overview
-jupyter notebook overview-analysis.ipynb
+jupyter notebook research/results/overview/overview-analysis.ipynb
 ```
 
 **Phase 5: Extract Results for Paper (1-2 hours)**
@@ -380,14 +380,14 @@ def detect_cf_commitments(theory_text: str) -> dict:
 
 | Notebook | Runtime | Key Outputs | For Paper |
 |----------|---------|-------------|-----------|
-| `dataset_generation.ipynb` | 15-30 min | 7,000 JSON files, ontology | Section 5.1: Dataset description |
+| `research/data/notebooks/dataset-generation.ipynb` | 15-30 min | 7,000 JSON files, ontology | Section 5.1: Dataset description |
 | `test1_analysis.ipynb` | 10-20 min | Classifications, embeddings | Section 5.2: Novelty analysis |
 | `test2_analysis.ipynb` | 10-20 min | Question taxonomy | Section 5.3: Agency assessment |
 | `test3_analysis.ipynb` | 10-20 min | Theory classifications | Section 5.4: Theory evaluation |
 | `test4_analysis.ipynb` | 10-20 min | Category scoring | Section 5.5: Recognition analysis |
 | `test5_mechanistic-analysis.ipynb` | 30-60 min | Attention, activations | Section 5.6: Mechanisms |
 | `test6_cross-model-analysis.ipynb` | 15-30 min | Effect sizes, robustness | Section 5.7: Generalization |
-| `overview-analysis.ipynb` | 5-10 min | Aggregate statistics | Section 5: Overview & tables |
+| `research/results/overview/overview-analysis.ipynb` | 5-10 min | Aggregate statistics | Section 5: Overview & tables |
 
 ---
 
@@ -400,7 +400,7 @@ python -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
 
 # Generate small dataset
-jupyter notebook dataset_generation.ipynb
+jupyter notebook research/data/notebooks/dataset-generation.ipynb
 # (modify n_train=50, n_val=10, n_test=10 in first cell)
 
 # Test with 5 samples
@@ -413,7 +413,7 @@ jupyter notebook test1_analysis.ipynb
 ### Full Production Run (8-12 hours)
 ```bash
 # Full dataset
-jupyter notebook dataset_generation.ipynb
+jupyter notebook research/data/notebooks/dataset-generation.ipynb
 
 # Collect all responses (takes longest due to rate limits)
 python research/data/scripts/collect_ai_responses.py --test all --models gpt-4,claude-3.5,gemini-1.5 --n-samples 50

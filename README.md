@@ -12,8 +12,8 @@ The notebooks implement the four empirical tests described in Section 4 and gene
 ## Repository Structure
 
 ```
-├── dataset_generation.ipynb          # Generate multimodal sensory dataset (Section 4.2)
-├── overview-analysis.ipynb        # Aggregate analysis across all tests (Section 5.1)
+├── research/data/notebooks/dataset-generation.ipynb          # Generate multimodal sensory dataset (Section 4.2)
+├── research/results/overview/overview-analysis.ipynb        # Aggregate analysis across all tests (Section 5.1)
 ├── test1_analysis.ipynb           # Test 1: Ontological Innovation (Section 5.2)
 ├── test2_analysis.ipynb           # Test 2: Epistemic Agency (Section 5.3)
 ├── test3_analysis.ipynb           # Test 3: Theory Generation (Section 5.4)
@@ -73,7 +73,7 @@ GOOGLE_API_KEY=your_google_key
 ### Step 1: Generate Dataset
 
 ```bash
-jupyter notebook dataset_generation.ipynb
+jupyter notebook research/data/notebooks/dataset-generation.ipynb
 ```
 
 This creates the 8-dimensional multimodal sensory dataset:
@@ -197,7 +197,7 @@ Evaluates robustness across models and parameters.
 ### Step 6: Generate Overview Report
 
 ```bash
-jupyter notebook overview-analysis.ipynb
+jupyter notebook research/results/overview/overview-analysis.ipynb
 ```
 
 Aggregates results from all tests into comprehensive overview.
@@ -382,7 +382,7 @@ model = SentenceTransformer('all-MiniLM-L6-v2', device='cpu')
 
 ### Adding New Modalities to Test
 
-Edit `dataset_generation.ipynb`:
+Edit `research/data/notebooks/dataset-generation.ipynb`:
 
 ```python
 class CustomModality(SensoryModality):

@@ -5,7 +5,7 @@
 I've generated a complete implementation framework for your paper's empirical section (Chapter 5). Here's what you have:
 
 ### 1. Core Data Generation ✓
-**File:** `dataset_generation.ipynb`
+**File:** `research/data/notebooks/dataset-generation.ipynb`
 - Complete implementation of 8-modality sensory dataset
 - Generates 7,000 examples (5K train, 1K val, 1K test)
 - 359 dimensions per timestep, 60 timesteps per example
@@ -13,7 +13,7 @@ I've generated a complete implementation framework for your paper's empirical se
 - Creates machine-readable ontology
 
 ### 2. Overview Analysis ✓
-**File:** `overview-analysis.ipynb`
+**File:** `research/results/overview/overview-analysis.ipynb`
 - Aggregates results from all 4 tests
 - Computes cross-test statistics
 - Bootstrap confidence intervals
@@ -90,7 +90,7 @@ GOOGLE_API_KEY=your_key_here
 
 ### Step 3: Generate Dataset
 ```bash
-jupyter notebook dataset_generation.ipynb
+jupyter notebook research/data/notebooks/dataset-generation.ipynb
 # Run all cells → creates data/ directory with 7,000 examples
 ```
 
@@ -127,7 +127,7 @@ jupyter notebook test5_mechanistic-analysis.ipynb
 jupyter notebook test6_cross-model-analysis.ipynb
 
 # Generate overview
-jupyter notebook overview-analysis.ipynb
+jupyter notebook research/results/overview/overview-analysis.ipynb
 ```
 
 ### Step 7: Extract Results for Paper
@@ -207,7 +207,7 @@ project/
 
 ## What Each File Does
 
-### dataset_generation.ipynb
+### research/data/notebooks/dataset-generation.ipynb
 - **Input:** Nothing (generates synthetic data)
 - **Output:** 7,000 JSON files in data/ with sensory recordings
 - **Runtime:** ~15-30 minutes
@@ -237,7 +237,7 @@ project/
 - **Runtime:** ~10-20 minutes
 - **Purpose:** Tests whether limitations generalize across models
 
-### overview-analysis.ipynb
+### research/results/overview/overview-analysis.ipynb
 - **Input:** Results from all other analyses
 - **Output:** Aggregate statistics, summary report, overview figures
 - **Runtime:** ~5 minutes
