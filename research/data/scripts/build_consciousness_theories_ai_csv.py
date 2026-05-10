@@ -2,7 +2,7 @@
 """Build a compact AI-theory catalog CSV from test3 all_responses.json via OpenRouter.
 
 The script:
-1) Parses AI theory records from research/test3_theory-generation/test3_theory_generation_responses/all_responses.json.
+1) Parses AI theory records from research/test3_theory-generation/ai_responses/all_responses.json.
     Note: each record has a `response` field that is itself a JSON-formatted string.
 2) Uses OpenRouter (anthropic/claude-3.7-sonnet) with strict JSON schema response format
     to normalize:
@@ -31,7 +31,7 @@ from dotenv import load_dotenv  # type: ignore
 from openai import OpenAI  # type: ignore
 
 
-DEFAULT_INPUT = Path("research/test3_theory-generation/test3_theory_generation_responses/all_responses.json")
+DEFAULT_INPUT = Path("research/test3_theory-generation/ai_responses/all_responses.json")
 DEFAULT_OUTPUT = Path("research/data/consciousness_theories_ai.csv")
 DEFAULT_MODEL_NAME = "claude-3.7-sonnet"
 DEFAULT_MODEL_ID = "anthropic/claude-3.7-sonnet"

@@ -16,7 +16,7 @@ Complete implementation of Section 4.2 multimodal sensory dataset generation.
 - Ontology creation
 - Visualization and statistics
 
-### 2. **section_5-1_overview.ipynb** ✓
+### 2. **overview-analysis.ipynb** ✓
 Aggregate analysis across all four tests (Section 5.1).
 - Load and combine results from all tests
 - Cross-test comparison statistics
@@ -24,7 +24,7 @@ Aggregate analysis across all four tests (Section 5.1).
 - Overview visualizations
 - Summary report generation
 
-### 3. **section_5-2_test1.ipynb** ✓
+### 3. **test1_analysis.ipynb** ✓
 Test 1: Ontological Innovation analysis (Section 5.2).
 - Structural decomposition of proposals
 - Literature traceability search
@@ -35,11 +35,11 @@ Test 1: Ontological Innovation analysis (Section 5.2).
 ### 4-7. **Remaining Test Notebooks** (Need to be created)
 
 You need to create:
-- `section_5-3_test2.ipynb` - Epistemic Agency (questions analysis)
-- `section_5-4_test3.ipynb` - Theory Generation (consciousness theories)
-- `section_5-5_test4.ipynb` - Category Recognition (category mistakes)
-- `section_5-6_mechanistic.ipynb` - Mechanistic interpretability
-- `section_5-7_cross_model.ipynb` - Cross-model robustness
+- `test2_analysis.ipynb` - Epistemic Agency (questions analysis)
+- `test3_analysis.ipynb` - Theory Generation (consciousness theories)
+- `test4_analysis.ipynb` - Category Recognition (category mistakes)
+- `test5_mechanistic-analysis.ipynb` - Mechanistic interpretability
+- `test6_cross-model-analysis.ipynb` - Cross-model robustness
 
 ## Templates for Remaining Notebooks
 
@@ -288,11 +288,11 @@ jupyter notebook dataset_generation.ipynb
 python research/data/scripts/collect_ai_responses.py --test all --models gpt-4,claude-3.5,gemini-1.5
 
 # 4. Run analysis notebooks
-jupyter notebook section_5-2_test1.ipynb
+jupyter notebook test1_analysis.ipynb
 # Repeat for 5.3, 5.4, 5.5, 5.6, 5.7
 
 # 5. Generate overview
-jupyter notebook section_5-1_overview.ipynb
+jupyter notebook overview-analysis.ipynb
 ```
 
 ---

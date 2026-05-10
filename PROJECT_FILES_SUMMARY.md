@@ -26,7 +26,7 @@ I've successfully generated **all 7 analysis notebooks** for your empirical sect
 ## Analysis Notebooks (JUST CREATED) ✓✓✓
 
 ### 3. Test 1: Ontological Innovation ✓
-**File:** `section_5-2_test1.ipynb`
+**File:** `test1_analysis.ipynb`
 
 **What it does:**
 - Structural decomposition algorithm
@@ -44,7 +44,7 @@ I've successfully generated **all 7 analysis notebooks** for your empirical sect
 ---
 
 ### 4. Test 2: Epistemic Agency ✓
-**File:** `section_5-3_test2.ipynb`
+**File:** `test2_analysis.ipynb`
 
 **What it does:**
 - Question extraction and parsing from AI responses
@@ -63,7 +63,7 @@ I've successfully generated **all 7 analysis notebooks** for your empirical sect
 ---
 
 ### 5. Test 3: Theory Generation ✓
-**File:** `section_5-4_test3.ipynb`
+**File:** `test3_analysis.ipynb`
 
 **What it does:**
 - Core claim extraction from theory texts
@@ -83,7 +83,7 @@ I've successfully generated **all 7 analysis notebooks** for your empirical sect
 ---
 
 ### 6. Test 4: Category Recognition ✓
-**File:** `section_5-5_test4.ipynb`
+**File:** `test4_analysis.ipynb`
 
 **What it does:**
 - Category awareness scoring (contestedness recognition, boundary awareness)
@@ -103,7 +103,7 @@ I've successfully generated **all 7 analysis notebooks** for your empirical sect
 ---
 
 ### 7. Mechanistic Interpretability ✓
-**File:** `section_5-6_mechanistic.ipynb`
+**File:** `test5_mechanistic-analysis.ipynb`
 
 **What it does:**
 - Attention pattern analysis (where models focus)
@@ -124,7 +124,7 @@ I've successfully generated **all 7 analysis notebooks** for your empirical sect
 ---
 
 ### 8. Cross-Model Robustness ✓
-**File:** `section_5-7_cross_model.ipynb`
+**File:** `test6_cross-model-analysis.ipynb`
 
 **What it does:**
 - Statistical cross-model comparison (chi-square, ANOVA)
@@ -143,7 +143,7 @@ I've successfully generated **all 7 analysis notebooks** for your empirical sect
 ---
 
 ### 9. Overview Analysis ✓
-**File:** `section_5-1_overview.ipynb`
+**File:** `overview-analysis.ipynb`
 
 **What it does:**
 - Aggregates results from all 4 tests
@@ -198,19 +198,19 @@ python research/data/scripts/collect_ai_responses.py --test test1 --models gpt-4
 **Phase 4: Run Analyses (2-3 hours)**
 ```bash
 # 5. Run test-specific analyses
-jupyter notebook section_5-2_test1.ipynb  # Ontological Innovation
-jupyter notebook section_5-3_test2.ipynb  # Epistemic Agency
-jupyter notebook section_5-4_test3.ipynb  # Theory Generation
-jupyter notebook section_5-5_test4.ipynb  # Category Recognition
+jupyter notebook test1_analysis.ipynb  # Ontological Innovation
+jupyter notebook test2_analysis.ipynb  # Epistemic Agency
+jupyter notebook test3_analysis.ipynb  # Theory Generation
+jupyter notebook test4_analysis.ipynb  # Category Recognition
 
 # 6. Run mechanistic analysis (if model access available)
-jupyter notebook section_5-6_mechanistic.ipynb
+jupyter notebook test5_mechanistic-analysis.ipynb
 
 # 7. Run cross-model robustness
-jupyter notebook section_5-7_cross_model.ipynb
+jupyter notebook test6_cross-model-analysis.ipynb
 
 # 8. Generate overview
-jupyter notebook section_5-1_overview.ipynb
+jupyter notebook overview-analysis.ipynb
 ```
 
 **Phase 5: Extract Results for Paper (1-2 hours)**
@@ -381,13 +381,13 @@ def detect_cf_commitments(theory_text: str) -> dict:
 | Notebook | Runtime | Key Outputs | For Paper |
 |----------|---------|-------------|-----------|
 | `dataset_generation.ipynb` | 15-30 min | 7,000 JSON files, ontology | Section 5.1: Dataset description |
-| `section_5-2_test1.ipynb` | 10-20 min | Classifications, embeddings | Section 5.2: Novelty analysis |
-| `section_5-3_test2.ipynb` | 10-20 min | Question taxonomy | Section 5.3: Agency assessment |
-| `section_5-4_test3.ipynb` | 10-20 min | Theory classifications | Section 5.4: Theory evaluation |
-| `section_5-5_test4.ipynb` | 10-20 min | Category scoring | Section 5.5: Recognition analysis |
-| `section_5-6_mechanistic.ipynb` | 30-60 min | Attention, activations | Section 5.6: Mechanisms |
-| `section_5-7_cross_model.ipynb` | 15-30 min | Effect sizes, robustness | Section 5.7: Generalization |
-| `section_5-1_overview.ipynb` | 5-10 min | Aggregate statistics | Section 5: Overview & tables |
+| `test1_analysis.ipynb` | 10-20 min | Classifications, embeddings | Section 5.2: Novelty analysis |
+| `test2_analysis.ipynb` | 10-20 min | Question taxonomy | Section 5.3: Agency assessment |
+| `test3_analysis.ipynb` | 10-20 min | Theory classifications | Section 5.4: Theory evaluation |
+| `test4_analysis.ipynb` | 10-20 min | Category scoring | Section 5.5: Recognition analysis |
+| `test5_mechanistic-analysis.ipynb` | 30-60 min | Attention, activations | Section 5.6: Mechanisms |
+| `test6_cross-model-analysis.ipynb` | 15-30 min | Effect sizes, robustness | Section 5.7: Generalization |
+| `overview-analysis.ipynb` | 5-10 min | Aggregate statistics | Section 5: Overview & tables |
 
 ---
 
@@ -407,7 +407,7 @@ jupyter notebook dataset_generation.ipynb
 python research/data/scripts/collect_ai_responses.py --test test1 --models gpt-4 --n-samples 5
 
 # Run analysis
-jupyter notebook section_5-2_test1.ipynb
+jupyter notebook test1_analysis.ipynb
 ```
 
 ### Full Production Run (8-12 hours)

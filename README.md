@@ -13,13 +13,13 @@ The notebooks implement the four empirical tests described in Section 4 and gene
 
 ```
 ├── dataset_generation.ipynb          # Generate multimodal sensory dataset (Section 4.2)
-├── section_5-1_overview.ipynb        # Aggregate analysis across all tests (Section 5.1)
-├── section_5-2_test1.ipynb           # Test 1: Ontological Innovation (Section 5.2)
-├── section_5-3_test2.ipynb           # Test 2: Epistemic Agency (Section 5.3)
-├── section_5-4_test3.ipynb           # Test 3: Theory Generation (Section 5.4)
-├── section_5-5_test4.ipynb           # Test 4: Category Recognition (Section 5.5)
-├── section_5-6_mechanistic.ipynb     # Mechanistic interpretability analysis (Section 5.6)
-├── section_5-7_cross_model.ipynb     # Cross-model comparison and robustness (Section 5.7)
+├── overview-analysis.ipynb        # Aggregate analysis across all tests (Section 5.1)
+├── test1_analysis.ipynb           # Test 1: Ontological Innovation (Section 5.2)
+├── test2_analysis.ipynb           # Test 2: Epistemic Agency (Section 5.3)
+├── test3_analysis.ipynb           # Test 3: Theory Generation (Section 5.4)
+├── test4_analysis.ipynb           # Test 4: Category Recognition (Section 5.5)
+├── test5_mechanistic-analysis.ipynb     # Mechanistic interpretability analysis (Section 5.6)
+├── test6_cross-model-analysis.ipynb     # Cross-model comparison and robustness (Section 5.7)
 ├── data/                             # Generated datasets
 ├── results/                          # Analysis outputs and figures
 └── README.md                         # This file
@@ -92,7 +92,7 @@ Each test notebook can be run independently after dataset generation:
 
 #### Test 1: Ontological Innovation
 ```bash
-jupyter notebook section_5-2_test1.ipynb
+jupyter notebook test1_analysis.ipynb
 ```
 Tests whether AI proposes genuinely novel sensory modalities.
 
@@ -106,7 +106,7 @@ Tests whether AI proposes genuinely novel sensory modalities.
 
 #### Test 2: Epistemic Agency
 ```bash
-jupyter notebook section_5-3_test2.ipynb
+jupyter notebook test2_analysis.ipynb
 ```
 Analyzes AI-generated research questions for paradigm-challenging capacity.
 
@@ -120,7 +120,7 @@ Analyzes AI-generated research questions for paradigm-challenging capacity.
 
 #### Test 3: Theory Generation
 ```bash
-jupyter notebook section_5-4_test3.ipynb
+jupyter notebook test3_analysis.ipynb
 ```
 Examines consciousness theories for computational functionalism vs. novel frameworks.
 
@@ -134,7 +134,7 @@ Examines consciousness theories for computational functionalism vs. novel framew
 
 #### Test 4: Category Recognition
 ```bash
-jupyter notebook section_5-5_test4.ipynb
+jupyter notebook test4_analysis.ipynb
 ```
 Tests recognition of category mistakes and ontological boundaries.
 
@@ -165,7 +165,7 @@ metadata, hidden states, attention tensors, and the generated continuation.
 ### Step 4: Mechanistic Interpretability Analysis
 
 ```bash
-jupyter notebook section_5-6_mechanistic.ipynb
+jupyter notebook test5_mechanistic-analysis.ipynb
 ```
 
 Probes internal representations to understand generation mechanisms.
@@ -181,7 +181,7 @@ Probes internal representations to understand generation mechanisms.
 ### Step 5: Cross-Model Comparison
 
 ```bash
-jupyter notebook section_5-7_cross_model.ipynb
+jupyter notebook test6_cross-model-analysis.ipynb
 ```
 
 Evaluates robustness across models and parameters.
@@ -197,7 +197,7 @@ Evaluates robustness across models and parameters.
 ### Step 6: Generate Overview Report
 
 ```bash
-jupyter notebook section_5-1_overview.ipynb
+jupyter notebook overview-analysis.ipynb
 ```
 
 Aggregates results from all tests into comprehensive overview.

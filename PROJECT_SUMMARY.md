@@ -13,7 +13,7 @@ I've generated a complete implementation framework for your paper's empirical se
 - Creates machine-readable ontology
 
 ### 2. Overview Analysis ✓
-**File:** `section_5-1_overview.ipynb`
+**File:** `overview-analysis.ipynb`
 - Aggregates results from all 4 tests
 - Computes cross-test statistics
 - Bootstrap confidence intervals
@@ -21,7 +21,7 @@ I've generated a complete implementation framework for your paper's empirical se
 - Generates summary visualizations
 
 ### 3. Test 1: Ontological Innovation ✓
-**File:** `section_5-2_test1.ipynb`
+**File:** `test1_analysis.ipynb`
 - Structural decomposition algorithm
 - Literature traceability search
 - Convex hull membership testing
@@ -41,27 +41,27 @@ I've generated a complete implementation framework for your paper's empirical se
 
 I've provided detailed templates in `IMPLEMENTATION_GUIDE.md` for:
 
-1. **section_5-3_test2.ipynb** - Epistemic Agency
+1. **test2_analysis.ipynb** - Epistemic Agency
    - Question classification system
    - Framework transcendence analysis
    - Originality assessment
 
-2. **section_5-4_test3.ipynb** - Theory Generation
+2. **test3_analysis.ipynb** - Theory Generation
    - Theoretical framework extraction
    - Computational functionalism detection
    - Theory traceability analysis
 
-3. **section_5-5_test4.ipynb** - Category Recognition
+3. **test4_analysis.ipynb** - Category Recognition
    - Category awareness scoring
    - Category mistake identification
    - Standard vs. novel scenario testing
 
-4. **section_5-6_mechanistic.ipynb** - Mechanistic Interpretability
+4. **test5_mechanistic-analysis.ipynb** - Mechanistic Interpretability
    - Attention pattern analysis
    - Activation space clustering
    - Gradient-based attribution
 
-5. **section_5-7_cross_model.ipynb** - Cross-Model Robustness
+5. **test6_cross-model-analysis.ipynb** - Cross-Model Robustness
    - Statistical cross-model comparison
    - Temperature variation experiments
    - Prompt robustness testing
@@ -97,13 +97,13 @@ python research/data/scripts/collect_ai_responses.py --test all --models gpt-4,c
 
 ### Step 5: Create Remaining Analysis Notebooks
 Use the templates in `IMPLEMENTATION_GUIDE.md` to create:
-- section_5-3_test2.ipynb
-- section_5-4_test3.ipynb
-- section_5-5_test4.ipynb
-- section_5-6_mechanistic.ipynb
-- section_5-7_cross_model.ipynb
+- test2_analysis.ipynb
+- test3_analysis.ipynb
+- test4_analysis.ipynb
+- test5_mechanistic-analysis.ipynb
+- test6_cross-model-analysis.ipynb
 
-Follow the same structure as `section_5-2_test1.ipynb`:
+Follow the same structure as `test1_analysis.ipynb`:
 - Load data
 - Apply analysis algorithms
 - Generate visualizations
@@ -112,17 +112,17 @@ Follow the same structure as `section_5-2_test1.ipynb`:
 ### Step 6: Run Complete Analysis
 ```bash
 # Run test-specific analyses
-jupyter notebook section_5-2_test1.ipynb
-jupyter notebook section_5-3_test2.ipynb
-jupyter notebook section_5-4_test3.ipynb
-jupyter notebook section_5-5_test4.ipynb
+jupyter notebook test1_analysis.ipynb
+jupyter notebook test2_analysis.ipynb
+jupyter notebook test3_analysis.ipynb
+jupyter notebook test4_analysis.ipynb
 
 # Run mechanistic and cross-model analyses
-jupyter notebook section_5-6_mechanistic.ipynb
-jupyter notebook section_5-7_cross_model.ipynb
+jupyter notebook test5_mechanistic-analysis.ipynb
+jupyter notebook test6_cross-model-analysis.ipynb
 
 # Generate overview
-jupyter notebook section_5-1_overview.ipynb
+jupyter notebook overview-analysis.ipynb
 ```
 
 ### Step 7: Extract Results for Paper
@@ -214,25 +214,25 @@ project/
 - **Runtime:** ~1-2 hours (with rate limiting)
 - **Purpose:** Automates querying multiple AI models
 
-### section_5-2_test1.ipynb (and similar for tests 2-4)
+### test1_analysis.ipynb (and similar for tests 2-4)
 - **Input:** AI responses from ai_responses/
 - **Output:** Classified results, statistics, visualizations
 - **Runtime:** ~5-15 minutes per test
 - **Purpose:** Analyzes whether AI outputs are genuinely novel
 
-### section_5-6_mechanistic.ipynb
+### test5_mechanistic-analysis.ipynb
 - **Input:** AI model internals (requires model access)
 - **Output:** Attention maps, activation plots, attribution scores
 - **Runtime:** ~30-60 minutes (depending on model size)
 - **Purpose:** Understands internal generation mechanisms
 
-### section_5-7_cross_model.ipynb
+### test6_cross-model-analysis.ipynb
 - **Input:** Results from all tests
 - **Output:** Cross-model statistics, robustness analyses
 - **Runtime:** ~10-20 minutes
 - **Purpose:** Tests whether limitations generalize across models
 
-### section_5-1_overview.ipynb
+### overview-analysis.ipynb
 - **Input:** Results from all other analyses
 - **Output:** Aggregate statistics, summary report, overview figures
 - **Runtime:** ~5 minutes

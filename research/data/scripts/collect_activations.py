@@ -5,7 +5,7 @@ Collect hidden states and attentions for mechanistic analysis.
 This script reuses prompts from the existing AI response exports under
 research/test*_*/<test_folder>_responses/all_responses.json and runs a local open-source causal LM over
 those prompts. It stores one artifact per prompt in research/data/activations so that
-section_5-6_mechanistic.ipynb can load them without performing collection.
+test5_mechanistic-analysis.ipynb can load them without performing collection.
 
 Example:
     python research/data/scripts/collect_activations.py \
@@ -28,10 +28,10 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 
 
 DEFAULT_TEST_EXPORTS = {
-    "test1_ontological_innovation": Path("research/test1_ontological-innovation/test1_ontological_innovation_responses/all_responses.json"),
-    "test2_epistemic_agency": Path("research/test2_epistemic-agency/test2_epistemic_agency_responses/all_responses.json"),
-    "test3_theory_generation": Path("research/test3_theory-generation/test3_theory_generation_responses/all_responses.json"),
-    "test4_category_recognition": Path("research/test4_category-recognition/test4_category_recognition_responses/all_responses.json"),
+    "test1_ontological_innovation": Path("research/test1_ontological-innovation/ai_responses/all_responses.json"),
+    "test2_epistemic_agency": Path("research/test2_epistemic-agency/ai_responses/all_responses.json"),
+    "test3_theory_generation": Path("research/test3_theory-generation/ai_responses/all_responses.json"),
+    "test4_category_recognition": Path("research/test4_category-recognition/ai_responses/all_responses.json"),
 }
 
 

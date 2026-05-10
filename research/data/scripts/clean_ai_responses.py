@@ -16,10 +16,10 @@ TEST_MAP = {
 
 # Map test names to their folder structure: (parent_folder, responses_folder)
 TEST_FOLDER_STRUCTURE = {
-    "test1_ontological_innovation": ("test1_ontological-innovation", "test1_ontological_innovation_responses"),
-    "test2_epistemic_agency": ("test2_epistemic-agency", "test2_epistemic_agency_responses"),
-    "test3_theory_generation": ("test3_theory-generation", "test3_theory_generation_responses"),
-    "test4_category_recognition": ("test4_category-recognition", "test4_category_recognition_responses"),
+    "test1_ontological_innovation": ("test1_ontological-innovation", "ai_responses"),
+    "test2_epistemic_agency": ("test2_epistemic-agency", "ai_responses"),
+    "test3_theory_generation": ("test3_theory-generation", "ai_responses"),
+    "test4_category_recognition": ("test4_category-recognition", "ai_responses"),
 }
 
 FENCE_START_RE = re.compile(r"^\s*```(?:json)?\s*", re.IGNORECASE)
