@@ -423,11 +423,12 @@ models_to_test = [
 If you use these notebooks in your research, please cite:
 
 ```bibtex
-@article{ontological_creativity_2026,
-  title={Beyond Recombination: Structural Limits of Neural Networks in Ontological Creativity},
-  author={[Your Name]},
-  journal={[Journal Name]},
-  year={2026}
+@article{ai_creativity,
+  title={Empirical Studies: Structural Limits of Information Processing Systems in Ontological Creativity},
+  author={Matarmaa, J.O.},
+  journal={Ural Federal University},
+  year={2026},
+  address={Yekaterinburg}
 }
 ```
 
@@ -439,7 +440,7 @@ MIT License - see LICENSE file for details
 
 For questions or issues:
 - Open an issue on GitHub
-- Email: [your-email]
+- Email: iarnoolavi.matarmaa@urfu.me
 
 ## Acknowledgments
 
@@ -461,4 +462,3 @@ Planned additions:
 - [ ] Interactive visualization dashboard
 - [ ] Real-time data collection from actual sensors
 - [ ] Longitudinal tracking of AI capabilities over time
->>>>>>> 3b0ad91 (Project Init)
