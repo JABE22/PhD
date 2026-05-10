@@ -1,3 +1,38 @@
+.env
+.env.*
+
+# Python and notebook caches
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local editor and OS files
+.DS_Store
+*.swp
+
+# Auxiliary notebooks not needed for the published test/section workflow
+playground.ipynb
+Test1_Backup.ipynb
+collect_activations_colab.ipynb
+4b-test3-extras.ipynb
+
+# Generated datasets
 data/multimodal_sensory_test.npz
 data/multimodal_sensory_val.npz
 data/multimodal_sensory_train.npz
+
+# LaTeX build outputs
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
