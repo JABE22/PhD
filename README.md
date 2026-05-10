@@ -7,21 +7,21 @@ This repository contains the complete computational notebooks for conducting the
 
 ## Overview
 
-The notebooks implement the four empirical tests described in Section 4 and generate the results and visualizations for Section 5 of the paper.
+The notebooks implement the four empirical tests described in the study and generate the results and visualizations reported in dissertation chapter 4.
 
 ## Repository Structure
 
 ```
-├── research/data/notebooks/dataset-generation.ipynb          # Generate multimodal sensory dataset (Section 4.2)
-├── research/results/overview/overview-analysis.ipynb        # Aggregate analysis across all tests (Section 5.1)
-├── test1_analysis.ipynb           # Test 1: Ontological Innovation (Section 5.2)
-├── test2_analysis.ipynb           # Test 2: Epistemic Agency (Section 5.3)
-├── test3_analysis.ipynb           # Test 3: Theory Generation (Section 5.4)
-├── test4_analysis.ipynb           # Test 4: Category Recognition (Section 5.5)
-├── test5_mechanistic-analysis.ipynb     # Mechanistic interpretability analysis (Section 5.6)
-├── test6_cross-model-analysis.ipynb     # Cross-model comparison and robustness (Section 5.7)
-├── data/                             # Generated datasets
-├── results/                          # Analysis outputs and figures
+├── research/data/notebooks/dataset-generation.ipynb          # Generate multimodal sensory dataset
+├── research/results/overview/overview-analysis.ipynb        # Aggregate analysis across all tests
+├── research/test1_ontological-innovation/test1_analysis.ipynb           # Test 1: Ontological Innovation
+├── research/test2_epistemic-agency/test2_analysis.ipynb           # Test 2: Epistemic Agency
+├── research/test3_theory-generation/test3_analysis.ipynb           # Test 3: Theory Generation
+├── research/test4_category-recognition/test4_analysis.ipynb           # Test 4: Category Recognition
+├── research/test5/test5_mechanistic-analysis.ipynb     # Mechanistic interpretability analysis
+├── research/test6/test6_cross-model-analysis.ipynb     # Cross-model comparison and robustness
+├── research/data/                             # Generated datasets
+├── research/results/                          # Analysis outputs and figures
 └── README.md                         # This file
 ```
 
@@ -47,9 +47,8 @@ jupyter >= 1.0
 ### Installation
 
 ```bash
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+# Use the existing project environment
+conda activate aitrust
 
 # Install requirements
 pip install -r requirements.txt
@@ -63,10 +62,12 @@ pip install torch torchvision torchaudio --index-url https://download.pytorch.or
 Create a `.env` file with your API keys:
 
 ```
-OPENAI_API_KEY=your_openai_key
-ANTHROPIC_API_KEY=your_anthropic_key
-GOOGLE_API_KEY=your_google_key
+OPENROUTER2_API_KEY=your_openrouter_key
+PERPLEXITY_API_KEY=your_perplexity_key
+MISTRALAI_API_KEY=your_mistral_key
 ```
+
+`OPENROUTER2_API_KEY` is required for the default `openrouter` provider in `research/data/scripts/collect_ai_responses.py`. The other keys are only needed if you use those providers.
 
 ## Usage
 
@@ -80,19 +81,37 @@ This creates the 8-dimensional multimodal sensory dataset:
 - 5,000 training examples
 - 1,000 validation examples  
 - 1,000 test examples
-- Complete ontology in `data/ontology.json`
+- Complete ontology in `research/data/ontology.json`
 
 **Expected runtime:** 15-30 minutes
 
 **Output:** `data/train/`, `data/val/`, `data/test/` directories with JSON files
 
-### Step 2: Run Empirical Tests
+### Step 2: Collect AI Responses
+
+Use the existing response collection script before running the analysis notebooks:
+
+```bash
+# Inspect configured models for the default provider
+python research/data/scripts/collect_ai_responses.py --provider openrouter --list-models
+
+# Collect responses for all four tests
+python research/data/scripts/collect_ai_responses.py \
+    --provider openrouter \
+    --test all \
+    --models gpt-5.2,claude-3.7-sonnet,gemini-3.1-pro-preview \
+    --n-samples 50
+```
+
+This writes per-sample JSON files and `all_responses.json` into each test folder's `ai_responses/` directory.
+
+### Step 3: Run Empirical Tests
 
 Each test notebook can be run independently after dataset generation:
 
 #### Test 1: Ontological Innovation
 ```bash
-jupyter notebook test1_analysis.ipynb
+jupyter notebook research/test1_ontological-innovation/test1_analysis.ipynb
 ```
 Tests whether AI proposes genuinely novel sensory modalities.
 
@@ -102,11 +121,11 @@ Tests whether AI proposes genuinely novel sensory modalities.
 - Embedding space convex hull testing
 - Multi-criteria classification
 
-**Output:** `results/test1/` with classifications, visualizations, and detailed examples
+**Output:** `research/test1_ontological-innovation/results/` with classifications, visualizations, and detailed examples
 
 #### Test 2: Epistemic Agency
 ```bash
-jupyter notebook test2_analysis.ipynb
+jupyter notebook research/test2_epistemic-agency/test2_analysis.ipynb
 ```
 Analyzes AI-generated research questions for paradigm-challenging capacity.
 
@@ -116,11 +135,11 @@ Analyzes AI-generated research questions for paradigm-challenging capacity.
 - Originality assessment via literature comparison
 - Dependency graph construction
 
-**Output:** `results/test2/` with question classifications and framework analysis
+**Output:** `research/test2_epistemic-agency/results/` with question classifications and framework analysis
 
 #### Test 3: Theory Generation
 ```bash
-jupyter notebook test3_analysis.ipynb
+jupyter notebook research/test3_theory-generation/test3_analysis.ipynb
 ```
 Examines consciousness theories for computational functionalism vs. novel frameworks.
 
@@ -130,11 +149,11 @@ Examines consciousness theories for computational functionalism vs. novel framew
 - Computational functionalism detection
 - Theory traceability to known frameworks
 
-**Output:** `results/test3/` with theory classifications and commitment graphs
+**Output:** `research/test3_theory-generation/results/` with theory classifications and commitment graphs
 
 #### Test 4: Category Recognition
 ```bash
-jupyter notebook test4_analysis.ipynb
+jupyter notebook research/test4_category-recognition/test4_analysis.ipynb
 ```
 Tests recognition of category mistakes and ontological boundaries.
 
@@ -144,12 +163,12 @@ Tests recognition of category mistakes and ontological boundaries.
 - Alternative framework proposal analysis
 - Standard vs. novel scenario comparison
 
-**Output:** `results/test4/` with category awareness metrics
+**Output:** `research/test4_category-recognition/results/` with category awareness metrics
 
-### Step 3: Collect Activations For Mechanistic Analysis
+### Step 4: Collect Activations For Mechanistic Analysis
 
 Before running the mechanistic notebook, collect activations from a local
-open-source model using the prompts already exported in `ai_responses/`.
+open-source model using the prompts already exported in `research/test*/ai_responses/`.
 
 ```bash
 python research/data/scripts/collect_activations.py \
@@ -162,10 +181,10 @@ python research/data/scripts/collect_activations.py \
 This writes one `.pt` artifact per prompt into `data/activations/` with prompt
 metadata, hidden states, attention tensors, and the generated continuation.
 
-### Step 4: Mechanistic Interpretability Analysis
+### Step 5: Mechanistic Interpretability Analysis
 
 ```bash
-jupyter notebook test5_mechanistic-analysis.ipynb
+jupyter notebook research/test5/test5_mechanistic-analysis.ipynb
 ```
 
 Probes internal representations to understand generation mechanisms.
@@ -176,12 +195,12 @@ Probes internal representations to understand generation mechanisms.
 - Gradient-based attribution
 - Layer-wise representation tracking
 
-**Output:** `results/mechanistic/` with attention visualizations and attribution maps
+**Output:** `research/results/mechanistic/` with attention visualizations and attribution maps
 
-### Step 5: Cross-Model Comparison
+### Step 6: Cross-Model Comparison
 
 ```bash
-jupyter notebook test6_cross-model-analysis.ipynb
+jupyter notebook research/test6/test6_cross-model-analysis.ipynb
 ```
 
 Evaluates robustness across models and parameters.
@@ -192,9 +211,9 @@ Evaluates robustness across models and parameters.
 - Prompt robustness testing
 - Architecture comparison
 
-**Output:** `results/cross_model/` with comparative statistics and robustness plots
+**Output:** `research/results/cross_model/` with comparative statistics and robustness plots
 
-### Step 6: Generate Overview Report
+### Step 7: Generate Overview Report
 
 ```bash
 jupyter notebook research/results/overview/overview-analysis.ipynb
@@ -202,7 +221,7 @@ jupyter notebook research/results/overview/overview-analysis.ipynb
 
 Aggregates results from all tests into comprehensive overview.
 
-**Output:** `results/overview_report.json` and summary figures
+**Output:** `research/results/overview_report.json` and summary figures
 
 ## Data Format
 
@@ -231,7 +250,7 @@ Each example is a JSON file with structure:
 
 ### Ontology Format
 
-The `data/ontology.json` file provides machine-readable ontology:
+The `research/data/ontology.json` file provides machine-readable ontology:
 
 ```json
 {
@@ -410,10 +429,10 @@ def custom_classification(row):
 
 ```python
 models_to_test = [
-    'gpt-4',
-    'claude-3.5-sonnet',
-    'gemini-1.5-pro',
-    'llama-3-70b',
+    'gpt-5.2',
+    'claude-3.7-sonnet',
+    'gemini-3.1-pro-preview',
+    'llama-3.3-70b-instruct',
     'your-custom-model'  # Add here
 ]
 ```

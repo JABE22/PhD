@@ -1,8 +1,8 @@
-# Project Files Summary
+# Project Summary
 
-## What I've Created for You
+## Project Overview
 
-I've generated a complete implementation framework for your paper's empirical section (Chapter 5). Here's what you have:
+This document introduces the repository structure, analysis workflow, and main outputs for third parties who may later use, reproduce, or extend the project. The repository contains the implemented workflow for the empirical studies reported in dissertation chapter 4.
 
 ### 1. Core Data Generation ✓
 **File:** `research/data/notebooks/dataset-generation.ipynb`
@@ -21,7 +21,7 @@ I've generated a complete implementation framework for your paper's empirical se
 - Generates summary visualizations
 
 ### 3. Test 1: Ontological Innovation ✓
-**File:** `test1_analysis.ipynb`
+**File:** `research/test1_ontological-innovation/test1_analysis.ipynb`
 - Structural decomposition algorithm
 - Literature traceability search
 - Convex hull membership testing
@@ -32,55 +32,33 @@ I've generated a complete implementation framework for your paper's empirical se
 **Files:**
 - `requirements.txt` - All Python dependencies
 - `README.md` - Complete documentation
-- `IMPLEMENTATION_GUIDE.md` - Detailed templates and workflows
-- `collect_ai_responses.py` - Automated AI query script
+- `research/data/scripts/collect_ai_responses.py` - Automated AI query script
+- `research/setups/` - Shared project utilities and analysis helpers
 
-## What You Still Need to Create
+## Analysis Notebook Coverage
 
-### Notebooks for Tests 2-4 and Analysis 5.6-5.7
+All analysis notebooks referenced in this workflow are already present in the repository:
 
-I've provided detailed templates in `IMPLEMENTATION_GUIDE.md` for:
+1. **research/test2_epistemic-agency/test2_analysis.ipynb** - Epistemic Agency
+2. **research/test3_theory-generation/test3_analysis.ipynb** - Theory Generation
+3. **research/test4_category-recognition/test4_analysis.ipynb** - Category Recognition
+4. **research/test5/test5_mechanistic-analysis.ipynb** - Mechanistic Interpretability
+5. **research/test6/test6_cross-model-analysis.ipynb** - Cross-Model Robustness
 
-1. **test2_analysis.ipynb** - Epistemic Agency
-   - Question classification system
-   - Framework transcendence analysis
-   - Originality assessment
-
-2. **test3_analysis.ipynb** - Theory Generation
-   - Theoretical framework extraction
-   - Computational functionalism detection
-   - Theory traceability analysis
-
-3. **test4_analysis.ipynb** - Category Recognition
-   - Category awareness scoring
-   - Category mistake identification
-   - Standard vs. novel scenario testing
-
-4. **test5_mechanistic-analysis.ipynb** - Mechanistic Interpretability
-   - Attention pattern analysis
-   - Activation space clustering
-   - Gradient-based attribution
-
-5. **test6_cross-model-analysis.ipynb** - Cross-Model Robustness
-   - Statistical cross-model comparison
-   - Temperature variation experiments
-   - Prompt robustness testing
-
-## How to Use These Files
+## Usage Workflow
 
 ### Step 1: Environment Setup
 ```bash
-python -m venv venv
-source venv/bin/activate
+conda activate aitrust
 pip install -r requirements.txt
 ```
 
 ### Step 2: Create .env File
 ```bash
 # Create .env with your API keys
-OPENAI_API_KEY=your_key_here
-ANTHROPIC_API_KEY=your_key_here
-GOOGLE_API_KEY=your_key_here
+OPENROUTER2_API_KEY=your_key_here
+PERPLEXITY_API_KEY=your_key_here
+MISTRALAI_API_KEY=your_key_here
 ```
 
 ### Step 3: Generate Dataset
@@ -91,41 +69,37 @@ jupyter notebook research/data/notebooks/dataset-generation.ipynb
 
 ### Step 4: Collect AI Responses
 ```bash
-python research/data/scripts/collect_ai_responses.py --test all --models gpt-4,claude-3.5,gemini-1.5 --n-samples 50
-# This queries AI models and saves responses to ai_responses/ directory
+python research/data/scripts/collect_ai_responses.py --provider openrouter --list-models
+python research/data/scripts/collect_ai_responses.py --provider openrouter --test all --models gpt-5.2,claude-3.7-sonnet,gemini-3.1-pro-preview --n-samples 50
+# This queries AI models and saves responses to research/test*/ai_responses/ directory
 ```
 
-### Step 5: Create Remaining Analysis Notebooks
-Use the templates in `IMPLEMENTATION_GUIDE.md` to create:
-- test2_analysis.ipynb
-- test3_analysis.ipynb
-- test4_analysis.ipynb
-- test5_mechanistic-analysis.ipynb
-- test6_cross-model-analysis.ipynb
-
-Follow the same structure as `test1_analysis.ipynb`:
-- Load data
-- Apply analysis algorithms
-- Generate visualizations
-- Export results
+### Step 5: Run Analysis Notebooks
+Execute the existing notebooks for each test and analysis stage:
+- research/test1_ontological-innovation/test1_analysis.ipynb
+- research/test2_epistemic-agency/test2_analysis.ipynb
+- research/test3_theory-generation/test3_analysis.ipynb
+- research/test4_category-recognition/test4_analysis.ipynb
+- research/test5/test5_mechanistic-analysis.ipynb
+- research/test6/test6_cross-model-analysis.ipynb
 
 ### Step 6: Run Complete Analysis
 ```bash
 # Run test-specific analyses
-jupyter notebook test1_analysis.ipynb
-jupyter notebook test2_analysis.ipynb
-jupyter notebook test3_analysis.ipynb
-jupyter notebook test4_analysis.ipynb
+jupyter notebook research/test1_ontological-innovation/test1_analysis.ipynb
+jupyter notebook research/test2_epistemic-agency/test2_analysis.ipynb
+jupyter notebook research/test3_theory-generation/test3_analysis.ipynb
+jupyter notebook research/test4_category-recognition/test4_analysis.ipynb
 
 # Run mechanistic and cross-model analyses
-jupyter notebook test5_mechanistic-analysis.ipynb
-jupyter notebook test6_cross-model-analysis.ipynb
+jupyter notebook research/test5/test5_mechanistic-analysis.ipynb
+jupyter notebook research/test6/test6_cross-model-analysis.ipynb
 
 # Generate overview
 jupyter notebook research/results/overview/overview-analysis.ipynb
 ```
 
-### Step 7: Extract Results for Paper
+### Step 7: Extract Results for Chapter 4
 From each notebook, extract:
 - Quantitative statistics (proportions, means, CIs)
 - Representative examples (quoted AI responses)
@@ -166,14 +140,14 @@ def bootstrap_ci(data, n_bootstrap=10000, ci=0.95):
 
 ```
 project/
-├── data/
+├── research/data/
 │   ├── train/           # 5,000 training examples
 │   ├── val/             # 1,000 validation examples
 │   ├── test/            # 1,000 test examples
 │   ├── ontology.json    # Machine-readable ontology
 │   └── dataset_summary.json
 │
-├── ai_responses/
+├── research/test*/ai_responses/
 │   ├── test1_ontological_innovation/
 │   │   ├── prompt.txt
 │   │   ├── gpt-4_sample_000.json
@@ -183,7 +157,7 @@ project/
 │   ├── test3_theory_generation/
 │   └── test4_category_recognition/
 │
-├── results/
+├── research/results/
 │   ├── test1/
 │   │   ├── detailed_results.csv
 │   │   ├── embedding_space_analysis.png
@@ -214,19 +188,19 @@ project/
 - **Runtime:** ~1-2 hours (with rate limiting)
 - **Purpose:** Automates querying multiple AI models
 
-### test1_analysis.ipynb (and similar for tests 2-4)
-- **Input:** AI responses from ai_responses/
+### research/test1_ontological-innovation/test1_analysis.ipynb (and similar for tests 2-4)
+- **Input:** AI responses from research/test*/ai_responses/
 - **Output:** Classified results, statistics, visualizations
 - **Runtime:** ~5-15 minutes per test
 - **Purpose:** Analyzes whether AI outputs are genuinely novel
 
-### test5_mechanistic-analysis.ipynb
+### research/test5/test5_mechanistic-analysis.ipynb
 - **Input:** AI model internals (requires model access)
 - **Output:** Attention maps, activation plots, attribution scores
 - **Runtime:** ~30-60 minutes (depending on model size)
 - **Purpose:** Understands internal generation mechanisms
 
-### test6_cross-model-analysis.ipynb
+### research/test6/test6_cross-model-analysis.ipynb
 - **Input:** Results from all tests
 - **Output:** Cross-model statistics, robustness analyses
 - **Runtime:** ~10-20 minutes
@@ -236,11 +210,11 @@ project/
 - **Input:** Results from all other analyses
 - **Output:** Aggregate statistics, summary report, overview figures
 - **Runtime:** ~5 minutes
-- **Purpose:** Creates paper-ready summary of all findings
+- **Purpose:** Creates chapter-ready summary of all findings
 
-## Key Metrics to Report in Paper
+## Key Metrics to Report in Chapter 4
 
-From your analyses, report these in Section 5:
+The following outputs are especially relevant for chapter 4 reporting:
 
 1. **Proportion Novel** (with 95% CI)
    - Expected: 0-5%
@@ -276,7 +250,7 @@ From your analyses, report these in Section 5:
 ### Don'ts ✗
 - Don't skip the data generation step
 - Don't run without API keys properly configured
-- Don't forget rate limiting (you'll get banned)
+- Respect provider rate limits to avoid request throttling or temporary suspension
 - Don't modify datasets between test runs (breaks reproducibility)
 - Don't skip documenting parameter choices
 
@@ -301,7 +275,7 @@ From your analyses, report these in Section 5:
 → Document all parameter choices
 → Save API response timestamps
 
-## Next Steps for You
+## Recommended Workflow
 
 1. **Immediate (1-2 hours):**
    - Review all created files
@@ -309,36 +283,32 @@ From your analyses, report these in Section 5:
    - Test dataset generation on small sample
 
 2. **Short term (1-2 days):**
-   - Create remaining 5 analysis notebooks using templates
    - Test AI response collection with n=5 samples
-   - Verify analysis pipeline works end-to-end
+   - Run the test-specific notebooks end-to-end
+   - Verify the analysis pipeline works end-to-end
 
 3. **Medium term (1-2 weeks):**
    - Collect full AI responses (n=50 per model)
    - Run all analyses
    - Generate figures and results
 
-4. **Paper integration (1 week):**
-   - Extract quantitative results for Section 5
+4. **Chapter 4 integration (1 week):**
+   - Extract quantitative results for chapter 4
    - Select representative examples
    - Create publication-quality figures
    - Write up findings
 
-## Questions?
+## Documentation Sources
 
-If you need help with:
-- Understanding any algorithm
-- Modifying the templates
-- Debugging issues
-- Interpreting results
+For algorithm details, workflow guidance, debugging, and result interpretation, use the following sources:
 
 Refer to:
 1. `README.md` - General documentation
-2. `IMPLEMENTATION_GUIDE.md` - Detailed templates
+2. Notebook markdown cells - Workflow and interpretation notes
 3. Inline comments in notebooks - Implementation details
-4. The paper itself - Theoretical grounding
+4. The dissertation discussion framing chapter 4
 
-## Final Notes
+## Project Status
 
 This is a complete, production-ready framework. All the hard work of:
 - Dataset design and generation ✓
@@ -347,11 +317,9 @@ This is a complete, production-ready framework. All the hard work of:
 - Visualization code ✓
 - Documentation ✓
 
-...is done. You now need to:
-1. Create the remaining 5 notebooks (using provided templates)
-2. Run the complete pipeline
-3. Extract results for your paper
+The current workflow supports:
+1. Running the complete pipeline
+2. Reviewing the generated outputs
+3. Extracting results for chapter 4
 
-The foundation is solid. Build on it systematically and you'll have excellent empirical results for Section 5.
-
-Good luck with your research!
+The repository is structured for reproducible execution, later reuse, and further methodological extension.
