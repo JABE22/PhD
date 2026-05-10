@@ -1,9 +1,9 @@
 # PhD-Research
 PhD. Dissertation Research Studies
-=======
-# Beyond Recombination: Analysis Notebooks
 
-This repository contains the complete computational notebooks for conducting the empirical investigations described in **"Beyond Recombination: Structural Limits of Neural Networks in Ontological Creativity"**.
+# Empirical Studies in Ontological Creativity of AI: Analysis Notebooks
+
+This repository contains the complete computational notebooks for conducting the empirical investigations described in **"Structural Limits of Neural Networks in Ontological Creativity"**.
 
 ## Overview
 
