@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.10.13)  10 MAY 2026 16:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.10.13)  10 MAY 2026 16:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1855,9 +1855,6 @@ L3 programming layer <2024-01-22>
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.43146pt have occurred.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `main_ru.out' has not changed.
 (rerunfilecheck)             Checksum: DB3619BFE7482DDC4C763B416CBE00E4;8378.
  ) 
@@ -1893,7 +1890,7 @@ ts/type1/public/cm-super/sfrm1728.pfb></home/jarnoma/texmf/fonts/type1/public/c
 m-super/sfti0800.pfb></home/jarnoma/texmf/fonts/type1/public/cm-super/sfti0900.
 pfb></home/jarnoma/texmf/fonts/type1/public/cm-super/sfti1000.pfb></home/jarnom
 a/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on main_ru.pdf (20 pages, 1710776 bytes).
+Output written on main_ru.pdf (20 pages, 1710796 bytes).
 PDF statistics:
  534 PDF objects out of 1000 (max. 8388607)
  436 compressed objects within 5 object streams
