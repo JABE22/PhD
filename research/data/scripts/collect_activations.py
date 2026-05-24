@@ -27,12 +27,18 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 
+REPO_ROOT = Path(__file__).resolve().parents[3]
+RESEARCH_ROOT = REPO_ROOT / "research"
+
+
 DEFAULT_TEST_EXPORTS = {
-    "test1_ontological_innovation": Path("research/test1_ontological-innovation/ai_responses/all_responses.json"),
-    "test2_epistemic_agency": Path("research/test2_epistemic-agency/ai_responses/all_responses.json"),
-    "test3_theory_generation": Path("research/test3_theory-generation/ai_responses/all_responses.json"),
-    "test4_category_recognition": Path("research/test4_category-recognition/ai_responses/all_responses.json"),
+    "test1_ontological_innovation": RESEARCH_ROOT / "test1_ontological-innovation/ai_responses/all_responses.json",
+    "test2_epistemic_agency": RESEARCH_ROOT / "test2_epistemic-agency/ai_responses/all_responses.json",
+    "test3_theory_generation": RESEARCH_ROOT / "test3_theory-generation/ai_responses/all_responses.json",
+    "test4_category_recognition": RESEARCH_ROOT / "test4_category-recognition/ai_responses/all_responses.json",
 }
+
+DEFAULT_OUTPUT_DIR = RESEARCH_ROOT / "data/activations"
 
 
 @dataclass(slots=True)
@@ -43,7 +49,7 @@ class ActivationCollectionConfig:
     max_prompts: int | None = None
     max_input_length: int = 1024
     max_new_tokens: int = 64
-    output_dir: str = "research/data/activations"
+    output_dir: str = str(DEFAULT_OUTPUT_DIR)
     device: str = "auto"
     dtype: str = "auto"
     save_attentions: bool = False
@@ -89,7 +95,7 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     )
     parser.add_argument(
         "--output-dir",
-        default="research/data/activations",
+        default=str(DEFAULT_OUTPUT_DIR),
         help="Directory where activation artifacts are written.",
     )
     parser.add_argument(
@@ -325,6 +331,8 @@ def collect_activations(config: ActivationCollectionConfig) -> dict:
         raise ValueError("No prompts found in the selected response exports.")
 
     output_dir = Path(config.output_dir)
+    if not output_dir.is_absolute():
+        output_dir = REPO_ROOT / output_dir
     output_dir.mkdir(parents=True, exist_ok=True)
 
     device = _resolve_device(config.device)

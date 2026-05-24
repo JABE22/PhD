@@ -8,7 +8,7 @@ Quantify cross-model stability of findings from Tests 1-4 and identify where mod
 2. Run cross-model aggregation in `test6_cross-model-analysis.ipynb`.
 3. Compute ANOVA/chi-square effect sizes across models.
 4. Build test-level and meta-level robustness summaries.
-5. Export outputs to `../results/cross_model/`.
+5. Export outputs to `results/`.
 
 ## Thresholds
 Source: `research/setups/thresholds.py` (overview constants)
@@ -21,7 +21,7 @@ Source: `research/setups/thresholds.py` (overview constants)
 - `OVERVIEW_T3_TRACEABILITY_SIMILARITY_THRESHOLD = 0.55`
 
 ## Basic Results
-From `../results/cross_model/cross_model_summary.json`:
+From `results/cross_model_summary.json`:
 
 - Mean cross-model effect size: `0.2733`
 - Significant effect share: `0.80`
@@ -38,8 +38,8 @@ Effect-size summary:
 | Test 4 | Primary metric | 0.766 | 2.84e-48 | large |
 
 ## Figures
-![Cross-Test Summary](../results/cross_model/cross_test_summary.png)
+![Cross-Test Summary](results/cross_test_summary.png)
 
-![Model Performance Heatmap](../results/cross_model/model_performance_heatmap.png)
+![Model Performance Heatmap](results/model_performance_heatmap.png)
 
-![Temperature Effect](../results/cross_model/temperature_effect.png)
+![Temperature Effect](results/temperature_effect.png)

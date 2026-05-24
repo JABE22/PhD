@@ -8,19 +8,19 @@ Analyze internal generation behavior using attention, activation-space, attribut
 2. Run mechanistic analysis in `test5_mechanistic-analysis.ipynb`.
 3. Compute attention and token-influence diagnostics.
 4. Analyze activation clustering and layer-wise separation trends.
-5. Export figures and summary JSON to `../results/mechanistic/`.
+5. Export figures and summary JSON to `results/`.
 
 ## Thresholds and Core Settings
 This test is primarily diagnostic and does not use strict binary decision thresholds from `research/setups/thresholds.py`.
 
-Core settings in `../results/mechanistic/mechanistic_summary.json`:
+Core settings in `results/mechanistic_summary.json`:
 
 - `n_clusters = 4`
 - `n_layers_analyzed = 25`
 - `hidden_dim = 896`
 
 ## Basic Results
-From `../results/mechanistic/mechanistic_summary.json`:
+From `results/mechanistic_summary.json`:
 
 | Metric | Value |
 |---|---:|
@@ -35,10 +35,10 @@ From `../results/mechanistic/mechanistic_summary.json`:
 Top attended tokens (sample): `code`, `fences`, `.`, `Do`
 
 ## Figures
-![Attention Heatmap](../results/mechanistic/attention_heatmap_real.png)
+![Attention Heatmap](results/attention_heatmap_real.png)
 
-![Activation Space PCA](../results/mechanistic/activation_space_pca.png)
+![Activation Space PCA](results/activation_space_pca.png)
 
-![Layer Progression](../results/mechanistic/layer_progression.png)
+![Layer Progression](results/layer_progression.png)
 
-![Token Importance](../results/mechanistic/token_importance.png)
+![Token Importance](results/token_importance.png)

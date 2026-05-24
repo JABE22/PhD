@@ -31,8 +31,12 @@ from dotenv import load_dotenv  # type: ignore
 from openai import OpenAI  # type: ignore
 
 
-DEFAULT_INPUT = Path("research/test3_theory-generation/ai_responses/all_responses.json")
-DEFAULT_OUTPUT = Path("research/data/consciousness_theories_ai.csv")
+REPO_ROOT = Path(__file__).resolve().parents[3]
+RESEARCH_ROOT = REPO_ROOT / "research"
+
+
+DEFAULT_INPUT = RESEARCH_ROOT / "test3_theory-generation/ai_responses/all_responses.json"
+DEFAULT_OUTPUT = RESEARCH_ROOT / "data/consciousness_theories_ai.csv"
 DEFAULT_MODEL_NAME = "claude-3.7-sonnet"
 DEFAULT_MODEL_ID = "anthropic/claude-3.7-sonnet"
 
@@ -550,6 +554,11 @@ def main() -> None:
         help="Overwrite output CSV instead of appending/skipping existing ids",
     )
     args = parser.parse_args()
+
+    if not args.input.is_absolute():
+        args.input = REPO_ROOT / args.input
+    if not args.output.is_absolute():
+        args.output = REPO_ROOT / args.output
 
     if args.next_batch_size is not None and args.next_batch_size <= 0:
         raise ValueError("--next-batch-size must be > 0")

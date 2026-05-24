@@ -27,6 +27,9 @@ from openai import OpenAI # type: ignore
 from perplexity import Perplexity # type: ignore
 #from transformers.convert_slow_tokenizers_checkpoints_to_fast import args
 
+REPO_ROOT = Path(__file__).resolve().parents[3]
+RESEARCH_ROOT = REPO_ROOT / "research"
+
 # Load environment variables
 load_dotenv()
 
@@ -671,7 +674,9 @@ def collect_responses(
         if test_name not in TEST_FOLDER_MAPPING:
             raise ValueError(f"Unknown test: {test_name}. Available: {list(TEST_FOLDER_MAPPING.keys())}")
         test_folder, responses_folder = TEST_FOLDER_MAPPING[test_name]
-        output_dir = Path("research") / test_folder / responses_folder
+        output_dir = RESEARCH_ROOT / test_folder / responses_folder
+    elif not output_dir.is_absolute():
+        output_dir = REPO_ROOT / output_dir
     
     output_dir.mkdir(parents=True, exist_ok=True)
     
@@ -682,7 +687,7 @@ def collect_responses(
     prompt = PROMPTS[test_name]
     
     # Save prompt (idempotent)
-    with open(output_dir / "prompt.txt", "w") as f:
+    with open(output_dir / "prompt.txt", "w", encoding="utf-8") as f:
         f.write(prompt)
     
     print(f"\n{'='*60}")
@@ -713,7 +718,7 @@ def collect_responses(
         if not file_path.exists():
             return False
         try:
-            with file_path.open("r") as f:
+            with file_path.open("r", encoding="utf-8") as f:
                 data = json.load(f)
         except (json.JSONDecodeError, OSError):
             return False
@@ -767,7 +772,7 @@ def collect_responses(
             
             # Save individual response (per-run, per-model files)
             filename = f"{model_name}_sample_{sample_index:03d}.json"
-            with open(output_dir / filename, "w") as f:
+            with open(output_dir / filename, "w", encoding="utf-8") as f:
                 json.dump(response_data, f, indent=2)
             
             run_responses.append(response_data)
@@ -784,7 +789,7 @@ def collect_responses(
     # ---- NEW: append to existing all_responses.json instead of overwriting ----
     all_path = output_dir / "all_responses.json"
     if all_path.exists():
-        with all_path.open("r") as f:
+        with all_path.open("r", encoding="utf-8") as f:
             try:
                 existing = json.load(f)
             except json.JSONDecodeError:
@@ -796,7 +801,7 @@ def collect_responses(
 
     merged = existing + run_responses
 
-    with all_path.open("w") as f:
+    with all_path.open("w", encoding="utf-8") as f:
         json.dump(merged, f, indent=2)
     # --------------------------------------------------------------------------
 
