@@ -1,0 +1,14 @@
+{
+  "source_results_csv": "/home/jarnoma/Yandex.Disk/OneDrive - UrFU/UrFU-DOCTOR/Dissertation/Articles/AI-Creativity/Code Project/research/test4_category-recognition/results/data/test4_results.csv",
+  "n_rows": 168,
+  "n_models": 7,
+  "scenario_types": [
+    "standard"
+  ],
+  "mean_scores": {
+    "Distinction_Score": 2.5773809523809526,
+    "Identification_Score": 2.7857142857142856,
+    "Alternative_Score": 3.3095238095238093,
+    "Total_Score": 8.672619047619047
+  }
+}

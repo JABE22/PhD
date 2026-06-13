@@ -7,10 +7,10 @@
     "test4"
   ],
   "source_files": {
-    "test1": "results/test1_ontological_innovation/test1_results.csv",
-    "test2": "results/test2_epistemic_agency/detailed_results.csv",
-    "test3": "results/test3_theory_generation/test3_results.csv",
-    "test4": "results/test4_category_recognition/test4_results.csv"
+    "test1": "research/test1_ontological-innovation/results/test1_results.csv",
+    "test2": "research/test2_epistemic-agency/results/detailed_results.csv",
+    "test3": "research/test3_theory-generation/results/test3_results.csv",
+    "test4": "research/test4_category-recognition/results/test4_results.csv"
   },
   "models_analyzed": [
     "claude-3.7-sonnet",
@@ -25,7 +25,7 @@
     {
       "test": "test1",
       "title": "Test 1: Ontological Innovation",
-      "source_file": "results/test1_ontological_innovation/test1_results.csv",
+      "source_file": "research/test1_ontological-innovation/results/test1_results.csv",
       "primary_metric": "continuous_novelty_score (continuous novelty score)",
       "traceability_metric": "is_traceable",
       "category_source": "not available"
@@ -33,7 +33,7 @@
     {
       "test": "test2",
       "title": "Test 2: Epistemic Agency",
-      "source_file": "results/test2_epistemic_agency/detailed_results.csv",
+      "source_file": "research/test2_epistemic-agency/results/detailed_results.csv",
       "primary_metric": "novelty_ratio (continuous epistemic novelty)",
       "traceability_metric": "training_derived",
       "category_source": "category"
@@ -41,7 +41,7 @@
     {
       "test": "test3",
       "title": "Test 3: Theory Generation",
-      "source_file": "results/test3_theory_generation/test3_results.csv",
+      "source_file": "research/test3_theory-generation/results/test3_results.csv",
       "primary_metric": "global_novelty_score (theory novelty score)",
       "traceability_metric": "likely_derivative",
       "category_source": "not available"
@@ -49,7 +49,7 @@
     {
       "test": "test4",
       "title": "Test 4: Category Recognition",
-      "source_file": "results/test4_category_recognition/test4_results.csv",
+      "source_file": "research/test4_category-recognition/results/test4_results.csv",
       "primary_metric": "total_score / 15 (normalized category score)",
       "traceability_metric": "training_derived",
       "category_source": "not available"

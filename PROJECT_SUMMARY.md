@@ -13,7 +13,7 @@ This document introduces the repository structure, analysis workflow, and main o
 - Creates machine-readable ontology
 
 ### 2. Overview Analysis ✓
-**File:** `research/results/overview/overview-analysis.ipynb`
+**File:** `research/test0_overview/overview-analysis.ipynb`
 - Aggregates results from all 4 tests
 - Computes cross-test statistics
 - Bootstrap confidence intervals
@@ -42,8 +42,8 @@ All analysis notebooks referenced in this workflow are already present in the re
 1. **research/test2_epistemic-agency/test2_analysis.ipynb** - Epistemic Agency
 2. **research/test3_theory-generation/test3_analysis.ipynb** - Theory Generation
 3. **research/test4_category-recognition/test4_analysis.ipynb** - Category Recognition
-4. **research/test5/test5_mechanistic-analysis.ipynb** - Mechanistic Interpretability
-5. **research/test6/test6_cross-model-analysis.ipynb** - Cross-Model Robustness
+4. **research/test5_mechanistic/test5_mechanistic-analysis.ipynb** - Mechanistic Interpretability
+5. **research/test6_cross_model/test6_cross-model-analysis.ipynb** - Cross-Model Robustness
 
 ## Usage Workflow
 
@@ -80,8 +80,8 @@ Execute the existing notebooks for each test and analysis stage:
 - research/test2_epistemic-agency/test2_analysis.ipynb
 - research/test3_theory-generation/test3_analysis.ipynb
 - research/test4_category-recognition/test4_analysis.ipynb
-- research/test5/test5_mechanistic-analysis.ipynb
-- research/test6/test6_cross-model-analysis.ipynb
+- research/test5_mechanistic/test5_mechanistic-analysis.ipynb
+- research/test6_cross_model/test6_cross-model-analysis.ipynb
 
 ### Step 6: Run Complete Analysis
 ```bash
@@ -92,11 +92,11 @@ jupyter notebook research/test3_theory-generation/test3_analysis.ipynb
 jupyter notebook research/test4_category-recognition/test4_analysis.ipynb
 
 # Run mechanistic and cross-model analyses
-jupyter notebook research/test5/test5_mechanistic-analysis.ipynb
-jupyter notebook research/test6/test6_cross-model-analysis.ipynb
+jupyter notebook research/test5_mechanistic/test5_mechanistic-analysis.ipynb
+jupyter notebook research/test6_cross_model/test6_cross-model-analysis.ipynb
 
 # Generate overview
-jupyter notebook research/results/overview/overview-analysis.ipynb
+jupyter notebook research/test0_overview/overview-analysis.ipynb
 ```
 
 ### Step 7: Extract Results for Chapter 4
@@ -194,19 +194,19 @@ project/
 - **Runtime:** ~5-15 minutes per test
 - **Purpose:** Analyzes whether AI outputs are genuinely novel
 
-### research/test5/test5_mechanistic-analysis.ipynb
+### research/test5_mechanistic/test5_mechanistic-analysis.ipynb
 - **Input:** AI model internals (requires model access)
 - **Output:** Attention maps, activation plots, attribution scores
 - **Runtime:** ~30-60 minutes (depending on model size)
 - **Purpose:** Understands internal generation mechanisms
 
-### research/test6/test6_cross-model-analysis.ipynb
+### research/test6_cross_model/test6_cross-model-analysis.ipynb
 - **Input:** Results from all tests
 - **Output:** Cross-model statistics, robustness analyses
 - **Runtime:** ~10-20 minutes
 - **Purpose:** Tests whether limitations generalize across models
 
-### research/results/overview/overview-analysis.ipynb
+### research/test0_overview/overview-analysis.ipynb
 - **Input:** Results from all other analyses
 - **Output:** Aggregate statistics, summary report, overview figures
 - **Runtime:** ~5 minutes

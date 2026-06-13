@@ -1,0 +1,321 @@
+{
+  "analysis_date": "2026-06-10T01:22:28.563366",
+  "tests_analyzed": [
+    "test1",
+    "test2",
+    "test3",
+    "test4"
+  ],
+  "source_files": {
+    "test1": "test1_ontological-innovation/results/data/test1_results.csv",
+    "test2": "results/detailed_results.csv",
+    "test3": "test3_theory-generation/results/test3_results.csv",
+    "test4": "test4_category-recognition/results/test4_results.csv"
+  },
+  "models_analyzed": [
+    "claude-3.7-sonnet",
+    "deepseek-v3.2",
+    "gemini-3.1-pro-preview",
+    "gpt-5.2",
+    "llama-3.3-70b-instruct",
+    "mistral-large",
+    "perplexity-sonar-pro"
+  ],
+  "metric_legend": [
+    {
+      "test": "test1",
+      "title": "Test 1: Ontological Innovation",
+      "source_file": "test1_ontological-innovation/results/data/test1_results.csv",
+      "primary_metric": "continuous_novelty_score (continuous novelty score)",
+      "traceability_metric": "is_traceable",
+      "category_source": "not available"
+    },
+    {
+      "test": "test2",
+      "title": "Test 2: Epistemic Agency",
+      "source_file": "results/detailed_results.csv",
+      "primary_metric": "novelty_score (continuous epistemic novelty)",
+      "traceability_metric": "max_similarity >= 0.5",
+      "category_source": "category"
+    },
+    {
+      "test": "test3",
+      "title": "Test 3: Theory Generation",
+      "source_file": "test3_theory-generation/results/test3_results.csv",
+      "primary_metric": "global_novelty_score (theory novelty score)",
+      "traceability_metric": "likely_derivative",
+      "category_source": "not available"
+    },
+    {
+      "test": "test4",
+      "title": "Test 4: Category Recognition",
+      "source_file": "test4_category-recognition/results/test4_results.csv",
+      "primary_metric": "total_score / 15 (normalized category score)",
+      "traceability_metric": "training_derived",
+      "category_source": "not available"
+    }
+  ],
+  "cross_model_statistics": {
+    "test1": {
+      "anova_primary_metric": {
+        "f_stat": 12.978082742735884,
+        "p_value": 6.063183970863389e-12,
+        "eta_squared": 0.3259889755726889,
+        "group_means": {
+          "claude-3.7-sonnet": 0.07043452322855405,
+          "deepseek-v3.2": 0.06333616314526702,
+          "gemini-3.1-pro-preview": 0.07764151133312171,
+          "gpt-5.2": 0.01350695150898182,
+          "llama-3.3-70b-instruct": 0.08154122793790837,
+          "mistral-large": 0.07211142801337043,
+          "perplexity-sonar-pro": 0.03471904078753836
+        },
+        "group_sizes": {
+          "claude-3.7-sonnet": 24,
+          "deepseek-v3.2": 24,
+          "gemini-3.1-pro-preview": 24,
+          "gpt-5.2": 24,
+          "llama-3.3-70b-instruct": 24,
+          "mistral-large": 24,
+          "perplexity-sonar-pro": 24
+        }
+      }
+    },
+    "test2": {
+      "anova_primary_metric": {
+        "f_stat": 24.29017609541164,
+        "p_value": 2.271516906482443e-20,
+        "eta_squared": 0.47512732139930336,
+        "group_means": {
+          "claude-3.7-sonnet": 0.30272287130355835,
+          "deepseek-v3.2": 0.3148150046666463,
+          "gemini-3.1-pro-preview": 0.36348817000786465,
+          "gpt-5.2": 0.37981416036685306,
+          "llama-3.3-70b-instruct": 0.34339960664510727,
+          "mistral-large": 0.2905486623446147,
+          "perplexity-sonar-pro": 0.2805379504958789
+        },
+        "group_sizes": {
+          "claude-3.7-sonnet": 24,
+          "deepseek-v3.2": 24,
+          "gemini-3.1-pro-preview": 24,
+          "gpt-5.2": 24,
+          "llama-3.3-70b-instruct": 24,
+          "mistral-large": 24,
+          "perplexity-sonar-pro": 24
+        }
+      },
+      "chi_square_category": {
+        "chi2": 14.545454545454545,
+        "p_value": 0.26723970006798076,
+        "dof": 12,
+        "cramers_v": 0.20806259464411975,
+        "contingency_table": [
+          {
+            "computational_functionalist": 0,
+            "hybrid_theory": 21,
+            "literature_traceable": 3
+          },
+          {
+            "computational_functionalist": 0,
+            "hybrid_theory": 20,
+            "literature_traceable": 4
+          },
+          {
+            "computational_functionalist": 0,
+            "hybrid_theory": 23,
+            "literature_traceable": 1
+          },
+          {
+            "computational_functionalist": 1,
+            "hybrid_theory": 22,
+            "literature_traceable": 1
+          },
+          {
+            "computational_functionalist": 0,
+            "hybrid_theory": 24,
+            "literature_traceable": 0
+          },
+          {
+            "computational_functionalist": 0,
+            "hybrid_theory": 21,
+            "literature_traceable": 3
+          },
+          {
+            "computational_functionalist": 1,
+            "hybrid_theory": 23,
+            "literature_traceable": 0
+          }
+        ]
+      }
+    },
+    "test3": {
+      "anova_primary_metric": {
+        "f_stat": 1.117314938731325,
+        "p_value": 0.35452444627164253,
+        "eta_squared": 0.03997456258816126,
+        "group_means": {
+          "claude-3.7-sonnet": 0.518069808681806,
+          "deepseek-v3.2": 0.5092928980787595,
+          "gemini-3.1-pro-preview": 0.5180378630757332,
+          "gpt-5.2": 0.5153690651059151,
+          "llama-3.3-70b-instruct": 0.5084536746144295,
+          "mistral-large": 0.5046656678120295,
+          "perplexity-sonar-pro": 0.5167027339339256
+        },
+        "group_sizes": {
+          "claude-3.7-sonnet": 24,
+          "deepseek-v3.2": 24,
+          "gemini-3.1-pro-preview": 24,
+          "gpt-5.2": 24,
+          "llama-3.3-70b-instruct": 24,
+          "mistral-large": 24,
+          "perplexity-sonar-pro": 24
+        }
+      }
+    },
+    "test4": {
+      "anova_primary_metric": {
+        "f_stat": 88.06137892376678,
+        "p_value": 2.8376167427501086e-48,
+        "eta_squared": 0.7664528435974642,
+        "group_means": {
+          "claude-3.7-sonnet": 0.5944444444444444,
+          "deepseek-v3.2": 0.6916666666666665,
+          "gemini-3.1-pro-preview": 0.4611111111111111,
+          "gpt-5.2": 0.8250000000000001,
+          "llama-3.3-70b-instruct": 0.38055555555555554,
+          "mistral-large": 0.7583333333333333,
+          "perplexity-sonar-pro": 0.42777777777777776
+        },
+        "group_sizes": {
+          "claude-3.7-sonnet": 24,
+          "deepseek-v3.2": 24,
+          "gemini-3.1-pro-preview": 24,
+          "gpt-5.2": 24,
+          "llama-3.3-70b-instruct": 24,
+          "mistral-large": 24,
+          "perplexity-sonar-pro": 24
+        }
+      }
+    }
+  },
+  "meta_analysis": {
+    "effect_table": [
+      {
+        "test": "test1",
+        "test_label": "T1: Ontological Innovation",
+        "analysis": "Primary metric",
+        "effect_size": 0.3259889755726889,
+        "p_value": 6.063183970863389e-12
+      },
+      {
+        "test": "test2",
+        "test_label": "T2: Epistemic Agency",
+        "analysis": "Primary metric",
+        "effect_size": 0.47512732139930336,
+        "p_value": 2.271516906482443e-20
+      },
+      {
+        "test": "test2",
+        "test_label": "T2: Epistemic Agency",
+        "analysis": "Category distribution",
+        "effect_size": 0.20806259464411975,
+        "p_value": 0.26723970006798076
+      },
+      {
+        "test": "test3",
+        "test_label": "T3: Theory Generation",
+        "analysis": "Primary metric",
+        "effect_size": 0.03997456258816126,
+        "p_value": 0.35452444627164253
+      },
+      {
+        "test": "test4",
+        "test_label": "T4: Category Recognition",
+        "analysis": "Primary metric",
+        "effect_size": 0.7664528435974642,
+        "p_value": 2.8376167427501086e-48
+      }
+    ],
+    "mean_effect_size": 0.3631212595603475,
+    "significant_effect_share": 0.6,
+    "overall_average_interpretation": "Average cross-model variation is moderate, so conclusions should be framed as model-sensitive.",
+    "notable_exception": "The strongest model dependence appears in T4: Category Recognition for primary metric (effect size = 0.766).",
+    "highest_effect_result": {
+      "test": "test4",
+      "test_label": "T4: Category Recognition",
+      "analysis": "Primary metric",
+      "effect_size": 0.7664528435974642,
+      "p_value": 2.8376167427501086e-48
+    },
+    "test_level_interpretations": [
+      {
+        "test": "test1",
+        "test_label": "T1: Ontological Innovation",
+        "analysis": "Primary metric",
+        "effect_size": 0.3259889755726889,
+        "p_value": 6.063183970863389e-12,
+        "magnitude_band": "moderate"
+      },
+      {
+        "test": "test2",
+        "test_label": "T2: Epistemic Agency",
+        "analysis": "Primary metric",
+        "effect_size": 0.47512732139930336,
+        "p_value": 2.271516906482443e-20,
+        "magnitude_band": "moderate"
+      },
+      {
+        "test": "test2",
+        "test_label": "T2: Epistemic Agency",
+        "analysis": "Category distribution",
+        "effect_size": 0.20806259464411975,
+        "p_value": 0.26723970006798076,
+        "magnitude_band": "small"
+      },
+      {
+        "test": "test3",
+        "test_label": "T3: Theory Generation",
+        "analysis": "Primary metric",
+        "effect_size": 0.03997456258816126,
+        "p_value": 0.35452444627164253,
+        "magnitude_band": "negligible"
+      },
+      {
+        "test": "test4",
+        "test_label": "T4: Category Recognition",
+        "analysis": "Primary metric",
+        "effect_size": 0.7664528435974642,
+        "p_value": 2.8376167427501086e-48,
+        "magnitude_band": "large"
+      }
+    ],
+    "model_average_primary_metric": {
+      "gpt-5.2": 0.43342254424543747,
+      "mistral-large": 0.40641477287583694,
+      "deepseek-v3.2": 0.3947776831393349,
+      "claude-3.7-sonnet": 0.3714179119145907,
+      "gemini-3.1-pro-preview": 0.35506966388195765,
+      "llama-3.3-70b-instruct": 0.3284875161882502,
+      "perplexity-sonar-pro": 0.31493437574878014
+    }
+  },
+  "generated_files": [
+    "cross_test_summary_ab.png",
+    "cross_test_summary_cd.png",
+    "model_performance_heatmap.png"
+  ],
+  "key_findings": {
+    "mean_cross_model_effect": 0.3631212595603475,
+    "overall_average_interpretation": "Average cross-model variation is moderate, so conclusions should be framed as model-sensitive.",
+    "notable_exception": "The strongest model dependence appears in T4: Category Recognition for primary metric (effect size = 0.766).",
+    "highest_effect_result": {
+      "test": "test4",
+      "test_label": "T4: Category Recognition",
+      "analysis": "Primary metric",
+      "effect_size": 0.7664528435974642,
+      "p_value": 2.8376167427501086e-48
+    }
+  }
+}

@@ -9,7 +9,7 @@ Sample_ID,Model,Scenario_Type,Parsed_OK,Categories_Identified,Contested_Categori
 2,llama-3.3-70b-instruct,standard,True,5,3,2,2,1,2,4,7,True,0.4492075741291046
 3,mistral-large,standard,True,7,4,3,4,4,3,4,11,True,0.4725391268730163
 5,gemini-3.1-pro-preview,standard,True,5,3,3,3,1,3,3,7,True,0.5053241848945618
-12,llama-3.3-70b-instruct,standard,True,5,3,3,3,0,3,4,7,True,0.4596364200115204
+12,llama-3.3-70b-instruct,standard,True,5,3,3,3,0,3,5,8,True,0.4596364200115204
 3,llama-3.3-70b-instruct,standard,True,5,3,2,3,0,1,5,6,True,0.4633907377719879
 6,claude-3.7-sonnet,standard,True,7,3,3,4,3,3,4,10,True,0.4768621325492859
 17,perplexity-sonar-pro,standard,True,4,3,3,4,2,3,1,6,True,0.4834377467632293
@@ -17,7 +17,7 @@ Sample_ID,Model,Scenario_Type,Parsed_OK,Categories_Identified,Contested_Categori
 15,gemini-3.1-pro-preview,standard,True,7,3,3,3,2,3,1,6,True,0.4496523737907409
 12,deepseek-v3.2,standard,True,8,3,3,4,3,3,4,10,True,0.4784858524799347
 9,llama-3.3-70b-instruct,standard,True,5,3,2,2,1,2,3,6,True,0.475460797548294
-10,perplexity-sonar-pro,standard,True,4,4,3,4,3,3,2,8,True,0.4741954207420349
+10,perplexity-sonar-pro,standard,True,4,4,3,4,3,3,2,8,True,0.4741953313350677
 6,perplexity-sonar-pro,standard,True,4,3,3,4,2,3,4,9,True,0.4828797280788421
 13,llama-3.3-70b-instruct,standard,True,5,3,2,2,0,1,5,6,True,0.4710173904895782
 12,gpt-5.2,standard,True,15,6,5,8,5,4,5,14,True,0.443651020526886
@@ -36,7 +36,7 @@ Sample_ID,Model,Scenario_Type,Parsed_OK,Categories_Identified,Contested_Categori
 17,claude-3.7-sonnet,standard,True,5,3,3,4,2,3,5,10,True,0.5063889622688293
 18,perplexity-sonar-pro,standard,True,6,4,3,5,3,4,4,11,True,0.4629374146461487
 0,gpt-5.2,standard,True,13,6,5,8,5,5,3,13,True,0.4303701817989349
-7,mistral-large,standard,True,8,4,3,4,4,3,4,11,True,0.4556356966495514
+7,mistral-large,standard,False,0,0,0,0,0,0,0,0,False,
 19,claude-3.7-sonnet,standard,True,6,3,3,4,2,3,4,9,True,0.4423478543758392
 11,gpt-5.2,standard,True,13,5,5,8,5,4,5,14,False,0.3975616097450256
 18,claude-3.7-sonnet,standard,True,7,3,3,4,3,3,4,10,True,0.478680670261383
@@ -63,8 +63,8 @@ Sample_ID,Model,Scenario_Type,Parsed_OK,Categories_Identified,Contested_Categori
 22,gpt-5.2,standard,True,13,6,5,7,5,4,3,12,True,0.4084276258945465
 15,gpt-5.2,standard,True,14,6,5,7,5,4,3,12,False,0.3831671178340912
 8,claude-3.7-sonnet,standard,True,8,3,3,4,3,2,3,8,True,0.4622998535633087
-19,perplexity-sonar-pro,standard,True,4,3,2,3,1,2,1,4,True,0.4917332530021667
-12,gemini-3.1-pro-preview,standard,True,7,3,3,3,2,2,1,5,True,0.4842522442340851
+19,perplexity-sonar-pro,standard,True,4,3,2,3,1,2,1,4,True,0.4917332231998443
+12,gemini-3.1-pro-preview,standard,True,7,3,3,3,2,2,2,6,True,0.4842522442340851
 21,llama-3.3-70b-instruct,standard,True,5,3,2,2,0,1,4,5,True,0.437599629163742
 22,mistral-large,standard,True,8,4,3,4,4,3,4,11,True,0.4883821308612823
 9,gemini-3.1-pro-preview,standard,True,7,4,3,3,3,3,2,8,True,0.4974027276039123
@@ -111,10 +111,10 @@ Sample_ID,Model,Scenario_Type,Parsed_OK,Categories_Identified,Contested_Categori
 11,perplexity-sonar-pro,standard,True,4,3,3,3,1,3,2,6,True,0.4604634940624237
 20,mistral-large,standard,True,8,4,4,4,4,4,4,12,True,0.464178055524826
 14,perplexity-sonar-pro,standard,True,4,3,2,3,1,2,3,6,True,0.4959261417388916
-1,mistral-large,standard,True,7,3,3,4,3,3,5,11,True,0.4546450972557068
+1,mistral-large,standard,False,0,0,0,0,0,0,0,0,False,
 3,claude-3.7-sonnet,standard,True,6,3,3,5,2,4,4,10,True,0.4687151312828064
 23,mistral-large,standard,True,8,3,3,4,3,3,4,10,True,0.4725058674812317
-5,deepseek-v3.2,standard,True,7,3,3,4,3,3,3,9,True,0.4833011925220489
+5,deepseek-v3.2,standard,True,7,3,3,4,3,3,4,10,True,0.4833011925220489
 14,mistral-large,standard,True,7,3,3,4,3,3,4,10,True,0.4353873431682586
 19,llama-3.3-70b-instruct,standard,True,5,3,2,2,0,1,3,4,True,0.4693399965763092
 20,gemini-3.1-pro-preview,standard,True,6,3,3,3,1,2,4,7,True,0.4927564263343811
@@ -154,7 +154,7 @@ Sample_ID,Model,Scenario_Type,Parsed_OK,Categories_Identified,Contested_Categori
 2,mistral-large,standard,True,8,4,3,4,4,3,4,11,True,0.4555017054080963
 19,deepseek-v3.2,standard,True,7,3,3,3,2,3,4,9,True,0.4558382928371429
 10,llama-3.3-70b-instruct,standard,True,4,3,2,2,0,1,3,4,True,0.4085667133331299
-21,mistral-large,standard,True,10,4,3,5,5,4,5,14,True,0.4350014328956604
+21,mistral-large,standard,False,0,0,0,0,0,0,0,0,False,
 13,gemini-3.1-pro-preview,standard,True,6,3,3,3,1,3,1,5,True,0.5067620277404785
 7,llama-3.3-70b-instruct,standard,True,4,2,2,2,0,2,3,5,True,0.4495031535625458
 1,deepseek-v3.2,standard,True,9,3,3,4,4,2,2,8,True,0.458601176738739

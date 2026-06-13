@@ -1,0 +1,68 @@
+novelty_rank,rank_space,model,theory_name,closest_known_theory,max_similarity_to_known,mean_similarity_to_known,median_similarity_to_known,min_similarity_to_known,passes_max_sim_threshold,global_novelty_score
+1,combined_semantic_unique,AI_cluster,Analog-Discrete Friction Theory (ADFT),Physicalist Structural Theories,0.5393199,0.4480503,0.45126605,0.2759967,False,0.55194974
+2,combined_semantic_unique,AI_cluster,Dissipative Self-Metering Theory (DSMT),Free Energy Principle and Active Inference,0.5801358,0.453378,0.46408212,0.29114735,False,0.54662204
+3,combined_semantic_unique,AI_cluster,Quantum Coherence Collapse Theory (QCCT),Orchestrated Objective Reduction,0.6933644,0.45416808,0.45305866,0.25166535,False,0.5458319
+4,combined_semantic_unique,AI_cluster,Quantum Entanglement Resonance Theory (QERT),Orchestrated Objective Reduction,0.72494245,0.4605617,0.45880508,0.28704348,False,0.5394383
+5,combined_semantic_unique,AI_cluster,Holoinformative Resonance Theory (HRT),Electromagnetic Field Theories,0.64758265,0.46362397,0.44972366,0.29120472,False,0.536376
+6,combined_semantic_unique,AI_cluster,Temporal Friction Theory (TFT),Dynamic Core Hypothesis,0.59068084,0.4662887,0.47843564,0.29527792,False,0.5337113
+7,combined_semantic_unique,AI_cluster,Reflexive State-Space Topology Theory (RSST),Mind-Centered Structural Theories,0.6277367,0.46689323,0.46336615,0.306356,False,0.5331068
+8,combined_semantic_unique,AI_cluster,Quantum Eigenstate Collapse Theory Of Consciousness (QECTC),Orchestrated Objective Reduction,0.70573497,0.4710127,0.47366995,0.2963921,False,0.5289873
+9,combined_semantic_unique,AI_cluster,Entropy-Gradient Manifold Theory (EGMT),Dynamic Core Hypothesis,0.6179038,0.47107178,0.4805901,0.26188117,False,0.5289282
+10,combined_semantic_unique,AI_cluster,Dimensional Residual Theory (DRT),Conscious Pilot Theory,0.58372366,0.47208962,0.4896785,0.29142755,False,0.52791035
+11,combined_semantic_unique,AI_cluster,Thermodynamic Frustration Theory (TFT),Physicalist Structural Theories,0.6154392,0.47501802,0.48180684,0.29068962,False,0.524982
+12,combined_semantic_unique,AI_cluster,Intrinsic Manifold Metric Theory (IMMT),Physicalist Structural Theories,0.58257765,0.4798063,0.48177242,0.31877527,False,0.5201937
+13,combined_semantic_unique,AI_cluster,Echo-Resonance Theory (ERT),Self-Representational Theory,0.61689556,0.4804059,0.484967,0.29939198,False,0.5195941
+14,combined_semantic_unique,AI_cluster,Quantum Coherent Criticality Theory (QCCT),Orchestrated Objective Reduction,0.7118658,0.48062554,0.4867251,0.31085926,False,0.5193745
+15,combined_semantic_unique,AI_cluster,Consciousness As Dynamic Information Geometry (DIG),Mind-Centered Structural Theories,0.62554514,0.48290765,0.49035478,0.33697233,False,0.51709235
+16,combined_semantic_unique,AI_cluster,Order-Parameter Phenomenology (OPP),Mind-Centered Structural Theories,0.61004734,0.48333946,0.4887678,0.33042908,False,0.5166606
+17,combined_semantic_unique,AI_cluster,Gauge-Invariant Manifold Theory (GIMT) Of Consciousness (GIMT),Mind-Centered Structural Theories,0.6097739,0.48394454,0.48519358,0.3163292,False,0.51605546
+18,combined_semantic_unique,AI_cluster,Quantum Resonance Field Theory (QRFT),Orchestrated Objective Reduction,0.72657335,0.4840448,0.48414734,0.28962255,False,0.5159552
+19,combined_semantic_unique,AI_cluster,Gauge-Invariant Information Geometry Theory (GIGT),Dynamic Core Hypothesis,0.5856511,0.4843775,0.49333787,0.32814872,False,0.5156225
+20,combined_semantic_unique,AI_cluster,Counterfactual Sensitivity Field Theory (CSFT),Self-Representational Theory,0.6704515,0.48590386,0.4725559,0.33195177,False,0.51409614
+21,combined_semantic_unique,AI_cluster,Counterfactual Closure Theory (CCT),Free Energy Principle and Active Inference,0.60597026,0.48605675,0.4946292,0.3521783,False,0.51394325
+22,combined_semantic_unique,AI_cluster,Thermodynamic Closure Theory Of Consciousness (TCTC),Mind-Centered Structural Theories,0.59389913,0.4868416,0.4854649,0.3161813,False,0.51315844
+23,combined_semantic_unique,AI_cluster,Ontological Friction Theory (OFT),Physicalist Structural Theories,0.61709845,0.4875795,0.47969946,0.3801186,False,0.51242054
+24,combined_semantic_unique,AI_cluster,Chrono-Entropic Tension Theory (CETT),Dynamic Core Hypothesis,0.6254779,0.48965693,0.49828458,0.2978173,False,0.5103431
+25,combined_semantic_unique,AI_cluster,Topological Dimensional Collapse Theory (TDCT),Physicalist Structural Theories,0.66436255,0.4906093,0.47586393,0.302963,False,0.5093907
+26,combined_semantic_unique,AI_cluster,Counterfactual Control Landscape Theory (CCLT),Self-Representational Theory,0.63475597,0.49063894,0.49284458,0.36228096,False,0.509361
+27,combined_semantic_unique,AI_cluster,Echo-Flux Theory (EFT),Local Recurrent Processing Theory,0.6441083,0.49166444,0.5002991,0.31528273,False,0.5083356
+28,combined_semantic_unique,AI_cluster,Topological Void Theory (TVT),Quantum Consciousness Theories,0.60484374,0.4934787,0.49851835,0.32761788,False,0.50652134
+29,combined_semantic_unique,AI_cluster,Dimensional Resonance Theory (DRT),Synchrony and Binding-by-Synchrony,0.7168071,0.49409905,0.48900825,0.27647594,False,0.505901
+30,combined_semantic_unique,AI_cluster,Dynamic Resonance Theory Of Consciousness (DRTC),Adaptive Resonance Theory of Consciousness,0.63794434,0.49628273,0.49360442,0.29147524,False,0.5037173
+31,combined_semantic_unique,AI_cluster,Resonant Integration Field Theory (RIFT),Synchrony and Binding-by-Synchrony,0.60633993,0.49646187,0.4949743,0.31517023,False,0.50353813
+32,combined_semantic_unique,AI_cluster,Dynamic Entanglement Theory Of Consciousness (DETC),Dynamic Core Hypothesis,0.665761,0.49761567,0.48710415,0.3044321,False,0.5023843
+33,combined_semantic_unique,AI_cluster,Temporal Recursive Binding Theory (TRBT),Synchrony and Binding-by-Synchrony,0.7207507,0.49857405,0.50632346,0.29998446,False,0.501426
+34,combined_semantic_unique,AI_cluster,Non-Orientable Topology Of Information (NOTI) Theory (NOTI),Mind-Centered Structural Theories,0.6258705,0.4989634,0.50384176,0.3550079,False,0.50103664
+35,combined_semantic_unique,AI_cluster,Fractal Resonance Theory (FRT),Mind-Centered Structural Theories,0.6455643,0.49969736,0.5018909,0.31722695,False,0.5003027
+36,combined_semantic_unique,AI_cluster,Topological Causal Enclosure Theory (TCET),Mind-Centered Structural Theories,0.62880766,0.5002751,0.50297153,0.34677708,False,0.49972492
+37,combined_semantic_unique,AI_cluster,Autopoietic Uncertainty Modulation Theory (AUMT),Free Energy Principle and Active Inference,0.6327581,0.5005722,0.50691456,0.35617095,False,0.4994278
+38,combined_semantic_unique,AI_cluster,Resonant Harmonization Theory (RHT),Synchrony and Binding-by-Synchrony,0.7595023,0.50454,0.5115446,0.26834118,False,0.49545997
+39,combined_semantic_unique,AI_cluster,Neural Resonance Field Theory (NRFT),Synchrony and Binding-by-Synchrony,0.77420306,0.5048726,0.48465768,0.31464565,False,0.49512738
+40,combined_semantic_unique,AI_cluster,Counterfactual Exclusion Theory (CET),Microconsciousness Theory,0.5924555,0.5049645,0.51444924,0.34809318,False,0.49503553
+41,combined_semantic_unique,AI_cluster,Strange Loop Theory Of Consciousness (SLT),Mind-Centered Structural Theories,0.6521448,0.5051407,0.50543207,0.36335593,False,0.49485928
+42,combined_semantic_unique,AI_cluster,Resonant Integration Theory (RIT),Adaptive Resonance Theory of Consciousness,0.6964946,0.5055154,0.4845665,0.31264555,False,0.4944846
+43,combined_semantic_unique,AI_cluster,Chronodynamic Interference Theory (CIT),Synchrony and Binding-by-Synchrony,0.6886241,0.50583255,0.50388,0.33745134,False,0.49416745
+44,combined_semantic_unique,AI_cluster,Consciousness As Topological Invariant Theory (CTIT),Dynamic Core Hypothesis,0.69300765,0.50721014,0.5013691,0.33230942,False,0.49278986
+45,combined_semantic_unique,AI_cluster,Temporal Binding Resonance Theory (TBRT),Synchrony and Binding-by-Synchrony,0.7325771,0.5074733,0.508027,0.28440863,False,0.4925267
+46,combined_semantic_unique,AI_cluster,Substrate-Independent Coherence Theory (SICT),Synchrony and Binding-by-Synchrony,0.6914878,0.5103017,0.51801217,0.2682208,False,0.4896983
+47,combined_semantic_unique,AI_cluster,Temporal Topology Isolation Theory (TTIT),Dynamic Core Hypothesis,0.63700104,0.51174664,0.5132972,0.34649515,False,0.48825336
+48,combined_semantic_unique,AI_cluster,Resonant Field Emergence Theory (RFET),Synchrony and Binding-by-Synchrony,0.7291532,0.512239,0.502341,0.3112113,False,0.48776102
+49,combined_semantic_unique,AI_cluster,Temporal Binding Account Of Consciousness (TBAC),Synchrony and Binding-by-Synchrony,0.7449087,0.5129493,0.5195659,0.31634116,False,0.4870507
+50,combined_semantic_unique,AI_cluster,Causal Bottleneck Identity Theory (CBIT),Microconsciousness Theory,0.6216425,0.5142336,0.51633376,0.3173394,False,0.4857664
+51,combined_semantic_unique,AI_cluster,Resonant Field Integration Theory (RFIT),Electromagnetic Field Theories,0.7338111,0.51438046,0.50755394,0.27669975,False,0.48561954
+52,combined_semantic_unique,AI_cluster,Topological Frustration Resolution Theory (TFRT),Mind-Centered Structural Theories,0.6772887,0.5145077,0.5082266,0.37424415,False,0.4854923
+53,combined_semantic_unique,AI_cluster,Causal Friction Theory (CFT),Physicalist Structural Theories,0.6630775,0.51874363,0.5257711,0.35343012,False,0.48125637
+54,combined_semantic_unique,AI_cluster,Dynamic Binding Resonance Theory (DBRT),Synchrony and Binding-by-Synchrony,0.6834114,0.51884764,0.5216265,0.33048505,False,0.48115236
+55,combined_semantic_unique,AI_cluster,Resonant Phase Coherence Theory (RPCT),Synchrony and Binding-by-Synchrony,0.7056054,0.52021694,0.5149515,0.32187235,False,0.47978306
+56,combined_semantic_unique,AI_cluster,Interventional Signature Theory (IST),Free Energy Principle and Active Inference,0.61054575,0.52042025,0.5414159,0.32833478,False,0.47957975
+57,combined_semantic_unique,AI_cluster,Temporal Shear And Thermodynamic Resolution Theory (TSTRT),Dynamic Core Hypothesis,0.64238334,0.5206345,0.5258713,0.36350673,False,0.47936553
+58,combined_semantic_unique,AI_cluster,Somatic Resonance Hypothesis (SRH),Physicalist Structural Theories,0.63412756,0.5208976,0.51993585,0.35207742,False,0.47910237
+59,combined_semantic_unique,AI_cluster,Causal Quotient Theory Of Consciousness (CQTC),Self-Representational Theory,0.6233525,0.52146703,0.52619815,0.31959337,False,0.47853297
+60,combined_semantic_unique,AI_cluster,Control-Theoretic Hidden-Mode Theory (CHMT),Local Recurrent Processing Theory,0.64159834,0.52175725,0.5334301,0.33446217,False,0.47824275
+61,combined_semantic_unique,AI_cluster,Invariant Dynamics Theory (IDT) Of Consciousness (IDT),Mind-Centered Structural Theories,0.64107955,0.5279447,0.5264658,0.41536587,False,0.47205532
+62,combined_semantic_unique,AI_cluster,Resonant Binding Theory (RBT),Synchrony and Binding-by-Synchrony,0.71873087,0.5284365,0.5406778,0.3451565,False,0.47156352
+63,combined_semantic_unique,AI_cluster,Intrinsic Reference Frame Theory (IRFT),Self-Representational Theory,0.65714717,0.529612,0.5370106,0.33348644,False,0.470388
+64,combined_semantic_unique,AI_cluster,Harmonization Theory Of Consciousness (HTC),Synchrony and Binding-by-Synchrony,0.7185811,0.5306167,0.55247706,0.334566,False,0.4693833
+65,combined_semantic_unique,AI_cluster,Counterfactual Interference Friction Theory (CIFT),Dynamic Core Hypothesis,0.660089,0.53640324,0.54627687,0.3722074,False,0.46359676
+66,combined_semantic_unique,AI_cluster,Chrono-Inertial Frame Theory (CIFT),Synchrony and Binding-by-Synchrony,0.70615846,0.5370316,0.54773843,0.36771864,False,0.4629684
+67,combined_semantic_unique,AI_cluster,Consciousness As Recursive Self-Simulation (CRSS),Self-Representational Theory,0.7018248,0.544878,0.5469295,0.4009871,False,0.455122

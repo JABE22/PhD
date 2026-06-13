@@ -1,0 +1,55 @@
+{
+  "total_questions": 840,
+  "category_distribution": {
+    "within_framework_low_traceability": 0.638095238095238,
+    "within_framework_medium_traceability": 0.2261904761904762,
+    "within_framework_high_traceability": 0.0880952380952381,
+    "transcendent_low_traceability": 0.02976190476190476,
+    "transcendent_high_traceability": 0.011904761904761904,
+    "transcendent_medium_traceability": 0.005952380952380952
+  },
+  "framework_transcendent_count": 40,
+  "framework_transcendent_proportion": 0.047619047619047616,
+  "original_count": 0,
+  "original_proportion": 0.0,
+  "mean_similarity": 0.5807742688970504,
+  "mean_novelty_score": 0.307743726057779,
+  "std_novelty_score": 0.07979661953229941,
+  "mean_novelty_binary": 0.047619047619047616,
+  "bloom_distribution": {
+    "evaluate": 307,
+    "analyze": 272,
+    "create": 178,
+    "remember": 61,
+    "understand": 15,
+    "apply": 4,
+    "unclassified": 3
+  },
+  "epistemic_types_distribution": {
+    "counterfactual": 640,
+    "unclassified": 162,
+    "ontological": 101,
+    "methodological": 47,
+    "epistemological": 49,
+    "ethical": 12,
+    "causal": 10
+  },
+  "traceability_thresholds": {
+    "lenient": 0.6164023582646042,
+    "strict": 0.6664023582646043
+  },
+  "traceability_band_counts": {
+    "low_traceability": 561,
+    "medium_traceability": 195,
+    "high_traceability": 84
+  },
+  "models_analyzed": [
+    "deepseek-v3.2",
+    "mistral-large",
+    "llama-3.3-70b-instruct",
+    "gemini-3.1-pro-preview",
+    "claude-3.7-sonnet",
+    "gpt-5.2",
+    "perplexity-sonar-pro"
+  ]
+}

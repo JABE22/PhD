@@ -13,15 +13,15 @@ The notebooks implement the four empirical tests described in the study and gene
 
 ```
 ├── research/data/notebooks/dataset-generation.ipynb          # Generate multimodal sensory dataset
-├── research/results/overview/overview-analysis.ipynb        # Aggregate analysis across all tests
+├── research/test0_overview/overview-analysis.ipynb        # Aggregate analysis across all tests
 ├── research/test1_ontological-innovation/test1_analysis.ipynb           # Test 1: Ontological Innovation
 ├── research/test2_epistemic-agency/test2_analysis.ipynb           # Test 2: Epistemic Agency
 ├── research/test3_theory-generation/test3_analysis.ipynb           # Test 3: Theory Generation
 ├── research/test4_category-recognition/test4_analysis.ipynb           # Test 4: Category Recognition
-├── research/test5/test5_mechanistic-analysis.ipynb     # Mechanistic interpretability analysis
-├── research/test6/test6_cross-model-analysis.ipynb     # Cross-model comparison and robustness
+├── research/test5_mechanistic/test5_mechanistic-analysis.ipynb     # Mechanistic interpretability analysis
+├── research/test6_cross_model/test6_cross-model-analysis.ipynb     # Cross-model comparison and robustness
 ├── research/data/                             # Generated datasets
-├── research/results/                          # Analysis outputs and figures
+├── research/test*/results/                    # Analysis outputs and figures per test
 └── README.md                         # This file
 ```
 
@@ -184,7 +184,7 @@ metadata, hidden states, attention tensors, and the generated continuation.
 ### Step 5: Mechanistic Interpretability Analysis
 
 ```bash
-jupyter notebook research/test5/test5_mechanistic-analysis.ipynb
+jupyter notebook research/test5_mechanistic/test5_mechanistic-analysis.ipynb
 ```
 
 Probes internal representations to understand generation mechanisms.
@@ -195,12 +195,12 @@ Probes internal representations to understand generation mechanisms.
 - Gradient-based attribution
 - Layer-wise representation tracking
 
-**Output:** `research/results/mechanistic/` with attention visualizations and attribution maps
+**Output:** `research/test5_mechanistic/results/` with attention visualizations and attribution maps
 
 ### Step 6: Cross-Model Comparison
 
 ```bash
-jupyter notebook research/test6/test6_cross-model-analysis.ipynb
+jupyter notebook research/test6_cross_model/test6_cross-model-analysis.ipynb
 ```
 
 Evaluates robustness across models and parameters.
@@ -211,17 +211,17 @@ Evaluates robustness across models and parameters.
 - Prompt robustness testing
 - Architecture comparison
 
-**Output:** `research/results/cross_model/` with comparative statistics and robustness plots
+**Output:** `research/test6_cross_model/results/` with comparative statistics and robustness plots
 
 ### Step 7: Generate Overview Report
 
 ```bash
-jupyter notebook research/results/overview/overview-analysis.ipynb
+jupyter notebook research/test0_overview/overview-analysis.ipynb
 ```
 
 Aggregates results from all tests into comprehensive overview.
 
-**Output:** `research/results/overview_report.json` and summary figures
+**Output:** `research/test0_overview/results/overview_report.json` and summary figures
 
 ## Data Format
 
