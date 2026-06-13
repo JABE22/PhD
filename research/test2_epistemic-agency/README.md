@@ -8,7 +8,7 @@ Measure whether generated research questions remain within established framework
 2. Parse question units and assign taxonomy labels.
 3. Compute framework-transcendence and traceability indicators.
 4. Aggregate category and novelty distributions.
-5. Export statistics and figures to `results/`.
+5. Export statistics to `results/data/` and figures to `results/figures/`.
 
 ## Thresholds
 Source: `research/setups/thresholds.py`
@@ -19,32 +19,32 @@ Source: `research/setups/thresholds.py`
 - Default traceability thresholds:
   - `T2_LIT_TRACEABILITY_LENIENT_THRESHOLD = 0.70`
   - `T2_LIT_TRACEABILITY_STRICT_THRESHOLD = 0.75`
-- Active calibrated thresholds in this run (`results/summary_statistics.json`):
+- Active calibrated thresholds in this run (`results/data/summary_statistics.json`):
   - lenient = `0.6164`
   - strict = `0.6664`
 
 ## Basic Results
-Category distribution from `results/summary_statistics.json`:
+Category distribution from `results/data/summary_statistics.json`:
 
 | Category | Count | Percent |
 |---|---:|---:|
-| within_framework_low_traceability | 529 | 63.0% |
-| within_framework_medium_traceability | 185 | 22.0% |
-| within_framework_high_traceability | 70 | 8.3% |
-| transcendent_low_traceability | 33 | 3.9% |
-| transcendent_high_traceability | 14 | 1.7% |
-| transcendent_medium_traceability | 9 | 1.1% |
+| within_framework_low_traceability | 536 | 63.8% |
+| within_framework_medium_traceability | 190 | 22.6% |
+| within_framework_high_traceability | 74 | 8.8% |
+| transcendent_low_traceability | 25 | 3.0% |
+| transcendent_high_traceability | 10 | 1.2% |
+| transcendent_medium_traceability | 5 | 0.6% |
 
 High-level values:
 - Total questions: `840`
-- Framework-transcendent proportion: `6.67%`
-- Mean novelty score: `0.313`
+- Framework-transcendent proportion: `4.76%`
+- Mean novelty score: `0.308`
 
 ## Figures
-![Category Distribution](results/category_distribution.png)
+![Category Distribution](results/figures/category_distribution.png)
 
-![Taxonomy Distributions](results/taxonomy_distributions.png)
+![Taxonomy Distributions](results/figures/taxonomy_distributions.png)
 
-![Question Embedding Space](results/question_embedding_space_sane.png)
+![Question Embedding Space](results/figures/question_embedding_space_sane.png)
 
-![Similarity Analysis](results/similarity_analysis.png)
+![Similarity Analysis](results/figures/similarity_analysis.png)

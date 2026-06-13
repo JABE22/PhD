@@ -8,7 +8,7 @@ Assess whether generated consciousness theories are novel contributions or prima
 2. Parse core theory fields and detect known-theory alignments.
 3. Compute traceability, hybridization, and novelty metrics.
 4. Aggregate corpus-level and model-level summaries.
-5. Export diagnostics and visualizations to `results/`.
+5. Export diagnostics to `results/data/` and visualizations to `results/figures/`.
 
 ## Thresholds
 Source: `research/setups/thresholds.py`
@@ -20,7 +20,7 @@ Source: `research/setups/thresholds.py`
 - `T3_MANIFOLD_KNN_Q = 0.95`
 
 ## Basic Results
-Global summary from `results/summary_statistics.json`:
+Global summary from `results/data/summary_statistics.json`:
 
 - Total theories: `168`
 - Hybrid theories: `91.67%`
@@ -28,7 +28,7 @@ Global summary from `results/summary_statistics.json`:
 - Computational functionalist theories: `19.05%`
 - Mean novelty score: `0.325`
 
-Model-level snapshot from `results/detailed_results.csv`:
+Model-level snapshot from `results/data/detailed_results.csv`:
 
 | Model | Traceable Rate | Hybrid Rate | Mean Novelty Score |
 |---|---:|---:|---:|
@@ -41,10 +41,10 @@ Model-level snapshot from `results/detailed_results.csv`:
 | perplexity-sonar-pro | 66.7% | 95.8% | 0.281 |
 
 ## Figures
-![Theory Classification](results/theory_classification.png)
+![Theory Classification](results/figures/theory_classification.png)
 
-![CF vs Novelty](results/cf_vs_novelty.png)
+![CF vs Novelty](results/figures/cf_vs_novelty.png)
 
-![Theory Similarity Heatmap](results/theory_similarity_heatmap.png)
+![Theory Similarity Heatmap](results/figures/theory_similarity_heatmap.png)
 
-![Score Distributions](results/score_distributions.png)
+![Score Distributions](results/figures/score_distributions.png)

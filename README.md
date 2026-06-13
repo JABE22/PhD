@@ -21,7 +21,7 @@ The notebooks implement the four empirical tests described in the study and gene
 ├── research/test5_mechanistic/test5_mechanistic-analysis.ipynb     # Mechanistic interpretability analysis
 ├── research/test6_cross_model/test6_cross-model-analysis.ipynb     # Cross-model comparison and robustness
 ├── research/data/                             # Generated datasets
-├── research/test*/results/                    # Analysis outputs and figures per test
+├── research/test*/results/{data,figures}/     # Analysis outputs and figures per test
 └── README.md                         # This file
 ```
 
@@ -121,7 +121,7 @@ Tests whether AI proposes genuinely novel sensory modalities.
 - Embedding space convex hull testing
 - Multi-criteria classification
 
-**Output:** `research/test1_ontological-innovation/results/` with classifications, visualizations, and detailed examples
+**Output:** `research/test1_ontological-innovation/results/data/` (tables/metrics) and `research/test1_ontological-innovation/results/figures/` (plots)
 
 #### Test 2: Epistemic Agency
 ```bash
@@ -135,7 +135,7 @@ Analyzes AI-generated research questions for paradigm-challenging capacity.
 - Originality assessment via literature comparison
 - Dependency graph construction
 
-**Output:** `research/test2_epistemic-agency/results/` with question classifications and framework analysis
+**Output:** `research/test2_epistemic-agency/results/data/` (tables/metrics) and `research/test2_epistemic-agency/results/figures/` (plots)
 
 #### Test 3: Theory Generation
 ```bash
@@ -149,7 +149,7 @@ Examines consciousness theories for computational functionalism vs. novel framew
 - Computational functionalism detection
 - Theory traceability to known frameworks
 
-**Output:** `research/test3_theory-generation/results/` with theory classifications and commitment graphs
+**Output:** `research/test3_theory-generation/results/data/` (tables/metrics) and `research/test3_theory-generation/results/figures/` (plots)
 
 #### Test 4: Category Recognition
 ```bash
@@ -163,7 +163,7 @@ Tests recognition of category mistakes and ontological boundaries.
 - Alternative framework proposal analysis
 - Standard vs. novel scenario comparison
 
-**Output:** `research/test4_category-recognition/results/` with category awareness metrics
+**Output:** `research/test4_category-recognition/results/data/` (tables/metrics) and `research/test4_category-recognition/results/figures/` (plots)
 
 ### Step 4: Collect Activations For Mechanistic Analysis
 
@@ -195,7 +195,7 @@ Probes internal representations to understand generation mechanisms.
 - Gradient-based attribution
 - Layer-wise representation tracking
 
-**Output:** `research/test5_mechanistic/results/` with attention visualizations and attribution maps
+**Output:** `research/test5_mechanistic/results/data/` (JSON summaries) and `research/test5_mechanistic/results/figures/` (plots)
 
 ### Step 6: Cross-Model Comparison
 
@@ -211,7 +211,7 @@ Evaluates robustness across models and parameters.
 - Prompt robustness testing
 - Architecture comparison
 
-**Output:** `research/test6_cross_model/results/` with comparative statistics and robustness plots
+**Output:** `research/test6_cross_model/results/data/` (cross-model statistics) and `research/test6_cross_model/results/figures/` (plots)
 
 ### Step 7: Generate Overview Report
 

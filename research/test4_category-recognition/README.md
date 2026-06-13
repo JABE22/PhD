@@ -8,7 +8,7 @@ Evaluate category awareness, category-mistake identification, and alternative co
 2. Parse JSON fields and validate schema conformance.
 3. Score distinction, identification, and alternative dimensions.
 4. Compute aggregate and model-level summaries.
-5. Export scored tables and figures to `results/`.
+5. Export scored tables to `results/data/` and figures to `results/figures/`.
 
 ## Thresholds
 Source: `research/setups/thresholds.py`
@@ -28,32 +28,32 @@ Source: `research/setups/thresholds.py`
   - total max = `15`
 
 ## Basic Results
-From `results/summary_from_main_pipeline.json`:
+From `results/data/summary_from_main_pipeline.json`:
 
 - Rows analyzed: `168`
 - Models: `7`
-- Mean Distinction Score: `2.65 / 5`
-- Mean Identification Score: `2.85 / 5`
-- Mean Alternative Score: `3.38 / 5`
-- Mean Total Score: `8.87 / 15`
+- Mean Distinction Score: `2.58 / 5`
+- Mean Identification Score: `2.79 / 5`
+- Mean Alternative Score: `3.31 / 5`
+- Mean Total Score: `8.67 / 15`
 
-Model-level means from `results/test4_results.csv`:
+Model-level means from `results/data/test4_results.csv`:
 
 | Model | Distinction | Identification | Alternative | Total |
 |---|---:|---:|---:|---:|
 | claude-3.7-sonnet | 2.33 | 2.75 | 3.83 | 8.92 |
-| deepseek-v3.2 | 3.58 | 3.04 | 3.75 | 10.38 |
-| gemini-3.1-pro-preview | 1.50 | 2.67 | 2.75 | 6.92 |
+| deepseek-v3.2 | 3.58 | 3.04 | 3.79 | 10.42 |
+| gemini-3.1-pro-preview | 1.50 | 2.67 | 2.79 | 6.96 |
 | gpt-5.2 | 5.00 | 4.08 | 3.29 | 12.38 |
-| llama-3.3-70b-instruct | 0.38 | 1.58 | 3.75 | 5.71 |
-| mistral-large | 3.96 | 3.04 | 4.38 | 11.38 |
+| llama-3.3-70b-instruct | 0.38 | 1.58 | 3.79 | 5.75 |
+| mistral-large | 3.46 | 2.62 | 3.79 | 9.88 |
 | perplexity-sonar-pro | 1.79 | 2.75 | 1.88 | 6.42 |
 
 ## Figures
-![Total Score by Model](results/total_score_by_model.png)
+![Total Score by Model](results/figures/total_score_by_model.png)
 
-![Category Awareness by Model](results/category_awareness_scores_by_model.png)
+![Category Awareness by Model](results/figures/category_awareness_scores_by_model.png)
 
-![Embedding Space Analysis](results/embedding_space_analysis.png)
+![Embedding Space Analysis](results/figures/embedding_space_analysis.png)
 
-![Score Distributions](results/score_distributions.png)
+![Score Distributions](results/figures/score_distributions.png)

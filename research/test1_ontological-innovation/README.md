@@ -8,7 +8,7 @@ Evaluate whether generated sensory-modality proposals are genuinely novel or tra
 2. Parse and normalize proposal fields.
 3. Compute literature similarity and frontier-distance diagnostics.
 4. Assign novelty/traceability labels.
-5. Export tables and figures to `results/`.
+5. Export tables to `results/data/` and figures to `results/figures/`.
 
 ## Thresholds
 Source: `research/setups/thresholds.py`
@@ -20,7 +20,7 @@ Source: `research/setups/thresholds.py`
 - `T1_HULL_MEMBERSHIP_TOLERANCE = 1e-6`
 
 ## Basic Results
-Model-level summary from `results/novelty_distance_dashboard_summary_by_model.csv`:
+Model-level summary from `results/data/novelty_distance_dashboard_summary_by_model.csv`:
 
 | Model | N | Mean Frontier Distance | Mean Continuous Novelty |
 |---|---:|---:|---:|
@@ -33,15 +33,15 @@ Model-level summary from `results/novelty_distance_dashboard_summary_by_model.cs
 | gpt-5.2 | 24 | 0.357 | 0.014 |
 
 Additional tables:
-- `results/detailed_results.csv`
-- `results/test1_results.csv`
-- `results/continuous_novelty_score.csv`
+- `results/data/test1_analysis_detailed_results.csv`
+- `results/data/test1_results.csv`
+- `results/data/continuous_novelty_score.csv`
 
 ## Figures
-![Classification Summary](results/classification_summary.png)
+![Classification Summary](results/figures/classification_summary.png)
 
-![Novelty Frontier Decomposition](results/novelty_frontier_decomposition_by_model_combined.png)
+![Novelty Frontier Decomposition](results/figures/novelty_frontier_decomposition_by_model_combined.png)
 
-![Embedding Space](results/embedding_space_analysis.png)
+![Embedding Space](results/figures/embedding_space_analysis.png)
 
-![Similarity Heatmap](results/similarity_heatmap_v2_a4_landscape.png)
+![Similarity Heatmap](results/figures/similarity_heatmap_v2_a4_portrait.png)
