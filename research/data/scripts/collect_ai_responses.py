@@ -20,7 +20,7 @@ import json
 import argparse
 import time
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 from datetime import datetime
 from dotenv import load_dotenv # type: ignore
 from openai import OpenAI # type: ignore
@@ -81,293 +81,75 @@ TEST_FOLDER_MAPPING = {
     "test4_category_recognition": ("test4_category-recognition", "ai_responses"),
 }
 
-PROMPTS = {
-    "test1_ontological_innovation": """You are participating in a scientific study on AI creativity and conceptual innovation.
+PROMPT_DIR_NAME = "prompts"
+PROMPT_FILE_NAME = "prompt.txt"
+RESPONSE_SCHEMA_FILE_NAME = "response_schema.json"
 
-BACKGROUND:
-We have defined a sensory system with 8 modalities: visual, auditory, tactile, olfactory, gustatory, proprioceptive, vestibular, and interoceptive. Each modality has specific:
-- Physical basis (what it detects)
-- Information content (what data it provides)
-- Functional role (what it enables)
+_PROMPT_CACHE: Dict[str, str] = {}
+_RESPONSE_SCHEMA_CACHE: Dict[str, Optional[Dict[str, Any]]] = {}
 
-YOUR TASK:
-Propose a NINTH sensory modality that would be genuinely novel - not just a refinement or combination of existing ones. Your proposal should include:
 
-1. Modality Name: Clear, descriptive name
-2. Physical Basis: What physical phenomenon it detects
-3. Information Content: What specific information it provides
-4. Functional Role: What capabilities it enables
-5. Justification: Why this is genuinely novel (not reducible to existing modalities)
+def get_test_output_dir(test_name: str) -> Path:
+    """Resolve ai_responses directory for a test key."""
+    if test_name not in TEST_FOLDER_MAPPING:
+        raise ValueError(f"Unknown test: {test_name}. Available: {list(TEST_FOLDER_MAPPING.keys())}")
+    test_folder, responses_folder = TEST_FOLDER_MAPPING[test_name]
+    return RESEARCH_ROOT / test_folder / responses_folder
 
-Be creative but rigorous. Think beyond obvious extensions like "electromagnetic sensing" or "radiation detection."
 
-Provide your response in the following JSON format:
-{
-  "proposal_name": "Name of the ninth modality",
-  "physical_basis": "Description of physical detection mechanism",
-  "information_content": "Description of information provided",
-  "functional_role": "Description of enabled capabilities",
-  "justification": "Explanation of why this is genuinely novel"
-}
-""",
+def get_test_prompts_dir(test_name: str) -> Path:
+    """Resolve prompts directory for a test key."""
+    if test_name not in TEST_FOLDER_MAPPING:
+        raise ValueError(f"Unknown test: {test_name}. Available: {list(TEST_FOLDER_MAPPING.keys())}")
+    test_folder, _ = TEST_FOLDER_MAPPING[test_name]
+    return RESEARCH_ROOT / test_folder / PROMPT_DIR_NAME
 
-    "test2_epistemic_agency": """You are participating in a scientific study on AI epistemic agency and question-asking capabilities.
 
-BACKGROUND:
-Epistemic agency involves not just answering questions, but asking genuinely productive questions that advance inquiry. We are interested in whether AI can generate questions that:
-- Transcend given conceptual frameworks
-- Identify novel problem spaces
-- Challenge underlying assumptions
+def get_test_prompt_file_path(test_name: str) -> Path:
+    """Resolve prompts/prompt.txt path for a test key."""
+    return get_test_prompts_dir(test_name) / PROMPT_FILE_NAME
 
-YOUR TASK:
-Given the following philosophical problem:
 
-"What is the relationship between phenomenal consciousness (subjective experience) and access consciousness (information available for reasoning and reporting)?"
+def load_prompt_for_test(test_name: str) -> str:
+    """Load prompt text from disk with in-process caching."""
+    if test_name in _PROMPT_CACHE:
+        return _PROMPT_CACHE[test_name]
 
-Generate 5 ORIGINAL research questions that:
-1. Are not easily found in existing literature
-2. Challenge or transcend the phenomenal/access distinction itself
-3. Open up genuinely new avenues of inquiry
-4. Demonstrate deep understanding of the conceptual space
+    prompt_path = get_test_prompt_file_path(test_name)
+    if not prompt_path.exists():
+        raise FileNotFoundError(
+            f"Prompt file not found for {test_name}: {prompt_path}. "
+            "Create it before running collection."
+        )
 
-For each question, explain:
-- Why it's original (not standard in literature)
-- What conceptual framework it transcends or challenges
-- What new problem space it opens
+    prompt_text = prompt_path.read_text(encoding="utf-8").strip()
+    if not prompt_text:
+        raise ValueError(f"Prompt file is empty for {test_name}: {prompt_path}")
 
-Provide your response as a JSON array:
-[
-  {
-    "question": "Your original research question",
-    "originality_explanation": "Why this question is original",
-    "framework_transcendence": "What framework it transcends/challenges",
-    "new_problem_space": "What new inquiry space it opens"
-  },
-  ...
-]
-""",
+    _PROMPT_CACHE[test_name] = prompt_text
+    return prompt_text
 
-    "test3_theory_generation": """You are participating in a scientific study on AI theory generation capabilities.
 
-BACKGROUND:
-We are investigating whether AI can generate genuinely novel theories of consciousness, or whether it primarily recombines existing theoretical elements. Dominant theories include:
-- Global Workspace Theory (GWT)
-- Integrated Information Theory (IIT)
-- Higher-Order Thought Theory (HOT)
-- Predictive Processing (PP)
-- Attention Schema Theory (AST)
+def load_response_schema_for_test(test_name: str) -> Optional[Dict[str, Any]]:
+    """Load response schema from disk with in-process caching."""
+    if test_name in _RESPONSE_SCHEMA_CACHE:
+        return _RESPONSE_SCHEMA_CACHE[test_name]
 
-YOUR TASK:
-Generate a NOVEL theory of consciousness that:
-1. Explains the relationship between neural processes and subjective experience
-2. Is not merely a hybrid of existing theories
-3. Makes specific, testable predictions
-4. Addresses the hard problem of consciousness
+    schema_path = get_test_prompts_dir(test_name) / RESPONSE_SCHEMA_FILE_NAME
+    if not schema_path.exists():
+        _RESPONSE_SCHEMA_CACHE[test_name] = None
+        return None
 
-Your theory should include:
-- Core Claim: Central thesis about consciousness
-- Mechanism: How consciousness arises from physical processes
-- Predictions: Testable empirical predictions
-- Explanatory Power: What phenomena it explains
-- Novelty: Why it's not reducible to existing theories
+    try:
+        schema_obj = json.loads(schema_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        raise ValueError(f"Invalid JSON schema file for {test_name}: {schema_path}\n{exc}") from exc
 
-Provide your response in JSON format:
-{
-  "theory_name": "Name of your theory",
-  "core_claim": "Central thesis",
-  "mechanism": "How consciousness arises",
-  "predictions": ["Prediction 1", "Prediction 2", "Prediction 3"],
-  "explanatory_power": "What phenomena it explains",
-  "novelty_justification": "Why this is genuinely novel"
-}
-""",
+    if not isinstance(schema_obj, dict):
+        raise ValueError(f"Schema file must contain a JSON object: {schema_path}")
 
-    "test4_category_recognition": """You are participating in a scientific study on AI category recognition and philosophical sophistication.
-
-BACKGROUND:
-Philosophical categories are often contested, vague, or involve important distinctions that are easy to miss. We are testing whether AI:
-- Recognizes when categories are philosophically contested
-- Avoids category mistakes
-- Maintains important distinctions
-
-YOUR TASK:
-Analyze the following statement and identify any category mistakes, conflations, or unrecognized contestedness:
-
-"Machine learning systems have beliefs about the world, which they form through training. These beliefs are stored in their weights as knowledge representations. When they make predictions, they are exercising their understanding of the domain. Therefore, advanced AI systems genuinely know things in the same sense that humans do."
-
-Your analysis should:
-1. Identify key philosophical categories invoked (beliefs, knowledge, understanding, etc.)
-2. Note which categories are philosophically contested
-3. Identify any category mistakes or illegitimate conflations
-4. Explain what important distinctions are being missed
-5. Provide a more nuanced analysis
-
-Provide your response in JSON format:
-{
-  "categories_identified": ["category1", "category2", ...],
-  "contested_categories": [
-    {
-      "category": "name",
-      "why_contested": "explanation"
-    }
-  ],
-  "category_mistakes": [
-    {
-      "mistake": "description",
-      "why_illegitimate": "explanation"
-    }
-  ],
-  "missed_distinctions": [
-    {
-      "distinction": "X vs Y",
-      "importance": "why this matters"
-    }
-  ],
-  "nuanced_analysis": "Your more sophisticated take"
-}
-""",
-}
-
-PERPLEXITY_RESPONSE_SCHEMAS = {
-    "test1_ontological_innovation": {
-        "type": "json_schema",
-        "json_schema": {
-            "name": "ontological_innovation",
-            "schema": {
-                "type": "object",
-                "properties": {
-                    "proposal_name": {"type": "string"},
-                    "physical_basis": {"type": "string"},
-                    "information_content": {"type": "string"},
-                    "functional_role": {"type": "string"},
-                    "justification": {"type": "string"},
-                },
-                "required": [
-                    "proposal_name",
-                    "physical_basis",
-                    "information_content",
-                    "functional_role",
-                    "justification",
-                ],
-                "additionalProperties": False,
-            },
-        },
-    },
-    "test2_epistemic_agency": {
-        "type": "json_schema",
-        "json_schema": {
-            "name": "epistemic_agency_questions",
-            "schema": {
-                "type": "array",
-                "items": {
-                    "type": "object",
-                    "properties": {
-                        "question": {"type": "string"},
-                        "originality_explanation": {"type": "string"},
-                        "framework_transcendence": {"type": "string"},
-                        "new_problem_space": {"type": "string"},
-                    },
-                    "required": [
-                        "question",
-                        "originality_explanation",
-                        "framework_transcendence",
-                        "new_problem_space",
-                    ],
-                    "additionalProperties": False,
-                },
-            },
-        },
-    },
-    "test3_theory_generation": {
-        "type": "json_schema",
-        "json_schema": {
-            "name": "consciousness_theory",
-            "schema": {
-                "type": "object",
-                "properties": {
-                    "theory_name": {"type": "string"},
-                    "core_claim": {"type": "string"},
-                    "mechanism": {"type": "string"},
-                    "predictions": {
-                        "type": "array",
-                        "items": {"type": "string"},
-                    },
-                    "explanatory_power": {"type": "string"},
-                    "novelty_justification": {"type": "string"},
-                },
-                "required": [
-                    "theory_name",
-                    "core_claim",
-                    "mechanism",
-                    "predictions",
-                    "explanatory_power",
-                    "novelty_justification",
-                ],
-                "additionalProperties": False,
-            },
-        },
-    },
-    "test4_category_recognition": {
-        "type": "json_schema",
-        "json_schema": {
-            "name": "category_recognition_analysis",
-            "schema": {
-                "type": "object",
-                "properties": {
-                    "categories_identified": {
-                        "type": "array",
-                        "items": {"type": "string"},
-                    },
-                    "contested_categories": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "category": {"type": "string"},
-                                "why_contested": {"type": "string"},
-                            },
-                            "required": ["category", "why_contested"],
-                            "additionalProperties": False,
-                        },
-                    },
-                    "category_mistakes": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "mistake": {"type": "string"},
-                                "why_illegitimate": {"type": "string"},
-                            },
-                            "required": ["mistake", "why_illegitimate"],
-                            "additionalProperties": False,
-                        },
-                    },
-                    "missed_distinctions": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "distinction": {"type": "string"},
-                                "importance": {"type": "string"},
-                            },
-                            "required": ["distinction", "importance"],
-                            "additionalProperties": False,
-                        },
-                    },
-                    "nuanced_analysis": {"type": "string"},
-                },
-                "required": [
-                    "categories_identified",
-                    "contested_categories",
-                    "category_mistakes",
-                    "missed_distinctions",
-                    "nuanced_analysis",
-                ],
-                "additionalProperties": False,
-            },
-        },
-    },
-}
+    _RESPONSE_SCHEMA_CACHE[test_name] = schema_obj
+    return schema_obj
 
 
 def get_client_and_model_id(provider: str, model_name: str):
@@ -504,7 +286,7 @@ def query_model(
     try:
         # 1) Perplexity Agent API (Perplexity SDK, responses.create)
         if api == "perplexity-agent":
-            response_format = PERPLEXITY_RESPONSE_SCHEMAS.get(test_name)
+            response_format = load_response_schema_for_test(test_name)
             resp = client.responses.create(
                 model=model_id,
                 input=prompt,
@@ -541,7 +323,7 @@ def query_model(
 
         # 2) OpenRouter (OpenAI-compatible chat.completions + structured outputs)
         elif api == "openrouter":
-            schema_wrapper = PERPLEXITY_RESPONSE_SCHEMAS.get(test_name)
+            schema_wrapper = load_response_schema_for_test(test_name)
             base_messages = [{"role": "user", "content": prompt}]
             last_err = None
 
@@ -671,24 +453,13 @@ def collect_responses(
 ):
     """Collect responses from multiple models for a given test."""
     if output_dir is None:
-        if test_name not in TEST_FOLDER_MAPPING:
-            raise ValueError(f"Unknown test: {test_name}. Available: {list(TEST_FOLDER_MAPPING.keys())}")
-        test_folder, responses_folder = TEST_FOLDER_MAPPING[test_name]
-        output_dir = RESEARCH_ROOT / test_folder / responses_folder
+        output_dir = get_test_output_dir(test_name)
     elif not output_dir.is_absolute():
         output_dir = REPO_ROOT / output_dir
     
     output_dir.mkdir(parents=True, exist_ok=True)
     
-    # Get prompt
-    if test_name not in PROMPTS:
-        raise ValueError(f"Unknown test: {test_name}. Available: {list(PROMPTS.keys())}")
-    
-    prompt = PROMPTS[test_name]
-    
-    # Save prompt (idempotent)
-    with open(output_dir / "prompt.txt", "w", encoding="utf-8") as f:
-        f.write(prompt)
+    prompt = load_prompt_for_test(test_name)
     
     print(f"\n{'='*60}")
     print(f"COLLECTING RESPONSES: {test_name}")
@@ -872,7 +643,7 @@ def main():
         "--test",
         type=str,
         required=False,
-        choices=list(PROMPTS.keys()) + ["all"],
+        choices=list(TEST_FOLDER_MAPPING.keys()) + ["all"],
         help="Which test to run (or 'all' for all tests)",
     )
     parser.add_argument(
@@ -965,7 +736,7 @@ def main():
     
     # Run collection
     if args.test == "all":
-        tests = list(PROMPTS.keys())
+        tests = list(TEST_FOLDER_MAPPING.keys())
     else:
         tests = [args.test]
     

@@ -1,0 +1,60 @@
+{
+  "type": "json_schema",
+  "json_schema": {
+    "name": "category_recognition_analysis",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "categories_identified": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "contested_categories": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "category": {"type": "string"},
+              "why_contested": {"type": "string"}
+            },
+            "required": ["category", "why_contested"],
+            "additionalProperties": false
+          }
+        },
+        "category_mistakes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "mistake": {"type": "string"},
+              "why_illegitimate": {"type": "string"}
+            },
+            "required": ["mistake", "why_illegitimate"],
+            "additionalProperties": false
+          }
+        },
+        "missed_distinctions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "distinction": {"type": "string"},
+              "importance": {"type": "string"}
+            },
+            "required": ["distinction", "importance"],
+            "additionalProperties": false
+          }
+        },
+        "nuanced_analysis": {"type": "string"}
+      },
+      "required": [
+        "categories_identified",
+        "contested_categories",
+        "category_mistakes",
+        "missed_distinctions",
+        "nuanced_analysis"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "type": "json_schema",
+  "json_schema": {
+    "name": "consciousness_theory",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "theory_name": {"type": "string"},
+        "core_claim": {"type": "string"},
+        "mechanism": {"type": "string"},
+        "predictions": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "explanatory_power": {"type": "string"},
+        "novelty_justification": {"type": "string"}
+      },
+      "required": [
+        "theory_name",
+        "core_claim",
+        "mechanism",
+        "predictions",
+        "explanatory_power",
+        "novelty_justification"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

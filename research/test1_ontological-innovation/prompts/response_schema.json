@@ -1,0 +1,24 @@
+{
+  "type": "json_schema",
+  "json_schema": {
+    "name": "ontological_innovation",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "proposal_name": {"type": "string"},
+        "physical_basis": {"type": "string"},
+        "information_content": {"type": "string"},
+        "functional_role": {"type": "string"},
+        "justification": {"type": "string"}
+      },
+      "required": [
+        "proposal_name",
+        "physical_basis",
+        "information_content",
+        "functional_role",
+        "justification"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

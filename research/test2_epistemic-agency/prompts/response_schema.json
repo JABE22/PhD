@@ -1,0 +1,25 @@
+{
+  "type": "json_schema",
+  "json_schema": {
+    "name": "epistemic_agency_questions",
+    "schema": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "question": {"type": "string"},
+          "originality_explanation": {"type": "string"},
+          "framework_transcendence": {"type": "string"},
+          "new_problem_space": {"type": "string"}
+        },
+        "required": [
+          "question",
+          "originality_explanation",
+          "framework_transcendence",
+          "new_problem_space"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}
