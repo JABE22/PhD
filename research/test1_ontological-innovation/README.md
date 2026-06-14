@@ -10,6 +10,10 @@ Evaluate whether generated sensory-modality proposals are genuinely novel or tra
 4. Assign novelty/traceability labels.
 5. Export tables to `results/data/` and figures to `results/figures/`.
 
+Response-collection assets for this test are stored in:
+- `prompts/prompt.txt`
+- `prompts/response_schema.json`
+
 ## Thresholds
 Source: `research/setups/thresholds.py`
 

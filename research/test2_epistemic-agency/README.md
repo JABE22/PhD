@@ -10,6 +10,10 @@ Measure whether generated research questions remain within established framework
 4. Aggregate category and novelty distributions.
 5. Export statistics to `results/data/` and figures to `results/figures/`.
 
+Response-collection assets for this test are stored in:
+- `prompts/prompt.txt`
+- `prompts/response_schema.json`
+
 ## Thresholds
 Source: `research/setups/thresholds.py`
 

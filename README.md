@@ -20,6 +20,7 @@ The notebooks implement the four empirical tests described in the study and gene
 ├── research/test4_category-recognition/test4_analysis.ipynb           # Test 4: Category Recognition
 ├── research/test5_mechanistic/test5_mechanistic-analysis.ipynb     # Mechanistic interpretability analysis
 ├── research/test6_cross_model/test6_cross-model-analysis.ipynb     # Cross-model comparison and robustness
+├── research/test*/prompts/{prompt.txt,response_schema.json} # Per-test prompt and schema assets for response collection
 ├── research/data/                             # Generated datasets
 ├── research/test*/results/{data,figures}/     # Analysis outputs and figures per test
 └── README.md                         # This file
@@ -105,6 +106,16 @@ python research/data/scripts/collect_ai_responses.py \
 
 This writes per-sample JSON files and `all_responses.json` into each test folder's `ai_responses/` directory.
 
+Input assets for response collection are now loaded per test from:
+- `research/test1_ontological-innovation/prompts/prompt.txt`
+- `research/test1_ontological-innovation/prompts/response_schema.json`
+- `research/test2_epistemic-agency/prompts/prompt.txt`
+- `research/test2_epistemic-agency/prompts/response_schema.json`
+- `research/test3_theory-generation/prompts/prompt.txt`
+- `research/test3_theory-generation/prompts/response_schema.json`
+- `research/test4_category-recognition/prompts/prompt.txt`
+- `research/test4_category-recognition/prompts/response_schema.json`
+
 ### Step 3: Run Empirical Tests
 
 Each test notebook can be run independently after dataset generation:
@@ -168,7 +179,7 @@ Tests recognition of category mistakes and ontological boundaries.
 ### Step 4: Collect Activations For Mechanistic Analysis
 
 Before running the mechanistic notebook, collect activations from a local
-open-source model using the prompts already exported in `research/test*/ai_responses/`.
+open-source model using the prompts in `research/test*/prompts/`.
 
 ```bash
 python research/data/scripts/collect_activations.py \

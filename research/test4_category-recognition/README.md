@@ -10,6 +10,10 @@ Evaluate category awareness, category-mistake identification, and alternative co
 4. Compute aggregate and model-level summaries.
 5. Export scored tables to `results/data/` and figures to `results/figures/`.
 
+Response-collection assets for this test are stored in:
+- `prompts/prompt.txt`
+- `prompts/response_schema.json`
+
 ## Thresholds
 Source: `research/setups/thresholds.py`
 

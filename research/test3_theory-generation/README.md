@@ -10,6 +10,10 @@ Assess whether generated consciousness theories are novel contributions or prima
 4. Aggregate corpus-level and model-level summaries.
 5. Export diagnostics to `results/data/` and visualizations to `results/figures/`.
 
+Response-collection assets for this test are stored in:
+- `prompts/prompt.txt`
+- `prompts/response_schema.json`
+
 ## Thresholds
 Source: `research/setups/thresholds.py`
 
