@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="slides-format" content="viewport">
+    <title>Structural Limits of Training-Derived Information-Processing Systems — Defense</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @theme {
+            --color-bg: #0a0f1e;
+            --color-bg-deep: #050810;
+            --color-surface: #111827;
+            --color-text: #f1f5f9;
+            --color-text-secondary: #cbd5e1;
+            --color-text-muted: #64748b;
+            --color-accent-1: #818cf8;
+            --color-accent-2: #38bdf8;
+            --color-accent-3: #a78bfa;
+            --color-glass-bg: rgba(255,255,255,0.05);
+            --color-glass-border: rgba(255,255,255,0.08);
+            --color-vignette: rgba(0,0,0,0.45);
+            --font-display: 'Instrument Serif', Georgia, serif;
+            --font-body: 'Inter', system-ui, sans-serif;
+        }
+    </style>
+    <style>
+        :root {
+            --color-bg: #0a0f1e;
+            --color-text: #f1f5f9;
+            --glow-color-rgb: 129,140,248;
+        }
+        *, *::before, *::after { box-sizing: border-box; }
+        html, body { background: var(--color-bg); margin: 0; }
+        body { font-family: 'Inter', system-ui, sans-serif; color: var(--color-text); overflow: hidden; height: 100vh; width: 100vw; }
+        .deck { width: 100vw; height: 100vh; position: relative; }
+        .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--color-bg); display: flex; flex-direction: column; align-items: center; justify-content: center; opacity: 0; transform: scale(0.95); transition: opacity 0.7s ease, transform 0.7s ease; pointer-events: none; overflow: hidden; }
+        .slide.active { opacity: 1; transform: scale(1); pointer-events: all; }
+        .slide > .content { position: relative; z-index: 2; width: 100%; max-width: 1100px; padding: clamp(1.5rem, 3.5vw, 3.5rem); }
+        .nav-controls { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 14px; z-index: 100; background: rgba(255,255,255,0.05); backdrop-filter: blur(12px); padding: 8px 22px; border-radius: 40px; border: 1px solid rgba(255,255,255,0.08); }
+        .nav-btn { width: 36px; height: 36px; border: none; background: rgba(255,255,255,0.06); color: #818cf8; border-radius: 50%; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.3s; }
+        .nav-btn:hover { background: rgba(129,140,248,0.15); }
+        .slide-dots { display: flex; gap: 7px; }
+        .slide-dots .dot { width: 9px; height: 9px; border-radius: 50%; background: rgba(255,255,255,0.15); cursor: pointer; transition: background 0.3s, transform 0.3s; }
+        .slide-dots .dot.active { background: #818cf8; transform: scale(1.3); }
+        .slide-counter { font-size: 0.75rem; color: #64748b; min-width: 40px; text-align: center; font-family: 'Inter', sans-serif; }
+        .reveal { opacity: 0; transform: translateY(20px); }
+
+        /* Glow */
+        .text-glow { text-shadow: 0 0 20px rgba(129,140,248,0.5), 0 0 40px rgba(129,140,248,0.2); }
+        .stat-glow { text-shadow: 0 0 30px rgba(129,140,248,0.6); }
+        @keyframes glow-pulse { 0%, 100% { text-shadow: 0 0 20px rgba(129,140,248,0.5); } 50% { text-shadow: 0 0 35px rgba(129,140,248,0.9), 0 0 60px rgba(56,189,248,0.3); } }
+        .glow-pulse { animation: glow-pulse 3s ease-in-out infinite; }
+
+        /* Blobs */
+        @keyframes float-slow { 0% { transform: translate(0,0) scale(1); } 25% { transform: translate(60px,-50px) scale(1.1); } 50% { transform: translate(-40px,40px) scale(0.9); } 75% { transform: translate(50px,20px) scale(1.08); } 100% { transform: translate(0,0) scale(1); } }
+        @keyframes float-drift { 0% { transform: translate(0,0) scale(1) rotate(0deg); } 33% { transform: translate(-50px,-60px) scale(1.15) rotate(3deg); } 66% { transform: translate(40px,30px) scale(0.88) rotate(-2deg); } 100% { transform: translate(0,0) scale(1) rotate(0deg); } }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+        .gradient-mesh { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+        .blob { position: absolute; border-radius: 50%; filter: blur(80px); animation: float-slow 10s ease-in-out infinite; }
+        .blob:nth-child(2) { animation: float-drift 14s ease-in-out infinite; }
+        .blob:nth-child(3) { animation: float-slow 18s ease-in-out infinite reverse; }
+
+        /* Depth */
+        .slide::before { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); background-repeat: repeat; background-size: 256px 256px; opacity: 0.03; mix-blend-mode: overlay; }
+        .slide::after { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: radial-gradient(ellipse at center, transparent 50%, var(--color-vignette) 100%); }
+
+        /* Figure placeholder styles */
+        .fig-placeholder { background: rgba(129,140,248,0.06); border: 2px dashed rgba(129,140,248,0.25); border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; color: #818cf8; font-size: 0.8rem; text-align: center; padding: 1rem; }
+        .fig-placeholder .fig-icon { font-size: 1.8rem; opacity: 0.6; }
+        .fig-placeholder .fig-label { font-weight: 600; font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; opacity: 0.7; }
+        .fig-placeholder .fig-desc { font-size: 0.7rem; color: #64748b; max-width: 180px; line-height: 1.4; }
+
+        /* Bar fill */
+        .bar-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, #818cf8, #38bdf8); }
+
+        /* Accent divider */
+        .accent-line { width: 60px; height: 3px; background: linear-gradient(90deg, #818cf8, #38bdf8); border-radius: 2px; }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.2s !important; } }
+    
+        /* ── fig-frame: wrapper for real figures ── */
+        .fig-frame {
+            position: relative;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.09);
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .fig-frame:hover {
+            border-color: rgba(124,158,248,0.45);
+            box-shadow: 0 0 18px rgba(124,158,248,0.18);
+        }
+        .fig-frame img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top left; }
+        .fig-frame figcaption { pointer-events: none; }
+
+        /* ── Lightbox overlay ── */
+        #lb-overlay {
+            position: fixed; inset: 0; z-index: 9000;
+            background: rgba(4,6,16,0.93);
+            backdrop-filter: blur(14px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 0.75rem;
+            cursor: zoom-out;
+        }
+        #lb-overlay.open { display: flex; }
+        #lb-img {
+            max-width: 92vw;
+            max-height: 84vh;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 8px 60px rgba(0,0,0,0.7);
+            cursor: default;
+        }
+        #lb-caption {
+            font-size: 0.82rem;
+            color: rgba(180,195,240,0.8);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-align: center;
+            max-width: 80vw;
+        }
+        #lb-desc {
+            font-size: 0.78rem;
+            color: rgba(120,140,180,0.7);
+            text-align: center;
+            max-width: 72vw;
+            line-height: 1.5;
+        }
+        #lb-close {
+            position: fixed; top: 20px; right: 24px;
+            width: 38px; height: 38px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 50%;
+            color: #e8eaf2; font-size: 1.1rem;
+            cursor: pointer; display: flex; align-items: center; justify-content: center;
+            z-index: 9001; transition: background 0.2s;
+        }
+        #lb-close:hover { background: rgba(255,255,255,0.18); }
+        /* Zoom-in cursor hint on figures */
+        .fig-frame::after {
+            content: '🔍';
+            position: absolute; top: 6px; right: 8px;
+            font-size: 0.8rem; opacity: 0;
+            transition: opacity 0.2s;
+            pointer-events: none;
+            background: rgba(0,0,0,0.5);
+            border-radius: 4px; padding: 1px 4px;
+        }
+        .fig-frame:hover::after { opacity: 0.8; }
+
+        
+        /* font boost applied via inline scaling */
+
+
+        /* ══ GLOBAL BASE: ~20pt (26.7px) for presentation visibility ══ */
+        html { font-size: 26.7px !important; }
+        body { font-size: 1rem !important; line-height: 1.6 !important; }
+
+        /* ══ CONTENT PADDING: tighter so figures get more room ══ */
+        .slide > .content {
+            padding: clamp(0.7rem, 1.6vw, 1.5rem) !important;
+        }
+
+        /* ══ FIGURE FRAMES: fill all available space ══ */
+        .fig-frame {
+            position: relative !important;
+            flex: 1 1 0 !important;
+            min-height: 0 !important;
+            height: auto !important;
+            width: 100% !important;
+            display: flex !important;
+            align-items: stretch !important;
+            justify-content: center !important;
+            background: rgba(255,255,255,0.04) !important;
+            border: 1px solid rgba(255,255,255,0.09) !important;
+            border-radius: 10px !important;
+            overflow: hidden !important;
+            cursor: pointer !important;
+            transition: border-color 0.2s, box-shadow 0.2s !important;
+        }
+        .fig-frame:hover {
+            border-color: rgba(124,158,248,0.45) !important;
+            box-shadow: 0 0 18px rgba(124,158,248,0.18) !important;
+        }
+        .fig-frame img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: contain !important;
+            border-radius: 8px !important;
+            display: block !important;
+            min-height: 0 !important;
+        }
+
+        /* ══ FIGURE-HEAVY SLIDES: flex column, figures fill remaining height ══ */
+        /* Apply to any slide that has fig-frame elements */
+        .slide > .content:has(.fig-frame) {
+            display: flex !important;
+            flex-direction: column !important;
+            height: calc(100vh - 68px) !important;
+            max-height: calc(100vh - 68px) !important;
+            justify-content: flex-start !important;
+        }
+        /* The grid containing figures grows to fill */
+        .slide > .content:has(.fig-frame) > .grid,
+        .slide > .content:has(.fig-frame) > div:has(.fig-frame) {
+            flex: 1 1 0 !important;
+            min-height: 0 !important;
+        }
+        /* Each cell inside the figure grid flexes vertically */
+        .slide > .content:has(.fig-frame) .grid > div {
+            display: flex !important;
+            flex-direction: column !important;
+            min-height: 0 !important;
+        }
+        /* Stats/info rows at bottom stay compact */
+        .slide > .content:has(.fig-frame) > .grid:last-child:not(:has(.fig-frame)),
+        .slide > .content:has(.fig-frame) > p.reveal,
+        .slide > .content:has(.fig-frame) > p[class*="reveal"] {
+            flex: 0 0 auto !important;
+        }
+
+        /* ══ COMPRESS SPACING on figure slides ══ */
+        .slide > .content:has(.fig-frame) .mb-3 { margin-bottom: 0.35rem !important; }
+        .slide > .content:has(.fig-frame) .mb-4 { margin-bottom: 0.45rem !important; }
+        .slide > .content:has(.fig-frame) .gap-3 { gap: 0.4rem !important; }
+        .slide > .content:has(.fig-frame) .gap-4 { gap: 0.55rem !important; }
+
+        /* ══ PREVENT inline height on fig-frame from locking size ══ */
+        figure.fig-frame[style*="height"] { height: auto !important; }
+
+
+        /* ══ 16:9 PRESENTATION VIEWPORT ══
+           The .deck is fixed at 1920×1080 logical units and scaled
+           to fit the actual screen while preserving aspect ratio.
+           This ensures perfect 16:9 on any display size.           */
+        html, body {
+            width: 100vw !important;
+            height: 100vh !important;
+            overflow: hidden !important;
+            background: #000 !important;   /* letterbox bars */
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+        .deck {
+            /* Fixed 16:9 canvas */
+            width: 1920px !important;
+            height: 1080px !important;
+            /* Scale to fit viewport while preserving ratio */
+            transform-origin: center center !important;
+            position: relative !important;
+            /* JS will set transform:scale() dynamically */
+            flex-shrink: 0 !important;
+        }
+        .slide {
+            width: 1920px !important;
+            height: 1080px !important;
+        }
+        /* Content max-width widened for 1920px canvas */
+        .slide > .content {
+            max-width: 1760px !important;
+            padding: clamp(1rem, 2vw, 2.5rem) 3.5rem !important;
+        }
+        /* Nav controls stay in viewport coords (fixed, not inside deck) */
+        .nav-controls {
+            position: fixed !important;
+            bottom: 18px !important;
+        }
+
+
+        /* ── Slide 7 specific: flex column so figures grow ── */
+        .slide-7-fix > .content {
+            display: flex !important;
+            flex-direction: column !important;
+            height: calc(1080px - 40px) !important;
+            max-height: calc(1080px - 40px) !important;
+            justify-content: flex-start !important;
+        }
+        .slide-7-fix > .content > .reveal:last-of-type {
+            flex: 1 1 0 !important;
+            min-height: 0 !important;
+        }
+
+
+        /* ══ LIGHT THEME VARIABLES ══ */
+        html.theme-light {
+            --lt-bg: #f5f6fa;
+            --lt-bg-deep: #eaecf4;
+            --lt-surface: #ffffff;
+            --lt-text: #0f172a;
+            --lt-text-secondary: #334155;
+            --lt-text-muted: #64748b;
+            --lt-glass-bg: rgba(255,255,255,0.85);
+            --lt-glass-border: rgba(0,0,0,0.08);
+            --lt-vignette: rgba(0,0,0,0.04);
+        }
+        html.theme-light body { background: var(--lt-bg) !important; color: var(--lt-text) !important; }
+        html.theme-light .slide { background: var(--lt-bg) !important; }
+        html.theme-light .slide > .content { color: var(--lt-text) !important; }
+        html.theme-light .blob { filter: blur(100px) !important; opacity: 0.07 !important; }
+        html.theme-light .slide::after { background: radial-gradient(ellipse at center, transparent 55%, var(--lt-vignette) 100%) !important; }
+        html.theme-light [style*="background:rgba(255,255,255,0.04)"],
+        html.theme-light [style*="background:rgba(255,255,255,0.03)"],
+        html.theme-light [style*="background:rgba(255,255,255,0.05)"],
+        html.theme-light [style*="background:rgba(255,255,255,0.06)"] {
+            background: rgba(255,255,255,0.9) !important;
+            border-color: rgba(0,0,0,0.08) !important;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06) !important;
+        }
+        html.theme-light [style*="color:#94a3b8"] { color: #475569 !important; }
+        html.theme-light [style*="color:#cbd5e1"] { color: #1e293b !important; }
+        html.theme-light [style*="color:#64748b"] { color: #64748b !important; }
+        html.theme-light [style*="color:#e2e8f0"] { color: #0f172a !important; }
+        html.theme-light .fig-frame { background: rgba(255,255,255,0.95) !important; border-color: rgba(0,0,0,0.1) !important; }
+        html.theme-light .nav-controls { background: rgba(255,255,255,0.85) !important; border-color: rgba(0,0,0,0.1) !important; }
+        html.theme-light .slide-dots .dot { background: rgba(0,0,0,0.15) !important; }
+        html.theme-light .slide-dots .dot.active { background: #818cf8 !important; }
+        html.theme-light #lb-overlay { background: rgba(240,242,248,0.96) !important; }
+        html.theme-light #lb-caption { color: #334155 !important; }
+        html.theme-light #lb-desc { color: #64748b !important; }
+        html.theme-light #lb-close { background: rgba(0,0,0,0.08) !important; color: #0f172a !important; border-color: rgba(0,0,0,0.12) !important; }
+        html.theme-light .mouse-spotlight { display: none !important; }
+        html.theme-light body { background: var(--lt-bg) !important; }
+        html.theme-light .deck { background: var(--lt-bg) !important; }
+
+        /* ══ THEME TOGGLE BUTTON ══ */
+        #theme-toggle {
+            position: fixed;
+            top: 18px;
+            right: 22px;
+            z-index: 200;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.12);
+            background: rgba(255,255,255,0.07);
+            backdrop-filter: blur(12px);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            transition: background 0.25s, border-color 0.25s, transform 0.2s;
+            line-height: 1;
+            color: #e2e8f0;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+        }
+        #theme-toggle:hover { transform: scale(1.1); background: rgba(129,140,248,0.18); }
+        html.theme-light #theme-toggle { border-color: rgba(0,0,0,0.12); background: rgba(255,255,255,0.85); color: #334155; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+
+
+        /* ── Slide 7: remove top padding gap ── */
+        .slide-7-fix > .content {
+            padding-top: 0.6rem !important;
+        }
+        .slide-7-fix > .content > .reveal:not(:last-child) {
+            flex: 0 0 auto !important;
+            margin-bottom: 0.1rem !important;
+        }
+        /* The grid (last reveal) grows to fill */
+        .slide-7-fix > .content > .reveal:last-child {
+            flex: 1 1 0 !important;
+            min-height: 0 !important;
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            gap: 1.1rem !important;
+            align-items: stretch !important;
+        }
+
+
+        /* ══ CONSISTENT FIGURE FRAME SIZING ══ */
+        /* Standalone fig-frames (not in flex/grid parents that override) */
+        .fig-frame:not([style*="flex:1"]) {
+            min-height: 200px;
+        }
+        /* Figures inside a 3-col grid (appendix slides 14,15) get fixed height */
+        .slide[data-slide="14"] .fig-frame,
+        .slide[data-slide="15"] .fig-frame {
+            height: 180px !important;
+            min-height: 180px !important;
+            flex: none !important;
+        }
+        /* Figures in 2-col grids (slides 9, 10) get consistent height */
+        .slide[data-slide="9"] .fig-frame {
+            min-height: 340px;
+            max-height: 440px;
+        }
+        .slide[data-slide="9"] .fig-frame img {
+            object-fit: cover !important;
+            width: 100% !important;
+            height: 100% !important;
+        }
+        .slide[data-slide="10"] .fig-frame {
+            min-height: 320px;
+            max-height: 420px;
+        }
+        /* All fig-frame images: always contain, never distort */
+        .fig-frame img {
+            object-fit: cover !important;
+            object-position: top left !important;
+            width: 100% !important;
+            height: 100% !important;
+        }
+        /* Caption always bottom-pinned */
+        .fig-frame figcaption {
+            position: absolute !important;
+            bottom: 3px !important;
+            left: 0 !important; right: 0 !important;
+            text-align: center !important;
+            font-size: 0.65rem !important;
+            color: rgba(180,190,220,0.65) !important;
+            letter-spacing: 0.05em !important;
+            text-transform: uppercase !important;
+            pointer-events: none !important;
+            background: linear-gradient(to top, rgba(10,15,30,0.55) 0%, transparent 100%) !important;
+            padding-bottom: 2px !important;
+            border-radius: 0 0 8px 8px !important;
+        }
+
+
+        /* ── Slides 6 & 8: flex column layout so figures fill height ── */
+        .slide[data-slide="6"] > .content,
+        .slide[data-slide="8"] > .content {
+            display: flex !important;
+            flex-direction: column !important;
+            height: calc(1080px - 40px) !important;
+            max-height: calc(1080px - 40px) !important;
+            justify-content: flex-start !important;
+            padding-top: 0.6rem !important;
+        }
+        /* Non-grid heading rows stay compact */
+        .slide[data-slide="6"] > .content > p.reveal,
+        .slide[data-slide="6"] > .content > h2.reveal,
+        .slide[data-slide="8"] > .content > p.reveal,
+        .slide[data-slide="8"] > .content > h2.reveal {
+            flex: 0 0 auto !important;
+            margin-bottom: 0.15rem !important;
+        }
+        /* The main grid (last reveal) grows */
+        .slide[data-slide="6"] > .content > .reveal:last-child,
+        .slide[data-slide="8"] > .content > .reveal:last-child {
+            flex: 1 1 0 !important;
+            min-height: 0 !important;
+        }
+        /* Inner flex columns for stacked figs */
+        .slide[data-slide="6"] .fig-frame,
+        .slide[data-slide="8"] .fig-frame {
+            flex: 1 1 0 !important;
+            min-height: 0 !important;
+            height: auto !important;
+        }
+
+
+        /* ── Slide 9 T4 figures: taller, fill from top-left ── */
+        .slide[data-slide="9"] .fig-frame {
+            min-height: 260px !important;
+            max-height: 340px !important;
+        }
+        .slide[data-slide="9"] .fig-frame img {
+            object-fit: cover !important;
+            object-position: top left !important;
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+</style>
+</head>
+<body>
+
+<!-- ── LIGHTBOX ── -->
+<div id="lb-overlay" onclick="closeLightbox(event)">
+    <button id="lb-close" onclick="closeLightbox(null)" title="Close (Esc)">✕</button>
+    <img id="lb-img" src="" alt="" onclick="event.stopPropagation()">
+    <p id="lb-caption"></p>
+    <p id="lb-desc"></p>
+</div>
+
+
+<button id="theme-toggle" title="Toggle light/dark theme" onclick="toggleTheme()">🌙</button>
+<div class="mouse-spotlight" style="position:fixed;inset:0;z-index:99;pointer-events:none;"></div>
+
+<div class="deck">
+
+<!-- ═══════════════════════════════════════════
+  SLIDE 1 — TITLE
+════════════════════════════════════════════ -->
+<div class="slide active" data-slide="1">
+    <div class="gradient-mesh">
+        <div class="blob" style="width:520px;height:520px;top:-120px;right:-80px;background:#818cf8;opacity:0.14;"></div>
+        <div class="blob" style="width:320px;height:320px;bottom:-80px;left:-60px;background:#38bdf8;opacity:0.10;"></div>
+        <div class="blob" style="width:200px;height:200px;top:42%;left:12%;background:#a78bfa;opacity:0.09;"></div>
+    </div>
+    <canvas class="particle-canvas" style="position:absolute;inset:0;z-index:1;width:100%;height:100%;"></canvas>
+    <div class="content text-center">
+        <div style="font-size:4.86rem;margin-bottom:1.2rem;animation:float 3s ease-in-out infinite;" class="reveal">🧠</div>
+        <div class="accent-line mx-auto mb-6 reveal"></div>
+        <h1 class="font-display reveal" style="font-size:clamp(1.888rem,3.8vw,3.776rem);font-weight:700;background:linear-gradient(135deg,#818cf8,#38bdf8,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.2;margin-bottom:1rem;">
+            Structural Limits of Training-Derived<br>Information-Processing Systems
+        </h1>
+        <p class="reveal" style="font-size:clamp(1.003rem,1.4vw,1.298rem);color:#94a3b8;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:2rem;">Ontological Creativity in Generative AI</p>
+        <div class="reveal" style="display:flex;flex-direction:column;align-items:center;gap:0.4rem;">
+            <p style="color:#cbd5e1;font-size:1.2rem;font-weight:500;">Jarno Olavi Matarmaa</p>
+            <p style="color:#64748b;font-size:1.12rem;">Ural Federal University · Educational and Scientific Center of AI · 2026</p>
+            <p style="color:#64748b;font-size:1.12rem;margin-top:0.3rem;">Supervisor: A. Yu. Dolganov, Candidate of Technical Sciences, Docent</p>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+  SLIDE 2 — RESEARCH FRAMING
+════════════════════════════════════════════ -->
+<div class="slide" data-slide="2">
+    <div class="gradient-mesh">
+        <div class="blob" style="width:380px;height:380px;top:-80px;right:-60px;background:#818cf8;opacity:0.08;"></div>
+        <div class="blob" style="width:250px;height:250px;bottom:-60px;left:-40px;background:#38bdf8;opacity:0.06;"></div>
+    </div>
+    <div class="content">
+        <p class="reveal" style="font-size:1.1rem;letter-spacing:0.14em;text-transform:uppercase;color:#818cf8;margin-bottom:0.5rem;">Motivation & Research Questions</p>
+        <h2 class="font-display reveal" style="font-size:clamp(1.888rem,3.2vw,2.832rem);font-weight:700;margin-bottom:0.6rem;line-height:1.2;">What Can Generative AI<br><em>Actually</em> Do?</h2>
+        <div class="accent-line reveal" style="margin-bottom:1.5rem;"></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;" class="reveal">
+            <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:1.2rem;">
+                <div style="color:#818cf8;font-size:1.55rem;margin-bottom:0.5rem;">❓</div>
+                <p style="font-size:1.12rem;font-weight:600;color:#e2e8f0;margin-bottom:0.4rem;">RQ1 — Vocabulary</p>
+                <p style="font-size:1.1rem;color:#94a3b8;line-height:1.5;">What distinctions between information, knowledge, and intelligence are needed to evaluate AI claims of understanding?</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:1.2rem;">
+                <div style="color:#38bdf8;font-size:1.55rem;margin-bottom:0.5rem;">🔬</div>
+                <p style="font-size:1.12rem;font-weight:600;color:#e2e8f0;margin-bottom:0.4rem;">RQ2 — Consciousness</p>
+                <p style="font-size:1.1rem;color:#94a3b8;line-height:1.5;">What would count as evidence for machine consciousness, and how do behavioral proxies bear on that evidence?</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:1.2rem;">
+                <div style="color:#a78bfa;font-size:1.55rem;margin-bottom:0.5rem;">🌀</div>
+                <p style="font-size:1.12rem;font-weight:600;color:#e2e8f0;margin-bottom:0.4rem;">RQ3 — Creativity</p>
+                <p style="font-size:1.1rem;color:#94a3b8;line-height:1.5;">When generative systems appear creative, do they introduce genuinely new conceptual primitives, or recombine within learned manifolds?</p>
+            </div>
+            <div style="background:rgba(129,140,248,0.07);border:1px solid rgba(129,140,248,0.18);border-radius:12px;padding:1.2rem;">
+                <div style="color:#818cf8;font-size:1.55rem;margin-bottom:0.5rem;">📐</div>
+                <p style="font-size:1.12rem;font-weight:600;color:#e2e8f0;margin-bottom:0.4rem;">Central Claim</p>
+                <p style="font-size:1.1rem;color:#94a3b8;line-height:1.5;">Current generators excel at <em>within-ontology recombination</em> but provide no internal mechanism for ontological basis-extension.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+  SLIDE 3 — THEORETICAL FRAMEWORK
+════════════════════════════════════════════ -->
+<div class="slide" data-slide="3">
+    <div class="gradient-mesh">
+        <div class="blob" style="width:350px;height:350px;top:-70px;left:-50px;background:#a78bfa;opacity:0.09;"></div>
+        <div class="blob" style="width:280px;height:280px;bottom:-60px;right:-40px;background:#818cf8;opacity:0.07;"></div>
+    </div>
+    <div class="content">
+        <p class="reveal" style="font-size:1.1rem;letter-spacing:0.14em;text-transform:uppercase;color:#818cf8;margin-bottom:0.5rem;">Theoretical Foundation</p>
+        <h2 class="font-display reveal" style="font-size:clamp(1.77rem,3vw,2.596rem);font-weight:700;margin-bottom:0.6rem;">Creativity Taxonomy &amp; Ontological Extension</h2>
+        <div class="accent-line reveal" style="margin-bottom:1.4rem;"></div>
+        <!-- Creativity hierarchy -->
+        <div class="reveal" style="display:grid;grid-template-columns:repeat(4,1fr);gap:0.8rem;margin-bottom:1.2rem;">
+            <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:0.9rem;text-align:center;">
+                <p style="font-size:0.98rem;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.4rem;">Combinational</p>
+                <p style="font-size:0.98rem;color:#94a3b8;line-height:1.4;">Applies operators to primitives — novel combinations within fixed space</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:0.9rem;text-align:center;">
+                <p style="font-size:0.98rem;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.4rem;">Exploratory</p>
+                <p style="font-size:0.98rem;color:#94a3b8;line-height:1.4;">Systematic search through output space — finds non-obvious outputs</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:0.9rem;text-align:center;">
+                <p style="font-size:0.98rem;font-weight:700;color:#a78bfa;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.4rem;">Transformational</p>
+                <p style="font-size:0.98rem;color:#94a3b8;line-height:1.4;">Modifies operators/rules — expands the conceptual space itself</p>
+            </div>
+            <div style="background:rgba(129,140,248,0.08);border:1px solid rgba(129,140,248,0.22);border-radius:10px;padding:0.9rem;text-align:center;">
+                <p style="font-size:0.98rem;font-weight:700;color:#818cf8;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.4rem;">Ontological ★</p>
+                <p style="font-size:0.98rem;color:#94a3b8;line-height:1.4;">Introduces new primitives P′ where P′ ∉ O(P) — new type structure</p>
+            </div>
+        </div>
+        <!-- Theorem box -->
+        <div class="reveal" style="background:rgba(129,140,248,0.06);border-left:3px solid #818cf8;border-radius:8px;padding:1rem 1.2rem;">
+            <p style="font-size:1.02rem;font-weight:700;color:#818cf8;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.5rem;">Theorem 2.1 — No New Basis</p>
+            <p style="font-size:1.12rem;color:#cbd5e1;line-height:1.6;">Let A be a neural architecture over representation space ℝ<sup>d</sup> trained on D = {x₁,…,x<sub>N</sub>}. Let M = span{x₁,…,x<sub>N</sub>}. Then all generated outputs x = G(z) satisfy x ∈ M̃, where M̃ is a continuous deformation of M with dim(M̃) = dim(M).</p>
+            <p style="font-size:1.1rem;color:#64748b;margin-top:0.4rem;font-style:italic;">Corollary: No internal mechanism can introduce new basis primitives at inference time.</p>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+  SLIDE 4 — DATASET & EXPERIMENTAL DESIGN
+════════════════════════════════════════════ -->
+<div class="slide" data-slide="4">
+    <div class="gradient-mesh">
+        <div class="blob" style="width:400px;height:400px;top:-90px;right:-70px;background:#38bdf8;opacity:0.08;"></div>
+        <div class="blob" style="width:260px;height:260px;bottom:-60px;left:-40px;background:#a78bfa;opacity:0.07;"></div>
+    </div>
+    <div class="content" style="display:flex;flex-direction:column;gap:0.7rem;padding-top:0.8rem;padding-bottom:0.8rem;">
+        <p class="reveal" style="font-size:1.1rem;letter-spacing:0.14em;text-transform:uppercase;color:#38bdf8;margin:0;">Experimental Design — Dataset</p>
+        <h2 class="font-display reveal" style="font-size:clamp(1.4rem,2.3vw,2rem);font-weight:700;margin:0;">Multimodal Sensory Dataset &amp; Test Suite</h2>
+
+        <!-- Figure + stat cards — side by side, equal height row -->
+        <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:0.9rem;align-items:stretch;">
+            <figure class="fig-frame" style="cursor:pointer;min-height:240px;max-height:320px;" data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/data/example_scenarios_compact.png" data-label="Figure 2 / Fig A.1–A.2" data-desc="Seven normalized scenario families (Walking Outdoor, Running, Sitting Indoor, Eating, Drinking, Listening Music, Viewing Screen) — 8 modalities per scenario — train/val/test splits" onclick="openLightbox(this)" title="Click to enlarge">
+              <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/data/example_scenarios_compact.png" alt="Figure 2 / Fig A.1–A.2" style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+              <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.65rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Figure 2 / Fig A.1–A.2</figcaption>
+            </figure>
+            <div style="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:0.6rem;">
+                <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:0.75rem;text-align:center;display:flex;flex-direction:column;justify-content:center;">
+                    <p class="stat-glow" style="font-size:1.85rem;font-weight:800;color:#818cf8;margin:0;">7</p>
+                    <p style="font-size:0.95rem;color:#94a3b8;text-transform:uppercase;letter-spacing:0.08em;margin:0;">Scenario<br>Families</p>
+                </div>
+                <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:0.75rem;text-align:center;display:flex;flex-direction:column;justify-content:center;">
+                    <p class="stat-glow" style="font-size:1.85rem;font-weight:800;color:#38bdf8;margin:0;">8</p>
+                    <p style="font-size:0.95rem;color:#94a3b8;text-transform:uppercase;letter-spacing:0.08em;margin:0;">Sensory<br>Modalities</p>
+                </div>
+                <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:0.75rem;text-align:center;display:flex;flex-direction:column;justify-content:center;">
+                    <p class="stat-glow" style="font-size:1.85rem;font-weight:800;color:#a78bfa;margin:0;">7</p>
+                    <p style="font-size:0.95rem;color:#94a3b8;text-transform:uppercase;letter-spacing:0.08em;margin:0;">AI Models<br>Tested</p>
+                </div>
+                <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:0.75rem;text-align:center;display:flex;flex-direction:column;justify-content:center;">
+                    <p class="stat-glow" style="font-size:1.85rem;font-weight:800;color:#818cf8;margin:0;">4+1</p>
+                    <p style="font-size:0.95rem;color:#94a3b8;text-transform:uppercase;letter-spacing:0.08em;margin:0;">Test<br>Families</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom info bar — full width, flows naturally BELOW the grid, no overlap -->
+        <div class="reveal" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:0.6rem 1rem;width:100%;">
+            <p style="font-size:0.95rem;color:#94a3b8;margin:0 0 0.25rem 0;line-height:1.5;"><span style="color:#818cf8;font-weight:600;">Models evaluated:</span> GPT-5.2 · Claude-3.7-Sonnet · DeepSeek-v3.2 · Gemini-3.1-Pro-Preview · LLaMA-3.3-70B · Mistral-Large · Perplexity-Sonar-Pro</p>
+            <p style="font-size:0.95rem;color:#94a3b8;margin:0;line-height:1.5;"><span style="color:#38bdf8;font-weight:600;">Diagnostics:</span> Traceability (OpenAlex similarity) · Embedding geometry (PCA/t-SNE) · Mechanistic signals (activations, attention) · Statistical inference (ANOVA, χ², effect sizes)</p>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+  SLIDE 5 — TEST METHODOLOGY (T1–T4)
+════════════════════════════════════════════ -->
+<div class="slide" data-slide="5">
+    <div class="gradient-mesh">
+        <div class="blob" style="width:380px;height:380px;top:-80px;left:-60px;background:#818cf8;opacity:0.08;"></div>
+        <div class="blob" style="width:240px;height:240px;bottom:-50px;right:-30px;background:#38bdf8;opacity:0.07;"></div>
+    </div>
+    <div class="content">
+        <p class="reveal" style="font-size:1.0rem;letter-spacing:0.14em;text-transform:uppercase;color:#818cf8;margin-bottom:0.35rem;">Methodology — Four Tests</p>
+        <h2 class="font-display reveal" style="font-size:clamp(1.5rem,2.5vw,1.9rem);font-weight:700;margin-bottom:0.7rem;">Convergent Diagnostic Test Suite (T1–T4 + T5)</h2>
+        <div class="reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.65rem;">
+            <div style="background:rgba(129,140,248,0.08);border:1px solid rgba(129,140,248,0.2);border-radius:10px;padding:0.85rem;grid-column:span 1;">
+                <p style="font-size:0.98rem;font-weight:700;color:#818cf8;text-transform:uppercase;margin-bottom:0.4rem;">T1 — Innovation</p>
+                <p style="font-size:0.98rem;color:#94a3b8;line-height:1.4;">New sensory modality proposals tested for basis-change vs. recombination. n=24/model. Frontier bands + convex hull (PCA)</p>
+                <p style="font-size:0.98rem;color:#818cf8;margin-top:0.35rem;">η²=0.326 moderate</p>
+            </div>
+            <div style="background:rgba(56,189,248,0.06);border:1px solid rgba(56,189,248,0.16);border-radius:10px;padding:0.85rem;">
+                <p style="font-size:0.98rem;font-weight:700;color:#38bdf8;text-transform:uppercase;margin-bottom:0.4rem;">T2 — Agency</p>
+                <p style="font-size:0.98rem;color:#94a3b8;line-height:1.4;">Epistemic agency: resisting flawed framings, proposing principled reframings. n=120/model. Bloom taxonomy + traceability</p>
+                <p style="font-size:0.98rem;color:#38bdf8;margin-top:0.35rem;">V=0.166 small</p>
+            </div>
+            <div style="background:rgba(167,139,250,0.06);border:1px solid rgba(167,139,250,0.16);border-radius:10px;padding:0.85rem;">
+                <p style="font-size:0.98rem;font-weight:700;color:#a78bfa;text-transform:uppercase;margin-bottom:0.4rem;">T3 — Theories</p>
+                <p style="font-size:0.98rem;color:#94a3b8;line-height:1.4;">Consciousness theory generation — novel explanatory types vs. template collapse. n=24/model. Hybrid/traceable classification</p>
+                <p style="font-size:0.98rem;color:#a78bfa;margin-top:0.35rem;">η²=0.040 n.s.</p>
+            </div>
+            <div style="background:transparent;border:none;"></div>
+            <div style="background:rgba(129,140,248,0.08);border:1px solid rgba(129,140,248,0.2);border-radius:10px;padding:0.85rem;">
+                <p style="font-size:0.98rem;font-weight:700;color:#818cf8;text-transform:uppercase;margin-bottom:0.4rem;">T4 — Category</p>
+                <p style="font-size:0.98rem;color:#94a3b8;line-height:1.4;">Category-mistake detection: recognise distinction → identify mistake → propose framework. n=24/model. 3-dim rubric</p>
+                <p style="font-size:0.98rem;color:#818cf8;margin-top:0.35rem;">η²=0.766 large</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:0.85rem;">
+                <p style="font-size:0.98rem;font-weight:700;color:#64748b;text-transform:uppercase;margin-bottom:0.4rem;">T5 — Mechanistic</p>
+                <p style="font-size:0.98rem;color:#94a3b8;line-height:1.4;">Activation clustering (k=4, purity=1.0), attention entropy, layer-wise progression, per-head heatmaps</p>
+                <p style="font-size:0.98rem;color:#64748b;margin-top:0.35rem;">Sep. score 0.465</p>
+            </div>
+        </div>
+        <!-- ANOVA table row -->
+        <div class="reveal" style="margin-top:0.6rem;">
+            <div class="fig-frame" style="height:64px;flex-direction:row;gap:0.35rem;padding:0.4rem 0.8rem;font-size:0.95rem;color:#94a3b8;letter-spacing:0.02em;"><span>📋</span><span style="flex:1;">📋 Table 1 — ANOVA Summary: F(T1)=12.98 p&amp;lt;.001 · F(T2)=10.09 p&amp;lt;.001 · F(T3)=1.12 n.s. · F(T4)=88.06 p&amp;lt;.001 &amp;nbsp;|&amp;nbsp; Pre-registered thresholds: T1=0.40 · T2=0.62/0.67 · T3=0.30/0.70 · T4=0.40</span></div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+  SLIDE 6 — RESULTS T1: ONTOLOGICAL INNOVATION
+════════════════════════════════════════════ -->
+<div class="slide" data-slide="6">
+    <div class="gradient-mesh">
+        <div class="blob" style="width:380px;height:380px;top:-70px;right:-60px;background:#818cf8;opacity:0.09;"></div>
+        <div class="blob" style="width:240px;height:240px;bottom:-50px;left:-40px;background:#a78bfa;opacity:0.07;"></div>
+    </div>
+    <div class="content">
+        <p class="reveal" style="font-size:1.1rem;letter-spacing:0.14em;text-transform:uppercase;color:#818cf8;margin-bottom:0.4rem;">Results — Test 1</p>
+        <h2 class="font-display reveal" style="font-size:clamp(1.65rem,2.8vw,2rem);font-weight:700;margin-bottom:0.3rem;">T1: Ontological Innovation in Sensory Modalities</h2>
+        <p class="reveal" style="font-size:1.12rem;color:#64748b;margin-bottom:0.3rem;">Can models propose genuinely new sensory primitives not reducible to the 8 training modalities?</p>
+        <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;align-items:stretch;flex:1 1 0;min-height:0;">
+            <!-- LEFT: two figs stacked vertically, 50% width -->
+            <div style="display:flex;flex-direction:column;gap:0.75rem;min-height:0;">
+            <figure class="fig-frame" style="flex:1 1 0;min-height:0;cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test1_ontological-innovation/results/figures/novelty_frontier_bands_by_model.png" data-label="Fig 2.5–2.6 / Fig 4a" data-desc="Novelty-frontier band assignment (near/moderate/far/missing) — share of proposals per model"   onclick="openLightbox(this)" title="Click to enlarge">
+  <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test1_ontological-innovation/results/figures/novelty_frontier_bands_by_model.png" alt="Fig 2.5–2.6 / Fig 4a"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+  <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Fig 2.5–2.6 / Fig 4a</figcaption>
+</figure>
+            <figure class="fig-frame" style="cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test1_ontological-innovation/results/figures/embedding_space_2d.png" data-label="Fig 2.8 / Fig 5" data-desc="Embedding-space PCA — proposals inside convex hull of training modalities (blue circles = training, squares = proposals)"   onclick="openLightbox(this)" title="Click to enlarge">
+  <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test1_ontological-innovation/results/figures/embedding_space_2d.png" alt="Fig 2.8 / Fig 5"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+  <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Fig 2.8 / Fig 5</figcaption>
+</figure>
+            </div><!-- end left fig column -->
+            <!-- RIGHT: text panel 50% width -->
+            <div style="display:flex;flex-direction:column;gap:0.7rem;min-height:0;">
+                <div style="background:rgba(129,140,248,0.07);border:1px solid rgba(129,140,248,0.18);border-radius:10px;padding:0.85rem;">
+                    <p style="font-size:1.02rem;font-weight:700;color:#818cf8;margin-bottom:0.3rem;">Key Findings</p>
+                    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.35rem;">
+                        <li style="font-size:0.98rem;color:#94a3b8;">• All proposals within convex hull of training set in PCA-reduced space</li>
+                        <li style="font-size:0.98rem;color:#94a3b8;">• Proposals concentrate in low-novelty / frontier-proximal regions</li>
+                        <li style="font-size:0.98rem;color:#94a3b8;">• Traceability rate: ~98% across models</li>
+                        <li style="font-size:0.98rem;color:#94a3b8;">• GPT-5.2 lowest novelty score (outlier); LLaMA/Claude highest (still within manifold)</li>
+                    </ul>
+                </div>
+                <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:0.85rem;">
+                    <p style="font-size:1.2rem;color:#64748b;font-style:italic;line-height:1.5;">"Proposals remain within a continuous deformation of the training manifold — consistent with <strong style="color:#818cf8;">within-manifold recombination</strong>, not basis extension."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+  SLIDE 7 — RESULTS T2: EPISTEMIC AGENCY
+════════════════════════════════════════════ -->
+<div class="slide slide-7-fix" data-slide="7">
+    <div class="gradient-mesh">
+        <div class="blob" style="width:360px;height:360px;top:-70px;left:-50px;background:#38bdf8;opacity:0.08;"></div>
+        <div class="blob" style="width:240px;height:240px;bottom:-50px;right:-40px;background:#818cf8;opacity:0.07;"></div>
+    </div>
+    <div class="content">
+        <p class="reveal" style="font-size:1.1rem;letter-spacing:0.14em;text-transform:uppercase;color:#38bdf8;margin-bottom:0.35rem;">Results — Test 2</p>
+        <h2 class="font-display reveal" style="font-size:clamp(1.55rem,2.6vw,1.95rem);font-weight:700;margin-bottom:0.2rem;">T2: Epistemic Agency &amp; Question Formation</h2>
+        <p class="reveal" style="font-size:1.05rem;color:#64748b;margin-bottom:0.35rem;">Do models exhibit stable meta-level control — resisting flawed framings and proposing genuine reframings?</p>
+        <div class="reveal" style="display:grid;grid-template-columns:30% 70%;gap:0.9rem;align-items:stretch;min-height:0;">
+            <!-- LEFT: two figures stacked vertically -->
+            <div style="display:flex;flex-direction:column;gap:0.7rem;min-height:0;">
+                <figure class="fig-frame" style="flex:1 1 0;min-height:0;cursor:pointer;"                <figure class="fig-frame" style="flex:1 1 0;min-height:0;cursor:pointer;"
+                    data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test2_epistemic-agency/results/figures/taxonomy_distributions.png"
+                    data-label="Fig 2.13 / Fig 6a–b"
+                    data-desc="T2 taxonomy distributions — Bloom's level breakdown (instrumental / exploratory / paradigm-challenging) + KDE per-model traceability"
+                    onclick="openLightbox(this)" title="Click to enlarge">
+                    <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test2_epistemic-agency/results/figures/taxonomy_distributions.png"
+                         alt="Fig 2.13 / Fig 6a–b"
+                         style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+                    <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.72rem;color:rgba(180,190,220,0.65);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Fig 2.13 / Fig 6a–b</figcaption>
+                </figure>
+                <figure class="fig-frame" style="flex:1 1 0;min-height:0;cursor:pointer;"
+                    data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test2_epistemic-agency/results/figures/class_decision_bias_map.png"
+                    data-label="Fig 2.15 / Fig A.10"
+                    data-desc="Decision-space bias: Within-framework vs. Transcends-framework category distribution (n=840). Only ~5% transcend framework."
+                    onclick="openLightbox(this)" title="Click to enlarge">
+                    <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test2_epistemic-agency/results/figures/class_decision_bias_map.png"
+                         alt="Fig 2.15 / Fig A.10"
+                         style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+                    <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.72rem;color:rgba(180,190,220,0.65);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Fig 2.15 / Fig A.10</figcaption>
+                </figure>
+            </div>
+            <!-- RIGHT: info panel — widened to fill remaining space -->
+            <div style="display:flex;flex-direction:column;gap:0.75rem;min-height:0;">
+                <div style="background:rgba(56,189,248,0.07);border:1px solid rgba(56,189,248,0.18);border-radius:10px;padding:0.8rem 0.9rem;flex:0 0 auto;">
+                    <p style="font-size:1.02rem;font-weight:700;color:#38bdf8;margin-bottom:0.4rem;">Key Findings</p>
+                    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.35rem;">
+                        <li style="font-size:0.98rem;color:#94a3b8;">• 100% of questions traceable to literature (strict threshold)</li>
+                        <li style="font-size:0.98rem;color:#94a3b8;">• Framework-transcendence rate: ~5% across all models</li>
+                        <li style="font-size:0.98rem;color:#94a3b8;">• Bloom's distribution: exploratory 91%, paradigm-challenging 9%</li>
+                        <li style="font-size:0.98rem;color:#94a3b8;">• Gemini-3.1-Pro: 0% transcendence — LLaMA drives chi-square effect</li>
+                    </ul>
+                </div>
+                <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:0.8rem 0.9rem;flex:1 1 0;">
+                    <p style="font-size:0.98rem;color:#94a3b8;margin-bottom:0.6rem;font-weight:600;color:#38bdf8;">Statistical Summary</p>
+                    <div style="display:flex;flex-direction:column;gap:0.4rem;">
+                        <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,0.06);padding-bottom:0.4rem;">
+                            <span style="font-size:0.95rem;color:#94a3b8;">Effect size (Cramér's V)</span>
+                            <span style="font-size:1.02rem;font-weight:700;color:#38bdf8;">0.166</span>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,0.06);padding-bottom:0.4rem;">
+                            <span style="font-size:0.95rem;color:#94a3b8;">η² (cross-model)</span>
+                            <span style="font-size:1.02rem;font-weight:700;color:#94a3b8;">0.068 n.s.</span>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,0.06);padding-bottom:0.4rem;">
+                            <span style="font-size:0.95rem;color:#94a3b8;">n per model</span>
+                            <span style="font-size:1.02rem;font-weight:700;color:#e2e8f0;">120</span>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;align-items:center;">
+                            <span style="font-size:0.95rem;color:#94a3b8;">Transcendence rate</span>
+                            <span style="font-size:1.02rem;font-weight:700;color:#f87171;">~5%</span>
+                        </div>
+                    </div>
+                    <p style="font-size:0.9rem;color:#64748b;font-style:italic;line-height:1.45;margin-top:0.5rem;">"Fluency is not agency — <strong style="color:#38bdf8;">shared low-transcendence regime</strong> across all models."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+  SLIDE 8 — RESULTS T3: THEORY GENERATION
+════════════════════════════════════════════ -->
+<div class="slide" data-slide="8">
+    <div class="gradient-mesh">
+        <div class="blob" style="width:360px;height:360px;top:-70px;right:-50px;background:#a78bfa;opacity:0.09;"></div>
+        <div class="blob" style="width:230px;height:230px;bottom:-50px;left:-40px;background:#818cf8;opacity:0.07;"></div>
+    </div>
+    <div class="content">
+        <p class="reveal" style="font-size:1.1rem;letter-spacing:0.14em;text-transform:uppercase;color:#a78bfa;margin-bottom:0.4rem;">Results — Test 3</p>
+        <h2 class="font-display reveal" style="font-size:clamp(1.6rem,2.8vw,2rem);font-weight:700;margin-bottom:0.2rem;">T3: Consciousness Theory Generation</h2>
+        <p class="reveal" style="font-size:1.12rem;color:#64748b;margin-bottom:0.3rem;">Are elicited theories of consciousness genuinely distinct, or template recombinations?</p>
+        <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;align-items:stretch;flex:1 1 0;min-height:0;">
+            <!-- LEFT: two figs stacked vertically -->
+            <div style="display:flex;flex-direction:column;gap:0.75rem;min-height:0;">
+            <figure class="fig-frame" style="flex:1 1 0;min-height:0;cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test3_theory-generation/results/figures/theory_classification.png" data-label="Fig 2.17–2.18 / Fig 7a–b" data-desc="Distribution of theory classes (Computational Functionalist / Literature Traceable / Hybrid) by model. Detected theory families matrix (F01–F12 templates)."   onclick="openLightbox(this)" title="Click to enlarge">
+  <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test3_theory-generation/results/figures/theory_classification.png" alt="Fig 2.17–2.18 / Fig 7a–b"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+  <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Fig 2.17–2.18 / Fig 7a–b</figcaption>
+</figure>
+            <figure class="fig-frame" style="flex:1 1 0;min-height:0;cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test3_theory-generation/results/figures/theory_cluster_map_2d.png" data-label="Fig 2.20 / Fig A.19" data-desc="T3 known-theory hull PCA — AI theory embeddings vs. 12 known family centroids. Cluster centroids + convex hulls show no external branches."   onclick="openLightbox(this)" title="Click to enlarge">
+  <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test3_theory-generation/results/figures/theory_cluster_map_2d.png" alt="Fig 2.20 / Fig A.19"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+  <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Fig 2.20 / Fig A.19</figcaption>
+</figure>
+            </div><!-- end left fig column slide 8 -->
+            <!-- RIGHT: text panel -->
+            <div style="display:flex;flex-direction:column;gap:0.7rem;min-height:0;">
+                <div style="background:rgba(167,139,250,0.07);border:1px solid rgba(167,139,250,0.18);border-radius:10px;padding:0.85rem;">
+                    <p style="font-size:1.3rem;font-weight:700;color:#a78bfa;margin-bottom:0.35rem;">Key Findings</p>
+                    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.35rem;">
+                        <li style="font-size:1.2rem;color:#94a3b8;">• Dominated by hybrid recombinations across all models</li>
+                        <li style="font-size:1.2rem;color:#94a3b8;">• ANOVA non-significant (η²=0.040) — most architecture-invariant result</li>
+                        <li style="font-size:1.2rem;color:#94a3b8;">• 98.5% inside manifold; 1.5% boundary candidates</li>
+                        <li style="font-size:1.2rem;color:#94a3b8;">• GPT-5.2 highest raw score (0.53); LLaMA/Mistral lowest</li>
+                    </ul>
+                </div>
+                <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:0.85rem;">
+                    <p style="font-size:1.2rem;color:#64748b;font-style:italic;line-height:1.5;">"Strongest recurrent-processing/workspace/higher-order clustering — <strong style="color:#a78bfa;">no detached framework-external branches</strong> in hierarchy."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+  SLIDE 9 — RESULTS T4 + MECHANISTIC
+════════════════════════════════════════════ -->
+<div class="slide" data-slide="9">
+    <div class="gradient-mesh">
+        <div class="blob" style="width:380px;height:380px;top:-80px;right:-60px;background:#818cf8;opacity:0.10;"></div>
+        <div class="blob" style="width:240px;height:240px;bottom:-50px;left:-40px;background:#38bdf8;opacity:0.07;"></div>
+    </div>
+    <div class="content">
+        <p class="reveal" style="font-size:1.1rem;letter-spacing:0.14em;text-transform:uppercase;color:#818cf8;margin-bottom:0.4rem;">Results — Test 4 &amp; Mechanistic Layer</p>
+        <h2 class="font-display reveal" style="font-size:clamp(1.534rem,2.6vw,2.242rem);font-weight:700;margin-bottom:0.9rem;">T4: Category Recognition + T5: Mechanistic Analysis</h2>
+        <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-items:start;">
+            <!-- T4 LEFT COLUMN: two figs stacked, equal height to T5 column -->
+            <div style="display:flex;flex-direction:column;gap:0.6rem;">
+                <p style="font-size:0.98rem;font-weight:700;color:#818cf8;text-transform:uppercase;margin-bottom:0.3rem;">T4 — Category-Mistake Detection (η²=0.766, large)</p>
+                <figure class="fig-frame" style="cursor:pointer;min-height:240px;max-height:280px;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test4_category-recognition/results/figures/score_distributions.png" data-label="Fig 2.22 / Fig 8a–c" data-desc="Score distributions: Distinction recognition (mean 2.58) · Mistake ID (mean 2.79) · Framework proposal (mean 3.31)"   onclick="openLightbox(this)" title="Click to enlarge">
+  <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test4_category-recognition/results/figures/score_distributions.png" alt="Fig 2.22 / Fig 8a–c" style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+  <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.65rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Fig 2.22 / Fig 8a–c</figcaption>
+</figure>
+                <figure class="fig-frame" style="cursor:pointer;min-height:240px;max-height:280px;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test4_category-recognition/results/figures/category_awareness_scores_by_model.png" data-label="Fig 2.21 / Fig A.22" data-desc="T4 by model/dimension. GPT-5.2 x̄=0.825 · Mistral x̄=0.758 top tier. LLaMA x̄=0.381 bottom. Traceability: 95.2% all models."   onclick="openLightbox(this)" title="Click to enlarge">
+  <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test4_category-recognition/results/figures/category_awareness_scores_by_model.png" alt="Fig 2.21 / Fig A.22" style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+  <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.65rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Fig 2.21 / Fig A.22</figcaption>
+</figure>
+            </div>
+            <!-- T5 RIGHT COLUMN: two figs + tier text below -->
+            <div style="display:flex;flex-direction:column;gap:0.6rem;">
+                <p style="font-size:0.98rem;font-weight:700;color:#38bdf8;text-transform:uppercase;margin-bottom:0.3rem;">T5 — Mechanistic Interpretability (Activation + Attention)</p>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;">
+                    <figure class="fig-frame" style="cursor:pointer;min-height:200px;max-height:240px;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test5_mechanistic/results/figures/activation_space_comparison.png" data-label="Fig 2.25 / Fig 9" data-desc="PCA + t-SNE of activation space — partial label separation for T1–T4 supports structured internal org., not undifferentiated encoding"   onclick="openLightbox(this)" title="Click to enlarge">
+  <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test5_mechanistic/results/figures/activation_space_comparison.png" alt="Fig 2.25 / Fig 9" style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+  <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.65rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Fig 2.25 / Fig 9</figcaption>
+</figure>
+                    <figure class="fig-frame" style="cursor:pointer;min-height:200px;max-height:240px;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test5_mechanistic/results/figures/attention_heatmap_real.png" data-label="Fig 2.24 / Fig A.23–A.24" data-desc="Per-head attention heatmaps + rollout across 25 layers. Mean cluster purity 1.0. Attention entropy 2.49. Separation score 0.465."   onclick="openLightbox(this)" title="Click to enlarge">
+  <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test5_mechanistic/results/figures/attention_heatmap_real.png" alt="Fig 2.24 / Fig A.23–A.24" style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+  <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.65rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Fig 2.24 / Fig A.23–A.24</figcaption>
+</figure>
+                </div>
+                <!-- Tier text moved here, below T5 figures -->
+                <div style="background:rgba(129,140,248,0.06);border-left:3px solid #818cf8;border-radius:8px;padding:0.65rem 0.9rem;margin-top:0.2rem;">
+                    <p style="font-size:1rem;color:#cbd5e1;line-height:1.45;">Tier structure in T4: <strong style="color:#818cf8;">Top</strong> GPT-5.2, Mistral-Large · <strong style="color:#a78bfa;">Mid</strong> DeepSeek, Claude · <strong style="color:#64748b;">Bottom</strong> Gemini, LLaMA — variation in <em>philosophical language fluency</em>, not constraint escape. High traceability persists across all tiers.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+  SLIDE 10 — CROSS-MODEL OVERVIEW
+════════════════════════════════════════════ -->
+<div class="slide" data-slide="10">
+    <div class="gradient-mesh">
+        <div class="blob" style="width:360px;height:360px;top:-70px;left:-50px;background:#818cf8;opacity:0.08;"></div>
+        <div class="blob" style="width:240px;height:240px;bottom:-50px;right:-40px;background:#38bdf8;opacity:0.06;"></div>
+    </div>
+    <div class="content">
+        <p class="reveal" style="font-size:1.1rem;letter-spacing:0.14em;text-transform:uppercase;color:#818cf8;margin-bottom:0.4rem;">Cross-Model Summary</p>
+        <h2 class="font-display reveal" style="font-size:clamp(1.65rem,2.8vw,2rem);font-weight:700;margin-bottom:0.9rem;">Overview Dashboards &amp; Effect-Size Profile</h2>
+        <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+            <figure class="fig-frame" style="cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test0_overview/results/figures/findings_dashboard_A.png" data-label="Fig 2.28 / Fig A.3a–b" data-desc="Model × Test heatmap of mean novelty-oriented scores (%). T1: 1–8% · T2: 0–8% · T3: 14–53% · T4: 38–83%"   onclick="openLightbox(this)" title="Click to enlarge">
+  <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test0_overview/results/figures/findings_dashboard_A.png" alt="Fig 2.28 / Fig A.3a–b"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+  <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Fig 2.28 / Fig A.3a–b</figcaption>
+</figure>
+            <figure class="fig-frame" style="cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test6_cross_model/results/figures/model_performance_heatmap.png" data-label="Fig 3 / Fig A.4b + Table A.16" data-desc="Within-test z-scores cross-model (Table 2) + meta-analytic effect-size profile T1–T4: η²(T1)=0.326 · η²(T2)=0.068 · η²(T3)=0.040 · η²(T4)=0.766"   onclick="openLightbox(this)" title="Click to enlarge">
+  <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test6_cross_model/results/figures/model_performance_heatmap.png" alt="Fig 3 / Fig A.4b + Table A.16"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+  <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Fig 3 / Fig A.4b + Table A.16</figcaption>
+</figure>
+        </div>
+        <!-- summary bar -->
+        <div class="reveal" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:0.9rem 1.1rem;">
+            <p style="font-size:0.98rem;font-weight:700;color:#e2e8f0;margin-bottom:0.6rem;">Asymmetric pattern across tests</p>
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0.8rem;">
+                <div style="text-align:center;">
+                    <p style="font-size:1.35rem;font-weight:800;color:#818cf8;">~5%</p>
+                    <p style="font-size:0.98rem;color:#64748b;">T1–T2<br>primary novelty</p>
+                </div>
+                <div style="text-align:center;">
+                    <p style="font-size:1.35rem;font-weight:800;color:#a78bfa;">~32%</p>
+                    <p style="font-size:0.98rem;color:#64748b;">T3 hybrid<br>theories</p>
+                </div>
+                <div style="text-align:center;">
+                    <p style="font-size:1.35rem;font-weight:800;color:#38bdf8;">~58%</p>
+                    <p style="font-size:0.98rem;color:#64748b;">T4 category<br>detection</p>
+                </div>
+                <div style="text-align:center;">
+                    <p style="font-size:1.35rem;font-weight:800;color:#818cf8;">&gt;95%</p>
+                    <p style="font-size:0.98rem;color:#64748b;">Traceability<br>rate (T1–T4)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+  SLIDE 11 — ETHICAL IMPLICATIONS
+════════════════════════════════════════════ -->
+<div class="slide" data-slide="11">
+    <div class="gradient-mesh">
+        <div class="blob" style="width:400px;height:400px;top:-90px;right:-70px;background:#818cf8;opacity:0.10;"></div>
+        <div class="blob" style="width:250px;height:250px;bottom:-60px;left:-40px;background:#a78bfa;opacity:0.08;"></div>
+    </div>
+    <canvas class="particle-canvas-ambient" style="position:absolute;inset:0;z-index:1;width:100%;height:100%;"></canvas>
+    <div class="content">
+        <p class="reveal" style="font-size:1.1rem;letter-spacing:0.14em;text-transform:uppercase;color:#818cf8;margin-bottom:0.4rem;">Chapter 3</p>
+        <h2 class="font-display reveal" style="font-size:clamp(1.77rem,3vw,2.714rem);font-weight:700;margin-bottom:0.7rem;">Ethical Implications</h2>
+        <div class="accent-line reveal" style="margin-bottom:1.2rem;"></div>
+        <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+            <div style="display:flex;flex-direction:column;gap:0.8rem;">
+                <div style="border-left:3px solid #818cf8;padding:0.85rem 1rem;background:rgba(129,140,248,0.05);border-radius:0 8px 8px 0;">
+                    <p style="font-size:1.1rem;font-weight:600;color:#e2e8f0;margin-bottom:0.3rem;">⚖️ The Misdescription Risk</p>
+                    <p style="font-size:0.98rem;color:#94a3b8;line-height:1.5;">Anthropomorphic language leads institutions to treat fluent outputs as <em>justificatory evidence</em>, offloading epistemic authority onto artifacts with an invalid model of what the system is.</p>
+                </div>
+                <div style="border-left:3px solid #38bdf8;padding:0.85rem 1rem;background:rgba(56,189,248,0.05);border-radius:0 8px 8px 0;">
+                    <p style="font-size:1.1rem;font-weight:600;color:#e2e8f0;margin-bottom:0.3rem;">🔒 Responsibility &amp; Governance</p>
+                    <p style="font-size:0.98rem;color:#94a3b8;line-height:1.5;">Policy compliance can be achieved without value understanding. Governance frameworks that presuppose agency misconfigure responsibility around an invalid system model.</p>
+                </div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:0.8rem;">
+                <div style="border-left:3px solid #a78bfa;padding:0.85rem 1rem;background:rgba(167,139,250,0.05);border-radius:0 8px 8px 0;">
+                    <p style="font-size:1.1rem;font-weight:600;color:#e2e8f0;margin-bottom:0.3rem;">🧮 Methodological Discipline</p>
+                    <p style="font-size:0.98rem;color:#94a3b8;line-height:1.5;">Traceability as a structural signature, not just a governance desideratum. Calibrated thresholds as explicit interpretive design. Behavioral fluency ≠ phenomenal subjectivity.</p>
+                </div>
+                <div style="border-left:3px solid #818cf8;padding:0.85rem 1rem;background:rgba(129,140,248,0.05);border-radius:0 8px 8px 0;">
+                    <p style="font-size:1.1rem;font-weight:600;color:#e2e8f0;margin-bottom:0.3rem;">🛡️ Practical Upshot</p>
+                    <p style="font-size:0.98rem;color:#94a3b8;line-height:1.5;">Keep decision authority with accountable humans · document evaluation assumptions &amp; failure modes · never interpret surface novelty as basis change without convergent diagnostics.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+  SLIDE 12 — DISCUSSION & SYNTHESIS
+════════════════════════════════════════════ -->
+<div class="slide" data-slide="12">
+    <div class="gradient-mesh">
+        <div class="blob" style="width:380px;height:380px;top:-80px;left:-60px;background:#38bdf8;opacity:0.08;"></div>
+        <div class="blob" style="width:260px;height:260px;bottom:-60px;right:-40px;background:#818cf8;opacity:0.07;"></div>
+    </div>
+    <div class="content">
+        <p class="reveal" style="font-size:1.1rem;letter-spacing:0.14em;text-transform:uppercase;color:#38bdf8;margin-bottom:0.4rem;">Chapter 4 — Discussion</p>
+        <h2 class="font-display reveal" style="font-size:clamp(1.65rem,2.8vw,2rem);font-weight:700;margin-bottom:0.8rem;">Synthesis: Empirical Results as System-Type Constraints</h2>
+        <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.9rem;margin-bottom:1rem;">
+            <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:1rem;">
+                <p style="font-size:0.98rem;font-weight:700;color:#38bdf8;margin-bottom:0.4rem;">🧮 Computational Limits</p>
+                <p style="font-size:0.98rem;color:#94a3b8;line-height:1.5;">Gödel + Turing + No New Basis: formal systems cannot escape their representational closure. Results confirm generators operate inside fixed learned manifolds.</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:1rem;">
+                <p style="font-size:0.98rem;font-weight:700;color:#818cf8;margin-bottom:0.4rem;">🤖 On "Intelligence"</p>
+                <p style="font-size:0.98rem;color:#94a3b8;line-height:1.5;">Scaling is unlikely to close the gap between within-manifold competence and ontological novelty. Emergent behaviors remain in-manifold. Superintelligence requires a mechanism change, not only scale.</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:1rem;">
+                <p style="font-size:0.98rem;font-weight:700;color:#a78bfa;margin-bottom:0.4rem;">🔭 Future Work</p>
+                <p style="font-size:0.98rem;color:#94a3b8;line-height:1.5;">Hybrid systems combining learned representations with external symbol grounding · Alternative substrates (quantum/neuromorphic) · Active inference architectures with genuine novelty channels.</p>
+            </div>
+        </div>
+        <div class="reveal" style="background:rgba(56,189,248,0.05);border:1px solid rgba(56,189,248,0.14);border-radius:10px;padding:1rem 1.1rem;">
+            <p style="font-size:1.12rem;color:#cbd5e1;line-height:1.6;font-style:italic;">"The right question is often not <em>How human-like is the output?</em> but <strong style="color:#38bdf8;">What kind of system would have to exist</strong> for this output to be evidence of basis change? Empirical results favor a conservative answer: current architectures systematically derive from inherited structure."</p>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+  SLIDE 13 — CONCLUSIONS
+════════════════════════════════════════════ -->
+<div class="slide" data-slide="13">
+    <div class="gradient-mesh">
+        <div class="blob" style="width:460px;height:460px;top:-100px;right:-80px;background:#818cf8;opacity:0.12;"></div>
+        <div class="blob" style="width:300px;height:300px;bottom:-70px;left:-50px;background:#38bdf8;opacity:0.09;"></div>
+        <div class="blob" style="width:200px;height:200px;top:40%;left:10%;background:#a78bfa;opacity:0.08;"></div>
+    </div>
+    <canvas class="particle-canvas" style="position:absolute;inset:0;z-index:1;width:100%;height:100%;"></canvas>
+    <div class="content">
+        <p class="reveal" style="font-size:1.1rem;letter-spacing:0.14em;text-transform:uppercase;color:#818cf8;margin-bottom:0.4rem;">Chapter 5 — Conclusions</p>
+        <h2 class="font-display reveal" style="font-size:clamp(1.77rem,3vw,2.714rem);font-weight:700;margin-bottom:0.7rem;">Summary of Contributions</h2>
+        <div class="accent-line reveal" style="margin-bottom:1.2rem;"></div>
+        <div class="reveal" style="display:flex;flex-direction:column;gap:0.7rem;margin-bottom:1.2rem;">
+            <div style="display:flex;align-items:flex-start;gap:0.8rem;padding:0.7rem 0.9rem;background:rgba(255,255,255,0.04);border-radius:8px;border-left:3px solid #818cf8;">
+                <span style="color:#818cf8;font-weight:800;font-size:1.15rem;min-width:1.5rem;">1.</span>
+                <p style="font-size:1.1rem;color:#cbd5e1;line-height:1.5;"><strong style="color:#e2e8f0;">Operational distinction:</strong> Surface novelty vs. ontological novelty as basis change — disciplined framework separating recombination from representational extension.</p>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:0.8rem;padding:0.7rem 0.9rem;background:rgba(255,255,255,0.04);border-radius:8px;border-left:3px solid #38bdf8;">
+                <span style="color:#38bdf8;font-weight:800;font-size:1.15rem;min-width:1.5rem;">2.</span>
+                <p style="font-size:1.1rem;color:#cbd5e1;line-height:1.5;"><strong style="color:#e2e8f0;">No New Basis Theorem (2.1):</strong> Formal result for continuously optimized neural generators — outputs lie in continuous deformations of training manifold; no internal escape mechanism.</p>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:0.8rem;padding:0.7rem 0.9rem;background:rgba(255,255,255,0.04);border-radius:8px;border-left:3px solid #a78bfa;">
+                <span style="color:#a78bfa;font-weight:800;font-size:1.15rem;min-width:1.5rem;">3.</span>
+                <p style="font-size:1.1rem;color:#cbd5e1;line-height:1.5;"><strong style="color:#e2e8f0;">Reproducible evaluation suite:</strong> T1–T4 + mechanistic layer with convergent diagnostics (traceability, geometry, activation) validated across 7 models, 4 test families, 840+ responses.</p>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:0.8rem;padding:0.7rem 0.9rem;background:rgba(255,255,255,0.04);border-radius:8px;border-left:3px solid #818cf8;">
+                <span style="color:#818cf8;font-weight:800;font-size:1.15rem;min-width:1.5rem;">4.</span>
+                <p style="font-size:1.1rem;color:#cbd5e1;line-height:1.5;"><strong style="color:#e2e8f0;">Governance recommendation:</strong> Deflate anthropomorphic predicates; treat calibrated traceability as deployment-critical; keep decision authority with accountable humans.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+  SLIDE 14 — APPENDIX A: T1 + T2 Additional Figures
+════════════════════════════════════════════ -->
+<div class="slide" data-slide="14">
+    <div class="gradient-mesh">
+        <div class="blob" style="width:340px;height:340px;top:-70px;right:-50px;background:#818cf8;opacity:0.07;"></div>
+        <div class="blob" style="width:220px;height:220px;bottom:-40px;left:-30px;background:#38bdf8;opacity:0.06;"></div>
+    </div>
+    <div class="content">
+        <p class="reveal" style="font-size:1.1rem;letter-spacing:0.14em;text-transform:uppercase;color:#64748b;margin-bottom:0.4rem;">Appendix — Additional Figures</p>
+        <h2 class="font-display reveal" style="font-size:clamp(1.534rem,2.5vw,2.124rem);font-weight:700;margin-bottom:0.9rem;">T1 &amp; T2 Supplementary Diagnostics</h2>
+        <div class="reveal" style="display:grid;grid-template-columns:repeat(4,1fr);gap:0.7rem;">
+            <figure class="fig-frame" style="cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test1_ontological-innovation/results/figures/similarity_heatmap_v1_optionA_aggregated.png" data-label="Fig A.5a–b" data-desc="T1 cosine-similarity heatmaps — high- and low-traceability segments, ordered by max similarity to modality centroids"   onclick="openLightbox(this)" title="Click to enlarge">
+  <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test1_ontological-innovation/results/figures/similarity_heatmap_v1_optionA_aggregated.png" alt="Fig A.5a–b"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+  <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Fig A.5a–b</figcaption>
+</figure>
+            <figure class="fig-frame" style="cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test1_ontological-innovation/results/figures/hierarc_clustering_dendrogram.png" data-label="Fig A.6" data-desc="T1 clustering dendrogram (cosine distance, avg linkage, threshold=0.28) — recombination inside known neighborhoods"   onclick="openLightbox(this)" title="Click to enlarge">
+  <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test1_ontological-innovation/results/figures/hierarc_clustering_dendrogram.png" alt="Fig A.6"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+  <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Fig A.6</figcaption>
+</figure>
+            <figure class="fig-frame" style="cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test1_ontological-innovation/results/figures/tsne_with_labels.png" data-label="Fig A.7" data-desc="T1 t-SNE projection with labels — local neighborhoods dense &amp;amp; interwoven with known modality regions"   onclick="openLightbox(this)" title="Click to enlarge">
+  <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test1_ontological-innovation/results/figures/tsne_with_labels.png" alt="Fig A.7"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+  <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Fig A.7</figcaption>
+</figure>
+            <figure class="fig-frame" style="cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test1_ontological-innovation/results/figures/extra_visualizations_row1.png" data-label="Fig A.8–A.9" data-desc="T1 supplementary diagnostics 1–2: traceable vs. non-traceable composition; modality–literature similarity correlation"   onclick="openLightbox(this)" title="Click to enlarge">
+  <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test1_ontological-innovation/results/figures/extra_visualizations_row1.png" alt="Fig A.8–A.9"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+  <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Fig A.8–A.9</figcaption>
+</figure>
+            <figure class="fig-frame" style="cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test2_epistemic-agency/results/figures/projection_method_comparison.png" data-label="Fig A.10–A.11" data-desc="T2 classification algorithm flowchart — 3-stage (stem → lexicon → domain) &amp;amp; projection reliability diagnostics"   onclick="openLightbox(this)" title="Click to enlarge">
+  <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test2_epistemic-agency/results/figures/projection_method_comparison.png" alt="Fig A.10–A.11"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+  <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Fig A.10–A.11</figcaption>
+</figure>
+            <figure class="fig-frame" style="cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test2_epistemic-agency/results/figures/diagnostic_visualizations.png" data-label="Fig A.12" data-desc="T2 diagnostic summary dashboard: Bloom distribution by model, similarity profile, question length, pairwise correlation"   onclick="openLightbox(this)" title="Click to enlarge">
+  <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test2_epistemic-agency/results/figures/diagnostic_visualizations.png" alt="Fig A.12"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+  <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Fig A.12</figcaption>
+</figure>
+            <figure class="fig-frame" style="cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test2_epistemic-agency/results/figures/question_classification.png" data-label="Table A.4" data-desc="T2 pairwise model comparisons (χ² with Bonferroni correction) — 10 significant contrasts; LLaMA &amp;amp; GPT-5.2 main drivers"   onclick="openLightbox(this)" title="Click to enlarge">
+  <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test2_epistemic-agency/results/figures/question_classification.png" alt="Table A.4"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+  <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Table A.4</figcaption>
+</figure>
+            <figure class="fig-frame" style="cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test1_ontological-innovation/results/figures/classification_summary.png" data-label="Table A.1 / A.2" data-desc="Cross-test threshold configuration registry (thresholds.py) — T1=0.40, T2=0.62/0.67, T3=0.30/0.70, T4=0.40"   onclick="openLightbox(this)" title="Click to enlarge">
+  <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test1_ontological-innovation/results/figures/classification_summary.png" alt="Table A.1 / A.2"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+  <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Table A.1 / A.2</figcaption>
+</figure>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+  SLIDE 15 — APPENDIX B: T3 + T4 + T5 Figures
+════════════════════════════════════════════ -->
+<div class="slide" data-slide="15">
+    <div class="gradient-mesh">
+        <div class="blob" style="width:340px;height:340px;top:-70px;left:-50px;background:#a78bfa;opacity:0.07;"></div>
+        <div class="blob" style="width:220px;height:220px;bottom:-40px;right:-30px;background:#818cf8;opacity:0.06;"></div>
+    </div>
+    <div class="content">
+        <p class="reveal" style="font-size:1.1rem;letter-spacing:0.14em;text-transform:uppercase;color:#64748b;margin-bottom:0.4rem;">Appendix — Additional Figures</p>
+        <h2 class="font-display reveal" style="font-size:clamp(1.534rem,2.5vw,2.124rem);font-weight:700;margin-bottom:0.9rem;">T3, T4 &amp; Mechanistic Supplementary Figures</h2>
+        <div class="reveal" style="display:grid;grid-template-columns:repeat(4,1fr);gap:0.7rem;">
+            <figure class="fig-frame" style="cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test3_theory-generation/results/figures/theory_dendrogram_full.png" data-label="Fig A.17–A.18" data-desc="T3 full hierarchical dendrogram (cosine dist, avg linkage) — no detached external branches. Truncated view (top 20 branches) for readability."   onclick="openLightbox(this)" title="Click to enlarge">
+  <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test3_theory-generation/results/figures/theory_dendrogram_full.png" alt="Fig A.17–A.18"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+  <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Fig A.17–A.18</figcaption>
+</figure>
+            <figure class="fig-frame" style="cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test3_theory-generation/results/figures/theory_cluster_map_setupA_centroids_hulls.png" data-label="Fig A.19–A.21" data-desc="T3 cluster centroids &amp;amp; convex hulls (Setup A–C). AI points inside known family neighborhoods. Coarser clustering at threshold 0.40."   onclick="openLightbox(this)" title="Click to enlarge">
+  <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test3_theory-generation/results/figures/theory_cluster_map_setupA_centroids_hulls.png" alt="Fig A.19–A.21"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+  <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Fig A.19–A.21</figcaption>
+</figure>
+            <figure class="fig-frame" style="cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test3_theory-generation/results/figures/cf_vs_novelty.png" data-label="Fig A.13–A.15" data-desc="T3 CF-confidence vs. novelty scatter — no low-CF/high-novelty region. Threshold robustness. Corpus-coverage stress test."   onclick="openLightbox(this)" title="Click to enlarge">
+  <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test3_theory-generation/results/figures/cf_vs_novelty.png" alt="Fig A.13–A.15"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+  <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Fig A.13–A.15</figcaption>
+</figure>
+            <figure class="fig-frame" style="cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test3_theory-generation/results/figures/theory_similarity_heatmap.png" data-label="Fig A.16 / Table A.7" data-desc="T3 theory similarity heatmap (30 theories × known families). Dense recurrent-processing/workspace neighborhoods. y-axis index map."   onclick="openLightbox(this)" title="Click to enlarge">
+  <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test3_theory-generation/results/figures/theory_similarity_heatmap.png" alt="Fig A.16 / Table A.7"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+  <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Fig A.16 / Table A.7</figcaption>
+</figure>
+            <figure class="fig-frame" style="cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test4_category-recognition/results/figures/total_score_by_model.png" data-label="Fig A.22 / Table A.15" data-desc="T4 mean total score by model. Pairwise comparisons (Bonferroni) — 16/21 pairs significant. Tier structure: GPT-5.2, Mistral ≫ LLaMA."   onclick="openLightbox(this)" title="Click to enlarge">
+  <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test4_category-recognition/results/figures/total_score_by_model.png" alt="Fig A.22 / Table A.15"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+  <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Fig A.22 / Table A.15</figcaption>
+</figure>
+            <figure class="fig-frame" style="cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test5_mechanistic/results/figures/attention_heads_grid.png" data-label="Fig A.23–A.24" data-desc="Per-head attention heatmaps (layer −1, 12 heads). Attention rollout across layers — aggregated information flow shows head specialization."   onclick="openLightbox(this)" title="Click to enlarge">
+  <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test5_mechanistic/results/figures/attention_heads_grid.png" alt="Fig A.23–A.24"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+  <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Fig A.23–A.24</figcaption>
+</figure>
+            <figure class="fig-frame" style="cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test6_cross_model/results/figures/cross_test_summary_ab.png" data-label="Fig A.25 / Table A.12" data-desc="Cross-model robustness summary dashboard. T5 mechanistic metrics: mean cluster purity 1.0, separation 0.465, entropy 2.49."   onclick="openLightbox(this)" title="Click to enlarge">
+  <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test6_cross_model/results/figures/cross_test_summary_ab.png" alt="Fig A.25 / Table A.12"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+  <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Fig A.25 / Table A.12</figcaption>
+</figure>
+            <figure class="fig-frame" style="cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test0_overview/results/figures/findings_dashboard_B.png" data-label="Table A.16" data-desc="Meta-analytic effect-size profile T1–T4: η²(T1)=0.326 moderate · η²(T2)=0.068 negligible · η²(T3)=0.040 n.s. · η²(T4)=0.766 large"   onclick="openLightbox(this)" title="Click to enlarge">
+  <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test0_overview/results/figures/findings_dashboard_B.png" alt="Table A.16"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+  <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Table A.16</figcaption>
+</figure>
+        </div>
+    </div>
+</div>
+
+</div><!-- end .deck -->
+
+<!-- NAVIGATION -->
+<div class="nav-controls">
+    <button class="nav-btn" onclick="changeSlide(-1)">&#8249;</button>
+    <div class="slide-dots" id="dots"></div>
+    <button class="nav-btn" onclick="changeSlide(1)">&#8250;</button>
+    <span class="slide-counter" id="counter">1 / 15</span>
+</div>
+
+<script>
+    let current = 1;
+    const total = document.querySelectorAll('.slide').length;
+    const dotsContainer = document.getElementById('dots');
+    const counter = document.getElementById('counter');
+    for (let i = 1; i <= total; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'dot' + (i === 1 ? ' active' : '');
+        dot.onclick = () => goToSlide(i);
+        dotsContainer.appendChild(dot);
+    }
+    function goToSlide(n) {
+        const prev = document.querySelector('.slide.active');
+        const next = document.querySelector(`.slide[data-slide="${n}"]`);
+        if (prev) prev.classList.remove('active');
+        if (next) { next.classList.add('active'); animateSlide(next); }
+        current = n; updateNav();
+    }
+    function changeSlide(dir) { let n = current + dir; if (n < 1) n = total; if (n > total) n = 1; goToSlide(n); }
+    function updateNav() {
+        document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i + 1 === current));
+        counter.textContent = current + ' / ' + total;
+    }
+    document.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); changeSlide(1); }
+        if (e.key === 'ArrowLeft') { e.preventDefault(); changeSlide(-1); }
+    });
+    let touchX = 0;
+    document.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; });
+    document.addEventListener('touchend', e => { const d = touchX - e.changedTouches[0].clientX; if (Math.abs(d) > 50) changeSlide(d > 0 ? 1 : -1); });
+
+    function animateSlide(slide) {
+        slide.querySelectorAll('.reveal').forEach((el, i) => {
+            el.style.transition = 'none';
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.offsetHeight;
+            const delay = i * 0.08;
+            el.style.transition = `opacity 0.35s ease ${delay}s, transform 0.35s ease ${delay}s`;
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0px)';
+        });
+    }
+
+    /* Mouse spotlight */
+    document.addEventListener('mousemove', e => {
+        const s = document.querySelector('.mouse-spotlight');
+        if (s) s.style.background = `radial-gradient(600px circle at ${e.clientX}px ${e.clientY}px, rgba(129,140,248,0.05), transparent 40%)`;
+    });
+
+    /* Particles */
+    window.initParticles = function(canvas, opts) {
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        canvas.width = canvas.offsetWidth || window.innerWidth;
+        canvas.height = canvas.offsetHeight || window.innerHeight;
+        const interactive = opts.interactive !== false;
+        const count = opts.count || (interactive ? 55 : 18);
+        let mx = -1000, my = -1000;
+        const particles = Array.from({ length: count }, () => ({
+            x: Math.random() * canvas.width, y: Math.random() * canvas.height,
+            vx: (Math.random() - 0.5) * 0.3, vy: (Math.random() - 0.5) * 0.3,
+            size: Math.random() * 2.5 + 0.8, alpha: Math.random() * 0.3 + 0.08
+        }));
+        if (interactive) {
+            canvas.addEventListener('mousemove', e => { const r = canvas.getBoundingClientRect(); mx = e.clientX - r.left; my = e.clientY - r.top; });
+            canvas.addEventListener('mouseleave', () => { mx = -1000; my = -1000; });
+        }
+        (function tick() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                if (interactive) { const dx = p.x - mx, dy = p.y - my, dist = Math.sqrt(dx*dx+dy*dy); if (dist < 120) { const f = (120-dist)/120*2; p.vx += (dx/dist)*f*0.1; p.vy += (dy/dist)*f*0.1; } }
+                p.vx *= 0.98; p.vy *= 0.98; p.x += p.vx; p.y += p.vy;
+                if (p.x < 0) p.x = canvas.width; if (p.x > canvas.width) p.x = 0;
+                if (p.y < 0) p.y = canvas.height; if (p.y > canvas.height) p.y = 0;
+                ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(129,140,248,${p.alpha})`; ctx.fill();
+            });
+            requestAnimationFrame(tick);
+        })();
+    };
+    document.querySelectorAll('.particle-canvas').forEach(c => window.initParticles(c, { interactive: true, count: 55 }));
+    document.querySelectorAll('.particle-canvas-ambient').forEach(c => window.initParticles(c, { interactive: false, count: 18 }));
+
+    try { animateSlide(document.querySelector('.slide.active')); } catch(e) {}
+
+    /* ── LIGHTBOX ── */
+    function openLightbox(el) {
+        var overlay = document.getElementById('lb-overlay');
+        var img     = document.getElementById('lb-img');
+        var cap     = document.getElementById('lb-caption');
+        var desc    = document.getElementById('lb-desc');
+        img.src     = el.dataset.src || el.querySelector('img').src;
+        cap.textContent  = el.dataset.label  || '';
+        desc.textContent = el.dataset.desc   || '';
+        overlay.classList.add('open');
+        document.addEventListener('keydown', lbKeyHandler);
+    }
+    function closeLightbox(e) {
+        if (e && e.target.id === 'lb-img') return; // don't close when clicking image
+        document.getElementById('lb-overlay').classList.remove('open');
+        document.getElementById('lb-img').src = '';
+        document.removeEventListener('keydown', lbKeyHandler);
+    }
+    function lbKeyHandler(e) {
+        if (e.key === 'Escape') closeLightbox(null);
+    }
+
+
+    /* ── 16:9 SCALE-TO-FIT ── */
+    function fitDeck() {
+        var deck = document.querySelector('.deck');
+        if (!deck) return;
+        var W = 1920, H = 1080;
+        var sw = window.innerWidth, sh = window.innerHeight;
+        var scale = Math.min(sw / W, sh / H);
+        deck.style.transform = 'scale(' + scale + ')';
+    }
+    fitDeck();
+    window.addEventListener('resize', fitDeck);
+
+
+    /* ── THEME TOGGLE ── */
+    function toggleTheme() {
+        var btn = document.getElementById('theme-toggle');
+        if (document.documentElement.classList.toggle('theme-light')) {
+            btn.textContent = '☀️';
+            btn.title = 'Switch to dark theme';
+        } else {
+            btn.textContent = '🌙';
+            btn.title = 'Switch to light theme';
+        }
+    }
+
+</script>
+</body>
+</html>
