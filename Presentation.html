@@ -7,7 +7,8 @@
     <title>Structural Limits of Training-Derived Information-Processing Systems — Defense</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800&family=IBM+Plex+Sans+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style type="text/tailwindcss">
         @theme {
@@ -48,6 +49,17 @@
         .slide-dots .dot.active { background: #818cf8; transform: scale(1.3); }
         .slide-counter { font-size: 0.75rem; color: #64748b; min-width: 40px; text-align: center; font-family: 'Inter', sans-serif; }
         .reveal { opacity: 0; transform: translateY(20px); }
+
+        /* Math rendering (KaTeX) */
+        .katex { font-size: 1em; }
+        .katex-display {
+            margin: 0.6em 0;
+            text-align: center;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 0.1em 0.05em;
+        }
+        .katex-display > .katex { font-size: 1.08em; }
 
         /* Glow */
         .text-glow { text-shadow: 0 0 20px rgba(129,140,248,0.5), 0 0 40px rgba(129,140,248,0.2); }
@@ -117,7 +129,7 @@
         #lb-overlay.open { display: flex; }
         #lb-img {
             max-width: 92vw;
-            max-height: 84vh;
+            max-height: 70vh;
             object-fit: contain;
             border-radius: 10px;
             box-shadow: 0 8px 60px rgba(0,0,0,0.7);
@@ -149,6 +161,70 @@
             z-index: 9001; transition: background 0.2s;
         }
         #lb-close:hover { background: rgba(255,255,255,0.18); }
+
+        /* ── Text popup for framed text blocks ── */
+        .text-popup-frame {
+            cursor: zoom-in;
+            transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+        }
+        .text-popup-frame:hover {
+            border-color: rgba(124,158,248,0.45) !important;
+            box-shadow: 0 0 16px rgba(124,158,248,0.18);
+            transform: translateY(-1px);
+        }
+        #tb-overlay {
+            position: fixed; inset: 0; z-index: 9050;
+            background: rgba(4,6,16,0.93);
+            backdrop-filter: blur(14px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 3.5vh 4vw;
+        }
+        #tb-overlay.open { display: flex; }
+        #tb-panel {
+            width: min(1100px, 92vw);
+            max-height: 88vh;
+            overflow: auto;
+            background: rgba(17,24,39,0.96);
+            border: 1px solid rgba(129,140,248,0.3);
+            border-radius: 12px;
+            box-shadow: 0 16px 70px rgba(0,0,0,0.65);
+            padding: 1.2rem 1.3rem 1.1rem;
+        }
+        #tb-title {
+            font-size: 1.08rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #93c5fd;
+            margin: 0 0 0.55rem;
+        }
+        #tb-content-en,
+        #tb-content-ru {
+            font-size: 1.25rem;
+            line-height: 1.75;
+            color: #e2e8f0;
+            white-space: pre-wrap;
+        }
+        #tb-content-ru {
+            margin-top: 0.6rem;
+            padding-top: 0.55rem;
+            border-top: 1px solid rgba(129,140,248,0.22);
+            font-size: 0.98rem;
+            line-height: 1.55;
+            color: #a5b4fc;
+        }
+        #tb-close {
+            position: fixed; top: 20px; right: 74px;
+            width: 38px; height: 38px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 50%;
+            color: #e8eaf2; font-size: 1.1rem;
+            cursor: pointer; display: flex; align-items: center; justify-content: center;
+            z-index: 9051; transition: background 0.2s;
+        }
+        #tb-close:hover { background: rgba(255,255,255,0.18); }
         /* Zoom-in cursor hint on figures */
         .fig-frame::after {
             content: '🔍';
@@ -332,15 +408,28 @@
         html.theme-light #lb-caption { color: #334155 !important; }
         html.theme-light #lb-desc { color: #64748b !important; }
         html.theme-light #lb-close { background: rgba(0,0,0,0.08) !important; color: #0f172a !important; border-color: rgba(0,0,0,0.12) !important; }
+        html.theme-light #tb-overlay { background: rgba(240,242,248,0.96) !important; }
+        html.theme-light #tb-panel {
+            background: rgba(255,255,255,0.97) !important;
+            border-color: rgba(99,102,241,0.28) !important;
+            box-shadow: 0 14px 56px rgba(15,23,42,0.18) !important;
+        }
+        html.theme-light #tb-title { color: #334155 !important; }
+        html.theme-light #tb-content-en { color: #0f172a !important; }
+        html.theme-light #tb-content-ru {
+            color: #475569 !important;
+            border-top-color: rgba(100,116,139,0.28) !important;
+        }
+        html.theme-light #tb-close { background: rgba(0,0,0,0.08) !important; color: #0f172a !important; border-color: rgba(0,0,0,0.12) !important; }
         html.theme-light .mouse-spotlight { display: none !important; }
         html.theme-light body { background: var(--lt-bg) !important; }
         html.theme-light .deck { background: var(--lt-bg) !important; }
 
         /* ══ THEME TOGGLE BUTTON ══ */
-        #theme-toggle {
+        #theme-toggle,
+        #lang-toggle {
             position: fixed;
             top: 18px;
-            right: 22px;
             z-index: 200;
             width: 44px;
             height: 44px;
@@ -358,8 +447,12 @@
             color: #e2e8f0;
             box-shadow: 0 2px 12px rgba(0,0,0,0.25);
         }
-        #theme-toggle:hover { transform: scale(1.1); background: rgba(129,140,248,0.18); }
-        html.theme-light #theme-toggle { border-color: rgba(0,0,0,0.12); background: rgba(255,255,255,0.85); color: #334155; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        #theme-toggle { right: 22px; }
+        #lang-toggle { right: 74px; }
+        #theme-toggle:hover,
+        #lang-toggle:hover { transform: scale(1.1); background: rgba(129,140,248,0.18); }
+        html.theme-light #theme-toggle,
+        html.theme-light #lang-toggle { border-color: rgba(0,0,0,0.12); background: rgba(255,255,255,0.85); color: #334155; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
 
 
         /* ── Slide 7: remove top padding gap ── */
@@ -370,13 +463,25 @@
             flex: 0 0 auto !important;
             margin-bottom: 0.1rem !important;
         }
+
+        /* ══ COMPACT RU TYPOGRAPHY ══ */
+        html.lang-ru body {
+            font-family: 'IBM Plex Sans Condensed', 'Inter', system-ui, sans-serif !important;
+            letter-spacing: -0.004em;
+        }
+        html.lang-ru .font-display {
+            font-family: 'IBM Plex Sans Condensed', 'Inter', system-ui, sans-serif !important;
+            font-style: normal !important;
+            letter-spacing: -0.01em;
+        }
         /* The grid (last reveal) grows to fill */
         .slide-7-fix > .content > .reveal:last-child {
             flex: 1 1 0 !important;
             min-height: 0 !important;
             display: grid !important;
-            grid-template-columns: 1fr 1fr !important;
-            gap: 1.1rem !important;
+            grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+            grid-template-rows: repeat(2, minmax(0, 1fr)) !important;
+            gap: 0.9rem !important;
             align-items: stretch !important;
         }
 
@@ -476,6 +581,42 @@
             height: 100% !important;
         }
 
+        /* ── Slide 5: balanced card grid, no dead spacer area ── */
+        .slide[data-slide="5"] > .content {
+            display: flex !important;
+            flex-direction: column !important;
+            height: calc(1080px - 40px) !important;
+            max-height: calc(1080px - 40px) !important;
+            justify-content: flex-start !important;
+            padding-top: 0.6rem !important;
+        }
+        .slide[data-slide="5"] .method-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-template-rows: repeat(3, minmax(0, 1fr));
+            gap: 0.65rem;
+            flex: 1 1 0;
+            min-height: 0;
+        }
+        .slide[data-slide="5"] .method-card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 1rem !important;
+        }
+        .slide[data-slide="5"] .method-card p:first-child {
+            font-size: 1.05rem !important;
+            margin-bottom: 0.52rem !important;
+        }
+        .slide[data-slide="5"] .method-card p:nth-child(2) {
+            flex: 1 1 auto;
+            font-size: 1.01rem !important;
+            line-height: 1.4 !important;
+        }
+        .slide[data-slide="5"] .method-card p:last-child {
+            font-size: 0.98rem !important;
+        }
+
 </style>
 </head>
 <body>
@@ -488,8 +629,19 @@
     <p id="lb-desc"></p>
 </div>
 
+<!-- ── TEXT POPUP ── -->
+<div id="tb-overlay" onclick="closeTextPopup(event)">
+    <button id="tb-close" onclick="closeTextPopup(null)" title="Close (Esc)">✕</button>
+    <div id="tb-panel" onclick="event.stopPropagation()">
+        <p id="tb-title">Text Frame</p>
+        <div id="tb-content-en"></div>
+        <div id="tb-content-ru">Загрузка перевода...</div>
+    </div>
+</div>
+
 
 <button id="theme-toggle" title="Toggle light/dark theme" onclick="toggleTheme()">🌙</button>
+<button id="lang-toggle" title="Switch language" onclick="toggleLanguage()">🇬🇧</button>
 <div class="mouse-spotlight" style="position:fixed;inset:0;z-index:99;pointer-events:none;"></div>
 
 <div class="deck">
@@ -505,7 +657,9 @@
     </div>
     <canvas class="particle-canvas" style="position:absolute;inset:0;z-index:1;width:100%;height:100%;"></canvas>
     <div class="content text-center">
-        <div style="font-size:4.86rem;margin-bottom:1.2rem;animation:float 3s ease-in-out infinite;" class="reveal">🧠</div>
+        <div style="margin-bottom:1.1rem;animation:float 3s ease-in-out infinite;display:inline-flex;align-items:center;justify-content:center;padding:0.55rem 0.85rem;background:rgba(255,255,255,0.92);border:1px solid rgba(255,255,255,0.45);border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,0.28);" class="reveal">
+            <img src="https://raw.githubusercontent.com/JABE22/Image/main/Logos/UrFU-Blue.png" alt="UrFU logo" style="width:clamp(7.2rem,13vw,10.5rem);height:auto;display:block;filter:drop-shadow(0 2px 6px rgba(10,30,80,0.18));">
+        </div>
         <div class="accent-line mx-auto mb-6 reveal"></div>
         <h1 class="font-display reveal" style="font-size:clamp(1.888rem,3.8vw,3.776rem);font-weight:700;background:linear-gradient(135deg,#818cf8,#38bdf8,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.2;margin-bottom:1rem;">
             Structural Limits of Training-Derived<br>Information-Processing Systems
@@ -529,7 +683,7 @@
     </div>
     <div class="content">
         <p class="reveal" style="font-size:1.1rem;letter-spacing:0.14em;text-transform:uppercase;color:#818cf8;margin-bottom:0.5rem;">Motivation & Research Questions</p>
-        <h2 class="font-display reveal" style="font-size:clamp(1.888rem,3.2vw,2.832rem);font-weight:700;margin-bottom:0.6rem;line-height:1.2;">What Can Generative AI<br><em>Actually</em> Do?</h2>
+        <h2 class="font-display reveal" style="font-size:clamp(1.888rem,3.2vw,2.832rem);font-weight:700;margin-bottom:0.6rem;line-height:1.2;">What Can Generative AI <em>Actually</em> Do?</h2>
         <div class="accent-line reveal" style="margin-bottom:1.5rem;"></div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;" class="reveal">
             <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:1.2rem;">
@@ -608,36 +762,33 @@
         <p class="reveal" style="font-size:1.1rem;letter-spacing:0.14em;text-transform:uppercase;color:#38bdf8;margin:0;">Experimental Design — Dataset</p>
         <h2 class="font-display reveal" style="font-size:clamp(1.4rem,2.3vw,2rem);font-weight:700;margin:0;">Multimodal Sensory Dataset &amp; Test Suite</h2>
 
-        <!-- Figure + stat cards — side by side, equal height row -->
-        <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:0.9rem;align-items:stretch;">
-            <figure class="fig-frame" style="cursor:pointer;min-height:240px;max-height:320px;" data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/data/example_scenarios_compact.png" data-label="Figure 2 / Fig A.1–A.2" data-desc="Seven normalized scenario families (Walking Outdoor, Running, Sitting Indoor, Eating, Drinking, Listening Music, Viewing Screen) — 8 modalities per scenario — train/val/test splits" onclick="openLightbox(this)" title="Click to enlarge">
-              <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/data/example_scenarios_compact.png" alt="Figure 2 / Fig A.1–A.2" style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
-              <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.65rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Figure 2 / Fig A.1–A.2</figcaption>
+        <div class="reveal" style="display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:auto auto auto;gap:0.7rem;align-items:stretch;min-height:0;">
+            <figure class="fig-frame" style="grid-column:1;grid-row:1 / 3;cursor:pointer;min-height:0;height:100%;" data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/data/example_scenarios_compact.png" data-label="Representative multimodal dataset examples" data-desc="Representative examples from the generated multimodal sensory dataset with modality blocks over time." onclick="openLightbox(this)" title="Click to enlarge">
+                <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/data/example_scenarios_compact.png" alt="Representative multimodal dataset examples" style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+                <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.65rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Representative multimodal dataset examples</figcaption>
             </figure>
-            <div style="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:0.6rem;">
-                <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:0.75rem;text-align:center;display:flex;flex-direction:column;justify-content:center;">
-                    <p class="stat-glow" style="font-size:1.85rem;font-weight:800;color:#818cf8;margin:0;">7</p>
-                    <p style="font-size:0.95rem;color:#94a3b8;text-transform:uppercase;letter-spacing:0.08em;margin:0;">Scenario<br>Families</p>
-                </div>
-                <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:0.75rem;text-align:center;display:flex;flex-direction:column;justify-content:center;">
-                    <p class="stat-glow" style="font-size:1.85rem;font-weight:800;color:#38bdf8;margin:0;">8</p>
-                    <p style="font-size:0.95rem;color:#94a3b8;text-transform:uppercase;letter-spacing:0.08em;margin:0;">Sensory<br>Modalities</p>
-                </div>
-                <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:0.75rem;text-align:center;display:flex;flex-direction:column;justify-content:center;">
-                    <p class="stat-glow" style="font-size:1.85rem;font-weight:800;color:#a78bfa;margin:0;">7</p>
-                    <p style="font-size:0.95rem;color:#94a3b8;text-transform:uppercase;letter-spacing:0.08em;margin:0;">AI Models<br>Tested</p>
-                </div>
-                <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:0.75rem;text-align:center;display:flex;flex-direction:column;justify-content:center;">
-                    <p class="stat-glow" style="font-size:1.85rem;font-weight:800;color:#818cf8;margin:0;">4+1</p>
-                    <p style="font-size:0.95rem;color:#94a3b8;text-transform:uppercase;letter-spacing:0.08em;margin:0;">Test<br>Families</p>
-                </div>
-            </div>
-        </div>
 
-        <!-- Bottom info bar — full width, flows naturally BELOW the grid, no overlap -->
-        <div class="reveal" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:0.6rem 1rem;width:100%;">
-            <p style="font-size:0.95rem;color:#94a3b8;margin:0 0 0.25rem 0;line-height:1.5;"><span style="color:#818cf8;font-weight:600;">Models evaluated:</span> GPT-5.2 · Claude-3.7-Sonnet · DeepSeek-v3.2 · Gemini-3.1-Pro-Preview · LLaMA-3.3-70B · Mistral-Large · Perplexity-Sonar-Pro</p>
-            <p style="font-size:0.95rem;color:#94a3b8;margin:0;line-height:1.5;"><span style="color:#38bdf8;font-weight:600;">Diagnostics:</span> Traceability (OpenAlex similarity) · Embedding geometry (PCA/t-SNE) · Mechanistic signals (activations, attention) · Statistical inference (ANOVA, χ², effect sizes)</p>
+            <div style="grid-column:2;grid-row:1;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:0.72rem;text-align:center;display:flex;flex-direction:column;justify-content:center;min-height:0;">
+                <p class="stat-glow" style="font-size:1.85rem;font-weight:800;color:#818cf8;margin:0;">7</p>
+                <p style="font-size:0.95rem;color:#94a3b8;text-transform:uppercase;letter-spacing:0.08em;margin:0;">Scenario<br>Families</p>
+            </div>
+            <div style="grid-column:3;grid-row:1;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:0.72rem;text-align:center;display:flex;flex-direction:column;justify-content:center;min-height:0;">
+                <p class="stat-glow" style="font-size:1.85rem;font-weight:800;color:#38bdf8;margin:0;">8</p>
+                <p style="font-size:0.95rem;color:#94a3b8;text-transform:uppercase;letter-spacing:0.08em;margin:0;">Sensory<br>Modalities</p>
+            </div>
+            <div style="grid-column:2;grid-row:2;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:0.72rem;text-align:center;display:flex;flex-direction:column;justify-content:center;min-height:0;">
+                <p class="stat-glow" style="font-size:1.85rem;font-weight:800;color:#a78bfa;margin:0;">7</p>
+                <p style="font-size:0.95rem;color:#94a3b8;text-transform:uppercase;letter-spacing:0.08em;margin:0;">AI Models<br>Tested</p>
+            </div>
+            <div style="grid-column:3;grid-row:2;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:0.72rem;text-align:center;display:flex;flex-direction:column;justify-content:center;min-height:0;">
+                <p class="stat-glow" style="font-size:1.85rem;font-weight:800;color:#818cf8;margin:0;">4+1</p>
+                <p style="font-size:0.95rem;color:#94a3b8;text-transform:uppercase;letter-spacing:0.08em;margin:0;">Test<br>Families</p>
+            </div>
+
+            <div style="grid-column:1 / 4;grid-row:3;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:0.6rem 1rem;min-height:0;">
+                <p style="font-size:0.95rem;color:#94a3b8;margin:0 0 0.25rem 0;line-height:1.5;"><span style="color:#818cf8;font-weight:600;">Models evaluated:</span> GPT-5.2 · Claude-3.7-Sonnet · DeepSeek-v3.2 · Gemini-3.1-Pro-Preview · LLaMA-3.3-70B · Mistral-Large · Perplexity-Sonar-Pro</p>
+                <p style="font-size:0.95rem;color:#94a3b8;margin:0;line-height:1.5;"><span style="color:#38bdf8;font-weight:600;">Diagnostics:</span> Traceability (OpenAlex similarity) · Embedding geometry (PCA/t-SNE) · Mechanistic signals (activations, attention) · Statistical inference (ANOVA, χ², effect sizes)</p>
+            </div>
         </div>
     </div>
 </div>
@@ -653,37 +804,37 @@
     <div class="content">
         <p class="reveal" style="font-size:1.0rem;letter-spacing:0.14em;text-transform:uppercase;color:#818cf8;margin-bottom:0.35rem;">Methodology — Four Tests</p>
         <h2 class="font-display reveal" style="font-size:clamp(1.5rem,2.5vw,1.9rem);font-weight:700;margin-bottom:0.7rem;">Convergent Diagnostic Test Suite (T1–T4 + T5)</h2>
-        <div class="reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.65rem;">
-            <div style="background:rgba(129,140,248,0.08);border:1px solid rgba(129,140,248,0.2);border-radius:10px;padding:0.85rem;grid-column:span 1;">
+        <div class="reveal method-grid">
+            <div class="method-card" style="background:rgba(129,140,248,0.08);border:1px solid rgba(129,140,248,0.2);border-radius:10px;padding:0.85rem;">
                 <p style="font-size:0.98rem;font-weight:700;color:#818cf8;text-transform:uppercase;margin-bottom:0.4rem;">T1 — Innovation</p>
                 <p style="font-size:0.98rem;color:#94a3b8;line-height:1.4;">New sensory modality proposals tested for basis-change vs. recombination. n=24/model. Frontier bands + convex hull (PCA)</p>
                 <p style="font-size:0.98rem;color:#818cf8;margin-top:0.35rem;">η²=0.326 moderate</p>
             </div>
-            <div style="background:rgba(56,189,248,0.06);border:1px solid rgba(56,189,248,0.16);border-radius:10px;padding:0.85rem;">
+            <div class="method-card" style="background:rgba(56,189,248,0.06);border:1px solid rgba(56,189,248,0.16);border-radius:10px;padding:0.85rem;">
                 <p style="font-size:0.98rem;font-weight:700;color:#38bdf8;text-transform:uppercase;margin-bottom:0.4rem;">T2 — Agency</p>
                 <p style="font-size:0.98rem;color:#94a3b8;line-height:1.4;">Epistemic agency: resisting flawed framings, proposing principled reframings. n=120/model. Bloom taxonomy + traceability</p>
                 <p style="font-size:0.98rem;color:#38bdf8;margin-top:0.35rem;">V=0.166 small</p>
             </div>
-            <div style="background:rgba(167,139,250,0.06);border:1px solid rgba(167,139,250,0.16);border-radius:10px;padding:0.85rem;">
+            <div class="method-card" style="background:rgba(167,139,250,0.06);border:1px solid rgba(167,139,250,0.16);border-radius:10px;padding:0.85rem;">
                 <p style="font-size:0.98rem;font-weight:700;color:#a78bfa;text-transform:uppercase;margin-bottom:0.4rem;">T3 — Theories</p>
                 <p style="font-size:0.98rem;color:#94a3b8;line-height:1.4;">Consciousness theory generation — novel explanatory types vs. template collapse. n=24/model. Hybrid/traceable classification</p>
                 <p style="font-size:0.98rem;color:#a78bfa;margin-top:0.35rem;">η²=0.040 n.s.</p>
             </div>
-            <div style="background:transparent;border:none;"></div>
-            <div style="background:rgba(129,140,248,0.08);border:1px solid rgba(129,140,248,0.2);border-radius:10px;padding:0.85rem;">
+            <div class="method-card" style="background:rgba(129,140,248,0.08);border:1px solid rgba(129,140,248,0.2);border-radius:10px;padding:0.85rem;">
                 <p style="font-size:0.98rem;font-weight:700;color:#818cf8;text-transform:uppercase;margin-bottom:0.4rem;">T4 — Category</p>
                 <p style="font-size:0.98rem;color:#94a3b8;line-height:1.4;">Category-mistake detection: recognise distinction → identify mistake → propose framework. n=24/model. 3-dim rubric</p>
                 <p style="font-size:0.98rem;color:#818cf8;margin-top:0.35rem;">η²=0.766 large</p>
             </div>
-            <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:0.85rem;">
+            <div class="method-card" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:0.85rem;">
                 <p style="font-size:0.98rem;font-weight:700;color:#64748b;text-transform:uppercase;margin-bottom:0.4rem;">T5 — Mechanistic</p>
                 <p style="font-size:0.98rem;color:#94a3b8;line-height:1.4;">Activation clustering (k=4, purity=1.0), attention entropy, layer-wise progression, per-head heatmaps</p>
                 <p style="font-size:0.98rem;color:#64748b;margin-top:0.35rem;">Sep. score 0.465</p>
             </div>
-        </div>
-        <!-- ANOVA table row -->
-        <div class="reveal" style="margin-top:0.6rem;">
-            <div class="fig-frame" style="height:64px;flex-direction:row;gap:0.35rem;padding:0.4rem 0.8rem;font-size:0.95rem;color:#94a3b8;letter-spacing:0.02em;"><span>📋</span><span style="flex:1;">📋 Table 1 — ANOVA Summary: F(T1)=12.98 p&amp;lt;.001 · F(T2)=10.09 p&amp;lt;.001 · F(T3)=1.12 n.s. · F(T4)=88.06 p&amp;lt;.001 &amp;nbsp;|&amp;nbsp; Pre-registered thresholds: T1=0.40 · T2=0.62/0.67 · T3=0.30/0.70 · T4=0.40</span></div>
+            <div class="method-card" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:0.85rem;">
+                <p style="font-size:0.98rem;font-weight:700;color:#cbd5e1;text-transform:uppercase;margin-bottom:0.4rem;">T6 — ANOVA Summary</p>
+                <p style="font-size:0.95rem;color:#94a3b8;line-height:1.4;">F(T1)=12.98, p&lt;.001 · F(T2)=10.09, p&lt;.001 · F(T3)=1.12, n.s. · F(T4)=88.06, p&lt;.001</p>
+                <p style="font-size:0.95rem;color:#cbd5e1;margin-top:0.35rem;">Thresholds: T1=0.40 · T2=0.62/0.67 · T3=0.30/0.70 · T4=0.40</p>
+            </div>
         </div>
     </div>
 </div>
@@ -703,24 +854,24 @@
         <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;align-items:stretch;flex:1 1 0;min-height:0;">
             <!-- LEFT: two figs stacked vertically, 50% width -->
             <div style="display:flex;flex-direction:column;gap:0.75rem;min-height:0;">
-            <figure class="fig-frame" style="flex:1 1 0;min-height:0;cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test1_ontological-innovation/results/figures/novelty_frontier_bands_by_model.png" data-label="Fig 2.5–2.6 / Fig 4a" data-desc="Novelty-frontier band assignment (near/moderate/far/missing) — share of proposals per model"   onclick="openLightbox(this)" title="Click to enlarge">
-  <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test1_ontological-innovation/results/figures/novelty_frontier_bands_by_model.png" alt="Fig 2.5–2.6 / Fig 4a"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
-  <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Fig 2.5–2.6 / Fig 4a</figcaption>
+                        <figure class="fig-frame" style="flex:1 1 0;min-height:0;cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test1_ontological-innovation/results/figures/novelty_frontier_bands_by_model.png" data-label="Test 1 novelty-frontier diagnostics by model" data-desc="Novelty-frontier band assignment (near/moderate/far/missing) — share of proposals per model"   onclick="openLightbox(this)" title="Click to enlarge">
+    <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test1_ontological-innovation/results/figures/novelty_frontier_bands_by_model.png" alt="Test 1 novelty-frontier diagnostics by model"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+    <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Test 1 novelty-frontier diagnostics by model</figcaption>
 </figure>
-            <figure class="fig-frame" style="cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test1_ontological-innovation/results/figures/embedding_space_2d.png" data-label="Fig 2.8 / Fig 5" data-desc="Embedding-space PCA — proposals inside convex hull of training modalities (blue circles = training, squares = proposals)"   onclick="openLightbox(this)" title="Click to enlarge">
-  <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test1_ontological-innovation/results/figures/embedding_space_2d.png" alt="Fig 2.8 / Fig 5"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
-  <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Fig 2.8 / Fig 5</figcaption>
+                        <figure class="fig-frame" style="cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test1_ontological-innovation/results/figures/embedding_space_2d.png" data-label="Embedding-space analysis for Test 1 proposals" data-desc="Embedding-space PCA — proposals inside convex hull of training modalities (blue circles = training, squares = proposals)"   onclick="openLightbox(this)" title="Click to enlarge">
+    <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test1_ontological-innovation/results/figures/embedding_space_2d.png" alt="Embedding-space analysis for Test 1 proposals"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+    <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Embedding-space analysis for Test 1 proposals</figcaption>
 </figure>
             </div><!-- end left fig column -->
             <!-- RIGHT: text panel 50% width -->
             <div style="display:flex;flex-direction:column;gap:0.7rem;min-height:0;">
                 <div style="background:rgba(129,140,248,0.07);border:1px solid rgba(129,140,248,0.18);border-radius:10px;padding:0.85rem;">
-                    <p style="font-size:1.02rem;font-weight:700;color:#818cf8;margin-bottom:0.3rem;">Key Findings</p>
+                    <p style="font-size:1.42rem;font-weight:700;color:#818cf8;margin-bottom:0.42rem;">Key Findings</p>
                     <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.35rem;">
-                        <li style="font-size:0.98rem;color:#94a3b8;">• All proposals within convex hull of training set in PCA-reduced space</li>
-                        <li style="font-size:0.98rem;color:#94a3b8;">• Proposals concentrate in low-novelty / frontier-proximal regions</li>
-                        <li style="font-size:0.98rem;color:#94a3b8;">• Traceability rate: ~98% across models</li>
-                        <li style="font-size:0.98rem;color:#94a3b8;">• GPT-5.2 lowest novelty score (outlier); LLaMA/Claude highest (still within manifold)</li>
+                        <li style="font-size:1.30rem;color:#94a3b8;">• All proposals within convex hull of training set in PCA-reduced space</li>
+                        <li style="font-size:1.30rem;color:#94a3b8;">• Proposals concentrate in low-novelty / frontier-proximal regions</li>
+                        <li style="font-size:1.30rem;color:#94a3b8;">• Traceability rate: ~98% across models</li>
+                        <li style="font-size:1.30rem;color:#94a3b8;">• GPT-5.2 lowest novelty score (outlier); LLaMA/Claude highest (still within manifold)</li>
                     </ul>
                 </div>
                 <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:0.85rem;">
@@ -740,67 +891,61 @@
         <div class="blob" style="width:240px;height:240px;bottom:-50px;right:-40px;background:#818cf8;opacity:0.07;"></div>
     </div>
     <div class="content">
-        <p class="reveal" style="font-size:1.1rem;letter-spacing:0.14em;text-transform:uppercase;color:#38bdf8;margin-bottom:0.35rem;">Results — Test 2</p>
-        <h2 class="font-display reveal" style="font-size:clamp(1.55rem,2.6vw,1.95rem);font-weight:700;margin-bottom:0.2rem;">T2: Epistemic Agency &amp; Question Formation</h2>
-        <p class="reveal" style="font-size:1.05rem;color:#64748b;margin-bottom:0.35rem;">Do models exhibit stable meta-level control — resisting flawed framings and proposing genuine reframings?</p>
-        <div class="reveal" style="display:grid;grid-template-columns:30% 70%;gap:0.9rem;align-items:stretch;min-height:0;">
-            <!-- LEFT: two figures stacked vertically -->
-            <div style="display:flex;flex-direction:column;gap:0.7rem;min-height:0;">
-                <figure class="fig-frame" style="flex:1 1 0;min-height:0;cursor:pointer;"                <figure class="fig-frame" style="flex:1 1 0;min-height:0;cursor:pointer;"
-                    data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test2_epistemic-agency/results/figures/taxonomy_distributions.png"
-                    data-label="Fig 2.13 / Fig 6a–b"
-                    data-desc="T2 taxonomy distributions — Bloom's level breakdown (instrumental / exploratory / paradigm-challenging) + KDE per-model traceability"
-                    onclick="openLightbox(this)" title="Click to enlarge">
-                    <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test2_epistemic-agency/results/figures/taxonomy_distributions.png"
-                         alt="Fig 2.13 / Fig 6a–b"
-                         style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
-                    <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.72rem;color:rgba(180,190,220,0.65);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Fig 2.13 / Fig 6a–b</figcaption>
-                </figure>
-                <figure class="fig-frame" style="flex:1 1 0;min-height:0;cursor:pointer;"
-                    data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test2_epistemic-agency/results/figures/class_decision_bias_map.png"
-                    data-label="Fig 2.15 / Fig A.10"
-                    data-desc="Decision-space bias: Within-framework vs. Transcends-framework category distribution (n=840). Only ~5% transcend framework."
-                    onclick="openLightbox(this)" title="Click to enlarge">
-                    <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test2_epistemic-agency/results/figures/class_decision_bias_map.png"
-                         alt="Fig 2.15 / Fig A.10"
-                         style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
-                    <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.72rem;color:rgba(180,190,220,0.65);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Fig 2.15 / Fig A.10</figcaption>
-                </figure>
+        <p class="reveal" style="font-size:1.22rem;letter-spacing:0.14em;text-transform:uppercase;color:#38bdf8;margin-bottom:0.35rem;">Results — Test 2</p>
+        <h2 class="font-display reveal" style="font-size:clamp(1.72rem,2.9vw,2.18rem);font-weight:700;margin-bottom:0.2rem;">T2: Epistemic Agency &amp; Question Formation</h2>
+        <p class="reveal" style="font-size:1.16rem;color:#64748b;margin-bottom:0.35rem;">Do models exhibit stable meta-level control — resisting flawed framings and proposing genuine reframings?</p>
+        <div class="reveal" style="display:grid;align-items:stretch;min-height:0;">
+            <div style="background:rgba(56,189,248,0.07);border:1px solid rgba(56,189,248,0.18);border-radius:10px;padding:0.8rem 0.9rem;grid-column:1 / 3;grid-row:1;">
+                <p style="font-size:1.14rem;font-weight:700;color:#38bdf8;margin-bottom:0.4rem;">Key Findings</p>
+                <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.35rem;">
+                    <li style="font-size:1.09rem;color:#94a3b8;">• 100% of questions traceable to literature (strict threshold)</li>
+                    <li style="font-size:1.09rem;color:#94a3b8;">• Framework-transcendence rate: ~5% across all models</li>
+                    <li style="font-size:1.09rem;color:#94a3b8;">• Bloom's distribution: exploratory 91%, paradigm-challenging 9%</li>
+                    <li style="font-size:1.09rem;color:#94a3b8;">• Gemini-3.1-Pro: 0% transcendence — LLaMA drives chi-square effect</li>
+                </ul>
             </div>
-            <!-- RIGHT: info panel — widened to fill remaining space -->
-            <div style="display:flex;flex-direction:column;gap:0.75rem;min-height:0;">
-                <div style="background:rgba(56,189,248,0.07);border:1px solid rgba(56,189,248,0.18);border-radius:10px;padding:0.8rem 0.9rem;flex:0 0 auto;">
-                    <p style="font-size:1.02rem;font-weight:700;color:#38bdf8;margin-bottom:0.4rem;">Key Findings</p>
-                    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.35rem;">
-                        <li style="font-size:0.98rem;color:#94a3b8;">• 100% of questions traceable to literature (strict threshold)</li>
-                        <li style="font-size:0.98rem;color:#94a3b8;">• Framework-transcendence rate: ~5% across all models</li>
-                        <li style="font-size:0.98rem;color:#94a3b8;">• Bloom's distribution: exploratory 91%, paradigm-challenging 9%</li>
-                        <li style="font-size:0.98rem;color:#94a3b8;">• Gemini-3.1-Pro: 0% transcendence — LLaMA drives chi-square effect</li>
-                    </ul>
-                </div>
-                <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:0.8rem 0.9rem;flex:1 1 0;">
-                    <p style="font-size:0.98rem;color:#94a3b8;margin-bottom:0.6rem;font-weight:600;color:#38bdf8;">Statistical Summary</p>
-                    <div style="display:flex;flex-direction:column;gap:0.4rem;">
-                        <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,0.06);padding-bottom:0.4rem;">
-                            <span style="font-size:0.95rem;color:#94a3b8;">Effect size (Cramér's V)</span>
-                            <span style="font-size:1.02rem;font-weight:700;color:#38bdf8;">0.166</span>
-                        </div>
-                        <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,0.06);padding-bottom:0.4rem;">
-                            <span style="font-size:0.95rem;color:#94a3b8;">η² (cross-model)</span>
-                            <span style="font-size:1.02rem;font-weight:700;color:#94a3b8;">0.068 n.s.</span>
-                        </div>
-                        <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,0.06);padding-bottom:0.4rem;">
-                            <span style="font-size:0.95rem;color:#94a3b8;">n per model</span>
-                            <span style="font-size:1.02rem;font-weight:700;color:#e2e8f0;">120</span>
-                        </div>
-                        <div style="display:flex;justify-content:space-between;align-items:center;">
-                            <span style="font-size:0.95rem;color:#94a3b8;">Transcendence rate</span>
-                            <span style="font-size:1.02rem;font-weight:700;color:#f87171;">~5%</span>
-                        </div>
+            <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:0.8rem 0.9rem;grid-column:3;grid-row:1 / 3;">
+                <p style="font-size:1.1rem;color:#94a3b8;margin-bottom:0.6rem;font-weight:600;color:#38bdf8;">Statistical Summary</p>
+                <div style="display:flex;flex-direction:column;gap:0.4rem;">
+                    <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,0.06);padding-bottom:0.4rem;">
+                        <span style="font-size:1.04rem;color:#94a3b8;">Effect size (Cramér's V)</span>
+                        <span style="font-size:1.14rem;font-weight:700;color:#38bdf8;">0.166</span>
                     </div>
-                    <p style="font-size:0.9rem;color:#64748b;font-style:italic;line-height:1.45;margin-top:0.5rem;">"Fluency is not agency — <strong style="color:#38bdf8;">shared low-transcendence regime</strong> across all models."</p>
+                    <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,0.06);padding-bottom:0.4rem;">
+                        <span style="font-size:1.04rem;color:#94a3b8;">η² (cross-model)</span>
+                        <span style="font-size:1.14rem;font-weight:700;color:#94a3b8;">0.068 n.s.</span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,0.06);padding-bottom:0.4rem;">
+                        <span style="font-size:1.04rem;color:#94a3b8;">n per model</span>
+                        <span style="font-size:1.14rem;font-weight:700;color:#e2e8f0;">120</span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;">
+                        <span style="font-size:1.04rem;color:#94a3b8;">Transcendence rate</span>
+                        <span style="font-size:1.14rem;font-weight:700;color:#f87171;">~5%</span>
+                    </div>
                 </div>
+                <p style="font-size:1.01rem;color:#64748b;font-style:italic;line-height:1.45;margin-top:0.5rem;">"Fluency is not agency — <strong style="color:#38bdf8;">shared low-transcendence regime</strong> across all models."</p>
             </div>
+            <figure class="fig-frame" style="min-height:0;height:100%;cursor:pointer;grid-column:1;grid-row:2;"
+                data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test2_epistemic-agency/results/figures/similarity_analysis.png"
+                data-label="T2 Similarity Analysis"
+                data-desc="Semantic similarity diagnostics for epistemic-agency outputs across models."
+                onclick="openLightbox(this)" title="Click to enlarge">
+                <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test2_epistemic-agency/results/figures/similarity_analysis.png"
+                    alt="T2 Similarity Analysis"
+                     style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+                <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.72rem;color:rgba(180,190,220,0.65);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">T2 Similarity Analysis</figcaption>
+            </figure>
+            <figure class="fig-frame" style="min-height:0;height:100%;cursor:pointer;grid-column:2;grid-row:2;"
+                data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test2_epistemic-agency/results/figures/category_distribution.png"
+                data-label="T2 Category Distribution"
+                data-desc="Category distribution diagnostics for epistemic-agency outputs across models."
+                onclick="openLightbox(this)" title="Click to enlarge">
+                <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test2_epistemic-agency/results/figures/category_distribution.png"
+                    alt="T2 Category Distribution"
+                     style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+                <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.72rem;color:rgba(180,190,220,0.65);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">T2 Category Distribution</figcaption>
+            </figure>
         </div>
     </div>
 </div>
@@ -817,31 +962,60 @@
         <p class="reveal" style="font-size:1.1rem;letter-spacing:0.14em;text-transform:uppercase;color:#a78bfa;margin-bottom:0.4rem;">Results — Test 3</p>
         <h2 class="font-display reveal" style="font-size:clamp(1.6rem,2.8vw,2rem);font-weight:700;margin-bottom:0.2rem;">T3: Consciousness Theory Generation</h2>
         <p class="reveal" style="font-size:1.12rem;color:#64748b;margin-bottom:0.3rem;">Are elicited theories of consciousness genuinely distinct, or template recombinations?</p>
-        <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;align-items:stretch;flex:1 1 0;min-height:0;">
-            <!-- LEFT: two figs stacked vertically -->
-            <div style="display:flex;flex-direction:column;gap:0.75rem;min-height:0;">
-            <figure class="fig-frame" style="flex:1 1 0;min-height:0;cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test3_theory-generation/results/figures/theory_classification.png" data-label="Fig 2.17–2.18 / Fig 7a–b" data-desc="Distribution of theory classes (Computational Functionalist / Literature Traceable / Hybrid) by model. Detected theory families matrix (F01–F12 templates)."   onclick="openLightbox(this)" title="Click to enlarge">
-  <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test3_theory-generation/results/figures/theory_classification.png" alt="Fig 2.17–2.18 / Fig 7a–b"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
-  <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Fig 2.17–2.18 / Fig 7a–b</figcaption>
-</figure>
-            <figure class="fig-frame" style="flex:1 1 0;min-height:0;cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test3_theory-generation/results/figures/theory_cluster_map_2d.png" data-label="Fig 2.20 / Fig A.19" data-desc="T3 known-theory hull PCA — AI theory embeddings vs. 12 known family centroids. Cluster centroids + convex hulls show no external branches."   onclick="openLightbox(this)" title="Click to enlarge">
-  <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test3_theory-generation/results/figures/theory_cluster_map_2d.png" alt="Fig 2.20 / Fig A.19"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
-  <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Fig 2.20 / Fig A.19</figcaption>
-</figure>
-            </div><!-- end left fig column slide 8 -->
-            <!-- RIGHT: text panel -->
+        <div class="reveal" style="display:grid;grid-template-columns:64% 36%;gap:1rem;align-items:stretch;flex:1 1 0;min-height:0;">
+            <!-- LEFT: model-level metrics table -->
+            <div style="display:flex;flex-direction:column;gap:0.7rem;min-height:0;">
+                <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:0.75rem 0.8rem;display:flex;flex-direction:column;min-height:0;flex:1 1 auto;">
+                <p style="font-size:1.06rem;font-weight:700;color:#a78bfa;text-transform:uppercase;letter-spacing:0.05em;margin:0 0 0.45rem 0;">Model Details (T3)</p>
+                <div style="flex:1 1 0;min-height:0;overflow:auto;">
+                    <table style="width:100%;border-collapse:collapse;font-size:0.93rem;line-height:1.35;">
+                        <thead>
+                            <tr style="border-bottom:1px solid rgba(255,255,255,0.12);">
+                                <th style="text-align:left;padding:0.38rem 0.3rem;color:#e2e8f0;font-weight:700;">Model</th>
+                                <th style="text-align:right;padding:0.38rem 0.3rem;color:#e2e8f0;font-weight:700;">Traceable Rate</th>
+                                <th style="text-align:right;padding:0.38rem 0.3rem;color:#e2e8f0;font-weight:700;">Hybrid Rate</th>
+                                <th style="text-align:right;padding:0.38rem 0.3rem;color:#e2e8f0;font-weight:700;">Mean Novelty Score</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:0.36rem 0.3rem;color:#94a3b8;">claude-3.7-sonnet</td><td style="padding:0.36rem 0.3rem;color:#cbd5e1;text-align:right;">45.8%</td><td style="padding:0.36rem 0.3rem;color:#cbd5e1;text-align:right;">87.5%</td><td style="padding:0.36rem 0.3rem;color:#a78bfa;text-align:right;">0.303</td></tr>
+                            <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:0.36rem 0.3rem;color:#94a3b8;">deepseek-v3.2</td><td style="padding:0.36rem 0.3rem;color:#cbd5e1;text-align:right;">29.2%</td><td style="padding:0.36rem 0.3rem;color:#cbd5e1;text-align:right;">83.3%</td><td style="padding:0.36rem 0.3rem;color:#a78bfa;text-align:right;">0.315</td></tr>
+                            <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:0.36rem 0.3rem;color:#94a3b8;">gemini-3.1-pro-preview</td><td style="padding:0.36rem 0.3rem;color:#cbd5e1;text-align:right;">4.2%</td><td style="padding:0.36rem 0.3rem;color:#cbd5e1;text-align:right;">95.8%</td><td style="padding:0.36rem 0.3rem;color:#a78bfa;text-align:right;">0.363</td></tr>
+                            <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:0.36rem 0.3rem;color:#94a3b8;">gpt-5.2</td><td style="padding:0.36rem 0.3rem;color:#cbd5e1;text-align:right;">0.0%</td><td style="padding:0.36rem 0.3rem;color:#cbd5e1;text-align:right;">91.7%</td><td style="padding:0.36rem 0.3rem;color:#a78bfa;text-align:right;">0.380</td></tr>
+                            <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:0.36rem 0.3rem;color:#94a3b8;">llama-3.3-70b-instruct</td><td style="padding:0.36rem 0.3rem;color:#cbd5e1;text-align:right;">16.7%</td><td style="padding:0.36rem 0.3rem;color:#cbd5e1;text-align:right;">100.0%</td><td style="padding:0.36rem 0.3rem;color:#a78bfa;text-align:right;">0.343</td></tr>
+                            <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:0.36rem 0.3rem;color:#94a3b8;">mistral-large</td><td style="padding:0.36rem 0.3rem;color:#cbd5e1;text-align:right;">66.7%</td><td style="padding:0.36rem 0.3rem;color:#cbd5e1;text-align:right;">87.5%</td><td style="padding:0.36rem 0.3rem;color:#a78bfa;text-align:right;">0.291</td></tr>
+                            <tr><td style="padding:0.36rem 0.3rem;color:#94a3b8;">perplexity-sonar-pro</td><td style="padding:0.36rem 0.3rem;color:#cbd5e1;text-align:right;">66.7%</td><td style="padding:0.36rem 0.3rem;color:#cbd5e1;text-align:right;">95.8%</td><td style="padding:0.36rem 0.3rem;color:#a78bfa;text-align:right;">0.281</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+                <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:0.75rem;">
+                    <p style="font-size:0.97rem;color:#94a3b8;font-style:italic;line-height:1.45;margin:0;">"Strong hybridization with low fully traceable rates for several frontier models indicates recombination-heavy novelty under fixed conceptual priors."</p>
+                </div>
+            </div>
+
+            <!-- RIGHT: findings + clickable figure links -->
             <div style="display:flex;flex-direction:column;gap:0.7rem;min-height:0;">
                 <div style="background:rgba(167,139,250,0.07);border:1px solid rgba(167,139,250,0.18);border-radius:10px;padding:0.85rem;">
-                    <p style="font-size:1.3rem;font-weight:700;color:#a78bfa;margin-bottom:0.35rem;">Key Findings</p>
-                    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.35rem;">
-                        <li style="font-size:1.2rem;color:#94a3b8;">• Dominated by hybrid recombinations across all models</li>
-                        <li style="font-size:1.2rem;color:#94a3b8;">• ANOVA non-significant (η²=0.040) — most architecture-invariant result</li>
-                        <li style="font-size:1.2rem;color:#94a3b8;">• 98.5% inside manifold; 1.5% boundary candidates</li>
-                        <li style="font-size:1.2rem;color:#94a3b8;">• GPT-5.2 highest raw score (0.53); LLaMA/Mistral lowest</li>
+                    <p style="font-size:1.15rem;font-weight:700;color:#a78bfa;margin-bottom:0.35rem;">Key Findings</p>
+                    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.3rem;">
+                        <li style="font-size:1.02rem;color:#94a3b8;">• Dominated by hybrid recombinations across all models</li>
+                        <li style="font-size:1.02rem;color:#94a3b8;">• ANOVA non-significant (η²=0.040) — architecture-invariant pattern</li>
+                        <li style="font-size:1.02rem;color:#94a3b8;">• Highest mean novelty: GPT-5.2 (0.380)</li>
                     </ul>
                 </div>
                 <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:0.85rem;">
-                    <p style="font-size:1.2rem;color:#64748b;font-style:italic;line-height:1.5;">"Strongest recurrent-processing/workspace/higher-order clustering — <strong style="color:#a78bfa;">no detached framework-external branches</strong> in hierarchy."</p>
+                    <p style="font-size:0.94rem;font-weight:700;color:#cbd5e1;text-transform:uppercase;letter-spacing:0.06em;margin:0 0 0.55rem 0;">Open Figures</p>
+                    <div style="display:flex;flex-direction:column;gap:0.45rem;">
+                        <button type="button" onclick="openLightbox(document.getElementById('slide8-fig-cf'))" style="display:block;text-align:left;background:rgba(129,140,248,0.13);border:1px solid rgba(129,140,248,0.35);border-radius:8px;padding:0.52rem 0.65rem;color:#c7d2fe;font-size:0.97rem;font-weight:600;cursor:pointer;">CF vs Novelty</button>
+                        <button type="button" onclick="openLightbox(document.getElementById('slide8-fig-score'))" style="display:block;text-align:left;background:rgba(56,189,248,0.12);border:1px solid rgba(56,189,248,0.34);border-radius:8px;padding:0.52rem 0.65rem;color:#bae6fd;font-size:0.97rem;font-weight:600;cursor:pointer;">Score Distributions</button>
+                        <button type="button" onclick="openLightbox(document.getElementById('slide8-fig-theory-class'))" style="display:block;text-align:left;background:rgba(167,139,250,0.12);border:1px solid rgba(167,139,250,0.34);border-radius:8px;padding:0.52rem 0.65rem;color:#ddd6fe;font-size:0.97rem;font-weight:600;cursor:pointer;">Theory Classification</button>
+                        <button type="button" onclick="openLightbox(document.getElementById('slide8-fig-category-dist'))" style="display:block;text-align:left;background:rgba(125,211,252,0.12);border:1px solid rgba(125,211,252,0.34);border-radius:8px;padding:0.52rem 0.65rem;color:#bae6fd;font-size:0.97rem;font-weight:600;cursor:pointer;">Category Distribution</button>
+                    </div>
+                    <div id="slide8-fig-cf" data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test3_theory-generation/results/figures/cf_vs_novelty.png" data-label="CF-confidence vs novelty scatter" data-desc="Confidence-vs-novelty relationship across generated T3 theories." style="display:none;"></div>
+                    <div id="slide8-fig-score" data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test3_theory-generation/results/figures/score_distributions.png" data-label="Test 4 score distributions" data-desc="Distribution of model-level scoring outcomes for T3 theory generation." style="display:none;"></div>
+                    <div id="slide8-fig-theory-class" data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test3_theory-generation/results/figures/theory_classification.png" data-label="Test 3 theory classification diagnostics" data-desc="Distribution of T3 theory classes by model." style="display:none;"></div>
+                    <div id="slide8-fig-category-dist" data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test3_theory-generation/results/figures/category_distribution.png" data-label="Test 3 category distribution" data-desc="Category-level distribution diagnostics for T3 responses." style="display:none;"></div>
                 </div>
             </div>
         </div>
@@ -863,26 +1037,26 @@
             <!-- T4 LEFT COLUMN: two figs stacked, equal height to T5 column -->
             <div style="display:flex;flex-direction:column;gap:0.6rem;">
                 <p style="font-size:0.98rem;font-weight:700;color:#818cf8;text-transform:uppercase;margin-bottom:0.3rem;">T4 — Category-Mistake Detection (η²=0.766, large)</p>
-                <figure class="fig-frame" style="cursor:pointer;min-height:240px;max-height:280px;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test4_category-recognition/results/figures/score_distributions.png" data-label="Fig 2.22 / Fig 8a–c" data-desc="Score distributions: Distinction recognition (mean 2.58) · Mistake ID (mean 2.79) · Framework proposal (mean 3.31)"   onclick="openLightbox(this)" title="Click to enlarge">
-  <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test4_category-recognition/results/figures/score_distributions.png" alt="Fig 2.22 / Fig 8a–c" style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
-  <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.65rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Fig 2.22 / Fig 8a–c</figcaption>
+                                <figure class="fig-frame" style="cursor:pointer;min-height:240px;max-height:280px;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test4_category-recognition/results/figures/score_distributions.png" data-label="Test 4 score distributions" data-desc="Score distributions: Distinction recognition (mean 2.58) · Mistake ID (mean 2.79) · Framework proposal (mean 3.31)"   onclick="openLightbox(this)" title="Click to enlarge">
+    <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test4_category-recognition/results/figures/score_distributions.png" alt="Test 4 score distributions" style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+    <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.65rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Test 4 score distributions</figcaption>
 </figure>
-                <figure class="fig-frame" style="cursor:pointer;min-height:240px;max-height:280px;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test4_category-recognition/results/figures/category_awareness_scores_by_model.png" data-label="Fig 2.21 / Fig A.22" data-desc="T4 by model/dimension. GPT-5.2 x̄=0.825 · Mistral x̄=0.758 top tier. LLaMA x̄=0.381 bottom. Traceability: 95.2% all models."   onclick="openLightbox(this)" title="Click to enlarge">
-  <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test4_category-recognition/results/figures/category_awareness_scores_by_model.png" alt="Fig 2.21 / Fig A.22" style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
-  <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.65rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Fig 2.21 / Fig A.22</figcaption>
+                                <figure class="fig-frame" style="cursor:pointer;min-height:240px;max-height:280px;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test4_category-recognition/results/figures/category_awareness_scores_by_model.png" data-label="Test 4 category-awareness scores by model" data-desc="T4 by model/dimension. GPT-5.2 x̄=0.825 · Mistral x̄=0.758 top tier. LLaMA x̄=0.381 bottom. Traceability: 95.2% all models."   onclick="openLightbox(this)" title="Click to enlarge">
+    <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test4_category-recognition/results/figures/category_awareness_scores_by_model.png" alt="Test 4 category-awareness scores by model" style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+    <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.65rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Test 4 category-awareness scores by model</figcaption>
 </figure>
             </div>
             <!-- T5 RIGHT COLUMN: two figs + tier text below -->
             <div style="display:flex;flex-direction:column;gap:0.6rem;">
                 <p style="font-size:0.98rem;font-weight:700;color:#38bdf8;text-transform:uppercase;margin-bottom:0.3rem;">T5 — Mechanistic Interpretability (Activation + Attention)</p>
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;">
-                    <figure class="fig-frame" style="cursor:pointer;min-height:200px;max-height:240px;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test5_mechanistic/results/figures/activation_space_comparison.png" data-label="Fig 2.25 / Fig 9" data-desc="PCA + t-SNE of activation space — partial label separation for T1–T4 supports structured internal org., not undifferentiated encoding"   onclick="openLightbox(this)" title="Click to enlarge">
-  <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test5_mechanistic/results/figures/activation_space_comparison.png" alt="Fig 2.25 / Fig 9" style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
-  <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.65rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Fig 2.25 / Fig 9</figcaption>
+                                        <figure class="fig-frame" style="cursor:pointer;min-height:200px;max-height:240px;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test5_mechanistic/results/figures/activation_space_comparison.png" data-label="Mechanistic activation-space comparison" data-desc="PCA + t-SNE of activation space — partial label separation for T1–T4 supports structured internal org., not undifferentiated encoding"   onclick="openLightbox(this)" title="Click to enlarge">
+    <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test5_mechanistic/results/figures/activation_space_comparison.png" alt="Mechanistic activation-space comparison" style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+    <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.65rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Mechanistic activation-space comparison</figcaption>
 </figure>
-                    <figure class="fig-frame" style="cursor:pointer;min-height:200px;max-height:240px;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test5_mechanistic/results/figures/attention_heatmap_real.png" data-label="Fig 2.24 / Fig A.23–A.24" data-desc="Per-head attention heatmaps + rollout across 25 layers. Mean cluster purity 1.0. Attention entropy 2.49. Separation score 0.465."   onclick="openLightbox(this)" title="Click to enlarge">
-  <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test5_mechanistic/results/figures/attention_heatmap_real.png" alt="Fig 2.24 / Fig A.23–A.24" style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
-  <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.65rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Fig 2.24 / Fig A.23–A.24</figcaption>
+                                        <figure class="fig-frame" style="cursor:pointer;min-height:200px;max-height:240px;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test5_mechanistic/results/figures/attention_heatmap_real.png" data-label="Mechanistic attention diagnostics (DistilBERT)" data-desc="Model used: distilbert-base-uncased (BertViz attention proxy). Panels a-b show token-level attention heatmaps; panel c shows row entropy and max-attention trends by query position."   onclick="openLightbox(this)" title="Click to enlarge">
+    <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test5_mechanistic/results/figures/attention_heatmap_real.png" alt="Mechanistic attention diagnostics (DistilBERT)" style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+    <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.65rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Mechanistic attention diagnostics (DistilBERT)</figcaption>
 </figure>
                 </div>
                 <!-- Tier text moved here, below T5 figures -->
@@ -906,13 +1080,13 @@
         <p class="reveal" style="font-size:1.1rem;letter-spacing:0.14em;text-transform:uppercase;color:#818cf8;margin-bottom:0.4rem;">Cross-Model Summary</p>
         <h2 class="font-display reveal" style="font-size:clamp(1.65rem,2.8vw,2rem);font-weight:700;margin-bottom:0.9rem;">Overview Dashboards &amp; Effect-Size Profile</h2>
         <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
-            <figure class="fig-frame" style="cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test0_overview/results/figures/findings_dashboard_A.png" data-label="Fig 2.28 / Fig A.3a–b" data-desc="Model × Test heatmap of mean novelty-oriented scores (%). T1: 1–8% · T2: 0–8% · T3: 14–53% · T4: 38–83%"   onclick="openLightbox(this)" title="Click to enlarge">
-  <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test0_overview/results/figures/findings_dashboard_A.png" alt="Fig 2.28 / Fig A.3a–b"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
-  <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Fig 2.28 / Fig A.3a–b</figcaption>
+                        <figure class="fig-frame" style="cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test0_overview/results/figures/findings_dashboard_A.png" data-label="Overview dashboard (Part A)" data-desc="Model × Test heatmap of mean novelty-oriented scores (%). T1: 1–8% · T2: 0–8% · T3: 14–53% · T4: 38–83%"   onclick="openLightbox(this)" title="Click to enlarge">
+    <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test0_overview/results/figures/findings_dashboard_A.png" alt="Overview dashboard (Part A)"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+    <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Overview dashboard (Part A)</figcaption>
 </figure>
-            <figure class="fig-frame" style="cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test6_cross_model/results/figures/model_performance_heatmap.png" data-label="Fig 3 / Fig A.4b + Table A.16" data-desc="Within-test z-scores cross-model (Table 2) + meta-analytic effect-size profile T1–T4: η²(T1)=0.326 · η²(T2)=0.068 · η²(T3)=0.040 · η²(T4)=0.766"   onclick="openLightbox(this)" title="Click to enlarge">
-  <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test6_cross_model/results/figures/model_performance_heatmap.png" alt="Fig 3 / Fig A.4b + Table A.16"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
-  <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Fig 3 / Fig A.4b + Table A.16</figcaption>
+                        <figure class="fig-frame" style="cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test6_cross_model/results/figures/model_performance_heatmap.png" data-label="Cross-test model comparison heatmaps" data-desc="Within-test z-scores cross-model (Table 2) + meta-analytic effect-size profile T1–T4: η²(T1)=0.326 · η²(T2)=0.068 · η²(T3)=0.040 · η²(T4)=0.766"   onclick="openLightbox(this)" title="Click to enlarge">
+    <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test6_cross_model/results/figures/model_performance_heatmap.png" alt="Cross-test model comparison heatmaps"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+    <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Cross-test model comparison heatmaps</figcaption>
 </figure>
         </div>
         <!-- summary bar -->
@@ -1136,6 +1310,14 @@
   <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test0_overview/results/figures/findings_dashboard_B.png" alt="Table A.16"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
   <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Table A.16</figcaption>
 </figure>
+                        <figure class="fig-frame" style="cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test3_theory-generation/results/figures/alternative_hypothesis_visualizations.png" data-label="Alt Hypothesis Visualizations" data-desc="Alternative-hypothesis diagnostic visualizations for T3 theory generation outputs."   onclick="openLightbox(this)" title="Click to enlarge">
+    <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test3_theory-generation/results/figures/alternative_hypothesis_visualizations.png" alt="Alt Hypothesis Visualizations"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+    <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Alt Hypothesis Visualizations</figcaption>
+</figure>
+                        <figure class="fig-frame" style="cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test3_theory-generation/results/figures/alt_reduced_space_hull_diagnostic.png" data-label="Alt Reduced-Space Hull" data-desc="Reduced-space hull diagnostic for alternative-hypothesis placement in T3 embedding space."   onclick="openLightbox(this)" title="Click to enlarge">
+    <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test3_theory-generation/results/figures/alt_reduced_space_hull_diagnostic.png" alt="Alt Reduced-Space Hull"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+    <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Alt Reduced-Space Hull</figcaption>
+</figure>
         </div>
     </div>
 </div>
@@ -1150,7 +1332,28 @@
     <span class="slide-counter" id="counter">1 / 15</span>
 </div>
 
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+
 <script>
+    window.renderPresentationMath = function() {
+        if (typeof renderMathInElement !== 'function') return;
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: '$$', right: '$$', display: true },
+                { left: '\\[', right: '\\]', display: true },
+                { left: '$', right: '$', display: false },
+                { left: '\\(', right: '\\)', display: false }
+            ],
+            throwOnError: false,
+            strict: 'ignore'
+        });
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+        window.renderPresentationMath();
+    });
+
     let current = 1;
     const total = document.querySelectorAll('.slide').length;
     const dotsContainer = document.getElementById('dots');
@@ -1237,14 +1440,34 @@
     try { animateSlide(document.querySelector('.slide.active')); } catch(e) {}
 
     /* ── LIGHTBOX ── */
+    var currentLanguage = 'en';
+    var languageApplyToken = 0;
+    var lightboxTranslateToken = 0;
+    var bilingualNodes = [];
+
     function openLightbox(el) {
         var overlay = document.getElementById('lb-overlay');
         var img     = document.getElementById('lb-img');
         var cap     = document.getElementById('lb-caption');
         var desc    = document.getElementById('lb-desc');
+        var labelText = el.dataset.label || '';
+        var descText = el.dataset.desc || '';
+        var token = ++lightboxTranslateToken;
         img.src     = el.dataset.src || el.querySelector('img').src;
-        cap.textContent  = el.dataset.label  || '';
-        desc.textContent = el.dataset.desc   || '';
+
+        if (currentLanguage === 'ru') {
+            cap.textContent = 'Перевод...';
+            desc.textContent = 'Перевод...';
+            Promise.all([translateToRussian(labelText), translateToRussian(descText)]).then(function(parts) {
+                if (token !== lightboxTranslateToken) return;
+                cap.textContent = parts[0] || '';
+                desc.textContent = parts[1] || '';
+            });
+        } else {
+            cap.textContent = labelText;
+            desc.textContent = descText;
+        }
+
         overlay.classList.add('open');
         document.addEventListener('keydown', lbKeyHandler);
     }
@@ -1257,6 +1480,295 @@
     function lbKeyHandler(e) {
         if (e.key === 'Escape') closeLightbox(null);
     }
+
+    /* ── TEXT FRAME POPUP ── */
+    function isTextFrameCandidate(el) {
+        if (!el || el.tagName !== 'DIV') return false;
+        if (el.closest('#lb-overlay, #tb-overlay, .nav-controls')) return false;
+        if (el.closest('.fig-frame')) return false;
+        if (el.querySelector('.fig-frame, img, canvas, svg, table')) return false;
+
+        var styleAttr = (el.getAttribute('style') || '').toLowerCase();
+        var hasFrameStyle = styleAttr.includes('border:1px') ||
+            styleAttr.includes('border: 1px') ||
+            styleAttr.includes('border-left:3px') ||
+            styleAttr.includes('border-left: 3px');
+        if (!hasFrameStyle) return false;
+
+        var text = (el.innerText || '').replace(/\s+/g, ' ').trim();
+        return text.length >= 24;
+    }
+
+    function initTextPopupFrames() {
+        document.querySelectorAll('.slide .content div').forEach(function(el) {
+            if (!isTextFrameCandidate(el)) return;
+            el.classList.add('text-popup-frame');
+            el.setAttribute('tabindex', '0');
+            el.setAttribute('role', 'button');
+            // Keep the original English text as stable source; do not overwrite on language switch.
+            if (!el.dataset.popupEn) {
+                el.dataset.popupEn = getFramePopupText(el);
+            }
+            if (!el.getAttribute('title')) {
+                el.setAttribute('title', 'Click to open text popup');
+            }
+        });
+    }
+
+    function getFramePrimaryHeading(el) {
+        // Prefer concise explicit headings over full paragraph text.
+        var explicit = el.querySelector('h1,h2,h3,h4,strong,span');
+        if (explicit) {
+            var explicitRaw = (explicit.textContent || '').replace(/\s+/g, ' ').trim();
+            if (explicitRaw) return explicitRaw;
+        }
+
+        var p = el.querySelector('p');
+        if (!p) return '';
+        return (p.textContent || '').replace(/\s+/g, ' ').trim();
+    }
+
+    function getFramePopupTitle(el) {
+        var raw = getFramePrimaryHeading(el);
+        if (!raw) return 'Text Frame';
+        return raw;
+    }
+
+    function getFramePopupText(el) {
+        var clone = el.cloneNode(true);
+        clone.querySelectorAll('button,a,img,svg,canvas,figure,figcaption').forEach(function(n) { n.remove(); });
+        var text = (clone.innerText || '').replace(/\n{3,}/g, '\n\n').trim();
+        return text;
+    }
+
+    function normalizeHeadingText(s) {
+        return (s || '')
+            .toLowerCase()
+            .replace(/[\u2013\u2014]/g, '-')
+            .replace(/[^\p{L}\p{N}\s-]/gu, '')
+            .replace(/\s+/g, ' ')
+            .trim();
+    }
+
+    function stripLeadingDuplicateHeading(text, heading) {
+        if (!text || !heading) return text;
+        var lines = text.split('\n');
+        if (!lines.length) return text;
+        var nHeading = normalizeHeadingText(heading);
+
+        if (!nHeading) return text;
+
+        // Remove duplicated heading occurrences near the top of the block.
+        // This handles patterns like: icon line -> repeated heading -> description.
+        var scanLimit = Math.min(5, lines.length);
+        var kept = [];
+        for (var i = 0; i < lines.length; i++) {
+            var line = lines[i];
+            var nLine = normalizeHeadingText((line || '').trim());
+            var isTopDuplicate = i < scanLimit && nLine && nLine === nHeading;
+            if (!isTopDuplicate) kept.push(line);
+        }
+
+        return kept.join('\n').replace(/^\s+/, '').trim();
+    }
+
+    var tbTranslationCache = new Map();
+    var tbTranslateToken = 0;
+
+    function splitTranslationChunks(text, maxLen) {
+        var chunks = [];
+        var source = (text || '').trim();
+        if (!source) return chunks;
+        var lines = source.split('\n');
+        var current = '';
+        lines.forEach(function(line) {
+            var candidate = current ? (current + '\n' + line) : line;
+            if (candidate.length <= maxLen) {
+                current = candidate;
+            } else {
+                if (current) chunks.push(current);
+                if (line.length <= maxLen) {
+                    current = line;
+                } else {
+                    for (var i = 0; i < line.length; i += maxLen) {
+                        chunks.push(line.slice(i, i + maxLen));
+                    }
+                    current = '';
+                }
+            }
+        });
+        if (current) chunks.push(current);
+        return chunks;
+    }
+
+    function translateChunkRu(text) {
+        var url = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=ru&dt=t&q=' + encodeURIComponent(text);
+        return fetch(url)
+            .then(function(res) { return res.json(); })
+            .then(function(data) {
+                if (!Array.isArray(data) || !Array.isArray(data[0])) return text;
+                return data[0].map(function(part) { return part[0] || ''; }).join('');
+            });
+    }
+
+    function translateToRussian(text) {
+        if (!text) return Promise.resolve('');
+        if (tbTranslationCache.has(text)) {
+            return Promise.resolve(tbTranslationCache.get(text));
+        }
+        var chunks = splitTranslationChunks(text, 420);
+        if (!chunks.length) return Promise.resolve('');
+
+        return Promise.all(chunks.map(translateChunkRu))
+            .then(function(parts) {
+                var translated = parts.join('\n');
+                tbTranslationCache.set(text, translated);
+                return translated;
+            })
+            .catch(function() {
+                return 'Не удалось автоматически загрузить перевод для этого текста.';
+            });
+    }
+
+    function openTextPopup(el) {
+        closeLightbox(null);
+        var overlay = document.getElementById('tb-overlay');
+        var title = document.getElementById('tb-title');
+        var contentEn = document.getElementById('tb-content-en');
+        var contentRu = document.getElementById('tb-content-ru');
+        var headingRaw = getFramePrimaryHeading(el);
+        var headingShort = getFramePopupTitle(el);
+        var sourceEn = el.dataset.popupEn || getFramePopupText(el);
+        var sourceVisible = getFramePopupText(el);
+        sourceEn = stripLeadingDuplicateHeading(sourceEn, headingRaw);
+        sourceVisible = stripLeadingDuplicateHeading(sourceVisible, headingRaw);
+        var token = ++tbTranslateToken;
+        title.textContent = headingShort;
+
+        if (headingRaw && currentLanguage === 'en') {
+            translateToRussian(headingRaw).then(function(ruHeading) {
+                if (token !== tbTranslateToken) return;
+                var left = headingShort || 'Text Frame';
+                var right = (ruHeading || '').replace(/\s+/g, ' ').trim();
+                title.textContent = right ? (left + ' / ' + right) : left;
+            });
+        }
+
+        if (currentLanguage === 'ru') {
+            contentEn.textContent = 'Загрузка перевода...';
+            contentRu.style.display = 'none';
+            contentRu.textContent = '';
+            overlay.classList.add('open');
+            document.addEventListener('keydown', tbKeyHandler);
+            translateToRussian(sourceEn).then(function(ruText) {
+                if (token !== tbTranslateToken) return;
+                contentEn.textContent = (ruText && ruText.trim()) ? ruText : sourceVisible;
+            });
+            return;
+        }
+
+        contentRu.style.display = 'block';
+        contentEn.textContent = sourceEn;
+        contentRu.textContent = 'Загрузка перевода...';
+        overlay.classList.add('open');
+        document.addEventListener('keydown', tbKeyHandler);
+
+        translateToRussian(sourceEn).then(function(ruText) {
+            if (token !== tbTranslateToken) return;
+            contentRu.textContent = ruText || 'Перевод отсутствует.';
+        });
+    }
+
+    function shouldTranslateNode(text) {
+        if (!text) return false;
+        var t = text.replace(/\s+/g, ' ').trim();
+        if (t.length < 2) return false;
+        if (!/[A-Za-z]/.test(t)) return false;
+        return true;
+    }
+
+    function initBilingualNodes() {
+        var roots = [document.querySelector('.deck'), document.querySelector('.nav-controls')].filter(Boolean);
+        roots.forEach(function(root) {
+            var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+            var node;
+            while ((node = walker.nextNode())) {
+                var parent = node.parentElement;
+                if (!parent) continue;
+                if (parent.closest('#lb-overlay, #tb-overlay, #theme-toggle, #lang-toggle')) continue;
+                var original = node.nodeValue;
+                if (!shouldTranslateNode(original)) continue;
+                bilingualNodes.push({ node: node, en: original });
+            }
+        });
+    }
+
+    function setLanguageButtonState() {
+        var btn = document.getElementById('lang-toggle');
+        if (!btn) return;
+        if (currentLanguage === 'ru') {
+            btn.textContent = '🇷🇺';
+            btn.title = 'Переключить язык';
+        } else {
+            btn.textContent = '🇬🇧';
+            btn.title = 'Switch language';
+        }
+    }
+
+    function applyLanguage(lang) {
+        currentLanguage = lang;
+        setLanguageButtonState();
+        document.documentElement.classList.toggle('lang-ru', lang === 'ru');
+        var token = ++languageApplyToken;
+
+        if (lang === 'en') {
+            bilingualNodes.forEach(function(item) { item.node.nodeValue = item.en; });
+            initTextPopupFrames();
+            return;
+        }
+
+        Promise.all(bilingualNodes.map(function(item) {
+            return translateToRussian(item.en).then(function(ru) {
+                return { item: item, ru: ru || item.en };
+            });
+        })).then(function(results) {
+            if (token !== languageApplyToken) return;
+            results.forEach(function(r) { r.item.node.nodeValue = r.ru; });
+            initTextPopupFrames();
+        });
+    }
+
+    function toggleLanguage() {
+        applyLanguage(currentLanguage === 'en' ? 'ru' : 'en');
+    }
+
+    function closeTextPopup(e) {
+        if (e && e.target.id === 'tb-panel') return;
+        document.getElementById('tb-overlay').classList.remove('open');
+        document.removeEventListener('keydown', tbKeyHandler);
+    }
+
+    function tbKeyHandler(e) {
+        if (e.key === 'Escape') closeTextPopup(null);
+    }
+
+    document.addEventListener('click', function(e) {
+        var frame = e.target.closest('.text-popup-frame');
+        if (!frame) return;
+        if (e.target.closest('button,a,input,textarea,select')) return;
+        openTextPopup(frame);
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if ((e.key !== 'Enter' && e.key !== ' ') || !document.activeElement) return;
+        if (!document.activeElement.classList.contains('text-popup-frame')) return;
+        e.preventDefault();
+        openTextPopup(document.activeElement);
+    });
+
+    initTextPopupFrames();
+    initBilingualNodes();
+    setLanguageButtonState();
 
 
     /* ── 16:9 SCALE-TO-FIT ── */
