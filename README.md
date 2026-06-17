@@ -5,6 +5,13 @@ PhD. Dissertation Research Studies
 
 This repository contains the complete computational notebooks for conducting the empirical investigations described in **"Structural Limits of Neural Networks in Ontological Creativity"**.
 
+## Presentation Context Files
+
+Statistical terminology companion files used in the defense presentation:
+
+- English PDF: [papers/statistical_glossary.pdf](papers/statistical_glossary.pdf)
+- Russian PDF: [papers/statistical_glossary_ru.pdf](papers/statistical_glossary_ru.pdf)
+
 ## Overview
 
 The notebooks implement the four empirical tests described in the study and generate the results and visualizations reported in dissertation chapter 4.
@@ -23,6 +30,8 @@ The notebooks implement the four empirical tests described in the study and gene
 ├── research/test*/prompts/{prompt.txt,response_schema.json} # Per-test prompt and schema assets for response collection
 ├── research/data/                             # Generated datasets
 ├── research/test*/results/{data,figures}/     # Analysis outputs and figures per test
+├── papers/statistical_glossary.pdf            # Statistical glossary for presentation (EN)
+├── papers/statistical_glossary_ru.pdf         # Statistical glossary for presentation (RU)
 └── README.md                         # This file
 ```
 
