@@ -492,23 +492,23 @@
             min-height: 200px;
         }
         /* Figures inside a 3-col grid (appendix slides 14,15) get fixed height */
-        .slide[data-slide="14"] .fig-frame,
-        .slide[data-slide="15"] .fig-frame {
+        .slide[data-slide="24"] .fig-frame,
+        .slide[data-slide="25"] .fig-frame {
             height: 180px !important;
             min-height: 180px !important;
             flex: none !important;
         }
         /* Figures in 2-col grids (slides 9, 10) get consistent height */
-        .slide[data-slide="9"] .fig-frame {
+        .slide[data-slide="13"] .fig-frame {
             min-height: 340px;
             max-height: 440px;
         }
-        .slide[data-slide="9"] .fig-frame img {
+        .slide[data-slide="13"] .fig-frame img {
             object-fit: cover !important;
             width: 100% !important;
             height: 100% !important;
         }
-        .slide[data-slide="10"] .fig-frame {
+        .slide[data-slide="14"] .fig-frame {
             min-height: 320px;
             max-height: 420px;
         }
@@ -537,8 +537,8 @@
 
 
         /* ── Slides 6 & 8: flex column layout so figures fill height ── */
-        .slide[data-slide="6"] > .content,
-        .slide[data-slide="8"] > .content {
+        .slide[data-slide="10"] > .content,
+        .slide[data-slide="12"] > .content {
             display: flex !important;
             flex-direction: column !important;
             height: calc(1080px - 40px) !important;
@@ -547,22 +547,22 @@
             padding-top: 0.6rem !important;
         }
         /* Non-grid heading rows stay compact */
-        .slide[data-slide="6"] > .content > p.reveal,
-        .slide[data-slide="6"] > .content > h2.reveal,
-        .slide[data-slide="8"] > .content > p.reveal,
-        .slide[data-slide="8"] > .content > h2.reveal {
+        .slide[data-slide="10"] > .content > p.reveal,
+        .slide[data-slide="10"] > .content > h2.reveal,
+        .slide[data-slide="12"] > .content > p.reveal,
+        .slide[data-slide="12"] > .content > h2.reveal {
             flex: 0 0 auto !important;
             margin-bottom: 0.15rem !important;
         }
         /* The main grid (last reveal) grows */
-        .slide[data-slide="6"] > .content > .reveal:last-child,
-        .slide[data-slide="8"] > .content > .reveal:last-child {
+        .slide[data-slide="10"] > .content > .reveal:last-child,
+        .slide[data-slide="12"] > .content > .reveal:last-child {
             flex: 1 1 0 !important;
             min-height: 0 !important;
         }
         /* Inner flex columns for stacked figs */
-        .slide[data-slide="6"] .fig-frame,
-        .slide[data-slide="8"] .fig-frame {
+        .slide[data-slide="10"] .fig-frame,
+        .slide[data-slide="12"] .fig-frame {
             flex: 1 1 0 !important;
             min-height: 0 !important;
             height: auto !important;
@@ -570,11 +570,11 @@
 
 
         /* ── Slide 9 T4 figures: taller, fill from top-left ── */
-        .slide[data-slide="9"] .fig-frame {
+        .slide[data-slide="13"] .fig-frame {
             min-height: 260px !important;
             max-height: 340px !important;
         }
-        .slide[data-slide="9"] .fig-frame img {
+        .slide[data-slide="13"] .fig-frame img {
             object-fit: cover !important;
             object-position: top left !important;
             width: 100% !important;
@@ -582,7 +582,7 @@
         }
 
         /* ── Slide 5: balanced card grid, no dead spacer area ── */
-        .slide[data-slide="5"] > .content {
+        .slide[data-slide="9"] > .content {
             display: flex !important;
             flex-direction: column !important;
             height: calc(1080px - 40px) !important;
@@ -590,7 +590,7 @@
             justify-content: flex-start !important;
             padding-top: 0.6rem !important;
         }
-        .slide[data-slide="5"] .method-grid {
+        .slide[data-slide="9"] .method-grid {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
             grid-template-rows: repeat(3, minmax(0, 1fr));
@@ -598,22 +598,22 @@
             flex: 1 1 0;
             min-height: 0;
         }
-        .slide[data-slide="5"] .method-card {
+        .slide[data-slide="9"] .method-card {
             height: 100%;
             display: flex;
             flex-direction: column;
             padding: 1rem !important;
         }
-        .slide[data-slide="5"] .method-card p:first-child {
+        .slide[data-slide="9"] .method-card p:first-child {
             font-size: 1.05rem !important;
             margin-bottom: 0.52rem !important;
         }
-        .slide[data-slide="5"] .method-card p:nth-child(2) {
+        .slide[data-slide="9"] .method-card p:nth-child(2) {
             flex: 1 1 auto;
             font-size: 1.01rem !important;
             line-height: 1.4 !important;
         }
-        .slide[data-slide="5"] .method-card p:last-child {
+        .slide[data-slide="9"] .method-card p:last-child {
             font-size: 0.98rem !important;
         }
 
@@ -674,9 +674,135 @@
 </div>
 
 <!-- ═══════════════════════════════════════════
-  SLIDE 2 — RESEARCH FRAMING
+  SLIDE 2 — RELEVANCE OF THE RESEARCH TOPIC
 ════════════════════════════════════════════ -->
 <div class="slide" data-slide="2">
+    <div class="gradient-mesh">
+        <div class="blob" style="width:420px;height:420px;top:-90px;right:-60px;background:#818cf8;opacity:0.10;"></div>
+        <div class="blob" style="width:260px;height:260px;bottom:-60px;left:-40px;background:#38bdf8;opacity:0.08;"></div>
+    </div>
+    <div class="content">
+        <p class="reveal" style="font-size:1.1rem;letter-spacing:0.14em;text-transform:uppercase;color:#818cf8;margin-bottom:0.4rem;">Dissertation Passport — §1</p>
+        <h2 class="font-display reveal" style="font-size:clamp(1.65rem,2.8vw,2.4rem);font-weight:700;margin-bottom:0.8rem;">Relevance of the Research Topic</h2>
+        <div class="accent-line reveal" style="margin-bottom:1.2rem;"></div>
+        <div class="reveal" style="display:flex;flex-direction:column;gap:0.75rem;">
+            <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-left:3px solid #818cf8;border-radius:10px;padding:0.85rem 1.1rem;">
+                <p style="font-size:1.08rem;font-weight:600;color:#e2e8f0;margin-bottom:0.3rem;">📈 Practical Urgency</p>
+                <p style="font-size:1.04rem;color:#94a3b8;line-height:1.55;">Generative AI systems are deployed in high-stakes domains — healthcare, law, science — while fundamental questions about their creative and epistemic limits remain unresolved, creating governance and safety risks.</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-left:3px solid #38bdf8;border-radius:10px;padding:0.85rem 1.1rem;">
+                <p style="font-size:1.08rem;font-weight:600;color:#e2e8f0;margin-bottom:0.3rem;">🔬 Scientific Gap</p>
+                <p style="font-size:1.04rem;color:#94a3b8;line-height:1.55;">Existing AI capability assessments rely on performance benchmarks without distinguishing <em>surface novelty</em> (recombination) from <em>ontological novelty</em> (genuine representational extension). No formal theorem characterised this boundary prior to this work.</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-left:3px solid #a78bfa;border-radius:10px;padding:0.85rem 1.1rem;">
+                <p style="font-size:1.08rem;font-weight:600;color:#e2e8f0;margin-bottom:0.3rem;">⚖️ Societal Implications</p>
+                <p style="font-size:1.04rem;color:#94a3b8;line-height:1.55;">Inflated claims of machine creativity undermine accountability structures, distort policy, and erode the human authority necessary for responsible AI deployment. A rigorous empirical basis is essential.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+  SLIDE 3 — OBJECT AND SUBJECT OF RESEARCH
+════════════════════════════════════════════ -->
+<div class="slide" data-slide="3">
+    <div class="gradient-mesh">
+        <div class="blob" style="width:380px;height:380px;top:-80px;left:-50px;background:#38bdf8;opacity:0.09;"></div>
+        <div class="blob" style="width:240px;height:240px;bottom:-50px;right:-40px;background:#a78bfa;opacity:0.07;"></div>
+    </div>
+    <div class="content">
+        <p class="reveal" style="font-size:1.1rem;letter-spacing:0.14em;text-transform:uppercase;color:#38bdf8;margin-bottom:0.4rem;">Dissertation Passport — §2</p>
+        <h2 class="font-display reveal" style="font-size:clamp(1.65rem,2.8vw,2.4rem);font-weight:700;margin-bottom:0.8rem;">Object and Subject of the Research</h2>
+        <div class="accent-line reveal" style="margin-bottom:1.2rem;"></div>
+        <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;">
+            <div style="background:rgba(56,189,248,0.06);border:1px solid rgba(56,189,248,0.15);border-radius:12px;padding:1.2rem;">
+                <p style="font-size:0.9rem;letter-spacing:0.12em;text-transform:uppercase;color:#38bdf8;margin-bottom:0.6rem;">Object of Research</p>
+                <p style="font-size:1.08rem;color:#e2e8f0;font-weight:600;line-height:1.5;margin-bottom:0.6rem;">Training-derived information-processing systems</p>
+                <p style="font-size:1.02rem;color:#94a3b8;line-height:1.5;">Transformer-based large language models and diffusion-based generators trained via continuous optimisation over large textual and/or perceptual corpora (GPT, Claude, Gemini, LLaMA, Mistral variants).</p>
+            </div>
+            <div style="background:rgba(167,139,250,0.06);border:1px solid rgba(167,139,250,0.15);border-radius:12px;padding:1.2rem;">
+                <p style="font-size:0.9rem;letter-spacing:0.12em;text-transform:uppercase;color:#a78bfa;margin-bottom:0.6rem;">Subject of Research</p>
+                <p style="font-size:1.08rem;color:#e2e8f0;font-weight:600;line-height:1.5;margin-bottom:0.6rem;">Structural limits with respect to ontological creativity</p>
+                <p style="font-size:1.02rem;color:#94a3b8;line-height:1.5;">Whether such systems can produce outputs that extend beyond the representational basis of their training distribution — i.e., whether a <em>basis change</em> is achievable through internal operations.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+  SLIDE 4 — GOALS AND OBJECTIVES
+════════════════════════════════════════════ -->
+<div class="slide" data-slide="4">
+    <div class="gradient-mesh">
+        <div class="blob" style="width:360px;height:360px;top:-70px;right:-50px;background:#818cf8;opacity:0.09;"></div>
+        <div class="blob" style="width:220px;height:220px;bottom:-50px;left:-30px;background:#38bdf8;opacity:0.07;"></div>
+    </div>
+    <div class="content">
+        <p class="reveal" style="font-size:1.1rem;letter-spacing:0.14em;text-transform:uppercase;color:#818cf8;margin-bottom:0.4rem;">Dissertation Passport — §3</p>
+        <h2 class="font-display reveal" style="font-size:clamp(1.65rem,2.8vw,2.4rem);font-weight:700;margin-bottom:0.7rem;">Goals and Objectives</h2>
+        <div class="accent-line reveal" style="margin-bottom:0.9rem;"></div>
+        <div class="reveal" style="background:rgba(129,140,248,0.06);border:1px solid rgba(129,140,248,0.15);border-radius:10px;padding:0.9rem 1.1rem;margin-bottom:0.9rem;">
+            <p style="font-size:1.0rem;letter-spacing:0.1em;text-transform:uppercase;color:#818cf8;margin-bottom:0.3rem;">Goal</p>
+            <p style="font-size:1.1rem;color:#e2e8f0;font-weight:600;line-height:1.5;">Establish a formal and empirically validated framework characterising the structural limits of ontological creativity in training-derived generative AI systems.</p>
+        </div>
+        <div class="reveal" style="display:flex;flex-direction:column;gap:0.5rem;">
+            <div style="display:flex;align-items:flex-start;gap:0.7rem;padding:0.6rem 0.85rem;background:rgba(255,255,255,0.03);border-radius:8px;border-left:3px solid #818cf8;">
+                <span style="color:#818cf8;font-weight:700;min-width:1.4rem;font-size:1rem;">O1</span>
+                <p style="font-size:1.0rem;color:#cbd5e1;line-height:1.45;">Develop rigorous vocabulary distinguishing information, knowledge, intelligence, and creativity in AI contexts.</p>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:0.7rem;padding:0.6rem 0.85rem;background:rgba(255,255,255,0.03);border-radius:8px;border-left:3px solid #38bdf8;">
+                <span style="color:#38bdf8;font-weight:700;min-width:1.4rem;font-size:1rem;">O2</span>
+                <p style="font-size:1.0rem;color:#cbd5e1;line-height:1.45;">Formalise the No New Basis condition for continuously optimised neural generators (Theorem 2.1).</p>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:0.7rem;padding:0.6rem 0.85rem;background:rgba(255,255,255,0.03);border-radius:8px;border-left:3px solid #a78bfa;">
+                <span style="color:#a78bfa;font-weight:700;min-width:1.4rem;font-size:1rem;">O3</span>
+                <p style="font-size:1.0rem;color:#cbd5e1;line-height:1.45;">Design and execute a multi-test empirical evaluation suite (T1–T5) spanning ontological innovation, epistemic agency, theory generation, category recognition, and mechanistic analysis.</p>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:0.7rem;padding:0.6rem 0.85rem;background:rgba(255,255,255,0.03);border-radius:8px;border-left:3px solid #818cf8;">
+                <span style="color:#818cf8;font-weight:700;min-width:1.4rem;font-size:1rem;">O4</span>
+                <p style="font-size:1.0rem;color:#cbd5e1;line-height:1.45;">Derive AI governance and deployment recommendations based on calibrated traceability evidence.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+  SLIDE 5 — SCIENTIFIC NOVELTY
+════════════════════════════════════════════ -->
+<div class="slide" data-slide="5">
+    <div class="gradient-mesh">
+        <div class="blob" style="width:400px;height:400px;top:-80px;left:-60px;background:#a78bfa;opacity:0.10;"></div>
+        <div class="blob" style="width:260px;height:260px;bottom:-60px;right:-40px;background:#818cf8;opacity:0.08;"></div>
+    </div>
+    <div class="content">
+        <p class="reveal" style="font-size:1.1rem;letter-spacing:0.14em;text-transform:uppercase;color:#a78bfa;margin-bottom:0.4rem;">Dissertation Passport — §4</p>
+        <h2 class="font-display reveal" style="font-size:clamp(1.65rem,2.8vw,2.4rem);font-weight:700;margin-bottom:0.7rem;">Scientific Novelty</h2>
+        <div class="accent-line reveal" style="margin-bottom:0.9rem;"></div>
+        <div class="reveal" style="display:flex;flex-direction:column;gap:0.6rem;">
+            <div style="background:rgba(167,139,250,0.06);border:1px solid rgba(167,139,250,0.14);border-radius:10px;padding:0.85rem 1.1rem;">
+                <p style="font-size:1.0rem;font-weight:700;color:#a78bfa;margin-bottom:0.3rem;">① No New Basis Theorem (Theorem 2.1)</p>
+                <p style="font-size:1.0rem;color:#94a3b8;line-height:1.5;">First formal proof that continuously optimised neural generators cannot produce outputs outside continuous deformations of the training manifold through internal operations — establishing a mathematically grounded creativity ceiling.</p>
+            </div>
+            <div style="background:rgba(129,140,248,0.06);border:1px solid rgba(129,140,248,0.14);border-radius:10px;padding:0.85rem 1.1rem;">
+                <p style="font-size:1.0rem;font-weight:700;color:#818cf8;margin-bottom:0.3rem;">② Operational Novelty Criterion</p>
+                <p style="font-size:1.0rem;color:#94a3b8;line-height:1.5;">Novel operational distinction between <em>surface novelty</em> (recombination within manifold) and <em>ontological novelty</em> (basis change) — enabling empirically testable hypothesis formulation for any generative system.</p>
+            </div>
+            <div style="background:rgba(56,189,248,0.06);border:1px solid rgba(56,189,248,0.14);border-radius:10px;padding:0.85rem 1.1rem;">
+                <p style="font-size:1.0rem;font-weight:700;color:#38bdf8;margin-bottom:0.3rem;">③ Multi-Dimensional Evaluation Suite (T1–T5)</p>
+                <p style="font-size:1.0rem;color:#94a3b8;line-height:1.5;">Original reproducible evaluation protocol combining semantic geometry, traceability scoring, theory-generation benchmarking, category recognition, and mechanistic attention analysis — validated across 7 models, 840+ responses.</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:0.85rem 1.1rem;">
+                <p style="font-size:1.0rem;font-weight:700;color:#e2e8f0;margin-bottom:0.3rem;">④ Cross-Layer Convergence</p>
+                <p style="font-size:1.0rem;color:#94a3b8;line-height:1.5;">First convergent validation linking behavioral creativity limits (T1–T4) to internal representational geometry (T5 mechanistic), confirming constraint at the representation level, not only in outputs.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+  SLIDE 6 — RESEARCH FRAMING
+════════════════════════════════════════════ -->
+<div class="slide" data-slide="6">
     <div class="gradient-mesh">
         <div class="blob" style="width:380px;height:380px;top:-80px;right:-60px;background:#818cf8;opacity:0.08;"></div>
         <div class="blob" style="width:250px;height:250px;bottom:-60px;left:-40px;background:#38bdf8;opacity:0.06;"></div>
@@ -711,9 +837,9 @@
 </div>
 
 <!-- ═══════════════════════════════════════════
-  SLIDE 3 — THEORETICAL FRAMEWORK
+  SLIDE 7 — THEORETICAL FRAMEWORK
 ════════════════════════════════════════════ -->
-<div class="slide" data-slide="3">
+<div class="slide" data-slide="7">
     <div class="gradient-mesh">
         <div class="blob" style="width:350px;height:350px;top:-70px;left:-50px;background:#a78bfa;opacity:0.09;"></div>
         <div class="blob" style="width:280px;height:280px;bottom:-60px;right:-40px;background:#818cf8;opacity:0.07;"></div>
@@ -751,9 +877,9 @@
 </div>
 
 <!-- ═══════════════════════════════════════════
-  SLIDE 4 — DATASET & EXPERIMENTAL DESIGN
+  SLIDE 8 — DATASET & EXPERIMENTAL DESIGN
 ════════════════════════════════════════════ -->
-<div class="slide" data-slide="4">
+<div class="slide" data-slide="8">
     <div class="gradient-mesh">
         <div class="blob" style="width:400px;height:400px;top:-90px;right:-70px;background:#38bdf8;opacity:0.08;"></div>
         <div class="blob" style="width:260px;height:260px;bottom:-60px;left:-40px;background:#a78bfa;opacity:0.07;"></div>
@@ -794,9 +920,9 @@
 </div>
 
 <!-- ═══════════════════════════════════════════
-  SLIDE 5 — TEST METHODOLOGY (T1–T4)
+  SLIDE 9 — TEST METHODOLOGY (T1–T4)
 ════════════════════════════════════════════ -->
-<div class="slide" data-slide="5">
+<div class="slide" data-slide="9">
     <div class="gradient-mesh">
         <div class="blob" style="width:380px;height:380px;top:-80px;left:-60px;background:#818cf8;opacity:0.08;"></div>
         <div class="blob" style="width:240px;height:240px;bottom:-50px;right:-30px;background:#38bdf8;opacity:0.07;"></div>
@@ -840,9 +966,9 @@
 </div>
 
 <!-- ═══════════════════════════════════════════
-  SLIDE 6 — RESULTS T1: ONTOLOGICAL INNOVATION
+  SLIDE 10 — RESULTS T1: ONTOLOGICAL INNOVATION
 ════════════════════════════════════════════ -->
-<div class="slide" data-slide="6">
+<div class="slide" data-slide="10">
     <div class="gradient-mesh">
         <div class="blob" style="width:380px;height:380px;top:-70px;right:-60px;background:#818cf8;opacity:0.09;"></div>
         <div class="blob" style="width:240px;height:240px;bottom:-50px;left:-40px;background:#a78bfa;opacity:0.07;"></div>
@@ -883,9 +1009,9 @@
 </div>
 
 <!-- ═══════════════════════════════════════════
-  SLIDE 7 — RESULTS T2: EPISTEMIC AGENCY
+  SLIDE 11 — RESULTS T2: EPISTEMIC AGENCY
 ════════════════════════════════════════════ -->
-<div class="slide slide-7-fix" data-slide="7">
+<div class="slide slide-7-fix" data-slide="11">
     <div class="gradient-mesh">
         <div class="blob" style="width:360px;height:360px;top:-70px;left:-50px;background:#38bdf8;opacity:0.08;"></div>
         <div class="blob" style="width:240px;height:240px;bottom:-50px;right:-40px;background:#818cf8;opacity:0.07;"></div>
@@ -951,9 +1077,9 @@
 </div>
 
 <!-- ═══════════════════════════════════════════
-  SLIDE 8 — RESULTS T3: THEORY GENERATION
+  SLIDE 12 — RESULTS T3: THEORY GENERATION
 ════════════════════════════════════════════ -->
-<div class="slide" data-slide="8">
+<div class="slide" data-slide="12">
     <div class="gradient-mesh">
         <div class="blob" style="width:360px;height:360px;top:-70px;right:-50px;background:#a78bfa;opacity:0.09;"></div>
         <div class="blob" style="width:230px;height:230px;bottom:-50px;left:-40px;background:#818cf8;opacity:0.07;"></div>
@@ -1023,9 +1149,9 @@
 </div>
 
 <!-- ═══════════════════════════════════════════
-  SLIDE 9 — RESULTS T4 + MECHANISTIC
+  SLIDE 13 — RESULTS T4 + MECHANISTIC
 ════════════════════════════════════════════ -->
-<div class="slide" data-slide="9">
+<div class="slide" data-slide="13">
     <div class="gradient-mesh">
         <div class="blob" style="width:380px;height:380px;top:-80px;right:-60px;background:#818cf8;opacity:0.10;"></div>
         <div class="blob" style="width:240px;height:240px;bottom:-50px;left:-40px;background:#38bdf8;opacity:0.07;"></div>
@@ -1069,9 +1195,9 @@
 </div>
 
 <!-- ═══════════════════════════════════════════
-  SLIDE 10 — CROSS-MODEL OVERVIEW
+  SLIDE 14 — CROSS-MODEL OVERVIEW
 ════════════════════════════════════════════ -->
-<div class="slide" data-slide="10">
+<div class="slide" data-slide="14">
     <div class="gradient-mesh">
         <div class="blob" style="width:360px;height:360px;top:-70px;left:-50px;background:#818cf8;opacity:0.08;"></div>
         <div class="blob" style="width:240px;height:240px;bottom:-50px;right:-40px;background:#38bdf8;opacity:0.06;"></div>
@@ -1115,9 +1241,9 @@
 </div>
 
 <!-- ═══════════════════════════════════════════
-  SLIDE 11 — ETHICAL IMPLICATIONS
+  SLIDE 15 — ETHICAL IMPLICATIONS
 ════════════════════════════════════════════ -->
-<div class="slide" data-slide="11">
+<div class="slide" data-slide="15">
     <div class="gradient-mesh">
         <div class="blob" style="width:400px;height:400px;top:-90px;right:-70px;background:#818cf8;opacity:0.10;"></div>
         <div class="blob" style="width:250px;height:250px;bottom:-60px;left:-40px;background:#a78bfa;opacity:0.08;"></div>
@@ -1153,9 +1279,9 @@
 </div>
 
 <!-- ═══════════════════════════════════════════
-  SLIDE 12 — DISCUSSION & SYNTHESIS
+  SLIDE 16 — DISCUSSION & SYNTHESIS
 ════════════════════════════════════════════ -->
-<div class="slide" data-slide="12">
+<div class="slide" data-slide="16">
     <div class="gradient-mesh">
         <div class="blob" style="width:380px;height:380px;top:-80px;left:-60px;background:#38bdf8;opacity:0.08;"></div>
         <div class="blob" style="width:260px;height:260px;bottom:-60px;right:-40px;background:#818cf8;opacity:0.07;"></div>
@@ -1184,9 +1310,9 @@
 </div>
 
 <!-- ═══════════════════════════════════════════
-  SLIDE 13 — CONCLUSIONS
+  SLIDE 17 — CONCLUSIONS
 ════════════════════════════════════════════ -->
-<div class="slide" data-slide="13">
+<div class="slide" data-slide="17">
     <div class="gradient-mesh">
         <div class="blob" style="width:460px;height:460px;top:-100px;right:-80px;background:#818cf8;opacity:0.12;"></div>
         <div class="blob" style="width:300px;height:300px;bottom:-70px;left:-50px;background:#38bdf8;opacity:0.09;"></div>
@@ -1219,9 +1345,232 @@
 </div>
 
 <!-- ═══════════════════════════════════════════
-  SLIDE 14 — APPENDIX A: T1 + T2 Additional Figures
+  SLIDE 18 — PRACTICAL SIGNIFICANCE
 ════════════════════════════════════════════ -->
-<div class="slide" data-slide="14">
+<div class="slide" data-slide="18">
+    <div class="gradient-mesh">
+        <div class="blob" style="width:380px;height:380px;top:-80px;right:-50px;background:#38bdf8;opacity:0.09;"></div>
+        <div class="blob" style="width:240px;height:240px;bottom:-50px;left:-40px;background:#818cf8;opacity:0.07;"></div>
+    </div>
+    <div class="content">
+        <p class="reveal" style="font-size:1.1rem;letter-spacing:0.14em;text-transform:uppercase;color:#38bdf8;margin-bottom:0.4rem;">Dissertation Passport — §5</p>
+        <h2 class="font-display reveal" style="font-size:clamp(1.65rem,2.8vw,2.4rem);font-weight:700;margin-bottom:0.7rem;">Practical Significance of the Work Results</h2>
+        <div class="accent-line reveal" style="margin-bottom:1rem;"></div>
+        <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:0.9rem;">
+            <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:10px;padding:1rem;">
+                <p style="font-size:1.05rem;font-weight:700;color:#38bdf8;margin-bottom:0.4rem;">🏛️ AI Governance</p>
+                <p style="font-size:1.0rem;color:#94a3b8;line-height:1.5;">Evidence-based guidelines for deflating anthropomorphic predicates in regulatory documents and product disclosures; operational criteria for distinguishing AI tool from AI agent in legal frameworks.</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:10px;padding:1rem;">
+                <p style="font-size:1.05rem;font-weight:700;color:#818cf8;margin-bottom:0.4rem;">🔍 Deployment Auditing</p>
+                <p style="font-size:1.0rem;color:#94a3b8;line-height:1.5;">Traceability scoring methodology directly applicable to AI deployment audits — allows quantifying the degree to which system outputs derive from known training data patterns vs. genuinely novel combinations.</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:10px;padding:1rem;">
+                <p style="font-size:1.05rem;font-weight:700;color:#a78bfa;margin-bottom:0.4rem;">🎓 Research Community</p>
+                <p style="font-size:1.0rem;color:#94a3b8;line-height:1.5;">Open-source evaluation suite (T1–T5, Python) and prompt corpora immediately reusable by researchers studying any generative model — enabling reproducible creativity assessment across architectures.</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:10px;padding:1rem;">
+                <p style="font-size:1.05rem;font-weight:700;color:#e2e8f0;margin-bottom:0.4rem;">⚖️ Human Accountability</p>
+                <p style="font-size:1.0rem;color:#94a3b8;line-height:1.5;">Calibrated traceability as a deployment-critical metric: a practical recommendation that human decision authority must be retained wherever AI outputs cannot be distinguished from genuine ontological novelty.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+  SLIDE 19 — PROPOSITIONS TO BE DEFENDED
+════════════════════════════════════════════ -->
+<div class="slide" data-slide="19">
+    <div class="gradient-mesh">
+        <div class="blob" style="width:440px;height:440px;top:-90px;right:-70px;background:#818cf8;opacity:0.11;"></div>
+        <div class="blob" style="width:280px;height:280px;bottom:-60px;left:-50px;background:#a78bfa;opacity:0.09;"></div>
+        <div class="blob" style="width:200px;height:200px;top:40%;left:15%;background:#38bdf8;opacity:0.07;"></div>
+    </div>
+    <div class="content">
+        <p class="reveal" style="font-size:1.1rem;letter-spacing:0.14em;text-transform:uppercase;color:#818cf8;margin-bottom:0.4rem;">Dissertation Passport — §6</p>
+        <h2 class="font-display reveal" style="font-size:clamp(1.65rem,2.8vw,2.4rem);font-weight:700;margin-bottom:0.7rem;">Propositions to be Defended</h2>
+        <div class="accent-line reveal" style="margin-bottom:0.85rem;"></div>
+        <div class="reveal" style="display:flex;flex-direction:column;gap:0.55rem;">
+            <div style="display:flex;align-items:flex-start;gap:0.8rem;padding:0.7rem 0.95rem;background:rgba(129,140,248,0.06);border-radius:9px;border-left:3px solid #818cf8;">
+                <span style="color:#818cf8;font-weight:800;font-size:1.1rem;min-width:1.6rem;">P1</span>
+                <p style="font-size:1.0rem;color:#cbd5e1;line-height:1.5;">The distinction between <strong style="color:#e2e8f0;">surface novelty</strong> (recombination within the learned manifold) and <strong style="color:#e2e8f0;">ontological novelty</strong> (basis change) constitutes a scientifically operable criterion for evaluating generative AI creativity.</p>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:0.8rem;padding:0.7rem 0.95rem;background:rgba(56,189,248,0.06);border-radius:9px;border-left:3px solid #38bdf8;">
+                <span style="color:#38bdf8;font-weight:800;font-size:1.1rem;min-width:1.6rem;">P2</span>
+                <p style="font-size:1.0rem;color:#cbd5e1;line-height:1.5;"><strong style="color:#e2e8f0;">Theorem 2.1 (No New Basis):</strong> Any continuously optimised neural generator produces outputs within the continuous deformation closure of its training manifold; basis change through internal operations alone is structurally impossible.</p>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:0.8rem;padding:0.7rem 0.95rem;background:rgba(167,139,250,0.06);border-radius:9px;border-left:3px solid #a78bfa;">
+                <span style="color:#a78bfa;font-weight:800;font-size:1.1rem;min-width:1.6rem;">P3</span>
+                <p style="font-size:1.0rem;color:#cbd5e1;line-height:1.5;">Empirical results from T1–T4 (840+ responses, 7 models) converge in confirming that all evaluated LLMs operate exclusively within their training manifold across ontological, epistemic, theoretical, and categorical dimensions.</p>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:0.8rem;padding:0.7rem 0.95rem;background:rgba(255,255,255,0.04);border-radius:9px;border-left:3px solid #818cf8;">
+                <span style="color:#818cf8;font-weight:800;font-size:1.1rem;min-width:1.6rem;">P4</span>
+                <p style="font-size:1.0rem;color:#cbd5e1;line-height:1.5;">Mechanistic analysis (T5) confirms the behavioral constraint is traceable to internal representational geometry: attention patterns and activation clusters reflect training-derived structure, not emergent novelty.</p>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:0.8rem;padding:0.7rem 0.95rem;background:rgba(255,255,255,0.04);border-radius:9px;border-left:3px solid #38bdf8;">
+                <span style="color:#38bdf8;font-weight:800;font-size:1.1rem;min-width:1.6rem;">P5</span>
+                <p style="font-size:1.0rem;color:#cbd5e1;line-height:1.5;">Calibrated traceability must be treated as a deployment-critical metric; human decision authority should be maintained in any domain where outputs cannot be verified as non-novel within the system's training manifold.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+  SLIDE 20 — VALIDATION & RELIABILITY
+════════════════════════════════════════════ -->
+<div class="slide" data-slide="20">
+    <div class="gradient-mesh">
+        <div class="blob" style="width:360px;height:360px;top:-70px;left:-50px;background:#38bdf8;opacity:0.09;"></div>
+        <div class="blob" style="width:220px;height:220px;bottom:-40px;right:-30px;background:#818cf8;opacity:0.07;"></div>
+    </div>
+    <div class="content">
+        <p class="reveal" style="font-size:1.1rem;letter-spacing:0.14em;text-transform:uppercase;color:#38bdf8;margin-bottom:0.4rem;">Dissertation Passport — §7–8</p>
+        <h2 class="font-display reveal" style="font-size:clamp(1.65rem,2.8vw,2.2rem);font-weight:700;margin-bottom:0.7rem;">Validation &amp; Degree of Reliability of Results</h2>
+        <div class="accent-line reveal" style="margin-bottom:0.9rem;"></div>
+        <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:0.9rem;margin-bottom:0.9rem;">
+            <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:10px;padding:1rem;">
+                <p style="font-size:1.0rem;font-weight:700;color:#38bdf8;margin-bottom:0.5rem;">🧪 Empirical Validation</p>
+                <ul style="font-size:0.98rem;color:#94a3b8;line-height:1.6;padding-left:1.1rem;margin:0;">
+                    <li>840+ AI-generated responses across 7 LLMs</li>
+                    <li>4 independent test families (T1–T4) + mechanistic layer</li>
+                    <li>Cross-model robustness analysis (T6)</li>
+                    <li>Open-source code and data for independent replication</li>
+                </ul>
+            </div>
+            <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:10px;padding:1rem;">
+                <p style="font-size:1.0rem;font-weight:700;color:#818cf8;margin-bottom:0.5rem;">📊 Statistical Rigour</p>
+                <ul style="font-size:0.98rem;color:#94a3b8;line-height:1.6;padding-left:1.1rem;margin:0;">
+                    <li>Effect sizes: Cohen's <em>d</em>, η² per test family</li>
+                    <li>Non-parametric tests: Kruskal–Wallis, Mann–Whitney U</li>
+                    <li>Bonferroni-corrected pairwise comparisons (21 pairs)</li>
+                    <li>Convergent validity across semantic geometry methods</li>
+                </ul>
+            </div>
+        </div>
+        <div class="reveal" style="background:rgba(56,189,248,0.05);border:1px solid rgba(56,189,248,0.14);border-radius:10px;padding:0.9rem 1.1rem;">
+            <p style="font-size:0.9rem;letter-spacing:0.1em;text-transform:uppercase;color:#38bdf8;margin-bottom:0.4rem;">Verification of Research Results</p>
+            <p style="font-size:1.0rem;color:#cbd5e1;line-height:1.55;">Results are supported by formal derivation (Theorem 2.1), multi-model statistical testing (T1-T6), and reproducible computational materials (code, prompts, and data-processing pipeline) provided in the dissertation project repository.</p>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+  SLIDE 21 — AUTHOR'S PERSONAL CONTRIBUTION
+════════════════════════════════════════════ -->
+<div class="slide" data-slide="21">
+    <div class="gradient-mesh">
+        <div class="blob" style="width:380px;height:380px;top:-80px;right:-60px;background:#a78bfa;opacity:0.09;"></div>
+        <div class="blob" style="width:240px;height:240px;bottom:-50px;left:-40px;background:#38bdf8;opacity:0.07;"></div>
+    </div>
+    <div class="content">
+        <p class="reveal" style="font-size:1.1rem;letter-spacing:0.14em;text-transform:uppercase;color:#a78bfa;margin-bottom:0.4rem;">Dissertation Passport — §9</p>
+        <h2 class="font-display reveal" style="font-size:clamp(1.65rem,2.8vw,2.2rem);font-weight:700;margin-bottom:0.7rem;">Author's Personal Contribution</h2>
+        <div class="accent-line reveal" style="margin-bottom:0.9rem;"></div>
+        <div class="reveal" style="display:flex;flex-direction:column;gap:0.75rem;">
+            <div style="display:flex;align-items:flex-start;gap:0.7rem;padding:0.65rem 0.85rem;background:rgba(255,255,255,0.03);border-radius:8px;border-left:3px solid #a78bfa;">
+                <span style="color:#a78bfa;font-weight:700;min-width:1.6rem;font-size:1rem;">1.</span>
+                <p style="font-size:1rem;color:#cbd5e1;line-height:1.5;">Developed the theoretical framework, conceptual apparatus, and formal argumentation (including Theorem 2.1).</p>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:0.7rem;padding:0.65rem 0.85rem;background:rgba(255,255,255,0.03);border-radius:8px;border-left:3px solid #38bdf8;">
+                <span style="color:#38bdf8;font-weight:700;min-width:1.6rem;font-size:1rem;">2.</span>
+                <p style="font-size:1rem;color:#cbd5e1;line-height:1.5;">Designed and implemented all empirical protocols (T1-T6), software pipelines, and statistical procedures.</p>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:0.7rem;padding:0.65rem 0.85rem;background:rgba(255,255,255,0.03);border-radius:8px;border-left:3px solid #818cf8;">
+                <span style="color:#818cf8;font-weight:700;min-width:1.6rem;font-size:1rem;">3.</span>
+                <p style="font-size:1rem;color:#cbd5e1;line-height:1.5;">Collected and processed data, interpreted results, prepared visualizations, and authored dissertation manuscripts and related publications.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+  SLIDE 22 — RESEARCH RESULTS
+════════════════════════════════════════════ -->
+<div class="slide" data-slide="22">
+    <div class="gradient-mesh">
+        <div class="blob" style="width:440px;height:440px;top:-90px;right:-70px;background:#818cf8;opacity:0.10;"></div>
+        <div class="blob" style="width:280px;height:280px;bottom:-60px;left:-50px;background:#38bdf8;opacity:0.08;"></div>
+        <div class="blob" style="width:200px;height:200px;top:40%;left:12%;background:#a78bfa;opacity:0.07;"></div>
+    </div>
+    <canvas class="particle-canvas-ambient" style="position:absolute;inset:0;z-index:1;width:100%;height:100%;"></canvas>
+    <div class="content">
+        <p class="reveal" style="font-size:1.1rem;letter-spacing:0.14em;text-transform:uppercase;color:#818cf8;margin-bottom:0.4rem;">Dissertation Passport — §11</p>
+        <h2 class="font-display reveal" style="font-size:clamp(1.65rem,2.8vw,2.4rem);font-weight:700;margin-bottom:0.7rem;">Research Results</h2>
+        <div class="accent-line reveal" style="margin-bottom:0.9rem;"></div>
+        <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.8rem;margin-bottom:0.8rem;">
+            <div style="background:rgba(129,140,248,0.06);border:1px solid rgba(129,140,248,0.14);border-radius:10px;padding:0.85rem;text-align:center;">
+                <p style="font-size:1.9rem;font-weight:800;color:#818cf8;line-height:1;">97.6%</p>
+                <p style="font-size:0.88rem;color:#64748b;margin-top:0.25rem;">T1 responses traceable<br>to known manifold clusters</p>
+            </div>
+            <div style="background:rgba(56,189,248,0.06);border:1px solid rgba(56,189,248,0.14);border-radius:10px;padding:0.85rem;text-align:center;">
+                <p style="font-size:1.9rem;font-weight:800;color:#38bdf8;line-height:1;">0 / 30</p>
+                <p style="font-size:0.88rem;color:#64748b;margin-top:0.25rem;">T3 generated theories<br>outside known families</p>
+            </div>
+            <div style="background:rgba(167,139,250,0.06);border:1px solid rgba(167,139,250,0.14);border-radius:10px;padding:0.85rem;text-align:center;">
+                <p style="font-size:1.9rem;font-weight:800;color:#a78bfa;line-height:1;">η²=0.766</p>
+                <p style="font-size:0.88rem;color:#64748b;margin-top:0.25rem;">T4 large effect — model<br>tier structure confirmed</p>
+            </div>
+        </div>
+        <div class="reveal" style="display:flex;flex-direction:column;gap:0.5rem;">
+            <div style="display:flex;align-items:flex-start;gap:0.7rem;padding:0.6rem 0.85rem;background:rgba(255,255,255,0.03);border-radius:8px;border-left:3px solid #818cf8;">
+                <span style="color:#818cf8;font-weight:700;min-width:2.4rem;font-size:0.95rem;">T1</span>
+                <p style="font-size:0.98rem;color:#cbd5e1;line-height:1.45;">Ontological Innovation: cosine similarity ≥ 0.65 to training modality centroids across all models; η²=0.326 (moderate). No outlier cluster detected beyond training distribution.</p>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:0.7rem;padding:0.6rem 0.85rem;background:rgba(255,255,255,0.03);border-radius:8px;border-left:3px solid #38bdf8;">
+                <span style="color:#38bdf8;font-weight:700;min-width:2.4rem;font-size:0.95rem;">T2</span>
+                <p style="font-size:0.98rem;color:#cbd5e1;line-height:1.45;">Epistemic Agency: no model demonstrated knowledge-boundary awareness; η²=0.068 (negligible). Boundary probing consistent with pattern completion, not self-modelling.</p>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:0.7rem;padding:0.6rem 0.85rem;background:rgba(255,255,255,0.03);border-radius:8px;border-left:3px solid #a78bfa;">
+                <span style="color:#a78bfa;font-weight:700;min-width:2.4rem;font-size:0.95rem;">T5</span>
+                <p style="font-size:0.98rem;color:#cbd5e1;line-height:1.45;">Mechanistic: cluster purity 1.0, inter-cluster separation 0.465, entropy 2.49 — internal representations fully stratified by training-derived structure.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+  SLIDE 23 — PUBLICATIONS RELATED TO THE DISSERTATION
+════════════════════════════════════════════ -->
+<div class="slide" data-slide="23">
+    <div class="gradient-mesh">
+        <div class="blob" style="width:420px;height:420px;top:-90px;right:-60px;background:#818cf8;opacity:0.09;"></div>
+        <div class="blob" style="width:260px;height:260px;bottom:-60px;left:-40px;background:#38bdf8;opacity:0.07;"></div>
+    </div>
+    <div class="content">
+        <p class="reveal" style="font-size:1.1rem;letter-spacing:0.14em;text-transform:uppercase;color:#818cf8;margin-bottom:0.4rem;">Dissertation Passport — §10</p>
+        <h2 class="font-display reveal" style="font-size:clamp(1.65rem,2.8vw,2.4rem);font-weight:700;margin-bottom:0.7rem;">Publications Related to the Dissertation</h2>
+        <div class="accent-line reveal" style="margin-bottom:1.3rem;"></div>
+        <div class="reveal" style="display:flex;flex-direction:column;gap:1.1rem;">
+            <div style="background:rgba(129,140,248,0.05);border:1px solid rgba(129,140,248,0.14);border-radius:12px;padding:1.15rem 1.4rem;display:flex;gap:1rem;align-items:flex-start;">
+                <span style="color:#818cf8;font-size:1.45rem;font-weight:800;min-width:2rem;line-height:1.2;">1.</span>
+                <div>
+                    <p style="font-size:1.04rem;color:#e2e8f0;line-height:1.62;margin-bottom:0.28rem;"><strong>Matarmaa J.&nbsp;O.</strong> Information-processing systems as conscious entities: on the limits of machine consciousness // <em>Discover Artificial Intelligence</em>, Springer Nature. 2026. Vol.&nbsp;x, No.&nbsp;x. P.&nbsp;x–x.</p>
+                    <p style="font-size:0.94rem;color:#38bdf8;">DOI: <a href="https://link.springer.com/journal/44163" style="color:#38bdf8;text-decoration:underline;">https://link.springer.com/journal/44163</a></p>
+                </div>
+            </div>
+            <div style="background:rgba(56,189,248,0.05);border:1px solid rgba(56,189,248,0.14);border-radius:12px;padding:1.15rem 1.4rem;display:flex;gap:1rem;align-items:flex-start;">
+                <span style="color:#38bdf8;font-size:1.45rem;font-weight:800;min-width:2rem;line-height:1.2;">2.</span>
+                <div>
+                    <p style="font-size:1.04rem;color:#e2e8f0;line-height:1.62;margin-bottom:0.28rem;"><strong>Matarmaa J.&nbsp;O.</strong> Operational limits of ontological innovation in LLMs: evidence from controlled sensory-modality generation // <em>Ontology of Designing</em>. 2026. Vol.&nbsp;x, No.&nbsp;x. P.&nbsp;x–x.</p>
+                    <p style="font-size:0.94rem;color:#38bdf8;">DOI: <a href="https://www.ontology-of-designing.ru/" style="color:#38bdf8;text-decoration:underline;">https://www.ontology-of-designing.ru/</a></p>
+                </div>
+            </div>
+            <div style="background:rgba(167,139,250,0.05);border:1px solid rgba(167,139,250,0.14);border-radius:12px;padding:1.15rem 1.4rem;display:flex;gap:1rem;align-items:flex-start;">
+                <span style="color:#a78bfa;font-size:1.45rem;font-weight:800;min-width:2rem;line-height:1.2;">3.</span>
+                <div>
+                    <p style="font-size:1.04rem;color:#e2e8f0;line-height:1.62;margin-bottom:0.28rem;"><strong>Matarmaa J.&nbsp;O.</strong> Semantic derivation in AI-generated consciousness theories: benchmark evidence from a multi-model theory-generation experiment // <em>Problems of Artificial Intelligence</em>. 2026. Vol.&nbsp;x, No.&nbsp;x. P.&nbsp;x–x.</p>
+                    <p style="font-size:0.94rem;color:#38bdf8;">DOI: <a href="http://paijournal.guicaidn.ru/en/news.html" style="color:#38bdf8;text-decoration:underline;">http://paijournal.guicaidn.ru/en/news.html</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+  SLIDE 24 — APPENDIX A: T1 + T2 Additional Figures
+════════════════════════════════════════════ -->
+<div class="slide" data-slide="24">
     <div class="gradient-mesh">
         <div class="blob" style="width:340px;height:340px;top:-70px;right:-50px;background:#818cf8;opacity:0.07;"></div>
         <div class="blob" style="width:220px;height:220px;bottom:-40px;left:-30px;background:#38bdf8;opacity:0.06;"></div>
@@ -1267,9 +1616,9 @@
 </div>
 
 <!-- ═══════════════════════════════════════════
-  SLIDE 15 — APPENDIX B: T3 + T4 + T5 Figures
+  SLIDE 25 — APPENDIX B: T3 + T4 + T5 Figures
 ════════════════════════════════════════════ -->
-<div class="slide" data-slide="15">
+<div class="slide" data-slide="25">
     <div class="gradient-mesh">
         <div class="blob" style="width:340px;height:340px;top:-70px;left:-50px;background:#a78bfa;opacity:0.07;"></div>
         <div class="blob" style="width:220px;height:220px;bottom:-40px;right:-30px;background:#818cf8;opacity:0.06;"></div>
@@ -1321,7 +1670,6 @@
         </div>
     </div>
 </div>
-
 </div><!-- end .deck -->
 
 <!-- NAVIGATION -->
