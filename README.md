@@ -9,6 +9,7 @@ This repository contains the complete computational notebooks for conducting the
 
 Statistical terminology companion files used in the defense presentation:
 
+- Presentation deck (HTML): [Presentation.html](Presentation.html)
 - English PDF: [papers/statistical_glossary.pdf](papers/statistical_glossary.pdf)
 - Russian PDF: [papers/statistical_glossary_ru.pdf](papers/statistical_glossary_ru.pdf)
 
@@ -30,6 +31,7 @@ The notebooks implement the four empirical tests described in the study and gene
 ├── research/test*/prompts/{prompt.txt,response_schema.json} # Per-test prompt and schema assets for response collection
 ├── research/data/                             # Generated datasets
 ├── research/test*/results/{data,figures}/     # Analysis outputs and figures per test
+├── Presentation.html                          # Defense presentation deck
 ├── papers/statistical_glossary.pdf            # Statistical glossary for presentation (EN)
 ├── papers/statistical_glossary_ru.pdf         # Statistical glossary for presentation (RU)
 └── README.md                         # This file
