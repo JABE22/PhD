@@ -37,6 +37,14 @@
         *, *::before, *::after { box-sizing: border-box; }
         html, body { background: var(--color-bg); margin: 0; }
         body { font-family: 'Inter', system-ui, sans-serif; color: var(--color-text); overflow: hidden; height: 100vh; width: 100vw; }
+        /* Normalize browser defaults that can cause unexpected text indentation */
+        .slide p,
+        .slide li {
+            text-indent: 0 !important;
+        }
+        .slide p {
+            margin: 0;
+        }
         .deck { width: 100vw; height: 100vh; position: relative; }
         .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--color-bg); display: flex; flex-direction: column; align-items: center; justify-content: center; opacity: 0; transform: scale(0.95); transition: opacity 0.7s ease, transform 0.7s ease; pointer-events: none; overflow: hidden; }
         .slide.active { opacity: 1; transform: scale(1); pointer-events: all; }
@@ -1677,7 +1685,7 @@
     <button class="nav-btn" onclick="changeSlide(-1)">&#8249;</button>
     <div class="slide-dots" id="dots"></div>
     <button class="nav-btn" onclick="changeSlide(1)">&#8250;</button>
-    <span class="slide-counter" id="counter">1 / 15</span>
+    <span class="slide-counter" id="counter">1 / ...</span>
 </div>
 
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
@@ -1712,6 +1720,7 @@
         dot.onclick = () => goToSlide(i);
         dotsContainer.appendChild(dot);
     }
+    updateNav();
     function goToSlide(n) {
         const prev = document.querySelector('.slide.active');
         const next = document.querySelector(`.slide[data-slide="${n}"]`);
@@ -1920,6 +1929,16 @@
         return kept.join('\n').replace(/^\s+/, '').trim();
     }
 
+    function normalizePopupBodyText(text) {
+        if (!text) return '';
+        return text
+            .split('\n')
+            .map(function(line) { return line.replace(/^\s+/, ''); })
+            .join('\n')
+            .replace(/\n{3,}/g, '\n\n')
+            .trim();
+    }
+
     var tbTranslationCache = new Map();
     var tbTranslateToken = 0;
 
@@ -1990,6 +2009,8 @@
         var sourceVisible = getFramePopupText(el);
         sourceEn = stripLeadingDuplicateHeading(sourceEn, headingRaw);
         sourceVisible = stripLeadingDuplicateHeading(sourceVisible, headingRaw);
+        sourceEn = normalizePopupBodyText(sourceEn);
+        sourceVisible = normalizePopupBodyText(sourceVisible);
         var token = ++tbTranslateToken;
         title.textContent = headingShort;
 
@@ -2008,9 +2029,21 @@
             contentRu.textContent = '';
             overlay.classList.add('open');
             document.addEventListener('keydown', tbKeyHandler);
-            translateToRussian(sourceEn).then(function(ruText) {
+            Promise.all([
+                translateToRussian(sourceEn),
+                translateToRussian(headingRaw || headingShort || '')
+            ]).then(function(parts) {
                 if (token !== tbTranslateToken) return;
-                contentEn.textContent = (ruText && ruText.trim()) ? ruText : sourceVisible;
+                var ruText = parts[0] || '';
+                var ruHeading = (parts[1] || '').replace(/\s+/g, ' ').trim();
+                var body = (ruText && ruText.trim()) ? ruText : sourceVisible;
+
+                // In RU mode, remove heading duplication in translated body.
+                body = stripLeadingDuplicateHeading(body, ruHeading || headingShort);
+                body = stripLeadingDuplicateHeading(body, headingShort);
+                body = normalizePopupBodyText(body);
+
+                contentEn.textContent = body;
             });
             return;
         }
