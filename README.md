@@ -9,6 +9,7 @@ This repository contains the complete computational notebooks for conducting the
 
 Statistical terminology companion files used in the defense presentation:
 
+- GitHub hosted presentation: [https://jabe22.github.io/](https://jabe22.github.io/)
 - Presentation deck (HTML): [Presentation.html](Presentation.html)
 - English PDF: [papers/statistical_glossary.pdf](papers/statistical_glossary.pdf)
 - Russian PDF: [papers/statistical_glossary_ru.pdf](papers/statistical_glossary_ru.pdf)
