@@ -16,7 +16,7 @@
   "hybrid_count": 154,
   "hybrid_proportion": 0.9166666666666666,
   "mean_cf_confidence": 0.2740079365079365,
-  "mean_novelty_score": 0.32504663190671373,
+  "mean_novelty_score": 0.3250466308423451,
   "mean_similarity": 0.6724029470767293,
   "models_analyzed": [
     "deepseek-v3.2",

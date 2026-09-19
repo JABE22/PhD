@@ -49,7 +49,7 @@ MIN_RESPONSE_WORDS = 100
 # against a smaller, heterogeneous corpus (OpenAlex + Crossref, ~500 docs).
 # Candidate sweep on current Test 1 data (0.30/0.40/0.50) showed 0.40 is the
 # best operating point: 0.30 is too permissive, 0.50 is too restrictive.
-T1_TRACEABILITY_SIM_THRESHOLD  = 0.40
+T1_TRACEABILITY_SIM_THRESHOLD  = 0.50
 T1_TRACEABILITY_TOP_K          = 10   # top-k corpus matches returned per proposal
 T1_TRACEABILITY_MIN_QUERY_CHARS = 60  # minimum proposal text length for retrieval
 T1_TRACEABILITY_MIN_DOC_CHARS   = 120 # minimum cleaned corpus document length

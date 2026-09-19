@@ -16,3 +16,5 @@ mistralai
 perplexityai
 tensorflow
 tf-keras
+ipywidgets
+sentence_transformers

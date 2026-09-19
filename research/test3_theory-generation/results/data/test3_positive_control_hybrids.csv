@@ -1,0 +1,11 @@
+first_family,second_family,top_match_1,top_similarity_1,top_match_2,top_similarity_2,passes_derivative_gate
+Global Workspace Theory,Global Neuronal Workspace Theory,Global Workspace Theory,0.9492694735527039,Global Neuronal Workspace Theory,0.8139434456825256,True
+Global Neuronal Workspace Theory,Synergistic Global Workspace,Global Neuronal Workspace Theory,0.978750467300415,Synergistic Global Workspace,0.8058067560195923,True
+Synergistic Global Workspace,Integrated Information Theory,Synergistic Global Workspace,0.9612488150596619,Global Workspace Theory,0.7712483406066895,True
+Integrated Information Theory,Higher-Order Thought Theory,Integrated Information Theory,0.9718215465545654,Higher-Order Thought Theory,0.6593562960624695,True
+Higher-Order Thought Theory,Higher-Order Perception Theory,Higher-Order Thought Theory,0.9738633632659912,Higher-Order Perception Theory,0.8385115265846252,True
+Higher-Order Perception Theory,Self-Representational Theory,Higher-Order Perception Theory,0.9586389064788818,Higher-Order Thought Theory,0.8470386862754822,True
+Self-Representational Theory,Attention Schema Theory,Self-Representational Theory,0.9292169809341431,Attention Schema Theory,0.7801568508148193,True
+Attention Schema Theory,Multiple Drafts Model,Attention Schema Theory,0.9577325582504272,Object-Centered Theories,0.6636026501655579,True
+Multiple Drafts Model,Local Recurrent Processing Theory,Multiple Drafts Model,0.9175591468811035,Local Recurrent Processing Theory,0.7362063527107239,True
+Local Recurrent Processing Theory,Local Recurrency Model of the Brain,Local Recurrent Processing Theory,0.8891323804855347,Local Recurrency Model of the Brain,0.8145910501480103,True

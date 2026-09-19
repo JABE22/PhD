@@ -54,7 +54,7 @@ PROVIDER_MODEL_CONFIGS = {
     "openrouter": {
         # OpenRouter models (prefix with provider/)
         "gpt-5.2": {"api": "openrouter", "id": "openai/gpt-5.2"},
-        "claude-3.7-sonnet": {"api": "openrouter", "id": "anthropic/claude-3.7-sonnet"},
+        "claude-sonnet-5": {"api": "openrouter", "id": "anthropic/claude-sonnet-5"},
         "gemini-3.1-pro-preview": {"api": "openrouter", "id": "google/gemini-3.1-pro-preview"},
         "llama-3.3-70b-instruct": {"api": "openrouter", "id": "meta-llama/llama-3.3-70b-instruct"},
         "deepseek-v3.2": {"api": "openrouter", "id": "deepseek/deepseek-v3.2"},
@@ -681,6 +681,17 @@ def main():
         action="store_true",
         help="List available models and exit",
     )
+    parser.add_argument(
+        "--output-dir",
+        type=str,
+        default=None,
+        help=(
+            "Override the ai_responses output directory (relative paths resolve from repo root). "
+            "Defaults to the test's standard ai_responses/ folder. Existing per-sample files there "
+            "are skipped (not overwritten), so use this to write a fresh round of results "
+            "(e.g. ai_responses_round2) without touching prior data."
+        ),
+    )
     
     args = parser.parse_args()
     
@@ -739,7 +750,9 @@ def main():
         tests = list(TEST_FOLDER_MAPPING.keys())
     else:
         tests = [args.test]
-    
+
+    output_dir = Path(args.output_dir) if args.output_dir else None
+
     for test in tests:
         collect_responses(
             provider=args.provider,
@@ -750,6 +763,7 @@ def main():
             temperature_schedule=temperature_schedule,
             max_tokens=args.max_tokens,
             delay=args.delay,
+            output_dir=output_dir,
         )
 
 

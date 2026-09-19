@@ -941,8 +941,8 @@
         <div class="reveal method-grid">
             <div class="method-card" style="background:rgba(129,140,248,0.08);border:1px solid rgba(129,140,248,0.2);border-radius:10px;padding:0.85rem;">
                 <p style="font-size:0.98rem;font-weight:700;color:#818cf8;text-transform:uppercase;margin-bottom:0.4rem;">T1 — Innovation</p>
-                <p style="font-size:0.98rem;color:#94a3b8;line-height:1.4;">New sensory modality proposals tested for basis-change vs. recombination. n=24/model. Frontier bands + convex hull (PCA)</p>
-                <p style="font-size:0.98rem;color:#818cf8;margin-top:0.35rem;">η²=0.326 moderate</p>
+                <p style="font-size:0.98rem;color:#94a3b8;line-height:1.4;">New sensory-modality proposals tested for basis change versus recombination. 168 raw records; 79 unique normalized proposals.</p>
+                <p style="font-size:0.98rem;color:#818cf8;margin-top:0.35rem;">0 strictly novel; 100% inside PCA hull</p>
             </div>
             <div class="method-card" style="background:rgba(56,189,248,0.06);border:1px solid rgba(56,189,248,0.16);border-radius:10px;padding:0.85rem;">
                 <p style="font-size:0.98rem;font-weight:700;color:#38bdf8;text-transform:uppercase;margin-bottom:0.4rem;">T2 — Agency</p>
@@ -966,7 +966,7 @@
             </div>
             <div class="method-card" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:0.85rem;">
                 <p style="font-size:0.98rem;font-weight:700;color:#cbd5e1;text-transform:uppercase;margin-bottom:0.4rem;">T6 — ANOVA Summary</p>
-                <p style="font-size:0.95rem;color:#94a3b8;line-height:1.4;">F(T1)=12.98, p&lt;.001 · F(T2)=10.09, p&lt;.001 · F(T3)=1.12, n.s. · F(T4)=88.06, p&lt;.001</p>
+                <p style="font-size:0.95rem;color:#94a3b8;line-height:1.4;">T1: 79 unique proposals, 0 strict-novelty cases · F(T2)=10.09, p&lt;.001 · F(T3)=1.12, n.s. · F(T4)=88.06, p&lt;.001</p>
                 <p style="font-size:0.95rem;color:#cbd5e1;margin-top:0.35rem;">Thresholds: T1=0.40 · T2=0.62/0.67 · T3=0.30/0.70 · T4=0.40</p>
             </div>
         </div>
@@ -988,12 +988,12 @@
         <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;align-items:stretch;flex:1 1 0;min-height:0;">
             <!-- LEFT: two figs stacked vertically, 50% width -->
             <div style="display:flex;flex-direction:column;gap:0.75rem;min-height:0;">
-                        <figure class="fig-frame" style="flex:1 1 0;min-height:0;cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test1_ontological-innovation/results/figures/novelty_frontier_bands_by_model.png" data-label="Test 1 novelty-frontier diagnostics by model" data-desc="Novelty-frontier band assignment (near/moderate/far/missing) — share of proposals per model"   onclick="openLightbox(this)" title="Click to enlarge">
-    <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test1_ontological-innovation/results/figures/novelty_frontier_bands_by_model.png" alt="Test 1 novelty-frontier diagnostics by model"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
-    <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Test 1 novelty-frontier diagnostics by model</figcaption>
+                        <figure class="fig-frame" style="flex:1 1 0;min-height:0;cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test1_ontological-innovation/results/figures/similarity_heatmap_v1_optionA_aggregated.png" data-label="Test 1 similarity to training modalities" data-desc="Cosine similarity of 79 unique proposals to the eight training modalities"   onclick="openLightbox(this)" title="Click to enlarge">
+    <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test1_ontological-innovation/results/figures/similarity_heatmap_v1_optionA_aggregated.png" alt="Test 1 similarity to training modalities"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+    <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Test 1 similarity to training modalities</figcaption>
 </figure>
-                        <figure class="fig-frame" style="cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test1_ontological-innovation/results/figures/embedding_space_2d.png" data-label="Embedding-space analysis for Test 1 proposals" data-desc="Embedding-space PCA — proposals inside convex hull of training modalities (blue circles = training, squares = proposals)"   onclick="openLightbox(this)" title="Click to enlarge">
-    <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test1_ontological-innovation/results/figures/embedding_space_2d.png" alt="Embedding-space analysis for Test 1 proposals"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
+                        <figure class="fig-frame" style="cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test1_ontological-innovation/results/figures/embedding_space_analysis.png" data-label="Embedding-space analysis for Test 1 proposals" data-desc="PCA projection of 79 unique proposals; hull membership is computed in three dimensions"   onclick="openLightbox(this)" title="Click to enlarge">
+    <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test1_ontological-innovation/results/figures/embedding_space_analysis.png" alt="Embedding-space analysis for Test 1 proposals"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
     <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Embedding-space analysis for Test 1 proposals</figcaption>
 </figure>
             </div><!-- end left fig column -->
@@ -1002,14 +1002,14 @@
                 <div style="background:rgba(129,140,248,0.07);border:1px solid rgba(129,140,248,0.18);border-radius:10px;padding:0.85rem;">
                     <p style="font-size:1.42rem;font-weight:700;color:#818cf8;margin-bottom:0.42rem;">Key Findings</p>
                     <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.35rem;">
-                        <li style="font-size:1.30rem;color:#94a3b8;">• All proposals within convex hull of training set in PCA-reduced space</li>
-                        <li style="font-size:1.30rem;color:#94a3b8;">• Proposals concentrate in low-novelty / frontier-proximal regions</li>
-                        <li style="font-size:1.30rem;color:#94a3b8;">• Traceability rate: ~98% across models</li>
-                        <li style="font-size:1.30rem;color:#94a3b8;">• GPT-5.2 lowest novelty score (outlier); LLaMA/Claude highest (still within manifold)</li>
+                        <li style="font-size:1.30rem;color:#94a3b8;">• 79/79 proposals lie inside the training hull in three-component PCA space</li>
+                        <li style="font-size:1.30rem;color:#94a3b8;">• 48/79 show at least one structural recombination marker</li>
+                        <li style="font-size:1.30rem;color:#94a3b8;">• 53/79 retrieve a scholarly-corpus match at τ = 0.40</li>
+                        <li style="font-size:1.30rem;color:#94a3b8;">• No proposal meets the strict novelty classification</li>
                     </ul>
                 </div>
                 <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:0.85rem;">
-                    <p style="font-size:1.2rem;color:#64748b;font-style:italic;line-height:1.5;">"Proposals remain within a continuous deformation of the training manifold — consistent with <strong style="color:#818cf8;">within-manifold recombination</strong>, not basis extension."</p>
+                    <p style="font-size:1.2rem;color:#64748b;font-style:italic;line-height:1.5;">"For this prompt and ontology, the combined structural and geometric evidence supports <strong style="color:#818cf8;">within-manifold recombination</strong>, not demonstrated basis extension."</p>
                 </div>
             </div>
         </div>
@@ -1218,7 +1218,7 @@
     <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test0_overview/results/figures/findings_dashboard_A.png" alt="Overview dashboard (Part A)"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
     <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Overview dashboard (Part A)</figcaption>
 </figure>
-                        <figure class="fig-frame" style="cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test6_cross_model/results/figures/model_performance_heatmap.png" data-label="Cross-test model comparison heatmaps" data-desc="Within-test z-scores cross-model (Table 2) + meta-analytic effect-size profile T1–T4: η²(T1)=0.326 · η²(T2)=0.068 · η²(T3)=0.040 · η²(T4)=0.766"   onclick="openLightbox(this)" title="Click to enlarge">
+                        <figure class="fig-frame" style="cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test6_cross_model/results/figures/model_performance_heatmap.png" data-label="Cross-test model comparison heatmaps" data-desc="Within-test z-scores for T2–T4; T1 is reported separately as a 79-unique-proposal descriptive analysis"   onclick="openLightbox(this)" title="Click to enlarge">
     <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test6_cross_model/results/figures/model_performance_heatmap.png" alt="Cross-test model comparison heatmaps"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
     <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Cross-test model comparison heatmaps</figcaption>
 </figure>
@@ -1522,7 +1522,7 @@
         <div class="reveal" style="display:flex;flex-direction:column;gap:0.5rem;">
             <div style="display:flex;align-items:flex-start;gap:0.7rem;padding:0.6rem 0.85rem;background:rgba(255,255,255,0.03);border-radius:8px;border-left:3px solid #818cf8;">
                 <span style="color:#818cf8;font-weight:700;min-width:2.4rem;font-size:0.95rem;">T1</span>
-                <p style="font-size:0.98rem;color:#cbd5e1;line-height:1.45;">Ontological Innovation: cosine similarity ≥ 0.65 to training modality centroids across all models; η²=0.326 (moderate). No outlier cluster detected beyond training distribution.</p>
+                <p style="font-size:0.98rem;color:#cbd5e1;line-height:1.45;">Ontological Innovation: 79 unique proposals; all lie inside the three-component training hull, and none meets the strict novelty classification. The current rerun is reported descriptively rather than as a cross-model effect size.</p>
             </div>
             <div style="display:flex;align-items:flex-start;gap:0.7rem;padding:0.6rem 0.85rem;background:rgba(255,255,255,0.03);border-radius:8px;border-left:3px solid #38bdf8;">
                 <span style="color:#38bdf8;font-weight:700;min-width:2.4rem;font-size:0.95rem;">T2</span>
@@ -1663,7 +1663,7 @@
   <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test6_cross_model/results/figures/cross_test_summary_ab.png" alt="Fig A.25 / Table A.12"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
   <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Fig A.25 / Table A.12</figcaption>
 </figure>
-            <figure class="fig-frame" style="cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test0_overview/results/figures/findings_dashboard_B.png" data-label="Table A.16" data-desc="Meta-analytic effect-size profile T1–T4: η²(T1)=0.326 moderate · η²(T2)=0.068 negligible · η²(T3)=0.040 n.s. · η²(T4)=0.766 large"   onclick="openLightbox(this)" title="Click to enlarge">
+            <figure class="fig-frame" style="cursor:pointer;"   data-src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test0_overview/results/figures/findings_dashboard_B.png" data-label="Table A.16" data-desc="Meta-analytic effect-size profile for T2–T4; T1 uses the updated descriptive 79-proposal analysis"   onclick="openLightbox(this)" title="Click to enlarge">
   <img src="https://raw.githubusercontent.com/JABE22/PhD/main/research/test0_overview/results/figures/findings_dashboard_B.png" alt="Table A.16"        style="width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:8px;display:block;">
   <figcaption style="position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:0.98rem;color:rgba(180,190,220,0.7);letter-spacing:0.06em;text-transform:uppercase;pointer-events:none;">Table A.16</figcaption>
 </figure>

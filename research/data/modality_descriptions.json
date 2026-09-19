@@ -19,6 +19,48 @@
     "vestibular": "Vestibular sensation detects head position, linear acceleration, and angular velocity through mechanoreceptors in inner ear semicircular canals, enabling balance, spatial orientation, and motion detection.",
     "interoceptive": "Interoceptive sensation detects internal physiological states including heart rate, respiration, skin conductance, temperature, hunger, thirst, fatigue, and pain through diverse receptors monitoring homeostatic conditions."
   },
+  "modality_table": {
+    "visual": {
+      "physical_basis": "Electromagnetic radiation, 300-1000 nm (UV, visible, near-infrared)",
+      "information_content": "Light, color, brightness, and spatial pattern information",
+      "functional_role": "Scene and object recognition"
+    },
+    "auditory": {
+      "physical_basis": "Mechanical pressure waves, 1 Hz-100 kHz",
+      "information_content": "Sound, pitch, volume, and acoustic pattern information",
+      "functional_role": "Sound source localization"
+    },
+    "tactile": {
+      "physical_basis": "Mechanical vibrations and pressure, 5-800 Hz on skin surface",
+      "information_content": "Touch, texture, vibration, and contact information",
+      "functional_role": "Surface texture and pressure sensing"
+    },
+    "olfactory": {
+      "physical_basis": "Airborne chemical molecules across ten scent categories",
+      "information_content": "Categorical scent/chemical identity information",
+      "functional_role": "Substance identification"
+    },
+    "gustatory": {
+      "physical_basis": "Dissolved chemical molecules across five taste categories",
+      "information_content": "Taste-category information (sweet/sour/salty/bitter/umami)",
+      "functional_role": "Ingestion guidance"
+    },
+    "proprioceptive": {
+      "physical_basis": "Joint angles and muscle tensions via muscle/tendon/joint mechanoreceptors",
+      "information_content": "Body configuration and movement information without visual input",
+      "functional_role": "Body-state estimation"
+    },
+    "vestibular": {
+      "physical_basis": "Linear acceleration and angular velocity via inner-ear semicircular canals",
+      "information_content": "Head position, motion, and orientation information",
+      "functional_role": "Balance and motion detection"
+    },
+    "interoceptive": {
+      "physical_basis": "Internal physiological signals (heart rate, respiration, skin conductance, temperature, hunger, thirst, fatigue, pain)",
+      "information_content": "Homeostatic and internal-state information",
+      "functional_role": "Homeostatic regulation"
+    }
+  },
   "extension_keywords": {
     "visual": [
       "electromagnetic",

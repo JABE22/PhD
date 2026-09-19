@@ -1,0 +1,4 @@
+test,statistic,p_value
+Levene/Brown-Forsythe,4.1942853653859755,0.000600946790766935
+One-way ANOVA fallback (statsmodels unavailable),24.290178079459707,2.2715099997497454e-20
+Kruskal-Wallis,82.3456255283179,1.169913812349191e-15

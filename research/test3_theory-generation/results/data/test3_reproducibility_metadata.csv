@@ -1,0 +1,10 @@
+field,value
+ai_records,168
+known_reference_records,46
+models,"claude-3.7-sonnet, deepseek-v3.2, gemini-3.1-pro-preview, gpt-5.2, llama-3.3-70b-instruct, mistral-large, perplexity-sonar-pro"
+embedding_model,all-MiniLM-L6-v2
+temperature,0.7
+derivative_threshold,0.3
+strict_threshold,0.7
+modalities,"visual, auditory, tactile, olfactory, gustatory, proprioceptive, vestibular, interoceptive"
+positive_control_status,calibration controls; no expert-validated novel theory

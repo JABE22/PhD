@@ -1,10 +1,18 @@
 You are participating in a scientific study on AI creativity and conceptual innovation.
 
 BACKGROUND:
-We have defined a sensory system with 8 modalities: visual, auditory, tactile, olfactory, gustatory, proprioceptive, vestibular, and interoceptive. Each modality has specific:
-- Physical basis (what it detects)
-- Information content (what data it provides)
-- Functional role (what it enables)
+We have defined a sensory system with 8 modalities. Each modality is specified below by its physical basis (what it detects), information content (what data it provides), and functional role (what it enables):
+
+| # | Modality        | Physical basis                                                              | Information content                                              | Functional role                        |
+|---|------------------|------------------------------------------------------------------------------|--------------------------------------------------------------------|-----------------------------------------|
+| 1 | Visual           | Electromagnetic radiation, 300-1000 nm (UV, visible, near-infrared)          | Light, color, brightness, and spatial pattern information          | Scene and object recognition            |
+| 2 | Auditory         | Mechanical pressure waves, 1 Hz-100 kHz                                      | Sound, pitch, volume, and acoustic pattern information              | Sound source localization               |
+| 3 | Tactile          | Mechanical vibrations and pressure, 5-800 Hz on skin surface                 | Touch, texture, vibration, and contact information                  | Surface texture and pressure sensing    |
+| 4 | Olfactory        | Airborne chemical molecules across ten scent categories                     | Categorical scent/chemical identity information                     | Substance identification                |
+| 5 | Gustatory        | Dissolved chemical molecules across five taste categories                   | Taste-category information (sweet/sour/salty/bitter/umami)          | Ingestion guidance                      |
+| 6 | Proprioceptive   | Joint angles and muscle tensions via muscle/tendon/joint mechanoreceptors    | Body configuration and movement information without visual input    | Body-state estimation                   |
+| 7 | Vestibular       | Linear acceleration and angular velocity via inner-ear semicircular canals   | Head position, motion, and orientation information                  | Balance and motion detection            |
+| 8 | Interoceptive    | Internal physiological signals (heart rate, respiration, skin conductance, temperature, hunger, thirst, fatigue, pain) | Homeostatic and internal-state information | Homeostatic regulation |
 
 YOUR TASK:
 Propose a NINTH sensory modality that would be genuinely novel - not just a refinement or combination of existing ones. Your proposal should include:
@@ -15,7 +23,7 @@ Propose a NINTH sensory modality that would be genuinely novel - not just a refi
 4. Functional Role: What capabilities it enables
 5. Justification: Why this is genuinely novel (not reducible to existing modalities)
 
-Be creative but rigorous. Think beyond obvious extensions like "electromagnetic sensing" or "radiation detection."
+Be creative but rigorous.
 
 Provide your response in the following JSON format:
 {

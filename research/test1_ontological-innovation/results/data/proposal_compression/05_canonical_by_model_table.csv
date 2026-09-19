@@ -1,30 +1,33 @@
-canonical_label,claude-3.7-sonnet,deepseek-v3.2,gemini-3.1-pro-preview,gpt-5.2,llama-3.3-70b-instruct,mistral-large,perplexity-sonar-pro
-Chronesthetic Sense,0,4,0,0,0,0,1
-Chronoceptive,9,1,0,0,24,0,0
-Chronoceptive (Proper-Time) Sense,0,0,0,3,0,0,0
-Chronometric Graviception (Spacetime-Gradient Sense),0,0,0,1,0,0,0
-Chronoperception,0,14,0,3,0,0,0
-Chronoreceptive Modality,0,0,0,0,0,0,1
-Chronosense,0,1,0,0,0,0,0
-Chronosense (Temporal Gradient Perception),0,2,0,0,0,1,0
-Coheroception,0,0,5,0,0,0,0
-Dissipationception (Entropy-Flux Sense),0,0,0,1,0,0,0
-Entangloreception (Quantum-Correlation Sense),0,0,0,1,0,0,0
-Entropiception,0,0,6,0,0,0,0
-Entropioception,0,0,8,1,0,0,0
-Exergoreception (Non-equilibrium/Free-energy Sensing),0,0,0,1,0,0,0
-Gradioreception (Tidal-Gravity Sense),0,0,0,7,0,0,0
-Inertioceptive (Sagnac) Sense,0,0,0,3,0,0,0
-Interferometric Gyroception (Sagnac Sense),0,0,0,1,0,0,0
-Isotopoception,0,0,1,0,0,0,0
-Metabolic Field Sensing,0,1,0,0,0,0,0
-Quantum Coherence Perception,12,0,0,0,0,0,21
-Quantum Entanglement Perception,3,0,0,0,0,0,0
-Relativiception,0,0,1,0,0,0,0
-Spacetime Strain Sense (Metricception),0,0,0,2,0,0,0
-Stochastiception,0,0,1,0,0,0,0
-Symploception,0,0,1,0,0,0,0
-Temporal Gradient Sensing (Chronoperception Modality),0,0,0,0,0,0,1
-Temporal Resonance Perception (TRP),0,0,0,0,0,23,0
-Temporoceptive,0,1,0,0,0,0,0
-Topograviception,0,0,1,0,0,0,0
+canonical_label,claude-sonnet-5,deepseek-v3.2,gemini-3.1-pro-preview,gpt-5.2,mistral-large,perplexity-sonar-pro
+Bioelectroception,0,1,0,0,0,0
+Causality Sense (Interventional Causal-Field Modality),0,0,0,0,0,4
+Causoryception (Causal Structure Sense),0,0,0,0,0,1
+Chronesthetic,0,0,0,0,1,0
+Chronesthetic Modality (Extrinsic Temporal-Structure Sensing),0,0,0,0,0,3
+Chronoceptive,0,2,0,0,1,0
+Chronomaterial Perception,0,1,0,0,0,0
+Chronoperception,0,1,0,0,0,0
+Chronotemporic,0,1,0,0,0,0
+Computational State Sense,0,0,0,0,0,1
+Electromagnetic Field Perception (EMP),0,1,0,0,2,0
+Electromagnetic Field Sense (Magnetoreception/Electroreception),3,0,0,0,0,0
+Electroreception,0,0,1,0,0,1
+Electroreceptive (Electric-Field) Sense,2,0,0,2,0,1
+Functioceptive,0,1,0,0,0,0
+Generative-Law Sensing (Nooceptive Modality),0,0,0,0,0,1
+Graviception,0,0,1,0,0,1
+Gravimetric Sensing,0,0,2,0,0,0
+Gravitomic Modality (Spacetime Curvature Sense),0,0,0,0,0,3
+Infospective Modality (Information-Structural Sensing),0,0,0,0,0,2
+Magnetoceptive (Geomagnetic) Sense,9,0,1,7,5,0
+Magnetoelectric Sense,0,1,0,0,0,0
+Magnetoreception,0,0,3,0,0,0
+Noetic Modality (Direct Mind-State Perception),0,0,0,0,0,1
+Nucleoception,0,0,1,0,0,0
+Operative,0,1,0,0,0,0
+Pattern-Structural Modality (Sense of Abstract Invariance and Regularity),0,0,0,0,0,2
+Quantum State Resonance,0,1,0,0,0,0
+Radioreception,0,0,1,0,0,0
+Structural Isomorphy Sense (SIS),0,0,0,0,0,1
+Temporal Coherence Field Detection,0,1,0,0,0,0
+Temporal Flux Sense (Endogenous Chronoception),3,0,0,0,0,0
