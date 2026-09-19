@@ -1,6 +1,8 @@
 # PhD-Research
 PhD. Dissertation Research Studies
 
+https://doi.org/10.5281/zenodo.8475
+
 # Empirical Studies in Ontological Creativity of AI: Analysis Notebooks
 
 This repository contains the complete computational notebooks for conducting the empirical investigations described in **"Structural Limits of Neural Networks in Ontological Creativity"**.
