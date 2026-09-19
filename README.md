@@ -1,7 +1,7 @@
 # PhD-Research
 PhD. Dissertation Research Studies
 
-https://doi.org/10.5281/zenodo.8475
+[![DOI](https://zenodo.org/badge/1225791040.svg)](https://doi.org/10.5281/zenodo.22843707)
 
 # Empirical Studies in Ontological Creativity of AI: Analysis Notebooks
 
