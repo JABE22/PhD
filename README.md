@@ -1,504 +1,144 @@
-# PhD-Research
-PhD. Dissertation Research Studies
+# Empirical Studies in Ontological Creativity of AI
 
-# Empirical Studies in Ontological Creativity of AI: Analysis Notebooks
+This repository contains notebooks and scripts for empirical studies of the limits of AI systems in ontological creativity, including the analyses reported in the dissertation *Structural Limits of Neural Networks in Ontological Creativity*.
 
-This repository contains the complete computational notebooks for conducting the empirical investigations described in **"Structural Limits of Neural Networks in Ontological Creativity"**.
+The project combines a multimodal sensory-dataset generator, AI response collection, four empirical analyses, a mechanistic interpretability study, and cross-model robustness analysis.
 
-## Presentation Context Files
+**Presentation:** [Defense presentation](https://jabe22.github.io/)
 
-Statistical terminology companion files used in the defense presentation:
+## Research workflow
 
-- GitHub hosted presentation: [https://jabe22.github.io/](https://jabe22.github.io/)
-- Presentation deck (HTML): [Presentation.html](Presentation.html)
-- English PDF: [statistical_glossary.pdf](../../../TeXstudio/Dissertation_v2/statistical_glossary/statistical_glossary.pdf)
-- Russian PDF: [statistical_glossary_ru.pdf](../../../TeXstudio/Dissertation_v2/statistical_glossary/statistical_glossary_ru.pdf)
+```mermaid
+flowchart TD
+    ENV["Set up Python environment"] --> DATA["Generate sensory dataset<br/>and ontology"]
+    ENV --> PROMPTS["Use test prompts and schemas"]
+    PROMPTS --> COLLECT["Collect model responses<br/>for Tests 1–4"]
+    COLLECT --> RESP["Save response JSON files"]
 
-## Overview
+    RESP --> T14["Analyze Tests 1–4"]
+    T14 --> RESULTS["Per-test tables, metrics,<br/>and figures"]
 
-The notebooks implement the four empirical tests described in the study and generate the results and visualizations reported in dissertation chapter 4.
+    RESP --> ACTIVATIONS["Collect activations with<br/>a local language model"]
+    ACTIVATIONS --> T5["Run Test 5<br/>mechanistic analysis"]
+    T5 --> MECH["Mechanistic results"]
 
-## Repository Structure
+    RESULTS --> T6["Run Test 6<br/>cross-model analysis"]
+    T6 --> ROBUST["Robustness results"]
 
-```
-├── research/data/notebooks/dataset-generation.ipynb          # Generate multimodal sensory dataset
-├── research/test0_overview/overview-analysis.ipynb        # Aggregate analysis across all tests
-├── research/test1_ontological-innovation/test1_analysis.ipynb           # Test 1: Ontological Innovation
-├── research/test2_epistemic-agency/test2_analysis.ipynb           # Test 2: Epistemic Agency
-├── research/test3_theory-generation/test3_analysis.ipynb           # Test 3: Theory Generation
-├── research/test4_category-recognition/test4_analysis.ipynb           # Test 4: Category Recognition
-├── research/test5_mechanistic/test5_mechanistic-analysis.ipynb     # Mechanistic interpretability analysis
-├── research/test6_cross_model/test6_cross-model-analysis.ipynb     # Cross-model comparison and robustness
-├── research/test*/prompts/{prompt.txt,response_schema.json} # Per-test prompt and schema assets for response collection
-├── research/data/                             # Generated datasets
-├── research/test*/results/{data,figures}/     # Analysis outputs and figures per test
-├── Presentation.html                          # Defense presentation deck
-└── README.md                                  # This file
+    RESULTS --> T0["Run Test 0<br/>overview analysis"]
+    T0 --> REPORT["Overview report<br/>and summary figures"]
 ```
 
-## Requirements
+Tests 1–4 analyze collected responses. Test 5 uses response exports as prompts for a local model. Test 6 compares results from Tests 1–4, and Test 0 aggregates those four tests into an overview.
 
-### Python Environment
+## Studies and notebooks
+
+| Study | Research focus | Notebook |
+|---|---|---|
+| Test 0 — Overview | Aggregate findings across Tests 1–4 | [`overview-analysis.ipynb`](research/test0_overview/overview-analysis.ipynb) |
+| Test 1 — Ontological Innovation | Whether proposed sensory modalities are novel or traceable to known concepts | [`test1_analysis.ipynb`](research/test1_ontological-innovation/test1_analysis.ipynb) |
+| Test 2 — Epistemic Agency | Whether AI-generated research questions transcend their originating frameworks | [`test2_analysis.ipynb`](research/test2_epistemic-agency/test2_analysis.ipynb) |
+| Test 3 — Theory Generation | Novelty and traceability of generated consciousness theories | [`test3_analysis.ipynb`](research/test3_theory-generation/test3_analysis.ipynb) |
+| Test 4 — Category Recognition | Recognition of category mistakes and quality of alternative framings | [`test4_analysis.ipynb`](research/test4_category-recognition/test4_analysis.ipynb) |
+| Test 5 — Mechanistic Interpretability | Internal activations, attention, and layer-wise representations | [`test5_mechanistic-analysis.ipynb`](research/test5_mechanistic/test5_mechanistic-analysis.ipynb) |
+| Test 6 — Cross-Model Robustness | Stability of Tests 1–4 across models and conditions | [`test6_cross-model-analysis.ipynb`](research/test6_cross_model/test6_cross-model-analysis.ipynb) |
+
+Test-specific response prompts and schemas for Tests 1–4 are stored in each test directory under `prompts/`. Analysis notebooks generally write tables and metrics to `results/data/` and figures to `results/figures/`.
+
+## Setup
+
+Run commands from the repository root.
 
 ```bash
-python >= 3.8
-numpy >= 1.20
-pandas >= 1.3
-matplotlib >= 3.4
-seaborn >= 0.11
-scikit-learn >= 0.24
-scipy >= 1.7
-sentence-transformers >= 2.0
-transformers >= 4.20
-torch >= 1.10
-networkx >= 2.6
-jupyter >= 1.0
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
 ```
 
-### Installation
+The repository does not pin a Python version. Use a Python environment compatible with the packages listed in [`requirements.txt`](requirements.txt). GPU support is optional; the activation-collection step may benefit from a GPU, depending on the selected model.
 
-```bash
-# Use the existing project environment
-conda activate aitrust
+## Generate the sensory dataset
 
-# Install requirements
-pip install -r requirements.txt
-
-# For GPU support (optional but recommended)
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
-```
-
-### API Keys (Required for AI Model Testing)
-
-Create a `.env` file with your API keys:
-
-```
-OPENROUTER2_API_KEY=your_openrouter_key
-PERPLEXITY_API_KEY=your_perplexity_key
-MISTRALAI_API_KEY=your_mistral_key
-```
-
-`OPENROUTER2_API_KEY` is required for the default `openrouter` provider in `research/data/scripts/collect_ai_responses.py`. The other keys are only needed if you use those providers.
-
-## Usage
-
-### Step 1: Generate Dataset
+Open and run [`dataset-generation.ipynb`](research/data/notebooks/dataset-generation.ipynb):
 
 ```bash
 jupyter notebook research/data/notebooks/dataset-generation.ipynb
 ```
 
-This creates the 8-dimensional multimodal sensory dataset:
-- 5,000 training examples
-- 1,000 validation examples  
-- 1,000 test examples
-- Complete ontology in `research/data/ontology.json`
+The notebook generates 7,000 examples: 5,000 training, 1,000 validation, and 1,000 test examples. Each example contains 60 timesteps and 359 features per timestep across eight modalities. From the repository root, generated files are written under `data/`:
 
-**Expected runtime:** 15-30 minutes
+- `multimodal_sensory_train.npz`
+- `multimodal_sensory_val.npz`
+- `multimodal_sensory_test.npz`
+- `ontology.json`
 
-**Output:** `data/train/`, `data/val/`, `data/test/` directories with JSON files
+The modality dimensions are visual (140), auditory (128), tactile (32), olfactory (10), gustatory (5), proprioceptive (30), vestibular (6), and interoceptive (8).
 
-### Step 2: Collect AI Responses
+## Collect AI responses
 
-Use the existing response collection script before running the analysis notebooks:
+Response collection is optional if you already have response exports. To query models, create a local `.env` file in the repository root. Do not commit API keys.
+
+```dotenv
+OPENROUTER2_API_KEY=your_openrouter_key
+# Only needed when using the Perplexity provider:
+PERPLEXITY_API_KEY=your_perplexity_key
+```
+
+List the models configured in the collector, then choose model names for the provider you intend to use:
 
 ```bash
-# Inspect configured models for the default provider
 python research/data/scripts/collect_ai_responses.py --provider openrouter --list-models
+```
 
-# Collect responses for all four tests
+For example, to collect responses for all four empirical tests using the currently configured OpenRouter model identifiers:
+
+```bash
 python research/data/scripts/collect_ai_responses.py \
-    --provider openrouter \
-    --test all \
-    --models gpt-5.2,claude-3.7-sonnet,gemini-3.1-pro-preview \
-    --n-samples 50
+  --provider openrouter \
+  --test all \
+  --models gpt-5.2,claude-sonnet-5,gemini-3.1-pro-preview \
+  --n-samples 24
 ```
 
-This writes per-sample JSON files and `all_responses.json` into each test folder's `ai_responses/` directory.
+This makes external API calls, which may incur costs and are subject to provider availability and rate limits. The collector saves per-sample JSON files and an `all_responses.json` export in each test's `ai_responses/` directory. The prompt and response schema are loaded from that test's `prompts/` directory.
 
-Input assets for response collection are now loaded per test from:
-- `research/test1_ontological-innovation/prompts/prompt.txt`
-- `research/test1_ontological-innovation/prompts/response_schema.json`
-- `research/test2_epistemic-agency/prompts/prompt.txt`
-- `research/test2_epistemic-agency/prompts/response_schema.json`
-- `research/test3_theory-generation/prompts/prompt.txt`
-- `research/test3_theory-generation/prompts/response_schema.json`
-- `research/test4_category-recognition/prompts/prompt.txt`
-- `research/test4_category-recognition/prompts/response_schema.json`
+## Run the analyses
 
-### Step 3: Run Empirical Tests
+After response collection, open the relevant notebook from the table above in Jupyter. Tests 1–4 can be analyzed independently once their response data is available. Test 6 requires the result files from Tests 1–4. Test 0 also requires the result files from Tests 1–4.
 
-Each test notebook can be run independently after dataset generation:
+### Mechanistic analysis (Test 5)
 
-#### Test 1: Ontological Innovation
-```bash
-jupyter notebook research/test1_ontological-innovation/test1_analysis.ipynb
-```
-Tests whether AI proposes genuinely novel sensory modalities.
-
-**Methods:**
-- Structural decomposition analysis
-- Literature traceability search
-- Embedding space convex hull testing
-- Multi-criteria classification
-
-**Output:** `research/test1_ontological-innovation/results/data/` (tables/metrics) and `research/test1_ontological-innovation/results/figures/` (plots)
-
-#### Test 2: Epistemic Agency
-```bash
-jupyter notebook research/test2_epistemic-agency/test2_analysis.ipynb
-```
-Analyzes AI-generated research questions for paradigm-challenging capacity.
-
-**Methods:**
-- Question type classification (instrumental/exploratory/paradigm-challenging)
-- Framework transcendence analysis
-- Originality assessment via literature comparison
-- Dependency graph construction
-
-**Output:** `research/test2_epistemic-agency/results/data/` (tables/metrics) and `research/test2_epistemic-agency/results/figures/` (plots)
-
-#### Test 3: Theory Generation
-```bash
-jupyter notebook research/test3_theory-generation/test3_analysis.ipynb
-```
-Examines consciousness theories for computational functionalism vs. novel frameworks.
-
-**Methods:**
-- Ontological commitment extraction
-- Explanatory structure analysis
-- Computational functionalism detection
-- Theory traceability to known frameworks
-
-**Output:** `research/test3_theory-generation/results/data/` (tables/metrics) and `research/test3_theory-generation/results/figures/` (plots)
-
-#### Test 4: Category Recognition
-```bash
-jupyter notebook research/test4_category-recognition/test4_analysis.ipynb
-```
-Tests recognition of category mistakes and ontological boundaries.
-
-**Methods:**
-- Category distinction scoring
-- Category mistake identification
-- Alternative framework proposal analysis
-- Standard vs. novel scenario comparison
-
-**Output:** `research/test4_category-recognition/results/data/` (tables/metrics) and `research/test4_category-recognition/results/figures/` (plots)
-
-### Step 4: Collect Activations For Mechanistic Analysis
-
-Before running the mechanistic notebook, collect activations from a local
-open-source model using the prompts in `research/test*/prompts/`.
+Test 5 requires response exports for Tests 1–4. It runs a local Hugging Face causal language model over prompts from those exports and saves activation artifacts under `research/data/activations/`.
 
 ```bash
 python research/data/scripts/collect_activations.py \
-    --model-name mistralai/Mistral-7B-v0.1 \
-    --per-test-limit 4 \
-    --max-new-tokens 64 \
-    --save-attentions
+  --model-name mistralai/Mistral-7B-v0.1 \
+  --per-test-limit 4 \
+  --max-new-tokens 64 \
+  --save-attentions
 ```
 
-This writes one `.pt` artifact per prompt into `data/activations/` with prompt
-metadata, hidden states, attention tensors, and the generated continuation.
+Then run [`test5_mechanistic-analysis.ipynb`](research/test5_mechanistic/test5_mechanistic-analysis.ipynb). Model downloads, memory needs, and access requirements depend on the selected Hugging Face model; omit `--save-attentions` if attention tensors are not needed.
 
-### Step 5: Mechanistic Interpretability Analysis
+## Repository map
 
-```bash
-jupyter notebook research/test5_mechanistic/test5_mechanistic-analysis.ipynb
+```text
+research/
+├── data/
+│   ├── notebooks/       # Dataset generation
+│   ├── scripts/         # Response, activation, and literature utilities
+│   ├── setups/          # Shared model, threshold, and visualization helpers
+│   └── ...              # Ontology and research data
+├── test0_overview/      # Aggregate analysis for Tests 1–4
+├── test1_ontological-innovation/
+├── test2_epistemic-agency/
+├── test3_theory-generation/
+├── test4_category-recognition/
+├── test5_mechanistic/
+└── test6_cross_model/
 ```
 
-Probes internal representations to understand generation mechanisms.
+## License and issues
 
-**Methods:**
-- Attention pattern analysis
-- Activation space clustering
-- Gradient-based attribution
-- Layer-wise representation tracking
-
-**Output:** `research/test5_mechanistic/results/data/` (JSON summaries) and `research/test5_mechanistic/results/figures/` (plots)
-
-### Step 6: Cross-Model Comparison
-
-```bash
-jupyter notebook research/test6_cross_model/test6_cross-model-analysis.ipynb
-```
-
-Evaluates robustness across models and parameters.
-
-**Methods:**
-- Statistical comparison tests
-- Temperature variation analysis
-- Prompt robustness testing
-- Architecture comparison
-
-**Output:** `research/test6_cross_model/results/data/` (cross-model statistics) and `research/test6_cross_model/results/figures/` (plots)
-
-### Step 7: Generate Overview Report
-
-```bash
-jupyter notebook research/test0_overview/overview-analysis.ipynb
-```
-
-Aggregates results from all tests into comprehensive overview.
-
-**Output:** `research/test0_overview/results/overview_report.json` and summary figures
-
-## Data Format
-
-### Multimodal Sensory Dataset
-
-Each example is a JSON file with structure:
-
-```json
-{
-  "scenario": "walking",
-  "timesteps": 60,
-  "modalities": {
-    "visual": [[...]],      // 60 x 140
-    "auditory": [[...]],    // 60 x 128
-    "tactile": [[...]],     // 60 x 32
-    "olfactory": [[...]],   // 60 x 10
-    "gustatory": [[...]],   // 60 x 5
-    "proprioceptive": [[...]], // 60 x 30
-    "vestibular": [[...]],  // 60 x 6
-    "interoceptive": [[...]] // 60 x 8
-  }
-}
-```
-
-**Total dimensions:** 359 per timestep, 21,540 per example
-
-### Ontology Format
-
-The `research/data/ontology.json` file provides machine-readable ontology:
-
-```json
-{
-  "modalities": [
-    {
-      "name": "visual",
-      "dimensions": 140,
-      "physical_basis": "Electromagnetic radiation",
-      "range": "300-1000nm",
-      "sampling": "5nm intervals"
-    },
-    ...
-  ],
-  "total_dimensions": 359
-}
-```
-
-## Key Functions and Algorithms
-
-### Structural Decomposition (Test 1)
-
-```python
-def structural_decomposition(proposal: dict) -> dict:
-    """
-    Analyze if proposed modality decomposes into existing 8 modalities.
-    
-    Returns:
-        - is_range_extension: bool
-        - is_hybrid: bool
-        - base_modalities: list
-        - novelty_score: float [0,1]
-    """
-```
-
-### Convex Hull Membership Test
-
-```python
-def test_convex_hull_membership(existing_embeddings, new_embeddings):
-    """
-    Test if new concepts lie within convex hull of training concepts.
-    Uses Delaunay triangulation for efficient membership testing.
-    
-    Returns:
-        - inside: bool array
-        - hull: ConvexHull object
-    """
-```
-
-### Literature Traceability
-
-```python
-def literature_search(text: str, corpus: list, threshold: float = 0.75):
-    """
-    Search training corpus using:
-    - BM25 keyword matching
-    - Sentence-BERT embedding similarity
-    - Structural pattern matching
-    
-    Returns:
-        - max_similarity: float
-        - matching_sources: list
-        - is_traceable: bool
-    """
-```
-
-### Framework Transcendence Analysis (Test 2)
-
-```python
-def analyze_framework_transcendence(question: str, framework: dict):
-    """
-    Determine if answering question requires resources beyond framework.
-    
-    Methods:
-    - Concept extraction
-    - Dependency graph construction  
-    - Framework boundary detection
-    
-    Returns:
-        - transcendence_score: float
-        - required_concepts: list
-        - is_paradigm_challenging: bool
-    """
-```
-
-## Interpreting Results
-
-### Classification Categories (Test 1)
-
-- **Genuinely Novel:** Passes all tests (rare, expected ~0-2%)
-- **Range Extension:** Extends existing modality parameters
-- **Hybrid/Combination:** Combines multiple existing modalities
-- **Literature Traceable:** Matches known concepts from training
-- **Recombination:** Novel combination within training space
-
-### Confidence Intervals
-
-All proportions reported with 95% bootstrap confidence intervals:
-
-```python
-# Example output
-Novel outputs: 3.2% [2.1%, 4.5%]
-Traceable: 94.8% [92.3%, 96.7%]
-```
-
-### Statistical Tests
-
-- **Chi-square:** Testing independence between models
-- **Mann-Whitney U:** Non-parametric comparison of distributions
-- **Kruskal-Wallis:** Multi-group comparison
-- **Bootstrap:** Confidence interval estimation
-
-## Troubleshooting
-
-### Common Issues
-
-**1. Memory Error During Dataset Generation**
-
-```python
-# Reduce batch size or generate in chunks
-generator.generate_dataset(5000, save_every=500)
-```
-
-**2. API Rate Limiting**
-
-```python
-# Add delay between requests
-import time
-for model in models:
-    response = call_api(model, prompt)
-    time.sleep(1)  # 1 second delay
-```
-
-**3. Missing Dependencies**
-
-```bash
-# Install specific version
-pip install sentence-transformers==2.2.2
-```
-
-**4. CUDA Out of Memory**
-
-```python
-# Use CPU for embeddings
-model = SentenceTransformer('all-MiniLM-L6-v2', device='cpu')
-```
-
-## Customization
-
-### Adding New Modalities to Test
-
-Edit `research/data/notebooks/dataset-generation.ipynb`:
-
-```python
-class CustomModality(SensoryModality):
-    def __init__(self):
-        super().__init__('custom_name', dimensions=50)
-    
-    def generate(self, scenario: str, timesteps: int):
-        # Implement generation logic
-        return data
-```
-
-### Modifying Evaluation Criteria
-
-Edit classification functions in test notebooks:
-
-```python
-def custom_classification(row):
-    # Custom logic for determining novelty
-    if custom_condition(row):
-        return 'Custom Category'
-    return 'Standard Category'
-```
-
-### Adding New AI Models
-
-```python
-models_to_test = [
-    'gpt-5.2',
-    'claude-3.7-sonnet',
-    'gemini-3.1-pro-preview',
-    'llama-3.3-70b-instruct',
-    'your-custom-model'  # Add here
-]
-```
-
-## Citation
-
-If you use these notebooks in your research, please cite:
-
-```bibtex
-@article{ai_creativity,
-  title={Empirical Studies: Structural Limits of Information Processing Systems in Ontological Creativity},
-  author={Matarmaa, J.O.},
-  journal={Ural Federal University},
-  year={2026},
-  address={Yekaterinburg}
-}
-```
-
-## License
-
-MIT License - see LICENSE file for details
-
-## Contact
-
-For questions or issues:
-- Open an issue on GitHub
-- Email: iarnoolavi.matarmaa@urfu.me
-
-## Acknowledgments
-
-- Dataset generation inspired by biological and machine sensing capabilities
-- Evaluation methods adapted from computational creativity literature
-- Statistical approaches follow standard practices in empirical AI research
-
-## Version History
-
-- **v1.0 (2026-02-13):** Initial release with all 7 notebooks
-- Includes complete dataset generation and all four empirical tests
-- Mechanistic interpretability and cross-model analysis included
-
-## Future Extensions
-
-Planned additions:
-- [ ] Additional AI models (GPT-5, Claude 4, etc.)
-- [ ] Extended modality set (>8 modalities)
-- [ ] Interactive visualization dashboard
-- [ ] Real-time data collection from actual sensors
-- [ ] Longitudinal tracking of AI capabilities over time
+The project is distributed under the [MIT License](LICENSE). For questions, bug reports, or reproducibility issues, please [open a GitHub issue](https://github.com/JABE22/PhD/issues).
