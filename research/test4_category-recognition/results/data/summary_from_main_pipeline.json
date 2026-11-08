@@ -1,5 +1,5 @@
 {
-  "source_results_csv": "/home/jarnoma/Yandex.Disk/OneDrive - UrFU/UrFU-DOCTOR/Dissertation/Articles/AI-Creativity/Code Project/research/test4_category-recognition/results/data/test4_results.csv",
+  "source_results_csv": "./research/test4_category-recognition/results/data/test4_results.csv",
   "n_rows": 168,
   "n_models": 7,
   "scenario_types": [
