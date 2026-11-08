@@ -37,16 +37,16 @@ Tests 1–4 analyze collected responses. Test 5 uses response exports as prompts
 
 Test 0 aggregates the results from Tests 1–4 in the [overview notebook](research/test0_overview/overview-analysis.ipynb). The six empirical and supporting studies are:
 
-<table>
+<table width="100%">
   <tr>
-    <td align="center"><a href="research/test1_ontological-innovation/test1_analysis.ipynb"><img src="assets/readme-images/test-1-ontological-innovation.jpg" width="280" height="210" alt="Researcher examining a prism and spectral data"><br><strong>Test 1 · Ontological Innovation</strong></a><br>Novelty of proposed sensory modalities</td>
-    <td align="center"><a href="research/test2_epistemic-agency/test2_analysis.ipynb"><img src="assets/readme-images/test-2-epistemic-agency.jpg" width="280" height="210" alt="Researcher developing a question among notes and concept maps"><br><strong>Test 2 · Epistemic Agency</strong></a><br>Framework-transcending research questions</td>
-    <td align="center"><a href="research/test3_theory-generation/test3_analysis.ipynb"><img src="assets/readme-images/test-3-theory-generation.jpg" width="280" height="210" alt="Researchers comparing theories of consciousness"><br><strong>Test 3 · Theory Generation</strong></a><br>Novelty and traceability of generated theories</td>
+    <td width="33%" align="center"><a href="research/test1_ontological-innovation/test1_analysis.ipynb"><img src="assets/readme-images/test-1-ontological-innovation.jpg" width="280" height="210" alt="Researcher examining a prism and spectral data"><br><strong>Test 1 · Ontological Innovation</strong></a><br>Novelty of proposed sensory modalities</td>
+    <td width="33%" align="center"><a href="research/test2_epistemic-agency/test2_analysis.ipynb"><img src="assets/readme-images/test-2-epistemic-agency.jpg" width="280" height="210" alt="Researcher developing a question among notes and concept maps"><br><strong>Test 2 · Epistemic Agency</strong></a><br>Framework-transcending research questions</td>
+    <td width="33%" align="center"><a href="research/test3_theory-generation/test3_analysis.ipynb"><img src="assets/readme-images/test-3-theory-generation.jpg" width="280" height="210" alt="Researchers comparing theories of consciousness"><br><strong>Test 3 · Theory Generation</strong></a><br>Novelty and traceability of generated theories</td>
   </tr>
   <tr>
-    <td align="center"><a href="research/test4_category-recognition/test4_analysis.ipynb"><img src="assets/readme-images/test-4-category-recognition.jpg" width="280" height="210" alt="Researcher sorting objects into conceptual categories"><br><strong>Test 4 · Category Recognition</strong></a><br>Category mistakes and alternative framings</td>
-    <td align="center"><a href="research/test5_mechanistic/test5_mechanistic-analysis.ipynb"><img src="assets/readme-images/test-5-mechanistic-interpretability.jpg" width="280" height="210" alt="Researcher inspecting model activation patterns on a monitor"><br><strong>Test 5 · Mechanistic Interpretability</strong></a><br>Internal activations and model representations</td>
-    <td align="center"><a href="research/test6_cross_model/test6_cross-model-analysis.ipynb"><img src="assets/readme-images/test-6-cross-model-robustness.jpg" width="280" height="210" alt="Researchers comparing statistical results across AI models"><br><strong>Test 6 · Cross-Model Robustness</strong></a><br>Stability of findings across models</td>
+    <td width="33%" align="center"><a href="research/test4_category-recognition/test4_analysis.ipynb"><img src="assets/readme-images/test-4-category-recognition.jpg" width="280" height="210" alt="Researcher sorting objects into conceptual categories"><br><strong>Test 4 · Category Recognition</strong></a><br>Category mistakes and alternative framings</td>
+    <td width="33%" align="center"><a href="research/test5_mechanistic/test5_mechanistic-analysis.ipynb"><img src="assets/readme-images/test-5-mechanistic-interpretability.jpg" width="280" height="210" alt="Researcher inspecting model activation patterns on a monitor"><br><strong>Test 5 · Mechanistic Interpretability</strong></a><br>Internal activations and model representations</td>
+    <td width="33%" align="center"><a href="research/test6_cross_model/test6_cross-model-analysis.ipynb"><img src="assets/readme-images/test-6-cross-model-robustness.jpg" width="280" height="210" alt="Researchers comparing statistical results across AI models"><br><strong>Test 6 · Cross-Model Robustness</strong></a><br>Stability of findings across models</td>
   </tr>
 </table>
 
