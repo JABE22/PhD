@@ -1,5 +1,7 @@
 # Empirical Studies in Ontological Creativity of AI
 
+![Researcher exploring multimodal sensory data in an AI research laboratory](assets/readme-images/project-hero.jpg)
+
 This repository contains notebooks and scripts for empirical studies of the limits of AI systems in ontological creativity, including the analyses reported in the dissertation *Structural Limits of Neural Networks in Ontological Creativity*.
 
 The project combines a multimodal sensory-dataset generator, AI response collection, four empirical analyses, a mechanistic interpretability study, and cross-model robustness analysis.
@@ -33,15 +35,20 @@ Tests 1–4 analyze collected responses. Test 5 uses response exports as prompts
 
 ## Studies and notebooks
 
-| Study | Research focus | Notebook |
-|---|---|---|
-| Test 0 — Overview | Aggregate findings across Tests 1–4 | [`overview-analysis.ipynb`](research/test0_overview/overview-analysis.ipynb) |
-| Test 1 — Ontological Innovation | Whether proposed sensory modalities are novel or traceable to known concepts | [`test1_analysis.ipynb`](research/test1_ontological-innovation/test1_analysis.ipynb) |
-| Test 2 — Epistemic Agency | Whether AI-generated research questions transcend their originating frameworks | [`test2_analysis.ipynb`](research/test2_epistemic-agency/test2_analysis.ipynb) |
-| Test 3 — Theory Generation | Novelty and traceability of generated consciousness theories | [`test3_analysis.ipynb`](research/test3_theory-generation/test3_analysis.ipynb) |
-| Test 4 — Category Recognition | Recognition of category mistakes and quality of alternative framings | [`test4_analysis.ipynb`](research/test4_category-recognition/test4_analysis.ipynb) |
-| Test 5 — Mechanistic Interpretability | Internal activations, attention, and layer-wise representations | [`test5_mechanistic-analysis.ipynb`](research/test5_mechanistic/test5_mechanistic-analysis.ipynb) |
-| Test 6 — Cross-Model Robustness | Stability of Tests 1–4 across models and conditions | [`test6_cross-model-analysis.ipynb`](research/test6_cross_model/test6_cross-model-analysis.ipynb) |
+Test 0 aggregates the results from Tests 1–4 in the [overview notebook](research/test0_overview/overview-analysis.ipynb). The six empirical and supporting studies are:
+
+<table>
+  <tr>
+    <td align="center"><a href="research/test1_ontological-innovation/test1_analysis.ipynb"><img src="assets/readme-images/test-1-ontological-innovation.jpg" width="280" alt="Researcher examining a prism and spectral data"><br><strong>Test 1 · Ontological Innovation</strong></a><br>Novelty of proposed sensory modalities</td>
+    <td align="center"><a href="research/test2_epistemic-agency/test2_analysis.ipynb"><img src="assets/readme-images/test-2-epistemic-agency.jpg" width="280" alt="Researcher developing a question among notes and concept maps"><br><strong>Test 2 · Epistemic Agency</strong></a><br>Framework-transcending research questions</td>
+    <td align="center"><a href="research/test3_theory-generation/test3_analysis.ipynb"><img src="assets/readme-images/test-3-theory-generation.jpg" width="280" alt="Researchers comparing theories of consciousness"><br><strong>Test 3 · Theory Generation</strong></a><br>Novelty and traceability of generated theories</td>
+  </tr>
+  <tr>
+    <td align="center"><a href="research/test4_category-recognition/test4_analysis.ipynb"><img src="assets/readme-images/test-4-category-recognition.jpg" width="280" alt="Researcher sorting objects into conceptual categories"><br><strong>Test 4 · Category Recognition</strong></a><br>Category mistakes and alternative framings</td>
+    <td align="center"><a href="research/test5_mechanistic/test5_mechanistic-analysis.ipynb"><img src="assets/readme-images/test-5-mechanistic-interpretability.jpg" width="280" alt="Researcher inspecting model activation patterns on a monitor"><br><strong>Test 5 · Mechanistic Interpretability</strong></a><br>Internal activations and model representations</td>
+    <td align="center"><a href="research/test6_cross_model/test6_cross-model-analysis.ipynb"><img src="assets/readme-images/test-6-cross-model-robustness.jpg" width="280" alt="Researchers comparing statistical results across AI models"><br><strong>Test 6 · Cross-Model Robustness</strong></a><br>Stability of findings across models</td>
+  </tr>
+</table>
 
 Test-specific response prompts and schemas for Tests 1–4 are stored in each test directory under `prompts/`. Analysis notebooks generally write tables and metrics to `results/data/` and figures to `results/figures/`.
 
