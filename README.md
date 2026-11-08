@@ -11,8 +11,8 @@ Statistical terminology companion files used in the defense presentation:
 
 - GitHub hosted presentation: [https://jabe22.github.io/](https://jabe22.github.io/)
 - Presentation deck (HTML): [Presentation.html](Presentation.html)
-- English PDF: [papers/statistical_glossary.pdf](papers/statistical_glossary.pdf)
-- Russian PDF: [papers/statistical_glossary_ru.pdf](papers/statistical_glossary_ru.pdf)
+- English PDF: [statistical_glossary.pdf](../../../TeXstudio/Dissertation_v2/statistical_glossary/statistical_glossary.pdf)
+- Russian PDF: [statistical_glossary_ru.pdf](../../../TeXstudio/Dissertation_v2/statistical_glossary/statistical_glossary_ru.pdf)
 
 ## Overview
 
@@ -33,9 +33,7 @@ The notebooks implement the four empirical tests described in the study and gene
 ├── research/data/                             # Generated datasets
 ├── research/test*/results/{data,figures}/     # Analysis outputs and figures per test
 ├── Presentation.html                          # Defense presentation deck
-├── papers/statistical_glossary.pdf            # Statistical glossary for presentation (EN)
-├── papers/statistical_glossary_ru.pdf         # Statistical glossary for presentation (RU)
-└── README.md                         # This file
+└── README.md                                  # This file
 ```
 
 ## Requirements
